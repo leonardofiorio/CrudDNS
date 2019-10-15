@@ -1,0 +1,99 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @domain.name %>
+</p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @domain.type_domain %>
+</p>
+
+<p>
+  <strong>Ttl:</strong>
+  <%= @domain.ttl %>
+</p>
+
+<p>
+  <strong>Primary name server:</strong>
+  <%= @domain.primary_name_server %>
+</p>
+
+<p>
+  <strong>Contact:</strong>
+  <%= @domain.contact %>
+</p>
+
+<p>
+  <strong>Refresh:</strong>
+  <%= @domain.refresh %>
+</p>
+
+<p>
+  <strong>Retry:</strong>
+  <%= @domain.retry %>
+</p>
+
+<p>
+  <strong>Expire:</strong>
+  <%= @domain.expire %>
+</p>
+
+<p>
+  <strong>Minimum:</strong>
+  <%= @domain.minimum %>
+</p>
+
+<%= link_to 'Edit', edit_domain_path(@domain) %> |
+<%= link_to 'Back', domains_path %>
+
+
+</br>
+
+</br>
+
+
+
+
+
+<h1>Dominios contidos dentro de <%= @domain.name %></h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Ttl</th>
+      <th>Primary name server</th>
+      <th>Contact</th>
+      <th>Refresh</th>
+      <th>Retry</th>
+      <th>Expire</th>
+      <th>Minimum</th>
+      <th colspan="3">Ações</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @domains_contained.each do |domain_contained| %>
+      <tr>
+        <td><%= domain_contained.name %></td>
+        <td><%= domain_contained.type_domain %></td>
+        <td><%= domain_contained.ttl %></td>
+        <td><%= domain_contained.primary_name_server %></td>
+        <td><%= domain_contained.contact %></td>
+        <td><%= domain_contained.refresh %></td>
+        <td><%= domain_contained.retry %></td>
+        <td><%= domain_contained.expire %></td>
+        <td><%= domain_contained.minimum %></td>
+        <td><%= link_to 'Show', domain %></td>
+        <td><%= link_to 'Edit', edit_domain_path(domain) %></td>
+        <td><%= link_to 'Destroy', domain, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+<%= link_to 'Inserir novo domínio em '+ @domain.name, new_domain_path + "/" +@domain.id.to_s %>

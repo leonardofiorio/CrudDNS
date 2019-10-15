@@ -1,0 +1,66 @@
+<%= form_with(model: domain, local: true) do |form| %>
+  <% if domain.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(domain.errors.count, "error") %> prohibited this domain from being saved:</h2>
+
+      <ul>
+        <% domain.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <% if !(@domain.is_contained_id.nil?) %>
+    <h3> O novo domínio será inserido no domínio <%= @domain.is_contained_id.to_s %> <h3>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :type_domain %>
+    <%= form.select(:type_domain, ['MASTER', 'SLAVE', 'FORWARD', 'STUB', 'HINT']) %>
+  </div>  
+
+  <div class="field">
+    <%= form.label :ttl %>
+    <%= form.text_field :ttl %>
+  </div>
+
+  <div class="field">
+    <%= form.label :primary_name_server %>
+    <%= form.text_field :primary_name_server %>
+  </div>
+
+  <div class="field">
+    <%= form.label :contact %>
+    <%= form.text_field :contact %>
+  </div>
+
+  <div class="field">
+    <%= form.label :refresh %>
+    <%= form.text_field :refresh %>
+  </div>
+
+  <div class="field">
+    <%= form.label :retry %>
+    <%= form.text_field :retry %>
+  </div>
+
+  <div class="field">
+    <%= form.label :expire %>
+    <%= form.text_field :expire %>
+  </div>
+
+  <div class="field">
+    <%= form.label :minimum %>
+    <%= form.text_field :minimum %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

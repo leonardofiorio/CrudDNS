@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Dominios</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Ttl</th>
+      <th>Primary name server</th>
+      <th>Contact</th>
+      <th>Refresh</th>
+      <th>Retry</th>
+      <th>Expire</th>
+      <th>Minimum</th>
+      <th colspan="3">Ações</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @domains.each do |domain| %>
+      <tr>
+        <td><%= domain.name %></td>
+        <td><%= domain.type_domain %></td>
+        <td><%= domain.ttl %></td>
+        <td><%= domain.primary_name_server %></td>
+        <td><%= domain.contact %></td>
+        <td><%= domain.refresh %></td>
+        <td><%= domain.retry %></td>
+        <td><%= domain.expire %></td>
+        <td><%= domain.minimum %></td>
+        <td><%= link_to 'Show', domain %></td>
+        <td><%= link_to 'Edit', edit_domain_path(domain) %></td>
+        <td><%= link_to 'Destroy', domain, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Domain', new_domain_path %>
