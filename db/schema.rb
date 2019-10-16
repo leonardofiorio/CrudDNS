@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_13_205822) do
+ActiveRecord::Schema.define(version: 2019_10_15_185751) do
 
   create_table "domains", force: :cascade do |t|
     t.string "name"
@@ -26,6 +26,16 @@ ActiveRecord::Schema.define(version: 2019_10_13_205822) do
     t.datetime "updated_at", precision: 6, null: false
     t.integer "is_contained_id"
     t.index ["is_contained_id"], name: "index_domains_on_is_contained_id"
+  end
+
+  create_table "records", force: :cascade do |t|
+    t.string "type"
+    t.string "host"
+    t.string "ttl"
+    t.string "content"
+    t.integer "priority"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
 end
