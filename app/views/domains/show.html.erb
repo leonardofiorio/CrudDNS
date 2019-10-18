@@ -1,52 +1,63 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @domain.name %>
-</p>
+<%= link_to 'Retornar a lista de Domains', domains_path %>
 
-<p>
-  <strong>Type:</strong>
-  <%= @domain.type_domain %>
-</p>
 
-<p>
-  <strong>Ttl:</strong>
-  <%= @domain.ttl %>
-</p>
+<table id='domain'>
 
-<p>
-  <strong>Primary name server:</strong>
-  <%= @domain.primary_name_server %>
-</p>
+  <tr>
+    <td><h2> Domain </h2>  </td>
+    <td>  <%= link_to 'Editar', edit_domain_path(@domain) %> </td>
+  </tr>
 
-<p>
-  <strong>Contact:</strong>
-  <%= @domain.contact %>
-</p>
+  <tr>
+    <td><strong>Name:</strong></td>
+    <td><%= @domain.name %></td>
+  </tr>
 
-<p>
-  <strong>Refresh:</strong>
-  <%= @domain.refresh %>
-</p>
+  <tr>
+    <td><strong>Type:</strong></td>
+    <td><%= @domain.type_domain %></td>
+  </tr>
 
-<p>
-  <strong>Retry:</strong>
-  <%= @domain.retry %>
-</p>
+  <tr>
+    <td><strong>Ttl:</strong></td>
+    <td><%= @domain.ttl %></td>
+  </tr>
 
-<p>
-  <strong>Expire:</strong>
-  <%= @domain.expire %>
-</p>
+  <tr>
+    <td><strong>Primary name server:</strong></td>
+    <td><%= @domain.primary_name_server %></td>
+  </tr>
 
-<p>
-  <strong>Minimum:</strong>
-  <%= @domain.minimum %>
-</p>
+  <tr>
+    <td><strong>Contact:</strong></td>
+    <td><%= @domain.contact %></td>
+  </tr>
 
-<%= link_to 'Edit', edit_domain_path(@domain) %> |
-<%= link_to 'Back', domains_path %>
+  <tr>
+    <td><strong>Refresh:</strong></td>
+    <td><%= @domain.refresh %></td>
+  </tr>
+
+  <tr>
+    <td><strong>Retry:</strong></td>
+    <td><%= @domain.retry %></td>
+  </tr>
+
+  <tr>
+    <td><strong>Expire:</strong></td>
+    <td><%= @domain.expire %></td>
+  </tr>
+
+  <tr>
+    <td><strong>Minimum:</strong></td>
+    <td><%= @domain.minimum %></td>
+  </tr>
+  
+
+
+</table>
 
 
 </br>
@@ -55,9 +66,7 @@
 
 
 
-
-
-<h1>Dominios contidos dentro de <%= @domain.name %></h1>
+<h2>Subdomains de <%= @domain.name %></h2>
 
 <table>
   <thead>
@@ -96,4 +105,43 @@
 </table>
 
 
-<%= link_to 'Inserir novo domínio em '+ @domain.name, new_domain_path + "/" +@domain.id.to_s %>
+<%= link_to 'Inserir um subdomain em '+ @domain.name, new_domain_path + "/" +@domain.id.to_s %>
+
+
+</br>
+
+</br>
+
+
+
+<h2>Records do Domain <%= @domain.name %></h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Host</th>
+      <th>Ttl</th>
+      <th>Content</th>
+      <th>Priority</th>
+      <th colspan="3">Ações</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @records.each do |record| %>
+      <tr>
+        <td><%= record.type_record %></td>
+        <td><%= record.host %></td>
+        <td><%= record.ttl %></td>
+        <td><%= record.content %></td>
+        <td><%= record.priority %></td>
+        <td><%= link_to 'Exibir', record %></td>
+        <td><%= link_to 'Editar', edit_record_path(record) %></td>
+        <td><%= link_to 'Excluir', record, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>

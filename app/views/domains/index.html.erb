@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Dominios</h1>
+<h1>Domains</h1>
 
 <table>
   <thead>
@@ -30,9 +30,9 @@
         <td><%= domain.retry %></td>
         <td><%= domain.expire %></td>
         <td><%= domain.minimum %></td>
-        <td><%= link_to 'Show', domain %></td>
-        <td><%= link_to 'Edit', edit_domain_path(domain) %></td>
-        <td><%= link_to 'Destroy', domain, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Exibir', domain %></td>
+        <td><%= link_to 'Editar', edit_domain_path(domain) %></td>
+        <td><%= link_to 'Excluir', domain, method: :delete, data: { confirm: 'Tem certeza que deseja excluir este Domain?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -40,4 +40,7 @@
 
 <br>
 
-<%= link_to 'New Domain', new_domain_path %>
+<%= link_to 'Novo Domain', new_domain_path %>
+
+</br>
+

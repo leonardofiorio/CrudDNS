@@ -1,7 +1,7 @@
 <%= form_with(model: record, local: true) do |form| %>
   <% if record.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(record.errors.count, "error") %> prohibited this record from being saved:</h2>
+      <h2><%= pluralize(record.errors.count, "erro") %> ocorreram durante o cadastro do record:</h2>
 
       <ul>
         <% record.errors.full_messages.each do |message| %>
@@ -12,8 +12,13 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :type_domain %>
-    <%= form.select(:type_domain, ['A', 'TXT', 'CNAME', 'PTR']) %>
+    <%= form.label :domain_id %>
+    <%= form.collection_select :domain_id, Domain.order(:name), :id, :name, include_blank: true %>
+  </div>  
+
+  <div class="field">
+    <%= form.label :type_record %>
+    <%= form.select(:type_record, [['A','A'], ['TXT','TXT'], ['CNAME','CNAME'],  ['PTR','PTR']], include_blank: true) %>
   </div>  
 
   <div class="field">
@@ -28,7 +33,7 @@
 
   <div class="field">
     <%= form.label :content %>
-    <%= form.text_field :content %>
+    <%= form.text_field :content,:input_html => {:on =>  "ValidateIPaddress();"} %>
   </div>
 
   <div class="field">

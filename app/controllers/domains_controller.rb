@@ -10,7 +10,8 @@ class DomainsController < ApplicationController
   # GET /domains/1
   # GET /domains/1.json
   def show
-    @domains_contained = Domain.where(is_contained_id: params[:id])
+    @domains_contained = Domain.where(domains_id: params[:id])
+    @records = Record.where(domain_id: params[:id])
   end
 
   # GET /domains/new
@@ -18,10 +19,9 @@ class DomainsController < ApplicationController
     @domain = Domain.new
 
     if(params[:id])
-      @domain.is_contained_id = params[:id]
+      @domain.domains_id = params[:id]
     end
   end
-
 
 
   # GET /domains/1/edit

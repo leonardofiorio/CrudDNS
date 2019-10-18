@@ -5,7 +5,7 @@ class RecordsController < ApplicationController
   # GET /records.json
   def index
     @records = Record.all
-  end
+  end 
 
   # GET /records/1
   # GET /records/1.json
@@ -25,10 +25,40 @@ class RecordsController < ApplicationController
   # POST /records.json
   def create
     @record = Record.new(record_params)
+    valid = true
+
+
+    if @record.type_record == "CNAME"
+      # Se o tipo é um CNAME, não pode existir outro Record, 
+      #com o mesmo nome, no mesmo Domain.
+
+      records_domain = Record.where(domain_id: @record.domain_id)
+
+      records_domain.each do |r|
+        
+        if @record.host == r.host 
+            valid = false
+        end
+
+      end
+    
+    else
+      #Se o tipo não é um CNAME, não pode existir um Record do tipo CNAME, 
+      #com o mesmo nome, no mesmo Domain.
+
+      records_cname_domain = Record.where(type_record: "CNAME", host: @record.host,
+       domain_id: @record.domain_id)
+
+      if !records_cname_domain.nil?
+          valid = false
+      end
+
+    end
+
 
     respond_to do |format|
-      if @record.save
-        format.html { redirect_to @record, notice: 'Record was successfully created.' }
+      if valid and @record.save
+        format.html { redirect_to @record, notice: 'Record inserido com sucesso!' }
         format.json { render :show, status: :created, location: @record }
       else
         format.html { render :new }
@@ -42,7 +72,7 @@ class RecordsController < ApplicationController
   def update
     respond_to do |format|
       if @record.update(record_params)
-        format.html { redirect_to @record, notice: 'Record was successfully updated.' }
+        format.html { redirect_to @record, notice: 'Record atualizado com sucesso!' }
         format.json { render :show, status: :ok, location: @record }
       else
         format.html { render :edit }
@@ -56,7 +86,7 @@ class RecordsController < ApplicationController
   def destroy
     @record.destroy
     respond_to do |format|
-      format.html { redirect_to records_url, notice: 'Record was successfully destroyed.' }
+      format.html { redirect_to records_url, notice: 'Record foi apagado com sucesso!' }
       format.json { head :no_content }
     end
   end
@@ -69,6 +99,6 @@ class RecordsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def record_params
-      params.require(:record).permit(:type, :host, :ttl, :content, :priority)
+      params.require(:record).permit(:domain_id ,:type_record, :host, :ttl, :content, :priority)
     end
 end

@@ -11,8 +11,8 @@
     </div>
   <% end %>
 
-  <% if !(@domain.is_contained_id.nil?) %>
-    <h3> O novo domínio será inserido no domínio <%= @domain.is_contained_id.to_s %> <h3>
+  <% if !(@domain.domains_id.nil?) %>
+    <h3> O novo domínio será inserido no domínio <%= @domain.domains_id.to_s %> <h3>
   <% end %>
 
   <div class="field">
@@ -22,7 +22,7 @@
 
   <div class="field">
     <%= form.label :type_domain %>
-    <%= form.select(:type_domain, ['MASTER', 'SLAVE', 'FORWARD', 'STUB', 'HINT']) %>
+    <%= form.select(:type_domain, ['MASTER', 'SLAVE', 'FORWARD', 'STUB', 'HINT'], include_blank: true) %>
   </div>  
 
   <div class="field">
