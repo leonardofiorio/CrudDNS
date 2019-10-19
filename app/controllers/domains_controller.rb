@@ -15,11 +15,12 @@ class DomainsController < ApplicationController
   end
 
   # GET /domains/new
+  # GET /domains/new/1
   def new
     @domain = Domain.new
 
-    if(params[:id])
-      @domain.domains_id = params[:id]
+    if params[:id]
+      @domain.domains = Domain.find(params[:id])
     end
   end
 
@@ -31,11 +32,25 @@ class DomainsController < ApplicationController
   # POST /domains
   # POST /domains.json
   def create
-    @domain = Domain.new(domain_params)
+    @domain = Domain.new()
+
+    if domain_params[:domains] != ""
+      @domain.domains = Domain.find(domain_params[:domains])
+    end
+    
+    @domain.name = domain_params[:name]
+    @domain.type_domain = domain_params[:type_domain]
+    @domain.ttl = domain_params[:ttl]
+    @domain.primary_name_server = domain_params[:primary_name_server]
+    @domain.contact = domain_params[:contact]
+    @domain.refresh = domain_params[:refresh]
+    @domain.expire = domain_params[:expire]
+    @domain.retry = domain_params[:retry]
+    @domain.minimum = domain_params[:minimum]
 
     respond_to do |format|
       if @domain.save
-        format.html { redirect_to @domain, notice: 'Domain was successfully created.' }
+        format.html { redirect_to @domain, notice: 'Domain inserido com sucesso!' }
         format.json { render :show, status: :created, location: @domain }
       else
         format.html { render :new }
@@ -49,7 +64,7 @@ class DomainsController < ApplicationController
   def update
     respond_to do |format|
       if @domain.update(domain_params)
-        format.html { redirect_to @domain, notice: 'Domain was successfully updated.' }
+        format.html { redirect_to @domain, notice: 'Domain inserido com sucesso!' }
         format.json { render :show, status: :ok, location: @domain }
       else
         format.html { render :edit }
@@ -63,7 +78,7 @@ class DomainsController < ApplicationController
   def destroy
     @domain.destroy
     respond_to do |format|
-      format.html { redirect_to domains_url, notice: 'Domain was successfully destroyed.' }
+      format.html { redirect_to domains_url, notice: 'Domain removido com sucesso!' }
       format.json { head :no_content }
     end
   end
@@ -76,6 +91,6 @@ class DomainsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def domain_params
-      params.require(:domain).permit(:name, :type_domain, :ttl, :primary_name_server, :contact, :refresh, :retry, :expire, :minimum)
+      params.require(:domain).permit(:name, :type_domain, :ttl, :primary_name_server, :contact, :refresh, :retry, :expire, :minimum, :domains)
     end
 end

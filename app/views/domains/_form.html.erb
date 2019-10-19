@@ -16,6 +16,10 @@
   <% end %>
 
   <div class="field">
+    <%= form.hidden_field :domains, value: @domain.domains_id.to_s %>
+  </div>
+
+  <div class="field">
     <%= form.label :name %>
     <%= form.text_field :name %>
   </div>

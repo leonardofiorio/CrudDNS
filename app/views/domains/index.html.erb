@@ -2,7 +2,7 @@
 
 <h1>Domains</h1>
 
-<table>
+<table id="domains" class=" datatable table table-striped table-bordered">
   <thead>
     <tr>
       <th>Name</th>
@@ -14,7 +14,7 @@
       <th>Retry</th>
       <th>Expire</th>
       <th>Minimum</th>
-      <th colspan="3">Ações</th>
+      <th>Ações</th>
     </tr>
   </thead>
 
@@ -30,9 +30,11 @@
         <td><%= domain.retry %></td>
         <td><%= domain.expire %></td>
         <td><%= domain.minimum %></td>
-        <td><%= link_to 'Exibir', domain %></td>
-        <td><%= link_to 'Editar', edit_domain_path(domain) %></td>
-        <td><%= link_to 'Excluir', domain, method: :delete, data: { confirm: 'Tem certeza que deseja excluir este Domain?' } %></td>
+        <td>
+            <%= link_to 'Exibir', domain %>
+            <%= link_to 'Editar', edit_domain_path(domain) %>
+            <%= link_to 'Excluir', domain, method: :delete, data: { confirm: 'Tem certeza que deseja excluir este Domain?' } %>
+        </td>
       </tr>
     <% end %>
   </tbody>
@@ -44,3 +46,17 @@
 
 </br>
 
+<script type="text/javascript" src="/assets/datatables.js"></script>
+
+<script type="text/javascript">
+  $(document).ready(function(){
+    var dataTable = $("#domains").DataTable(
+       {
+        "language": 
+          {
+             "url": "//cdn.datatables.net/plug-ins/1.10.19/i18n/Portuguese-Brasil.json"
+          },
+      }
+    )
+  });
+</script>

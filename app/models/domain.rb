@@ -14,7 +14,7 @@ class Domain < ApplicationRecord
 	validates_presence_of :minimum, :message => " deve ser informado!"
 
 	# Tratamento das zonas
-	belongs_to :is_contained, class_name: "Domain", optional:false
+	belongs_to :domains, class_name: "Domain", optional:true
 
 	has_many :records, class_name: "Record", :inverse_of => :domain 
 
