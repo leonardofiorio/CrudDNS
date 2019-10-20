@@ -14577,3 +14577,2285 @@ Processing by DomainsController#index as HTML
 Completed 200 OK in 19ms (Views: 17.8ms | ActiveRecord: 0.1ms | Allocations: 11990)
 
 
+Started GET "/domains" for ::1 at 2019-10-19 14:47:24 -0300
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by DomainsController#index as HTML
+  Rendering domains/index.html.erb within layouts/application
+  [1m[36mDomain Load (13.5ms)[0m  [1m[34mSELECT "domains".* FROM "domains"[0m
+  ↳ app/views/domains/index.html.erb:22
+  Rendered domains/index.html.erb within layouts/application (Duration: 65.5ms | Allocations: 10694)
+Completed 200 OK in 1954ms (Views: 1903.5ms | ActiveRecord: 14.2ms | Allocations: 1306438)
+
+
+Started GET "/domains/2" for ::1 at 2019-10-19 14:52:24 -0300
+Processing by DomainsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mDomain Load (0.4ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/domains_controller.rb:89:in `set_domain'
+  Rendering domains/show.html.erb within layouts/application
+  [1m[36mDomain Load (14.9ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."domains_id" = ?[0m  [["domains_id", 2]]
+  ↳ app/views/domains/show.html.erb:85
+  [1m[36mRecord Load (26.6ms)[0m  [1m[34mSELECT "records".* FROM "records" WHERE "records"."domain_id" = ?[0m  [["domain_id", 2]]
+  ↳ app/views/domains/show.html.erb:124
+  Rendered domains/show.html.erb within layouts/application (Duration: 77.8ms | Allocations: 7686)
+Completed 200 OK in 133ms (Views: 46.8ms | ActiveRecord: 43.9ms | Allocations: 22286)
+
+
+Started GET "/domains/2/edit" for ::1 at 2019-10-19 14:52:30 -0300
+Processing by DomainsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mDomain Load (0.3ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/domains_controller.rb:89:in `set_domain'
+  Rendering domains/edit.html.erb within layouts/application
+  Rendered domains/_form.html.erb (Duration: 78.8ms | Allocations: 4858)
+  Rendered domains/edit.html.erb within layouts/application (Duration: 95.7ms | Allocations: 5260)
+Completed 200 OK in 113ms (Views: 109.5ms | ActiveRecord: 0.3ms | Allocations: 16560)
+
+
+Started GET "/domains" for ::1 at 2019-10-19 14:52:34 -0300
+Processing by DomainsController#index as HTML
+  Rendering domains/index.html.erb within layouts/application
+  [1m[36mDomain Load (0.2ms)[0m  [1m[34mSELECT "domains".* FROM "domains"[0m
+  ↳ app/views/domains/index.html.erb:22
+  Rendered domains/index.html.erb within layouts/application (Duration: 2.8ms | Allocations: 1386)
+Completed 200 OK in 17ms (Views: 16.2ms | ActiveRecord: 0.2ms | Allocations: 12014)
+
+
+Started GET "/domains" for ::1 at 2019-10-19 14:56:42 -0300
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by DomainsController#index as HTML
+  Rendering domains/index.html.erb within layouts/application
+  [1m[36mDomain Load (0.7ms)[0m  [1m[34mSELECT "domains".* FROM "domains"[0m
+  ↳ app/views/domains/index.html.erb:22
+  Rendered domains/index.html.erb within layouts/application (Duration: 32.2ms | Allocations: 11225)
+Completed 200 OK in 1261ms (Views: 1245.6ms | ActiveRecord: 1.4ms | Allocations: 1307760)
+
+
+Started DELETE "/domains/1" for ::1 at 2019-10-19 14:56:47 -0300
+Processing by DomainsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"u+P9st61DDz86eE6cYiQXMHpKKzWNweu5Pc4XE+fJlcG5dcD1xtZYWJQpH0W/Rl6EAI0aqmpjMKBKx4z9TC3fA==", "id"=>"1"}
+  [1m[36mDomain Load (0.2ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/domains_controller.rb:89:in `set_domain'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/domains_controller.rb:79:in `destroy'
+  [1m[36mDomain Destroy (1.3ms)[0m  [1m[31mDELETE FROM "domains" WHERE "domains"."id" = ?[0m  [["id", 1]]
+  ↳ app/controllers/domains_controller.rb:79:in `destroy'
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/domains_controller.rb:79:in `destroy'
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 1.8ms | Allocations: 4903)
+
+
+  
+ActiveRecord::InvalidForeignKey (SQLite3::ConstraintException: FOREIGN KEY constraint failed):
+  
+app/controllers/domains_controller.rb:79:in `destroy'
+Started GET "/domains/1" for ::1 at 2019-10-19 14:58:33 -0300
+Processing by DomainsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDomain Load (0.5ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/domains_controller.rb:89:in `set_domain'
+  Rendering domains/show.html.erb within layouts/application
+  [1m[36mDomain Load (0.2ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."domains_id" = ?[0m  [["domains_id", 1]]
+  ↳ app/views/domains/show.html.erb:85
+  [1m[36mRecord Load (0.2ms)[0m  [1m[34mSELECT "records".* FROM "records" WHERE "records"."domain_id" = ?[0m  [["domain_id", 1]]
+  ↳ app/views/domains/show.html.erb:124
+  Rendered domains/show.html.erb within layouts/application (Duration: 15.2ms | Allocations: 7968)
+Completed 200 OK in 45ms (Views: 26.2ms | ActiveRecord: 1.5ms | Allocations: 22250)
+
+
+Started GET "/domains/5" for ::1 at 2019-10-19 14:58:38 -0300
+Processing by DomainsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mDomain Load (0.1ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/domains_controller.rb:89:in `set_domain'
+  Rendering domains/show.html.erb within layouts/application
+  [1m[36mDomain Load (0.2ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."domains_id" = ?[0m  [["domains_id", 5]]
+  ↳ app/views/domains/show.html.erb:85
+  [1m[36mRecord Load (0.2ms)[0m  [1m[34mSELECT "records".* FROM "records" WHERE "records"."domain_id" = ?[0m  [["domain_id", 5]]
+  ↳ app/views/domains/show.html.erb:124
+  Rendered domains/show.html.erb within layouts/application (Duration: 3.8ms | Allocations: 1470)
+Completed 200 OK in 18ms (Views: 15.4ms | ActiveRecord: 0.5ms | Allocations: 12706)
+
+
+Started DELETE "/domains/5" for ::1 at 2019-10-19 14:58:44 -0300
+Processing by DomainsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"u+P9st61DDz86eE6cYiQXMHpKKzWNweu5Pc4XE+fJlcG5dcD1xtZYWJQpH0W/Rl6EAI0aqmpjMKBKx4z9TC3fA==", "id"=>"5"}
+  [1m[36mDomain Load (0.2ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/domains_controller.rb:89:in `set_domain'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/domains_controller.rb:79:in `destroy'
+  [1m[36mDomain Destroy (0.8ms)[0m  [1m[31mDELETE FROM "domains" WHERE "domains"."id" = ?[0m  [["id", 5]]
+  ↳ app/controllers/domains_controller.rb:79:in `destroy'
+  [1m[35m (0.5ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/domains_controller.rb:79:in `destroy'
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 1.6ms | Allocations: 4427)
+
+
+  
+ActiveRecord::InvalidForeignKey (SQLite3::ConstraintException: FOREIGN KEY constraint failed):
+  
+app/controllers/domains_controller.rb:79:in `destroy'
+Started GET "/domains" for ::1 at 2019-10-19 15:01:32 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by DomainsController#index as HTML
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 0.0ms | Allocations: 1378)
+
+
+  
+ArgumentError (wrong number of arguments (given 0, expected 1)):
+  
+app/models/domain.rb:17:in `<class:Domain>'
+app/models/domain.rb:1:in `<main>'
+app/controllers/domains_controller.rb:7:in `index'
+Started GET "/domains" for ::1 at 2019-10-19 15:01:54 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by DomainsController#index as HTML
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 1474)
+
+
+  
+ArgumentError (Unknown key: :on_delete. Valid keys are: :class_name, :anonymous_class, :foreign_key, :validate, :autosave, :foreign_type, :dependent, :primary_key, :inverse_of, :required, :polymorphic, :touch, :counter_cache, :optional, :default):
+  
+app/models/domain.rb:17:in `<class:Domain>'
+app/models/domain.rb:1:in `<main>'
+app/controllers/domains_controller.rb:7:in `index'
+Started GET "/domains" for ::1 at 2019-10-19 15:02:18 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by DomainsController#index as HTML
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 1533)
+
+
+  
+ArgumentError (The :dependent option must be one of [:destroy, :delete], but is :delete_all):
+  
+app/models/domain.rb:17:in `<class:Domain>'
+app/models/domain.rb:1:in `<main>'
+app/controllers/domains_controller.rb:7:in `index'
+Started GET "/domains" for ::1 at 2019-10-19 15:02:31 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by DomainsController#index as HTML
+  Rendering domains/index.html.erb within layouts/application
+  [1m[36mDomain Load (0.4ms)[0m  [1m[34mSELECT "domains".* FROM "domains"[0m
+  ↳ app/views/domains/index.html.erb:22
+  Rendered domains/index.html.erb within layouts/application (Duration: 19.9ms | Allocations: 9689)
+Completed 200 OK in 39ms (Views: 34.0ms | ActiveRecord: 1.4ms | Allocations: 22031)
+
+
+Started DELETE "/domains/5" for ::1 at 2019-10-19 15:02:36 -0300
+Processing by DomainsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"aC+ZihQ16jNiRCPic322xVg3S+YTtZiGD42LhrPrWHjVKbM7HZu/bvz9ZqUUCD/jidxXIGwrE+pqUa3pCUTJUw==", "id"=>"5"}
+  [1m[36mDomain Load (0.3ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/domains_controller.rb:89:in `set_domain'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/domains_controller.rb:79:in `destroy'
+  [1m[36mDomain Destroy (1.7ms)[0m  [1m[31mDELETE FROM "domains" WHERE "domains"."id" = ?[0m  [["id", 5]]
+  ↳ app/controllers/domains_controller.rb:79:in `destroy'
+  [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/domains_controller.rb:79:in `destroy'
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 2.4ms | Allocations: 4549)
+
+
+  
+ActiveRecord::InvalidForeignKey (SQLite3::ConstraintException: FOREIGN KEY constraint failed):
+  
+app/controllers/domains_controller.rb:79:in `destroy'
+Started DELETE "/domains/5" for ::1 at 2019-10-19 15:02:58 -0300
+Processing by DomainsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"aC+ZihQ16jNiRCPic322xVg3S+YTtZiGD42LhrPrWHjVKbM7HZu/bvz9ZqUUCD/jidxXIGwrE+pqUa3pCUTJUw==", "id"=>"5"}
+  [1m[36mDomain Load (0.3ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/domains_controller.rb:89:in `set_domain'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/domains_controller.rb:79:in `destroy'
+  [1m[36mDomain Destroy (1.0ms)[0m  [1m[31mDELETE FROM "domains" WHERE "domains"."id" = ?[0m  [["id", 5]]
+  ↳ app/controllers/domains_controller.rb:79:in `destroy'
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/domains_controller.rb:79:in `destroy'
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 1.6ms | Allocations: 4400)
+
+
+  
+ActiveRecord::InvalidForeignKey (SQLite3::ConstraintException: FOREIGN KEY constraint failed):
+  
+app/controllers/domains_controller.rb:79:in `destroy'
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to DomainDeleteCascade (20191019180759)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "adomains" ("id" integer NOT NULL PRIMARY KEY, "name" varchar DEFAULT NULL, "type_domain" varchar DEFAULT NULL, "ttl" varchar DEFAULT NULL, "primary_name_server" varchar DEFAULT NULL, "contact" varchar DEFAULT NULL, "refresh" varchar DEFAULT NULL, "retry" varchar DEFAULT NULL, "expire" varchar DEFAULT NULL, "minimum" varchar DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "domains_id" integer DEFAULT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "tindex_adomains_on_adomains_id" ON "adomains" ("domains_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "adomains" ("id","name","type_domain","ttl","primary_name_server","contact","refresh","retry","expire","minimum","created_at","updated_at","domains_id")
+                     SELECT "id","name","type_domain","ttl","primary_name_server","contact","refresh","retry","expire","minimum","created_at","updated_at","domains_id" FROM "domains"[0m
+  [1m[35m (11.9ms)[0m  [1m[35mDROP TABLE "domains"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "domains" ("id" integer NOT NULL PRIMARY KEY, "name" varchar DEFAULT NULL, "type_domain" varchar DEFAULT NULL, "ttl" varchar DEFAULT NULL, "primary_name_server" varchar DEFAULT NULL, "contact" varchar DEFAULT NULL, "refresh" varchar DEFAULT NULL, "retry" varchar DEFAULT NULL, "expire" varchar DEFAULT NULL, "minimum" varchar DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "domains" ("id","name","type_domain","ttl","primary_name_server","contact","refresh","retry","expire","minimum","created_at","updated_at")
+                     SELECT "id","name","type_domain","ttl","primary_name_server","contact","refresh","retry","expire","minimum","created_at","updated_at" FROM "adomains"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "adomains"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "arecords" ("id" integer NOT NULL PRIMARY KEY, "type_record" varchar DEFAULT NULL, "host" varchar DEFAULT NULL, "ttl" varchar DEFAULT NULL, "content" varchar DEFAULT NULL, "priority" integer DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "domain_id" integer DEFAULT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "tindex_arecords_on_domain_id" ON "arecords" ("domain_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "arecords" ("id","type_record","host","ttl","content","priority","created_at","updated_at","domain_id")
+                     SELECT "id","type_record","host","ttl","content","priority","created_at","updated_at","domain_id" FROM "records"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "records"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "records" ("id" integer NOT NULL PRIMARY KEY, "type_record" varchar DEFAULT NULL, "host" varchar DEFAULT NULL, "ttl" varchar DEFAULT NULL, "content" varchar DEFAULT NULL, "priority" integer DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "records" ("id","type_record","host","ttl","content","priority","created_at","updated_at")
+                     SELECT "id","type_record","host","ttl","content","priority","created_at","updated_at" FROM "arecords"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "arecords"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to DomainDeleteCascade (20191019180759)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "adomains" ("id" integer NOT NULL PRIMARY KEY, "name" varchar DEFAULT NULL, "type_domain" varchar DEFAULT NULL, "ttl" varchar DEFAULT NULL, "primary_name_server" varchar DEFAULT NULL, "contact" varchar DEFAULT NULL, "refresh" varchar DEFAULT NULL, "retry" varchar DEFAULT NULL, "expire" varchar DEFAULT NULL, "minimum" varchar DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "domains_id" integer DEFAULT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "tindex_adomains_on_adomains_id" ON "adomains" ("domains_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "adomains" ("id","name","type_domain","ttl","primary_name_server","contact","refresh","retry","expire","minimum","created_at","updated_at","domains_id")
+                     SELECT "id","name","type_domain","ttl","primary_name_server","contact","refresh","retry","expire","minimum","created_at","updated_at","domains_id" FROM "domains"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE "domains"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "domains" ("id" integer NOT NULL PRIMARY KEY, "name" varchar DEFAULT NULL, "type_domain" varchar DEFAULT NULL, "ttl" varchar DEFAULT NULL, "primary_name_server" varchar DEFAULT NULL, "contact" varchar DEFAULT NULL, "refresh" varchar DEFAULT NULL, "retry" varchar DEFAULT NULL, "expire" varchar DEFAULT NULL, "minimum" varchar DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "domains" ("id","name","type_domain","ttl","primary_name_server","contact","refresh","retry","expire","minimum","created_at","updated_at")
+                     SELECT "id","name","type_domain","ttl","primary_name_server","contact","refresh","retry","expire","minimum","created_at","updated_at" FROM "adomains"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "adomains"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "arecords" ("id" integer NOT NULL PRIMARY KEY, "type_record" varchar DEFAULT NULL, "host" varchar DEFAULT NULL, "ttl" varchar DEFAULT NULL, "content" varchar DEFAULT NULL, "priority" integer DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "domain_id" integer DEFAULT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "tindex_arecords_on_domain_id" ON "arecords" ("domain_id")[0m
+  [1m[35m (0.3ms)[0m  [1m[32mINSERT INTO "arecords" ("id","type_record","host","ttl","content","priority","created_at","updated_at","domain_id")
+                     SELECT "id","type_record","host","ttl","content","priority","created_at","updated_at","domain_id" FROM "records"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE "records"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "records" ("id" integer NOT NULL PRIMARY KEY, "type_record" varchar DEFAULT NULL, "host" varchar DEFAULT NULL, "ttl" varchar DEFAULT NULL, "content" varchar DEFAULT NULL, "priority" integer DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "records" ("id","type_record","host","ttl","content","priority","created_at","updated_at")
+                     SELECT "id","type_record","host","ttl","content","priority","created_at","updated_at" FROM "arecords"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "arecords"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "records" ADD "domain_id" integer[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_records_on_domain_id" ON "records" ("domain_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TEMPORARY TABLE "arecords" ("id" integer NOT NULL PRIMARY KEY, "type_record" varchar DEFAULT NULL, "host" varchar DEFAULT NULL, "ttl" varchar DEFAULT NULL, "content" varchar DEFAULT NULL, "priority" integer DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "domain_id" integer DEFAULT NULL)[0m
+  [1m[35m (15.2ms)[0m  [1m[35mCREATE  INDEX "tindex_arecords_on_domain_id" ON "arecords" ("domain_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[32mINSERT INTO "arecords" ("id","type_record","host","ttl","content","priority","created_at","updated_at","domain_id")
+                     SELECT "id","type_record","host","ttl","content","priority","created_at","updated_at","domain_id" FROM "records"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE "records"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "records" ("id" integer NOT NULL PRIMARY KEY, "type_record" varchar DEFAULT NULL, "host" varchar DEFAULT NULL, "ttl" varchar DEFAULT NULL, "content" varchar DEFAULT NULL, "priority" integer DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "domain_id" integer DEFAULT NULL, CONSTRAINT "fk_rails_98dedb8d34"
+FOREIGN KEY ("domain_id")
+  REFERENCES "domains" ("id")
+)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_records_on_domain_id" ON "records" ("domain_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "records" ("id","type_record","host","ttl","content","priority","created_at","updated_at","domain_id")
+                     SELECT "id","type_record","host","ttl","content","priority","created_at","updated_at","domain_id" FROM "arecords"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "arecords"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "domains" ADD "domains_id" integer[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_domains_on_domains_id" ON "domains" ("domains_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "adomains" ("id" integer NOT NULL PRIMARY KEY, "name" varchar DEFAULT NULL, "type_domain" varchar DEFAULT NULL, "ttl" varchar DEFAULT NULL, "primary_name_server" varchar DEFAULT NULL, "contact" varchar DEFAULT NULL, "refresh" varchar DEFAULT NULL, "retry" varchar DEFAULT NULL, "expire" varchar DEFAULT NULL, "minimum" varchar DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "domains_id" integer DEFAULT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "tindex_adomains_on_adomains_id" ON "adomains" ("domains_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[32mINSERT INTO "adomains" ("id","name","type_domain","ttl","primary_name_server","contact","refresh","retry","expire","minimum","created_at","updated_at","domains_id")
+                     SELECT "id","name","type_domain","ttl","primary_name_server","contact","refresh","retry","expire","minimum","created_at","updated_at","domains_id" FROM "domains"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE "domains"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "domains" ("id" integer NOT NULL PRIMARY KEY, "name" varchar DEFAULT NULL, "type_domain" varchar DEFAULT NULL, "ttl" varchar DEFAULT NULL, "primary_name_server" varchar DEFAULT NULL, "contact" varchar DEFAULT NULL, "refresh" varchar DEFAULT NULL, "retry" varchar DEFAULT NULL, "expire" varchar DEFAULT NULL, "minimum" varchar DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "domains_id" integer DEFAULT NULL, CONSTRAINT "fk_rails_629f6848db"
+FOREIGN KEY ("domains_id")
+  REFERENCES "domains" ("id")
+)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_domains_on_domains_id" ON "domains" ("domains_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[32mINSERT INTO "domains" ("id","name","type_domain","ttl","primary_name_server","contact","refresh","retry","expire","minimum","created_at","updated_at","domains_id")
+                     SELECT "id","name","type_domain","ttl","primary_name_server","contact","refresh","retry","expire","minimum","created_at","updated_at","domains_id" FROM "adomains"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "adomains"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mprimary::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20191019180759"]]
+  [1m[35m (170.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for ::1 at 2019-10-19 15:17:37 -0300
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by DomainsController#index as HTML
+  Rendering domains/index.html.erb within layouts/application
+  [1m[36mDomain Load (0.2ms)[0m  [1m[34mSELECT "domains".* FROM "domains"[0m
+  ↳ app/views/domains/index.html.erb:22
+  Rendered domains/index.html.erb within layouts/application (Duration: 28.2ms | Allocations: 10852)
+Completed 200 OK in 1094ms (Views: 1083.0ms | ActiveRecord: 0.8ms | Allocations: 1307843)
+
+
+Started DELETE "/domains/5" for ::1 at 2019-10-19 15:17:41 -0300
+Processing by DomainsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"fRQYnLqqRwAuVqn+7hjxRCC45zcO8V9SsEFt/Q/MfY/AEjItswQSXbDv7LmJbXhi8VP78XFv1D7VnUuStWPspA==", "id"=>"5"}
+  [1m[36mDomain Load (0.2ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/domains_controller.rb:89:in `set_domain'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/domains_controller.rb:79:in `destroy'
+  [1m[36mDomain Destroy (0.4ms)[0m  [1m[31mDELETE FROM "domains" WHERE "domains"."id" = ?[0m  [["id", 5]]
+  ↳ app/controllers/domains_controller.rb:79:in `destroy'
+  [1m[35m (91.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/domains_controller.rb:79:in `destroy'
+Redirected to http://localhost:3000/domains
+Completed 302 Found in 141ms (ActiveRecord: 91.9ms | Allocations: 5473)
+
+
+Started GET "/domains" for ::1 at 2019-10-19 15:17:41 -0300
+Processing by DomainsController#index as HTML
+  Rendering domains/index.html.erb within layouts/application
+  [1m[36mDomain Load (0.2ms)[0m  [1m[34mSELECT "domains".* FROM "domains"[0m
+  ↳ app/views/domains/index.html.erb:22
+  Rendered domains/index.html.erb within layouts/application (Duration: 3.1ms | Allocations: 1238)
+Completed 200 OK in 19ms (Views: 18.1ms | ActiveRecord: 0.2ms | Allocations: 11870)
+
+
+Started GET "/domains" for ::1 at 2019-10-19 15:17:45 -0300
+Processing by DomainsController#index as HTML
+  Rendering domains/index.html.erb within layouts/application
+  [1m[36mDomain Load (0.2ms)[0m  [1m[34mSELECT "domains".* FROM "domains"[0m
+  ↳ app/views/domains/index.html.erb:22
+  Rendered domains/index.html.erb within layouts/application (Duration: 2.5ms | Allocations: 1234)
+Completed 200 OK in 16ms (Views: 15.3ms | ActiveRecord: 0.2ms | Allocations: 11857)
+
+
+Started GET "/domains" for ::1 at 2019-10-19 15:17:46 -0300
+Processing by DomainsController#index as HTML
+  Rendering domains/index.html.erb within layouts/application
+  [1m[36mDomain Load (0.1ms)[0m  [1m[34mSELECT "domains".* FROM "domains"[0m
+  ↳ app/views/domains/index.html.erb:22
+  Rendered domains/index.html.erb within layouts/application (Duration: 3.2ms | Allocations: 1234)
+Completed 200 OK in 14ms (Views: 13.6ms | ActiveRecord: 0.1ms | Allocations: 11867)
+
+
+Started GET "/domains" for ::1 at 2019-10-19 15:17:53 -0300
+Processing by DomainsController#index as HTML
+  Rendering domains/index.html.erb within layouts/application
+  [1m[36mDomain Load (0.1ms)[0m  [1m[34mSELECT "domains".* FROM "domains"[0m
+  ↳ app/views/domains/index.html.erb:22
+  Rendered domains/index.html.erb within layouts/application (Duration: 3.0ms | Allocations: 1226)
+Completed 200 OK in 17ms (Views: 15.9ms | ActiveRecord: 0.1ms | Allocations: 11839)
+
+
+Started GET "/domains" for ::1 at 2019-10-19 15:17:54 -0300
+Processing by DomainsController#index as HTML
+  Rendering domains/index.html.erb within layouts/application
+  [1m[36mDomain Load (0.2ms)[0m  [1m[34mSELECT "domains".* FROM "domains"[0m
+  ↳ app/views/domains/index.html.erb:22
+  Rendered domains/index.html.erb within layouts/application (Duration: 3.4ms | Allocations: 1233)
+Completed 200 OK in 17ms (Views: 15.5ms | ActiveRecord: 0.2ms | Allocations: 11858)
+
+
+Started GET "/domains" for ::1 at 2019-10-19 15:17:55 -0300
+Processing by DomainsController#index as HTML
+  Rendering domains/index.html.erb within layouts/application
+  [1m[36mDomain Load (0.3ms)[0m  [1m[34mSELECT "domains".* FROM "domains"[0m
+  ↳ app/views/domains/index.html.erb:22
+  Rendered domains/index.html.erb within layouts/application (Duration: 3.9ms | Allocations: 1226)
+Completed 200 OK in 17ms (Views: 15.3ms | ActiveRecord: 0.3ms | Allocations: 11835)
+
+
+Started GET "/domains" for ::1 at 2019-10-19 15:17:55 -0300
+Processing by DomainsController#index as HTML
+  Rendering domains/index.html.erb within layouts/application
+  [1m[36mDomain Load (0.1ms)[0m  [1m[34mSELECT "domains".* FROM "domains"[0m
+  ↳ app/views/domains/index.html.erb:22
+  Rendered domains/index.html.erb within layouts/application (Duration: 2.0ms | Allocations: 1226)
+Completed 200 OK in 16ms (Views: 15.4ms | ActiveRecord: 0.1ms | Allocations: 11843)
+
+
+Started GET "/domains" for ::1 at 2019-10-19 15:17:56 -0300
+Processing by DomainsController#index as HTML
+  Rendering domains/index.html.erb within layouts/application
+  [1m[36mDomain Load (0.3ms)[0m  [1m[34mSELECT "domains".* FROM "domains"[0m
+  ↳ app/views/domains/index.html.erb:22
+  Rendered domains/index.html.erb within layouts/application (Duration: 4.2ms | Allocations: 1226)
+Completed 200 OK in 16ms (Views: 15.4ms | ActiveRecord: 0.3ms | Allocations: 11849)
+
+
+Started GET "/domains" for ::1 at 2019-10-19 15:17:56 -0300
+Processing by DomainsController#index as HTML
+  Rendering domains/index.html.erb within layouts/application
+  [1m[36mDomain Load (0.2ms)[0m  [1m[34mSELECT "domains".* FROM "domains"[0m
+  ↳ app/views/domains/index.html.erb:22
+  Rendered domains/index.html.erb within layouts/application (Duration: 3.8ms | Allocations: 1226)
+Completed 200 OK in 37ms (Views: 35.7ms | ActiveRecord: 0.2ms | Allocations: 11839)
+
+
+Started GET "/domains" for ::1 at 2019-10-19 15:17:57 -0300
+Processing by DomainsController#index as HTML
+  Rendering domains/index.html.erb within layouts/application
+  [1m[36mDomain Load (0.1ms)[0m  [1m[34mSELECT "domains".* FROM "domains"[0m
+  ↳ app/views/domains/index.html.erb:22
+  Rendered domains/index.html.erb within layouts/application (Duration: 1.8ms | Allocations: 1226)
+Completed 200 OK in 14ms (Views: 13.0ms | ActiveRecord: 0.1ms | Allocations: 11839)
+
+
+Started GET "/domains" for ::1 at 2019-10-19 15:17:58 -0300
+Processing by DomainsController#index as HTML
+  Rendering domains/index.html.erb within layouts/application
+  [1m[36mDomain Load (0.2ms)[0m  [1m[34mSELECT "domains".* FROM "domains"[0m
+  ↳ app/views/domains/index.html.erb:22
+  Rendered domains/index.html.erb within layouts/application (Duration: 2.7ms | Allocations: 1226)
+Completed 200 OK in 21ms (Views: 19.6ms | ActiveRecord: 0.2ms | Allocations: 11849)
+
+
+Started GET "/domains/6" for ::1 at 2019-10-19 15:18:05 -0300
+Processing by DomainsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mDomain Load (0.2ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/domains_controller.rb:89:in `set_domain'
+  Rendering domains/show.html.erb within layouts/application
+  [1m[36mDomain Load (0.2ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."domains_id" = ?[0m  [["domains_id", 6]]
+  ↳ app/views/domains/show.html.erb:85
+  [1m[36mRecord Load (0.1ms)[0m  [1m[34mSELECT "records".* FROM "records" WHERE "records"."domain_id" = ?[0m  [["domain_id", 6]]
+  ↳ app/views/domains/show.html.erb:124
+  Rendered domains/show.html.erb within layouts/application (Duration: 3.5ms | Allocations: 2250)
+Completed 200 OK in 25ms (Views: 13.1ms | ActiveRecord: 1.2ms | Allocations: 16403)
+
+
+Started DELETE "/domains/6" for ::1 at 2019-10-19 15:18:12 -0300
+Processing by DomainsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"gZQyiXk8sdD3ykU2byljVIJ+lxwbJI7bla4b3XHP9/c8khg4cJLkjWlzAHEIXOpyU5WL2mS6Bbfwcj2yy2Bm3A==", "id"=>"6"}
+  [1m[36mDomain Load (0.1ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/domains_controller.rb:89:in `set_domain'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/domains_controller.rb:79:in `destroy'
+  [1m[36mDomain Destroy (0.4ms)[0m  [1m[31mDELETE FROM "domains" WHERE "domains"."id" = ?[0m  [["id", 6]]
+  ↳ app/controllers/domains_controller.rb:79:in `destroy'
+  [1m[35m (96.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/domains_controller.rb:79:in `destroy'
+Redirected to http://localhost:3000/domains
+Completed 302 Found in 103ms (ActiveRecord: 97.2ms | Allocations: 3676)
+
+
+Started GET "/domains" for ::1 at 2019-10-19 15:18:12 -0300
+Processing by DomainsController#index as HTML
+  Rendering domains/index.html.erb within layouts/application
+  [1m[36mDomain Load (0.2ms)[0m  [1m[34mSELECT "domains".* FROM "domains"[0m
+  ↳ app/views/domains/index.html.erb:22
+  Rendered domains/index.html.erb within layouts/application (Duration: 3.8ms | Allocations: 1080)
+Completed 200 OK in 22ms (Views: 20.2ms | ActiveRecord: 0.2ms | Allocations: 11709)
+
+
+Started GET "/domains/new" for ::1 at 2019-10-19 15:18:14 -0300
+Processing by DomainsController#new as HTML
+  Rendering domains/new.html.erb within layouts/application
+  Rendered domains/_form.html.erb (Duration: 8.0ms | Allocations: 4774)
+  Rendered domains/new.html.erb within layouts/application (Duration: 23.9ms | Allocations: 5128)
+Completed 200 OK in 36ms (Views: 34.9ms | ActiveRecord: 0.0ms | Allocations: 15924)
+
+
+Started POST "/domains" for ::1 at 2019-10-19 15:18:25 -0300
+Processing by DomainsController#create as HTML
+  Parameters: {"authenticity_token"=>"qSEvA3+h84omeH5UuTKgen67E4LauS9enOYNCrQBMywUJwWydg+m17jBOxPeRylcr1APRKUnpDL5OitlDq6iBw==", "domain"=>{"domains"=>"", "name"=>"globo.com", "type_domain"=>"MASTER", "ttl"=>"1", "primary_name_server"=>"d", "contact"=>"e", "refresh"=>"a", "retry"=>"a", "expire"=>"h", "minimum"=>"i"}, "commit"=>"Create Domain"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/domains_controller.rb:52:in `block in create'
+  [1m[36mDomain Create (0.4ms)[0m  [1m[32mINSERT INTO "domains" ("name", "type_domain", "ttl", "primary_name_server", "contact", "refresh", "retry", "expire", "minimum", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "globo.com"], ["type_domain", "MASTER"], ["ttl", "1"], ["primary_name_server", "d"], ["contact", "e"], ["refresh", "a"], ["retry", "a"], ["expire", "h"], ["minimum", "i"], ["created_at", "2019-10-19 18:18:25.278612"], ["updated_at", "2019-10-19 18:18:25.278612"]]
+  ↳ app/controllers/domains_controller.rb:52:in `block in create'
+  [1m[35m (312.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/domains_controller.rb:52:in `block in create'
+Redirected to http://localhost:3000/domains/4
+Completed 302 Found in 323ms (ActiveRecord: 313.0ms | Allocations: 5283)
+
+
+Started GET "/domains/4" for ::1 at 2019-10-19 15:18:25 -0300
+Processing by DomainsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mDomain Load (0.1ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/domains_controller.rb:89:in `set_domain'
+  Rendering domains/show.html.erb within layouts/application
+  [1m[36mDomain Load (0.1ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."domains_id" = ?[0m  [["domains_id", 4]]
+  ↳ app/views/domains/show.html.erb:85
+  [1m[36mRecord Load (0.1ms)[0m  [1m[34mSELECT "records".* FROM "records" WHERE "records"."domain_id" = ?[0m  [["domain_id", 4]]
+  ↳ app/views/domains/show.html.erb:124
+  Rendered domains/show.html.erb within layouts/application (Duration: 2.7ms | Allocations: 1325)
+Completed 200 OK in 18ms (Views: 15.8ms | ActiveRecord: 0.4ms | Allocations: 12588)
+
+
+Started GET "/domains/new/4" for ::1 at 2019-10-19 15:18:28 -0300
+Processing by DomainsController#new as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mDomain Load (0.1ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/domains_controller.rb:23:in `new'
+  Rendering domains/new.html.erb within layouts/application
+  Rendered domains/_form.html.erb (Duration: 3.5ms | Allocations: 2184)
+  Rendered domains/new.html.erb within layouts/application (Duration: 4.2ms | Allocations: 2275)
+Completed 200 OK in 18ms (Views: 16.6ms | ActiveRecord: 0.1ms | Allocations: 13447)
+
+
+Started POST "/domains" for ::1 at 2019-10-19 15:18:41 -0300
+Processing by DomainsController#create as HTML
+  Parameters: {"authenticity_token"=>"z3WtrfORCMUhGmsVj3EZdkJ9/CfRepSpEW8ecPPRY2Fyc4cc+j9dmL+jLlLoBJBQk5bg4a7kH8V0szgfSX7ySg==", "domain"=>{"domains"=>"4", "name"=>"dev.globo.com", "type_domain"=>"MASTER", "ttl"=>"1", "primary_name_server"=>"a", "contact"=>"e", "refresh"=>"f", "retry"=>"a", "expire"=>"1", "minimum"=>"i"}, "commit"=>"Create Domain"}
+  [1m[36mDomain Load (0.2ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/domains_controller.rb:38:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/domains_controller.rb:52:in `block in create'
+  [1m[36mDomain Create (1.0ms)[0m  [1m[32mINSERT INTO "domains" ("name", "type_domain", "ttl", "primary_name_server", "contact", "refresh", "retry", "expire", "minimum", "created_at", "updated_at", "domains_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "dev.globo.com"], ["type_domain", "MASTER"], ["ttl", "1"], ["primary_name_server", "a"], ["contact", "e"], ["refresh", "f"], ["retry", "a"], ["expire", "1"], ["minimum", "i"], ["created_at", "2019-10-19 18:18:41.812972"], ["updated_at", "2019-10-19 18:18:41.812972"], ["domains_id", 4]]
+  ↳ app/controllers/domains_controller.rb:52:in `block in create'
+  [1m[35m (278.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/domains_controller.rb:52:in `block in create'
+Redirected to http://localhost:3000/domains/5
+Completed 302 Found in 291ms (ActiveRecord: 279.3ms | Allocations: 5509)
+
+
+Started GET "/domains/5" for ::1 at 2019-10-19 15:18:42 -0300
+Processing by DomainsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mDomain Load (0.3ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/domains_controller.rb:89:in `set_domain'
+  Rendering domains/show.html.erb within layouts/application
+  [1m[36mDomain Load (0.1ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."domains_id" = ?[0m  [["domains_id", 5]]
+  ↳ app/views/domains/show.html.erb:85
+  [1m[36mRecord Load (0.1ms)[0m  [1m[34mSELECT "records".* FROM "records" WHERE "records"."domain_id" = ?[0m  [["domain_id", 5]]
+  ↳ app/views/domains/show.html.erb:124
+  Rendered domains/show.html.erb within layouts/application (Duration: 2.0ms | Allocations: 1322)
+Completed 200 OK in 19ms (Views: 15.6ms | ActiveRecord: 0.4ms | Allocations: 12581)
+
+
+Started GET "/domains" for ::1 at 2019-10-19 15:18:45 -0300
+Processing by DomainsController#index as HTML
+  Rendering domains/index.html.erb within layouts/application
+  [1m[36mDomain Load (0.4ms)[0m  [1m[34mSELECT "domains".* FROM "domains"[0m
+  ↳ app/views/domains/index.html.erb:22
+  Rendered domains/index.html.erb within layouts/application (Duration: 4.5ms | Allocations: 1377)
+Completed 200 OK in 20ms (Views: 18.4ms | ActiveRecord: 0.4ms | Allocations: 11991)
+
+
+Started GET "/domains/4" for ::1 at 2019-10-19 15:18:49 -0300
+Processing by DomainsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mDomain Load (0.3ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/domains_controller.rb:89:in `set_domain'
+  Rendering domains/show.html.erb within layouts/application
+  [1m[36mDomain Load (0.1ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."domains_id" = ?[0m  [["domains_id", 4]]
+  ↳ app/views/domains/show.html.erb:85
+  [1m[36mRecord Load (0.1ms)[0m  [1m[34mSELECT "records".* FROM "records" WHERE "records"."domain_id" = ?[0m  [["domain_id", 4]]
+  ↳ app/views/domains/show.html.erb:124
+  Rendered domains/show.html.erb within layouts/application (Duration: 3.0ms | Allocations: 1469)
+Completed 200 OK in 19ms (Views: 16.1ms | ActiveRecord: 0.6ms | Allocations: 12697)
+
+
+Started GET "/domains" for ::1 at 2019-10-19 15:18:57 -0300
+Processing by DomainsController#index as HTML
+  Rendering domains/index.html.erb within layouts/application
+  [1m[36mDomain Load (0.3ms)[0m  [1m[34mSELECT "domains".* FROM "domains"[0m
+  ↳ app/views/domains/index.html.erb:22
+  Rendered domains/index.html.erb within layouts/application (Duration: 3.7ms | Allocations: 1375)
+Completed 200 OK in 22ms (Views: 20.5ms | ActiveRecord: 0.3ms | Allocations: 11991)
+
+
+Started DELETE "/domains/4" for ::1 at 2019-10-19 15:19:03 -0300
+Processing by DomainsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"nmix7xgKJHfXQgzibwpZqbdsj3QhT0en5EFiF8WOa9MjbpteEaRxKkn7SaUIf9CPZoeTsl7RzMuBnUR4fyH6+A==", "id"=>"4"}
+  [1m[36mDomain Load (0.2ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/domains_controller.rb:89:in `set_domain'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/domains_controller.rb:79:in `destroy'
+  [1m[36mDomain Destroy (1.4ms)[0m  [1m[31mDELETE FROM "domains" WHERE "domains"."id" = ?[0m  [["id", 4]]
+  ↳ app/controllers/domains_controller.rb:79:in `destroy'
+  [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/domains_controller.rb:79:in `destroy'
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 2.0ms | Allocations: 4414)
+
+
+  
+ActiveRecord::InvalidForeignKey (SQLite3::ConstraintException: FOREIGN KEY constraint failed):
+  
+app/controllers/domains_controller.rb:79:in `destroy'
+Started DELETE "/domains/4" for ::1 at 2019-10-19 15:19:36 -0300
+Processing by DomainsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"nmix7xgKJHfXQgzibwpZqbdsj3QhT0en5EFiF8WOa9MjbpteEaRxKkn7SaUIf9CPZoeTsl7RzMuBnUR4fyH6+A==", "id"=>"4"}
+  [1m[36mDomain Load (0.2ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/domains_controller.rb:89:in `set_domain'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/domains_controller.rb:79:in `destroy'
+  [1m[36mDomain Destroy (1.2ms)[0m  [1m[31mDELETE FROM "domains" WHERE "domains"."id" = ?[0m  [["id", 4]]
+  ↳ app/controllers/domains_controller.rb:79:in `destroy'
+  [1m[35m (0.6ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/domains_controller.rb:79:in `destroy'
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 2.1ms | Allocations: 4456)
+
+
+  
+ActiveRecord::InvalidForeignKey (SQLite3::ConstraintException: FOREIGN KEY constraint failed):
+  
+app/controllers/domains_controller.rb:79:in `destroy'
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to DomainDeleteCascadeFk (20191019182407)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "adomains" ("id" integer NOT NULL PRIMARY KEY, "name" varchar DEFAULT NULL, "type_domain" varchar DEFAULT NULL, "ttl" varchar DEFAULT NULL, "primary_name_server" varchar DEFAULT NULL, "contact" varchar DEFAULT NULL, "refresh" varchar DEFAULT NULL, "retry" varchar DEFAULT NULL, "expire" varchar DEFAULT NULL, "minimum" varchar DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "domains_id" integer DEFAULT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "tindex_adomains_on_adomains_id" ON "adomains" ("domains_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "adomains" ("id","name","type_domain","ttl","primary_name_server","contact","refresh","retry","expire","minimum","created_at","updated_at","domains_id")
+                     SELECT "id","name","type_domain","ttl","primary_name_server","contact","refresh","retry","expire","minimum","created_at","updated_at","domains_id" FROM "domains"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE "domains"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "domains" ("id" integer NOT NULL PRIMARY KEY, "name" varchar DEFAULT NULL, "type_domain" varchar DEFAULT NULL, "ttl" varchar DEFAULT NULL, "primary_name_server" varchar DEFAULT NULL, "contact" varchar DEFAULT NULL, "refresh" varchar DEFAULT NULL, "retry" varchar DEFAULT NULL, "expire" varchar DEFAULT NULL, "minimum" varchar DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "domains_id" integer DEFAULT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_domains_on_domains_id" ON "domains" ("domains_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "domains" ("id","name","type_domain","ttl","primary_name_server","contact","refresh","retry","expire","minimum","created_at","updated_at","domains_id")
+                     SELECT "id","name","type_domain","ttl","primary_name_server","contact","refresh","retry","expire","minimum","created_at","updated_at","domains_id" FROM "adomains"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "adomains"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "adomains" ("id" integer NOT NULL PRIMARY KEY, "name" varchar DEFAULT NULL, "type_domain" varchar DEFAULT NULL, "ttl" varchar DEFAULT NULL, "primary_name_server" varchar DEFAULT NULL, "contact" varchar DEFAULT NULL, "refresh" varchar DEFAULT NULL, "retry" varchar DEFAULT NULL, "expire" varchar DEFAULT NULL, "minimum" varchar DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "domains_id" integer DEFAULT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "tindex_adomains_on_adomains_id" ON "adomains" ("domains_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "adomains" ("id","name","type_domain","ttl","primary_name_server","contact","refresh","retry","expire","minimum","created_at","updated_at","domains_id")
+                     SELECT "id","name","type_domain","ttl","primary_name_server","contact","refresh","retry","expire","minimum","created_at","updated_at","domains_id" FROM "domains"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "domains"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "domains" ("id" integer NOT NULL PRIMARY KEY, "name" varchar DEFAULT NULL, "type_domain" varchar DEFAULT NULL, "ttl" varchar DEFAULT NULL, "primary_name_server" varchar DEFAULT NULL, "contact" varchar DEFAULT NULL, "refresh" varchar DEFAULT NULL, "retry" varchar DEFAULT NULL, "expire" varchar DEFAULT NULL, "minimum" varchar DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "domains_id" integer DEFAULT NULL, CONSTRAINT "fk_rails_5f9955a000"
+FOREIGN KEY ("domain_id")
+  REFERENCES "domains" ("id")
+ ON DELETE CASCADE)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to DomainDeleteCascadeFk (20191019182407)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "adomains" ("id" integer NOT NULL PRIMARY KEY, "name" varchar DEFAULT NULL, "type_domain" varchar DEFAULT NULL, "ttl" varchar DEFAULT NULL, "primary_name_server" varchar DEFAULT NULL, "contact" varchar DEFAULT NULL, "refresh" varchar DEFAULT NULL, "retry" varchar DEFAULT NULL, "expire" varchar DEFAULT NULL, "minimum" varchar DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "domains_id" integer DEFAULT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "tindex_adomains_on_adomains_id" ON "adomains" ("domains_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "adomains" ("id","name","type_domain","ttl","primary_name_server","contact","refresh","retry","expire","minimum","created_at","updated_at","domains_id")
+                     SELECT "id","name","type_domain","ttl","primary_name_server","contact","refresh","retry","expire","minimum","created_at","updated_at","domains_id" FROM "domains"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE "domains"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "domains" ("id" integer NOT NULL PRIMARY KEY, "name" varchar DEFAULT NULL, "type_domain" varchar DEFAULT NULL, "ttl" varchar DEFAULT NULL, "primary_name_server" varchar DEFAULT NULL, "contact" varchar DEFAULT NULL, "refresh" varchar DEFAULT NULL, "retry" varchar DEFAULT NULL, "expire" varchar DEFAULT NULL, "minimum" varchar DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "domains_id" integer DEFAULT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_domains_on_domains_id" ON "domains" ("domains_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "domains" ("id","name","type_domain","ttl","primary_name_server","contact","refresh","retry","expire","minimum","created_at","updated_at","domains_id")
+                     SELECT "id","name","type_domain","ttl","primary_name_server","contact","refresh","retry","expire","minimum","created_at","updated_at","domains_id" FROM "adomains"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "adomains"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "adomains" ("id" integer NOT NULL PRIMARY KEY, "name" varchar DEFAULT NULL, "type_domain" varchar DEFAULT NULL, "ttl" varchar DEFAULT NULL, "primary_name_server" varchar DEFAULT NULL, "contact" varchar DEFAULT NULL, "refresh" varchar DEFAULT NULL, "retry" varchar DEFAULT NULL, "expire" varchar DEFAULT NULL, "minimum" varchar DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "domains_id" integer DEFAULT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "tindex_adomains_on_adomains_id" ON "adomains" ("domains_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "adomains" ("id","name","type_domain","ttl","primary_name_server","contact","refresh","retry","expire","minimum","created_at","updated_at","domains_id")
+                     SELECT "id","name","type_domain","ttl","primary_name_server","contact","refresh","retry","expire","minimum","created_at","updated_at","domains_id" FROM "domains"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "domains"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "domains" ("id" integer NOT NULL PRIMARY KEY, "name" varchar DEFAULT NULL, "type_domain" varchar DEFAULT NULL, "ttl" varchar DEFAULT NULL, "primary_name_server" varchar DEFAULT NULL, "contact" varchar DEFAULT NULL, "refresh" varchar DEFAULT NULL, "retry" varchar DEFAULT NULL, "expire" varchar DEFAULT NULL, "minimum" varchar DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "domains_id" integer DEFAULT NULL, CONSTRAINT "fk_rails_5f9955a000"
+FOREIGN KEY ("domain_id")
+  REFERENCES "domains" ("id")
+ ON DELETE CASCADE)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to DomainDeleteCascadeFk (20191019182407)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "adomains" ("id" integer NOT NULL PRIMARY KEY, "name" varchar DEFAULT NULL, "type_domain" varchar DEFAULT NULL, "ttl" varchar DEFAULT NULL, "primary_name_server" varchar DEFAULT NULL, "contact" varchar DEFAULT NULL, "refresh" varchar DEFAULT NULL, "retry" varchar DEFAULT NULL, "expire" varchar DEFAULT NULL, "minimum" varchar DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "domains_id" integer DEFAULT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "tindex_adomains_on_adomains_id" ON "adomains" ("domains_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "adomains" ("id","name","type_domain","ttl","primary_name_server","contact","refresh","retry","expire","minimum","created_at","updated_at","domains_id")
+                     SELECT "id","name","type_domain","ttl","primary_name_server","contact","refresh","retry","expire","minimum","created_at","updated_at","domains_id" FROM "domains"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE "domains"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "domains" ("id" integer NOT NULL PRIMARY KEY, "name" varchar DEFAULT NULL, "type_domain" varchar DEFAULT NULL, "ttl" varchar DEFAULT NULL, "primary_name_server" varchar DEFAULT NULL, "contact" varchar DEFAULT NULL, "refresh" varchar DEFAULT NULL, "retry" varchar DEFAULT NULL, "expire" varchar DEFAULT NULL, "minimum" varchar DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "domains_id" integer DEFAULT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_domains_on_domains_id" ON "domains" ("domains_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "domains" ("id","name","type_domain","ttl","primary_name_server","contact","refresh","retry","expire","minimum","created_at","updated_at","domains_id")
+                     SELECT "id","name","type_domain","ttl","primary_name_server","contact","refresh","retry","expire","minimum","created_at","updated_at","domains_id" FROM "adomains"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "adomains"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "adomains" ("id" integer NOT NULL PRIMARY KEY, "name" varchar DEFAULT NULL, "type_domain" varchar DEFAULT NULL, "ttl" varchar DEFAULT NULL, "primary_name_server" varchar DEFAULT NULL, "contact" varchar DEFAULT NULL, "refresh" varchar DEFAULT NULL, "retry" varchar DEFAULT NULL, "expire" varchar DEFAULT NULL, "minimum" varchar DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "domains_id" integer DEFAULT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "tindex_adomains_on_adomains_id" ON "adomains" ("domains_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "adomains" ("id","name","type_domain","ttl","primary_name_server","contact","refresh","retry","expire","minimum","created_at","updated_at","domains_id")
+                     SELECT "id","name","type_domain","ttl","primary_name_server","contact","refresh","retry","expire","minimum","created_at","updated_at","domains_id" FROM "domains"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "domains"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "domains" ("id" integer NOT NULL PRIMARY KEY, "name" varchar DEFAULT NULL, "type_domain" varchar DEFAULT NULL, "ttl" varchar DEFAULT NULL, "primary_name_server" varchar DEFAULT NULL, "contact" varchar DEFAULT NULL, "refresh" varchar DEFAULT NULL, "retry" varchar DEFAULT NULL, "expire" varchar DEFAULT NULL, "minimum" varchar DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "domains_id" integer DEFAULT NULL, CONSTRAINT "fk_rails_5f9955a000"
+FOREIGN KEY ("domain_id")
+  REFERENCES "domains" ("id")
+ ON DELETE CASCADE)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to DomainDeleteCascadeFk (20191019182407)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "adomains" ("id" integer NOT NULL PRIMARY KEY, "name" varchar DEFAULT NULL, "type_domain" varchar DEFAULT NULL, "ttl" varchar DEFAULT NULL, "primary_name_server" varchar DEFAULT NULL, "contact" varchar DEFAULT NULL, "refresh" varchar DEFAULT NULL, "retry" varchar DEFAULT NULL, "expire" varchar DEFAULT NULL, "minimum" varchar DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "domains_id" integer DEFAULT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "tindex_adomains_on_adomains_id" ON "adomains" ("domains_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "adomains" ("id","name","type_domain","ttl","primary_name_server","contact","refresh","retry","expire","minimum","created_at","updated_at","domains_id")
+                     SELECT "id","name","type_domain","ttl","primary_name_server","contact","refresh","retry","expire","minimum","created_at","updated_at","domains_id" FROM "domains"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE "domains"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "domains" ("id" integer NOT NULL PRIMARY KEY, "name" varchar DEFAULT NULL, "type_domain" varchar DEFAULT NULL, "ttl" varchar DEFAULT NULL, "primary_name_server" varchar DEFAULT NULL, "contact" varchar DEFAULT NULL, "refresh" varchar DEFAULT NULL, "retry" varchar DEFAULT NULL, "expire" varchar DEFAULT NULL, "minimum" varchar DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "domains" ("id","name","type_domain","ttl","primary_name_server","contact","refresh","retry","expire","minimum","created_at","updated_at")
+                     SELECT "id","name","type_domain","ttl","primary_name_server","contact","refresh","retry","expire","minimum","created_at","updated_at" FROM "adomains"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "adomains"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "adomains" ("id" integer NOT NULL PRIMARY KEY, "name" varchar DEFAULT NULL, "type_domain" varchar DEFAULT NULL, "ttl" varchar DEFAULT NULL, "primary_name_server" varchar DEFAULT NULL, "contact" varchar DEFAULT NULL, "refresh" varchar DEFAULT NULL, "retry" varchar DEFAULT NULL, "expire" varchar DEFAULT NULL, "minimum" varchar DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "adomains" ("id","name","type_domain","ttl","primary_name_server","contact","refresh","retry","expire","minimum","created_at","updated_at")
+                     SELECT "id","name","type_domain","ttl","primary_name_server","contact","refresh","retry","expire","minimum","created_at","updated_at" FROM "domains"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "domains"[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "domains" ("id" integer NOT NULL PRIMARY KEY, "name" varchar DEFAULT NULL, "type_domain" varchar DEFAULT NULL, "ttl" varchar DEFAULT NULL, "primary_name_server" varchar DEFAULT NULL, "contact" varchar DEFAULT NULL, "refresh" varchar DEFAULT NULL, "retry" varchar DEFAULT NULL, "expire" varchar DEFAULT NULL, "minimum" varchar DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_5f9955a000"
+FOREIGN KEY ("domain_id")
+  REFERENCES "domains" ("id")
+ ON DELETE CASCADE)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to DomainDeleteCascadeFk (20191019182407)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "adomains" ("id" integer NOT NULL PRIMARY KEY, "name" varchar DEFAULT NULL, "type_domain" varchar DEFAULT NULL, "ttl" varchar DEFAULT NULL, "primary_name_server" varchar DEFAULT NULL, "contact" varchar DEFAULT NULL, "refresh" varchar DEFAULT NULL, "retry" varchar DEFAULT NULL, "expire" varchar DEFAULT NULL, "minimum" varchar DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "domains_id" integer DEFAULT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "tindex_adomains_on_adomains_id" ON "adomains" ("domains_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "adomains" ("id","name","type_domain","ttl","primary_name_server","contact","refresh","retry","expire","minimum","created_at","updated_at","domains_id")
+                     SELECT "id","name","type_domain","ttl","primary_name_server","contact","refresh","retry","expire","minimum","created_at","updated_at","domains_id" FROM "domains"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE "domains"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "domains" ("id" integer NOT NULL PRIMARY KEY, "name" varchar DEFAULT NULL, "type_domain" varchar DEFAULT NULL, "ttl" varchar DEFAULT NULL, "primary_name_server" varchar DEFAULT NULL, "contact" varchar DEFAULT NULL, "refresh" varchar DEFAULT NULL, "retry" varchar DEFAULT NULL, "expire" varchar DEFAULT NULL, "minimum" varchar DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "domains_id" integer DEFAULT NULL, CONSTRAINT "fk_rails_629f6848db"
+FOREIGN KEY ("domains_id")
+  REFERENCES "domains" ("id")
+)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_domains_on_domains_id" ON "domains" ("domains_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "domains" ("id","name","type_domain","ttl","primary_name_server","contact","refresh","retry","expire","minimum","created_at","updated_at","domains_id")
+                     SELECT "id","name","type_domain","ttl","primary_name_server","contact","refresh","retry","expire","minimum","created_at","updated_at","domains_id" FROM "adomains"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "adomains"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.7ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TEMPORARY TABLE "adomains" ("id" integer NOT NULL PRIMARY KEY, "name" varchar DEFAULT NULL, "type_domain" varchar DEFAULT NULL, "ttl" varchar DEFAULT NULL, "primary_name_server" varchar DEFAULT NULL, "contact" varchar DEFAULT NULL, "refresh" varchar DEFAULT NULL, "retry" varchar DEFAULT NULL, "expire" varchar DEFAULT NULL, "minimum" varchar DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "domains_id" integer DEFAULT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "tindex_adomains_on_adomains_id" ON "adomains" ("domains_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "adomains" ("id","name","type_domain","ttl","primary_name_server","contact","refresh","retry","expire","minimum","created_at","updated_at","domains_id")
+                     SELECT "id","name","type_domain","ttl","primary_name_server","contact","refresh","retry","expire","minimum","created_at","updated_at","domains_id" FROM "domains"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE "domains"[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE TABLE "domains" ("id" integer NOT NULL PRIMARY KEY, "name" varchar DEFAULT NULL, "type_domain" varchar DEFAULT NULL, "ttl" varchar DEFAULT NULL, "primary_name_server" varchar DEFAULT NULL, "contact" varchar DEFAULT NULL, "refresh" varchar DEFAULT NULL, "retry" varchar DEFAULT NULL, "expire" varchar DEFAULT NULL, "minimum" varchar DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "domains_id" integer DEFAULT NULL, CONSTRAINT "fk_rails_629f6848db"
+FOREIGN KEY ("domains_id")
+  REFERENCES "domains" ("id")
+, CONSTRAINT "fk_rails_5f9955a000"
+FOREIGN KEY ("domain_id")
+  REFERENCES "domains" ("id")
+ ON DELETE CASCADE)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to DomainDeleteCascadeFk (20191019182407)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TEMPORARY TABLE "adomains" ("id" integer NOT NULL PRIMARY KEY, "name" varchar DEFAULT NULL, "type_domain" varchar DEFAULT NULL, "ttl" varchar DEFAULT NULL, "primary_name_server" varchar DEFAULT NULL, "contact" varchar DEFAULT NULL, "refresh" varchar DEFAULT NULL, "retry" varchar DEFAULT NULL, "expire" varchar DEFAULT NULL, "minimum" varchar DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "domains_id" integer DEFAULT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "tindex_adomains_on_adomains_id" ON "adomains" ("domains_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "adomains" ("id","name","type_domain","ttl","primary_name_server","contact","refresh","retry","expire","minimum","created_at","updated_at","domains_id")
+                     SELECT "id","name","type_domain","ttl","primary_name_server","contact","refresh","retry","expire","minimum","created_at","updated_at","domains_id" FROM "domains"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE "domains"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "domains" ("id" integer NOT NULL PRIMARY KEY, "name" varchar DEFAULT NULL, "type_domain" varchar DEFAULT NULL, "ttl" varchar DEFAULT NULL, "primary_name_server" varchar DEFAULT NULL, "contact" varchar DEFAULT NULL, "refresh" varchar DEFAULT NULL, "retry" varchar DEFAULT NULL, "expire" varchar DEFAULT NULL, "minimum" varchar DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "domains" ("id","name","type_domain","ttl","primary_name_server","contact","refresh","retry","expire","minimum","created_at","updated_at")
+                     SELECT "id","name","type_domain","ttl","primary_name_server","contact","refresh","retry","expire","minimum","created_at","updated_at" FROM "adomains"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "adomains"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "adomains" ("id" integer NOT NULL PRIMARY KEY, "name" varchar DEFAULT NULL, "type_domain" varchar DEFAULT NULL, "ttl" varchar DEFAULT NULL, "primary_name_server" varchar DEFAULT NULL, "contact" varchar DEFAULT NULL, "refresh" varchar DEFAULT NULL, "retry" varchar DEFAULT NULL, "expire" varchar DEFAULT NULL, "minimum" varchar DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "adomains" ("id","name","type_domain","ttl","primary_name_server","contact","refresh","retry","expire","minimum","created_at","updated_at")
+                     SELECT "id","name","type_domain","ttl","primary_name_server","contact","refresh","retry","expire","minimum","created_at","updated_at" FROM "domains"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "domains"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "domains" ("id" integer NOT NULL PRIMARY KEY, "name" varchar DEFAULT NULL, "type_domain" varchar DEFAULT NULL, "ttl" varchar DEFAULT NULL, "primary_name_server" varchar DEFAULT NULL, "contact" varchar DEFAULT NULL, "refresh" varchar DEFAULT NULL, "retry" varchar DEFAULT NULL, "expire" varchar DEFAULT NULL, "minimum" varchar DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_5f9955a000"
+FOREIGN KEY ("domain_id")
+  REFERENCES "domains" ("id")
+ ON DELETE CASCADE)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to DomainDeleteCascadeFk (20191019182407)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "arecords" ("id" integer NOT NULL PRIMARY KEY, "type_record" varchar DEFAULT NULL, "host" varchar DEFAULT NULL, "ttl" varchar DEFAULT NULL, "content" varchar DEFAULT NULL, "priority" integer DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "domain_id" integer DEFAULT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "tindex_arecords_on_domain_id" ON "arecords" ("domain_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "arecords" ("id","type_record","host","ttl","content","priority","created_at","updated_at","domain_id")
+                     SELECT "id","type_record","host","ttl","content","priority","created_at","updated_at","domain_id" FROM "records"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE "records"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "records" ("id" integer NOT NULL PRIMARY KEY, "type_record" varchar DEFAULT NULL, "host" varchar DEFAULT NULL, "ttl" varchar DEFAULT NULL, "content" varchar DEFAULT NULL, "priority" integer DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "domain_id" integer DEFAULT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_records_on_domain_id" ON "records" ("domain_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "records" ("id","type_record","host","ttl","content","priority","created_at","updated_at","domain_id")
+                     SELECT "id","type_record","host","ttl","content","priority","created_at","updated_at","domain_id" FROM "arecords"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "arecords"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "arecords" ("id" integer NOT NULL PRIMARY KEY, "type_record" varchar DEFAULT NULL, "host" varchar DEFAULT NULL, "ttl" varchar DEFAULT NULL, "content" varchar DEFAULT NULL, "priority" integer DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "domain_id" integer DEFAULT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "tindex_arecords_on_domain_id" ON "arecords" ("domain_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "arecords" ("id","type_record","host","ttl","content","priority","created_at","updated_at","domain_id")
+                     SELECT "id","type_record","host","ttl","content","priority","created_at","updated_at","domain_id" FROM "records"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "records"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "records" ("id" integer NOT NULL PRIMARY KEY, "type_record" varchar DEFAULT NULL, "host" varchar DEFAULT NULL, "ttl" varchar DEFAULT NULL, "content" varchar DEFAULT NULL, "priority" integer DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "domain_id" integer DEFAULT NULL, CONSTRAINT "fk_rails_98dedb8d34"
+FOREIGN KEY ("domain_id")
+  REFERENCES "domains" ("id")
+ ON DELETE CASCADE)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_records_on_domain_id" ON "records" ("domain_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "records" ("id","type_record","host","ttl","content","priority","created_at","updated_at","domain_id")
+                     SELECT "id","type_record","host","ttl","content","priority","created_at","updated_at","domain_id" FROM "arecords"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "arecords"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mprimary::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20191019182407"]]
+  [1m[35m (130.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to DomainDeleteCascadeFkDomainToDomain (20191019183458)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "adomains" ("id" integer NOT NULL PRIMARY KEY, "name" varchar DEFAULT NULL, "type_domain" varchar DEFAULT NULL, "ttl" varchar DEFAULT NULL, "primary_name_server" varchar DEFAULT NULL, "contact" varchar DEFAULT NULL, "refresh" varchar DEFAULT NULL, "retry" varchar DEFAULT NULL, "expire" varchar DEFAULT NULL, "minimum" varchar DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "domains_id" integer DEFAULT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "tindex_adomains_on_adomains_id" ON "adomains" ("domains_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "adomains" ("id","name","type_domain","ttl","primary_name_server","contact","refresh","retry","expire","minimum","created_at","updated_at","domains_id")
+                     SELECT "id","name","type_domain","ttl","primary_name_server","contact","refresh","retry","expire","minimum","created_at","updated_at","domains_id" FROM "domains"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE "domains"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "domains" ("id" integer NOT NULL PRIMARY KEY, "name" varchar DEFAULT NULL, "type_domain" varchar DEFAULT NULL, "ttl" varchar DEFAULT NULL, "primary_name_server" varchar DEFAULT NULL, "contact" varchar DEFAULT NULL, "refresh" varchar DEFAULT NULL, "retry" varchar DEFAULT NULL, "expire" varchar DEFAULT NULL, "minimum" varchar DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "domains" ("id","name","type_domain","ttl","primary_name_server","contact","refresh","retry","expire","minimum","created_at","updated_at")
+                     SELECT "id","name","type_domain","ttl","primary_name_server","contact","refresh","retry","expire","minimum","created_at","updated_at" FROM "adomains"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "adomains"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mprimary::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20191019183458"]]
+  [1m[35m (85.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (2.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateFkDomainToDomainOnCascade (20191019184840)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "adomains" ("id" integer NOT NULL PRIMARY KEY, "name" varchar DEFAULT NULL, "type_domain" varchar DEFAULT NULL, "ttl" varchar DEFAULT NULL, "primary_name_server" varchar DEFAULT NULL, "contact" varchar DEFAULT NULL, "refresh" varchar DEFAULT NULL, "retry" varchar DEFAULT NULL, "expire" varchar DEFAULT NULL, "minimum" varchar DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "adomains" ("id","name","type_domain","ttl","primary_name_server","contact","refresh","retry","expire","minimum","created_at","updated_at")
+                     SELECT "id","name","type_domain","ttl","primary_name_server","contact","refresh","retry","expire","minimum","created_at","updated_at" FROM "domains"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE "domains"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "domains" ("id" integer NOT NULL PRIMARY KEY, "name" varchar DEFAULT NULL, "type_domain" varchar DEFAULT NULL, "ttl" varchar DEFAULT NULL, "primary_name_server" varchar DEFAULT NULL, "contact" varchar DEFAULT NULL, "refresh" varchar DEFAULT NULL, "retry" varchar DEFAULT NULL, "expire" varchar DEFAULT NULL, "minimum" varchar DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_5f9955a000"
+FOREIGN KEY ("domain_id")
+  REFERENCES "domains" ("id")
+ ON DELETE CASCADE)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateFkDomainToDomainOnCascade (20191019184840)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TEMPORARY TABLE "adomains" ("id" integer NOT NULL PRIMARY KEY, "name" varchar DEFAULT NULL, "type_domain" varchar DEFAULT NULL, "ttl" varchar DEFAULT NULL, "primary_name_server" varchar DEFAULT NULL, "contact" varchar DEFAULT NULL, "refresh" varchar DEFAULT NULL, "retry" varchar DEFAULT NULL, "expire" varchar DEFAULT NULL, "minimum" varchar DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "adomains" ("id","name","type_domain","ttl","primary_name_server","contact","refresh","retry","expire","minimum","created_at","updated_at")
+                     SELECT "id","name","type_domain","ttl","primary_name_server","contact","refresh","retry","expire","minimum","created_at","updated_at" FROM "domains"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE "domains"[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "domains" ("id" integer NOT NULL PRIMARY KEY, "name" varchar DEFAULT NULL, "type_domain" varchar DEFAULT NULL, "ttl" varchar DEFAULT NULL, "primary_name_server" varchar DEFAULT NULL, "contact" varchar DEFAULT NULL, "refresh" varchar DEFAULT NULL, "retry" varchar DEFAULT NULL, "expire" varchar DEFAULT NULL, "minimum" varchar DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_5f9955a000"
+FOREIGN KEY ("domain_id")
+  REFERENCES "domains" ("id")
+ ON DELETE CASCADE)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateFkDomainToDomainOnCascade (20191019184840)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TEMPORARY TABLE "adomains" ("id" integer NOT NULL PRIMARY KEY, "name" varchar DEFAULT NULL, "type_domain" varchar DEFAULT NULL, "ttl" varchar DEFAULT NULL, "primary_name_server" varchar DEFAULT NULL, "contact" varchar DEFAULT NULL, "refresh" varchar DEFAULT NULL, "retry" varchar DEFAULT NULL, "expire" varchar DEFAULT NULL, "minimum" varchar DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "adomains" ("id","name","type_domain","ttl","primary_name_server","contact","refresh","retry","expire","minimum","created_at","updated_at")
+                     SELECT "id","name","type_domain","ttl","primary_name_server","contact","refresh","retry","expire","minimum","created_at","updated_at" FROM "domains"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE "domains"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "domains" ("id" integer NOT NULL PRIMARY KEY, "name" varchar DEFAULT NULL, "type_domain" varchar DEFAULT NULL, "ttl" varchar DEFAULT NULL, "primary_name_server" varchar DEFAULT NULL, "contact" varchar DEFAULT NULL, "refresh" varchar DEFAULT NULL, "retry" varchar DEFAULT NULL, "expire" varchar DEFAULT NULL, "minimum" varchar DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_5f9955a000"
+FOREIGN KEY ("domain_id")
+  REFERENCES "domains" ("id")
+ ON DELETE CASCADE)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateFkDomainToDomainOnCascade (20191019184840)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "adomains" ("id" integer NOT NULL PRIMARY KEY, "name" varchar DEFAULT NULL, "type_domain" varchar DEFAULT NULL, "ttl" varchar DEFAULT NULL, "primary_name_server" varchar DEFAULT NULL, "contact" varchar DEFAULT NULL, "refresh" varchar DEFAULT NULL, "retry" varchar DEFAULT NULL, "expire" varchar DEFAULT NULL, "minimum" varchar DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "adomains" ("id","name","type_domain","ttl","primary_name_server","contact","refresh","retry","expire","minimum","created_at","updated_at")
+                     SELECT "id","name","type_domain","ttl","primary_name_server","contact","refresh","retry","expire","minimum","created_at","updated_at" FROM "domains"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE "domains"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "domains" ("id" integer NOT NULL PRIMARY KEY, "name" varchar DEFAULT NULL, "type_domain" varchar DEFAULT NULL, "ttl" varchar DEFAULT NULL, "primary_name_server" varchar DEFAULT NULL, "contact" varchar DEFAULT NULL, "refresh" varchar DEFAULT NULL, "retry" varchar DEFAULT NULL, "expire" varchar DEFAULT NULL, "minimum" varchar DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_5f9955a000"
+FOREIGN KEY ("domain_id")
+  REFERENCES "domains" ("id")
+ ON DELETE CASCADE)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateFkDomainToDomainOnCascade (20191019184840)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateFkDomainToDomainOnCascade (20191019184840)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateFkDomainToDomainOnCascade (20191019184840)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "domains" ADD "domains_id" integer[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_domains_on_domains_id" ON "domains" ("domains_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "adomains" ("id" integer NOT NULL PRIMARY KEY, "name" varchar DEFAULT NULL, "type_domain" varchar DEFAULT NULL, "ttl" varchar DEFAULT NULL, "primary_name_server" varchar DEFAULT NULL, "contact" varchar DEFAULT NULL, "refresh" varchar DEFAULT NULL, "retry" varchar DEFAULT NULL, "expire" varchar DEFAULT NULL, "minimum" varchar DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "domains_id" integer DEFAULT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "tindex_adomains_on_adomains_id" ON "adomains" ("domains_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "adomains" ("id","name","type_domain","ttl","primary_name_server","contact","refresh","retry","expire","minimum","created_at","updated_at","domains_id")
+                     SELECT "id","name","type_domain","ttl","primary_name_server","contact","refresh","retry","expire","minimum","created_at","updated_at","domains_id" FROM "domains"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE "domains"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "domains" ("id" integer NOT NULL PRIMARY KEY, "name" varchar DEFAULT NULL, "type_domain" varchar DEFAULT NULL, "ttl" varchar DEFAULT NULL, "primary_name_server" varchar DEFAULT NULL, "contact" varchar DEFAULT NULL, "refresh" varchar DEFAULT NULL, "retry" varchar DEFAULT NULL, "expire" varchar DEFAULT NULL, "minimum" varchar DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "domains_id" integer DEFAULT NULL, CONSTRAINT "fk_rails_629f6848db"
+FOREIGN KEY ("domains_id")
+  REFERENCES "domains" ("id")
+ ON DELETE CASCADE)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_domains_on_domains_id" ON "domains" ("domains_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "domains" ("id","name","type_domain","ttl","primary_name_server","contact","refresh","retry","expire","minimum","created_at","updated_at","domains_id")
+                     SELECT "id","name","type_domain","ttl","primary_name_server","contact","refresh","retry","expire","minimum","created_at","updated_at","domains_id" FROM "adomains"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "adomains"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mprimary::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20191019184840"]]
+  [1m[35m (158.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for ::1 at 2019-10-19 16:13:58 -0300
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by DomainsController#index as HTML
+  Rendering domains/index.html.erb within layouts/application
+  [1m[36mDomain Load (0.2ms)[0m  [1m[34mSELECT "domains".* FROM "domains"[0m
+  ↳ app/views/domains/index.html.erb:22
+  Rendered domains/index.html.erb within layouts/application (Duration: 31.9ms | Allocations: 10921)
+Completed 200 OK in 1122ms (Views: 1111.6ms | ActiveRecord: 1.2ms | Allocations: 1307953)
+
+
+Started DELETE "/domains/4" for ::1 at 2019-10-19 16:14:04 -0300
+Processing by DomainsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"UQiTCZzfzPIHEubE7LjPk+QcTNzGm2CVDFaIW0GaYFPsDrm4lXGZr5mro4OLzUa1NfdQGrkF6/lpiq40+zXxeA==", "id"=>"4"}
+  [1m[36mDomain Load (0.3ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/domains_controller.rb:89:in `set_domain'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/domains_controller.rb:79:in `destroy'
+  [1m[36mDomain Destroy (2.7ms)[0m  [1m[31mDELETE FROM "domains" WHERE "domains"."id" = ?[0m  [["id", 4]]
+  ↳ app/controllers/domains_controller.rb:79:in `destroy'
+  [1m[35m (94.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/domains_controller.rb:79:in `destroy'
+Redirected to http://localhost:3000/domains
+Completed 302 Found in 113ms (ActiveRecord: 97.4ms | Allocations: 5380)
+
+
+Started GET "/domains" for ::1 at 2019-10-19 16:14:04 -0300
+Processing by DomainsController#index as HTML
+  Rendering domains/index.html.erb within layouts/application
+  [1m[36mDomain Load (0.2ms)[0m  [1m[34mSELECT "domains".* FROM "domains"[0m
+  ↳ app/views/domains/index.html.erb:22
+  Rendered domains/index.html.erb within layouts/application (Duration: 3.5ms | Allocations: 1238)
+Completed 200 OK in 19ms (Views: 18.0ms | ActiveRecord: 0.2ms | Allocations: 11884)
+
+
+Started GET "/domains" for ::1 at 2019-10-19 16:14:10 -0300
+Processing by DomainsController#index as HTML
+  Rendering domains/index.html.erb within layouts/application
+  [1m[36mDomain Load (0.3ms)[0m  [1m[34mSELECT "domains".* FROM "domains"[0m
+  ↳ app/views/domains/index.html.erb:22
+  Rendered domains/index.html.erb within layouts/application (Duration: 2.4ms | Allocations: 1234)
+Completed 200 OK in 13ms (Views: 12.1ms | ActiveRecord: 0.3ms | Allocations: 11857)
+
+
+Started GET "/domains/5" for ::1 at 2019-10-19 16:14:15 -0300
+Processing by DomainsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mDomain Load (0.2ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/domains_controller.rb:89:in `set_domain'
+  Rendering domains/show.html.erb within layouts/application
+  [1m[36mDomain Load (0.2ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."domains_id" = ?[0m  [["domains_id", 5]]
+  ↳ app/views/domains/show.html.erb:85
+  [1m[36mRecord Load (0.2ms)[0m  [1m[34mSELECT "records".* FROM "records" WHERE "records"."domain_id" = ?[0m  [["domain_id", 5]]
+  ↳ app/views/domains/show.html.erb:124
+  Rendered domains/show.html.erb within layouts/application (Duration: 4.3ms | Allocations: 2250)
+Completed 200 OK in 22ms (Views: 15.9ms | ActiveRecord: 0.9ms | Allocations: 14831)
+
+
+Started DELETE "/domains/5" for ::1 at 2019-10-19 16:14:23 -0300
+Processing by DomainsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"62cwLa4Hvj4Pg98xL+Ko/cuA/1vVJIvwyd6a8wuJdxVWYRqcp6nrY5E6mnZIlyHbGmvjnaq6AJysArycsSbmPg==", "id"=>"5"}
+  [1m[36mDomain Load (0.3ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/domains_controller.rb:89:in `set_domain'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/domains_controller.rb:79:in `destroy'
+  [1m[36mDomain Destroy (0.7ms)[0m  [1m[31mDELETE FROM "domains" WHERE "domains"."id" = ?[0m  [["id", 5]]
+  ↳ app/controllers/domains_controller.rb:79:in `destroy'
+  [1m[35m (90.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/domains_controller.rb:79:in `destroy'
+Redirected to http://localhost:3000/domains
+Completed 302 Found in 100ms (ActiveRecord: 91.8ms | Allocations: 3676)
+
+
+Started GET "/domains" for ::1 at 2019-10-19 16:14:23 -0300
+Processing by DomainsController#index as HTML
+  Rendering domains/index.html.erb within layouts/application
+  [1m[36mDomain Load (0.2ms)[0m  [1m[34mSELECT "domains".* FROM "domains"[0m
+  ↳ app/views/domains/index.html.erb:22
+  Rendered domains/index.html.erb within layouts/application (Duration: 2.3ms | Allocations: 1081)
+Completed 200 OK in 19ms (Views: 17.5ms | ActiveRecord: 0.2ms | Allocations: 11698)
+
+
+Started GET "/domains/new" for ::1 at 2019-10-19 16:14:26 -0300
+Processing by DomainsController#new as HTML
+  Rendering domains/new.html.erb within layouts/application
+  Rendered domains/_form.html.erb (Duration: 15.4ms | Allocations: 6694)
+  Rendered domains/new.html.erb within layouts/application (Duration: 16.8ms | Allocations: 7048)
+Completed 200 OK in 30ms (Views: 29.0ms | ActiveRecord: 0.0ms | Allocations: 17759)
+
+
+Started POST "/domains" for ::1 at 2019-10-19 16:14:35 -0300
+Processing by DomainsController#create as HTML
+  Parameters: {"authenticity_token"=>"AX4jKHbmv/tdV9Dx2i2Ymq91pmQXCMJn2BEovyAmnzK8eAmZf0jqpsPulba9WBG8fp66omiWSQu9zQ7QmokOGQ==", "domain"=>{"domains"=>"", "name"=>"globo.com", "type_domain"=>"MASTER", "ttl"=>"1", "primary_name_server"=>"d", "contact"=>"e", "refresh"=>"a", "retry"=>"a", "expire"=>"h", "minimum"=>"i"}, "commit"=>"Create Domain"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/domains_controller.rb:52:in `block in create'
+  [1m[36mDomain Create (1.0ms)[0m  [1m[32mINSERT INTO "domains" ("name", "type_domain", "ttl", "primary_name_server", "contact", "refresh", "retry", "expire", "minimum", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "globo.com"], ["type_domain", "MASTER"], ["ttl", "1"], ["primary_name_server", "d"], ["contact", "e"], ["refresh", "a"], ["retry", "a"], ["expire", "h"], ["minimum", "i"], ["created_at", "2019-10-19 19:14:35.946508"], ["updated_at", "2019-10-19 19:14:35.946508"]]
+  ↳ app/controllers/domains_controller.rb:52:in `block in create'
+  [1m[35m (243.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/domains_controller.rb:52:in `block in create'
+Redirected to http://localhost:3000/domains/4
+Completed 302 Found in 258ms (ActiveRecord: 245.0ms | Allocations: 5288)
+
+
+Started GET "/domains/4" for ::1 at 2019-10-19 16:14:36 -0300
+Processing by DomainsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mDomain Load (0.2ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/domains_controller.rb:89:in `set_domain'
+  Rendering domains/show.html.erb within layouts/application
+  [1m[36mDomain Load (0.1ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."domains_id" = ?[0m  [["domains_id", 4]]
+  ↳ app/views/domains/show.html.erb:85
+  [1m[36mRecord Load (0.3ms)[0m  [1m[34mSELECT "records".* FROM "records" WHERE "records"."domain_id" = ?[0m  [["domain_id", 4]]
+  ↳ app/views/domains/show.html.erb:124
+  Rendered domains/show.html.erb within layouts/application (Duration: 4.7ms | Allocations: 1325)
+Completed 200 OK in 19ms (Views: 16.2ms | ActiveRecord: 0.7ms | Allocations: 12588)
+
+
+Started GET "/domains/new/4" for ::1 at 2019-10-19 16:14:38 -0300
+Processing by DomainsController#new as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mDomain Load (0.1ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/domains_controller.rb:23:in `new'
+  Rendering domains/new.html.erb within layouts/application
+  Rendered domains/_form.html.erb (Duration: 3.1ms | Allocations: 2184)
+  Rendered domains/new.html.erb within layouts/application (Duration: 3.5ms | Allocations: 2275)
+Completed 200 OK in 24ms (Views: 22.3ms | ActiveRecord: 0.1ms | Allocations: 13429)
+
+
+Started POST "/domains" for ::1 at 2019-10-19 16:14:46 -0300
+Processing by DomainsController#create as HTML
+  Parameters: {"authenticity_token"=>"btGyOHXrz2cihSRpDmGM/mdhPs+Dap6IgMpfLOl7e7rT15iJfEWaOrw8YS5pFAXYtooiCfz0FeTlFnlDU9TqkQ==", "domain"=>{"domains"=>"4", "name"=>"dev.globo.com", "type_domain"=>"SLAVE", "ttl"=>"1", "primary_name_server"=>"d", "contact"=>"e", "refresh"=>"f", "retry"=>"a", "expire"=>"1", "minimum"=>"i"}, "commit"=>"Create Domain"}
+  [1m[36mDomain Load (0.2ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/domains_controller.rb:38:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/domains_controller.rb:52:in `block in create'
+  [1m[36mDomain Create (0.4ms)[0m  [1m[32mINSERT INTO "domains" ("name", "type_domain", "ttl", "primary_name_server", "contact", "refresh", "retry", "expire", "minimum", "created_at", "updated_at", "domains_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "dev.globo.com"], ["type_domain", "SLAVE"], ["ttl", "1"], ["primary_name_server", "d"], ["contact", "e"], ["refresh", "f"], ["retry", "a"], ["expire", "1"], ["minimum", "i"], ["created_at", "2019-10-19 19:14:46.995318"], ["updated_at", "2019-10-19 19:14:46.995318"], ["domains_id", 4]]
+  ↳ app/controllers/domains_controller.rb:52:in `block in create'
+  [1m[35m (217.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/domains_controller.rb:52:in `block in create'
+Redirected to http://localhost:3000/domains/5
+Completed 302 Found in 267ms (ActiveRecord: 218.0ms | Allocations: 5428)
+
+
+Started GET "/domains/5" for ::1 at 2019-10-19 16:14:47 -0300
+Processing by DomainsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mDomain Load (0.1ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/domains_controller.rb:89:in `set_domain'
+  Rendering domains/show.html.erb within layouts/application
+  [1m[36mDomain Load (0.1ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."domains_id" = ?[0m  [["domains_id", 5]]
+  ↳ app/views/domains/show.html.erb:85
+  [1m[36mRecord Load (0.1ms)[0m  [1m[34mSELECT "records".* FROM "records" WHERE "records"."domain_id" = ?[0m  [["domain_id", 5]]
+  ↳ app/views/domains/show.html.erb:124
+  Rendered domains/show.html.erb within layouts/application (Duration: 2.8ms | Allocations: 1325)
+Completed 200 OK in 16ms (Views: 13.7ms | ActiveRecord: 0.4ms | Allocations: 12576)
+
+
+Started GET "/domains" for ::1 at 2019-10-19 16:14:50 -0300
+Processing by DomainsController#index as HTML
+  Rendering domains/index.html.erb within layouts/application
+  [1m[36mDomain Load (0.3ms)[0m  [1m[34mSELECT "domains".* FROM "domains"[0m
+  ↳ app/views/domains/index.html.erb:22
+  Rendered domains/index.html.erb within layouts/application (Duration: 3.7ms | Allocations: 1377)
+Completed 200 OK in 17ms (Views: 15.1ms | ActiveRecord: 0.3ms | Allocations: 12007)
+
+
+Started GET "/domains/4" for ::1 at 2019-10-19 16:14:51 -0300
+Processing by DomainsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mDomain Load (0.1ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/domains_controller.rb:89:in `set_domain'
+  Rendering domains/show.html.erb within layouts/application
+  [1m[36mDomain Load (0.2ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."domains_id" = ?[0m  [["domains_id", 4]]
+  ↳ app/views/domains/show.html.erb:85
+  [1m[36mRecord Load (0.1ms)[0m  [1m[34mSELECT "records".* FROM "records" WHERE "records"."domain_id" = ?[0m  [["domain_id", 4]]
+  ↳ app/views/domains/show.html.erb:124
+  Rendered domains/show.html.erb within layouts/application (Duration: 3.7ms | Allocations: 1470)
+Completed 200 OK in 19ms (Views: 15.8ms | ActiveRecord: 0.4ms | Allocations: 12722)
+
+
+Started DELETE "/domains/4" for ::1 at 2019-10-19 16:14:58 -0300
+Processing by DomainsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"s2joaJoEm4yGKgCRqen1G37Qc06NnR/qCh+rqj2lBeEObsLZk6rO0RiTRdbOnHw9rztviPIDlIZvw43FhwqUyg==", "id"=>"4"}
+  [1m[36mDomain Load (0.2ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/domains_controller.rb:89:in `set_domain'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/domains_controller.rb:79:in `destroy'
+  [1m[36mDomain Destroy (0.6ms)[0m  [1m[31mDELETE FROM "domains" WHERE "domains"."id" = ?[0m  [["id", 4]]
+  ↳ app/controllers/domains_controller.rb:79:in `destroy'
+  [1m[35m (101.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/domains_controller.rb:79:in `destroy'
+Redirected to http://localhost:3000/domains
+Completed 302 Found in 111ms (ActiveRecord: 102.5ms | Allocations: 3756)
+
+
+Started GET "/domains" for ::1 at 2019-10-19 16:14:58 -0300
+Processing by DomainsController#index as HTML
+  Rendering domains/index.html.erb within layouts/application
+  [1m[36mDomain Load (0.2ms)[0m  [1m[34mSELECT "domains".* FROM "domains"[0m
+  ↳ app/views/domains/index.html.erb:22
+  Rendered domains/index.html.erb within layouts/application (Duration: 3.4ms | Allocations: 1078)
+Completed 200 OK in 16ms (Views: 14.9ms | ActiveRecord: 0.2ms | Allocations: 11719)
+
+
+Started GET "/domains/new" for ::1 at 2019-10-19 16:15:04 -0300
+Processing by DomainsController#new as HTML
+  Rendering domains/new.html.erb within layouts/application
+  Rendered domains/_form.html.erb (Duration: 3.4ms | Allocations: 2180)
+  Rendered domains/new.html.erb within layouts/application (Duration: 3.8ms | Allocations: 2271)
+Completed 200 OK in 20ms (Views: 18.5ms | ActiveRecord: 0.0ms | Allocations: 12921)
+
+
+Started POST "/domains" for ::1 at 2019-10-19 16:15:14 -0300
+Processing by DomainsController#create as HTML
+  Parameters: {"authenticity_token"=>"eE34jgNH311E/zjtssLibNgqzJy2pJDEBzU6gNnUinzFS9I/CumKANpGfarVt2tKCcHQWsk6G6hi6RzvY3sbVw==", "domain"=>{"domains"=>"", "name"=>"globo.com", "type_domain"=>"MASTER", "ttl"=>"1", "primary_name_server"=>"d", "contact"=>"e", "refresh"=>"f", "retry"=>"a", "expire"=>"h", "minimum"=>"i"}, "commit"=>"Create Domain"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/domains_controller.rb:52:in `block in create'
+  [1m[36mDomain Create (0.8ms)[0m  [1m[32mINSERT INTO "domains" ("name", "type_domain", "ttl", "primary_name_server", "contact", "refresh", "retry", "expire", "minimum", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "globo.com"], ["type_domain", "MASTER"], ["ttl", "1"], ["primary_name_server", "d"], ["contact", "e"], ["refresh", "f"], ["retry", "a"], ["expire", "h"], ["minimum", "i"], ["created_at", "2019-10-19 19:15:14.698820"], ["updated_at", "2019-10-19 19:15:14.698820"]]
+  ↳ app/controllers/domains_controller.rb:52:in `block in create'
+  [1m[35m (267.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/domains_controller.rb:52:in `block in create'
+Redirected to http://localhost:3000/domains/4
+Completed 302 Found in 279ms (ActiveRecord: 267.9ms | Allocations: 4863)
+
+
+Started GET "/domains/4" for ::1 at 2019-10-19 16:15:14 -0300
+Processing by DomainsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mDomain Load (0.1ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/domains_controller.rb:89:in `set_domain'
+  Rendering domains/show.html.erb within layouts/application
+  [1m[36mDomain Load (0.1ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."domains_id" = ?[0m  [["domains_id", 4]]
+  ↳ app/views/domains/show.html.erb:85
+  [1m[36mRecord Load (0.1ms)[0m  [1m[34mSELECT "records".* FROM "records" WHERE "records"."domain_id" = ?[0m  [["domain_id", 4]]
+  ↳ app/views/domains/show.html.erb:124
+  Rendered domains/show.html.erb within layouts/application (Duration: 2.0ms | Allocations: 1322)
+Completed 200 OK in 16ms (Views: 14.1ms | ActiveRecord: 0.3ms | Allocations: 12573)
+
+
+Started GET "/domains" for ::1 at 2019-10-19 16:15:17 -0300
+Processing by DomainsController#index as HTML
+  Rendering domains/index.html.erb within layouts/application
+  [1m[36mDomain Load (0.5ms)[0m  [1m[34mSELECT "domains".* FROM "domains"[0m
+  ↳ app/views/domains/index.html.erb:22
+  Rendered domains/index.html.erb within layouts/application (Duration: 4.3ms | Allocations: 1226)
+Completed 200 OK in 19ms (Views: 17.3ms | ActiveRecord: 0.5ms | Allocations: 11850)
+
+
+Started GET "/domains/4" for ::1 at 2019-10-19 16:15:18 -0300
+Processing by DomainsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mDomain Load (0.4ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/domains_controller.rb:89:in `set_domain'
+  Rendering domains/show.html.erb within layouts/application
+  [1m[36mDomain Load (0.1ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."domains_id" = ?[0m  [["domains_id", 4]]
+  ↳ app/views/domains/show.html.erb:85
+  [1m[36mRecord Load (0.1ms)[0m  [1m[34mSELECT "records".* FROM "records" WHERE "records"."domain_id" = ?[0m  [["domain_id", 4]]
+  ↳ app/views/domains/show.html.erb:124
+  Rendered domains/show.html.erb within layouts/application (Duration: 2.3ms | Allocations: 1320)
+Completed 200 OK in 18ms (Views: 13.5ms | ActiveRecord: 0.5ms | Allocations: 12552)
+
+
+Started GET "/domains/new/4" for ::1 at 2019-10-19 16:15:21 -0300
+Processing by DomainsController#new as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mDomain Load (0.2ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/domains_controller.rb:23:in `new'
+  Rendering domains/new.html.erb within layouts/application
+  Rendered domains/_form.html.erb (Duration: 6.4ms | Allocations: 2183)
+  Rendered domains/new.html.erb within layouts/application (Duration: 6.8ms | Allocations: 2274)
+Completed 200 OK in 23ms (Views: 19.7ms | ActiveRecord: 0.2ms | Allocations: 13438)
+
+
+Started POST "/domains" for ::1 at 2019-10-19 16:15:37 -0300
+Processing by DomainsController#create as HTML
+  Parameters: {"authenticity_token"=>"XJVAoNcNkNVd5jp3rHbCxXi/Xvrv4sl7EdBRCFkDJhvhk2oR3qPFiMNffzDLA0vjqVRCPJB8Qhd0DHdn46y3MA==", "domain"=>{"domains"=>"4", "name"=>"dev.globo.com", "type_domain"=>"FORWARD", "ttl"=>"1", "primary_name_server"=>"d", "contact"=>"a", "refresh"=>"f", "retry"=>"a", "expire"=>"h", "minimum"=>"i"}, "commit"=>"Create Domain"}
+  [1m[36mDomain Load (0.3ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/domains_controller.rb:38:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/domains_controller.rb:52:in `block in create'
+  [1m[36mDomain Create (0.4ms)[0m  [1m[32mINSERT INTO "domains" ("name", "type_domain", "ttl", "primary_name_server", "contact", "refresh", "retry", "expire", "minimum", "created_at", "updated_at", "domains_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "dev.globo.com"], ["type_domain", "FORWARD"], ["ttl", "1"], ["primary_name_server", "d"], ["contact", "a"], ["refresh", "f"], ["retry", "a"], ["expire", "h"], ["minimum", "i"], ["created_at", "2019-10-19 19:15:37.972478"], ["updated_at", "2019-10-19 19:15:37.972478"], ["domains_id", 4]]
+  ↳ app/controllers/domains_controller.rb:52:in `block in create'
+  [1m[35m (226.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/domains_controller.rb:52:in `block in create'
+Redirected to http://localhost:3000/domains/5
+Completed 302 Found in 242ms (ActiveRecord: 227.5ms | Allocations: 5492)
+
+
+Started GET "/domains/5" for ::1 at 2019-10-19 16:15:38 -0300
+Processing by DomainsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mDomain Load (0.1ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/domains_controller.rb:89:in `set_domain'
+  Rendering domains/show.html.erb within layouts/application
+  [1m[36mDomain Load (0.1ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."domains_id" = ?[0m  [["domains_id", 5]]
+  ↳ app/views/domains/show.html.erb:85
+  [1m[36mRecord Load (0.1ms)[0m  [1m[34mSELECT "records".* FROM "records" WHERE "records"."domain_id" = ?[0m  [["domain_id", 5]]
+  ↳ app/views/domains/show.html.erb:124
+  Rendered domains/show.html.erb within layouts/application (Duration: 2.4ms | Allocations: 1322)
+Completed 200 OK in 19ms (Views: 15.6ms | ActiveRecord: 0.3ms | Allocations: 12577)
+
+
+Started GET "/domains/new/5" for ::1 at 2019-10-19 16:15:40 -0300
+Processing by DomainsController#new as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mDomain Load (0.4ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/domains_controller.rb:23:in `new'
+  Rendering domains/new.html.erb within layouts/application
+  Rendered domains/_form.html.erb (Duration: 4.8ms | Allocations: 2183)
+  Rendered domains/new.html.erb within layouts/application (Duration: 5.2ms | Allocations: 2274)
+Completed 200 OK in 22ms (Views: 18.0ms | ActiveRecord: 0.4ms | Allocations: 13432)
+
+
+Started GET "/domains" for ::1 at 2019-10-19 16:15:42 -0300
+Processing by DomainsController#index as HTML
+  Rendering domains/index.html.erb within layouts/application
+  [1m[36mDomain Load (0.2ms)[0m  [1m[34mSELECT "domains".* FROM "domains"[0m
+  ↳ app/views/domains/index.html.erb:22
+  Rendered domains/index.html.erb within layouts/application (Duration: 2.8ms | Allocations: 1375)
+Completed 200 OK in 17ms (Views: 15.9ms | ActiveRecord: 0.2ms | Allocations: 11985)
+
+
+Started DELETE "/domains/4" for ::1 at 2019-10-19 16:15:47 -0300
+Processing by DomainsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"6nwYAs4RFSlazn1Vggtvo/o+vtEylEKDNi2fOMzkccxXejKzx79AdMR3OBLlfuaFK9WiF00Kye9T8blXdkvg5w==", "id"=>"4"}
+  [1m[36mDomain Load (0.1ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/domains_controller.rb:89:in `set_domain'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/domains_controller.rb:79:in `destroy'
+  [1m[36mDomain Destroy (0.4ms)[0m  [1m[31mDELETE FROM "domains" WHERE "domains"."id" = ?[0m  [["id", 4]]
+  ↳ app/controllers/domains_controller.rb:79:in `destroy'
+  [1m[35m (99.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/domains_controller.rb:79:in `destroy'
+Redirected to http://localhost:3000/domains
+Completed 302 Found in 131ms (ActiveRecord: 99.8ms | Allocations: 3755)
+
+
+Started GET "/domains" for ::1 at 2019-10-19 16:15:47 -0300
+Processing by DomainsController#index as HTML
+  Rendering domains/index.html.erb within layouts/application
+  [1m[36mDomain Load (0.2ms)[0m  [1m[34mSELECT "domains".* FROM "domains"[0m
+  ↳ app/views/domains/index.html.erb:22
+  Rendered domains/index.html.erb within layouts/application (Duration: 2.4ms | Allocations: 1078)
+Completed 200 OK in 26ms (Views: 25.2ms | ActiveRecord: 0.2ms | Allocations: 11713)
+
+
+Started GET "/domains/2/edit" for ::1 at 2019-10-19 16:15:54 -0300
+Processing by DomainsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mDomain Load (0.2ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/domains_controller.rb:89:in `set_domain'
+  Rendering domains/edit.html.erb within layouts/application
+  Rendered domains/_form.html.erb (Duration: 3.5ms | Allocations: 2293)
+  Rendered domains/edit.html.erb within layouts/application (Duration: 4.2ms | Allocations: 2551)
+Completed 200 OK in 18ms (Views: 15.7ms | ActiveRecord: 0.2ms | Allocations: 13831)
+
+
+Started PATCH "/domains/2" for ::1 at 2019-10-19 16:15:56 -0300
+Processing by DomainsController#update as HTML
+  Parameters: {"authenticity_token"=>"tZL8TuQB4V6EHusGJPvy82oOefYgN35RfEhqyf5RBqkIlNb/7a+0AxqnrkFDjnvVu+VlMF+p9T0ZlEymRP6Xgg==", "domain"=>{"domains"=>"", "name"=>"teste", "type_domain"=>"SLAVE", "ttl"=>"1", "primary_name_server"=>"1", "contact"=>"1", "refresh"=>"1", "retry"=>"1", "expire"=>"1", "minimum"=>"1"}, "commit"=>"Update Domain", "id"=>"2"}
+  [1m[36mDomain Load (0.2ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/domains_controller.rb:89:in `set_domain'
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.2ms | Allocations: 1542)
+
+
+  
+ActiveRecord::AssociationTypeMismatch (Domain(#47020353989220) expected, got "" which is an instance of String(#47020327247320)):
+  
+app/controllers/domains_controller.rb:66:in `block in update'
+app/controllers/domains_controller.rb:65:in `update'
+Started GET "/" for ::1 at 2019-10-19 20:28:19 -0300
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by DomainsController#index as HTML
+  Rendering domains/index.html.erb within layouts/application
+  [1m[36mDomain Load (0.3ms)[0m  [1m[34mSELECT "domains".* FROM "domains"[0m
+  ↳ app/views/domains/index.html.erb:22
+  Rendered domains/index.html.erb within layouts/application (Duration: 52.4ms | Allocations: 10393)
+Completed 200 OK in 1767ms (Views: 1681.7ms | ActiveRecord: 1.4ms | Allocations: 1306172)
+
+
+Started GET "/domains/2/edit" for ::1 at 2019-10-19 20:28:30 -0300
+Processing by DomainsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mDomain Load (0.3ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/domains_controller.rb:89:in `set_domain'
+  Rendering domains/edit.html.erb within layouts/application
+  Rendered domains/_form.html.erb (Duration: 232.0ms | Allocations: 4858)
+  Rendered domains/edit.html.erb within layouts/application (Duration: 280.0ms | Allocations: 5267)
+Completed 200 OK in 313ms (Views: 293.1ms | ActiveRecord: 0.3ms | Allocations: 17015)
+
+
+Started PATCH "/domains/2" for ::1 at 2019-10-19 20:28:32 -0300
+Processing by DomainsController#update as HTML
+  Parameters: {"authenticity_token"=>"5Ue33gb8qmQNdgchGpqO9erjFJMU+l1iuer/WxFdmy5YQZ1vD1L/OZPPQmZ97wfTOwgIVWtk1g7cNtk0q/IKBQ==", "domain"=>{"domains"=>"", "name"=>"teste", "type_domain"=>"SLAVE", "ttl"=>"1", "primary_name_server"=>"1", "contact"=>"1", "refresh"=>"1", "retry"=>"1", "expire"=>"1", "minimum"=>"1"}, "commit"=>"Update Domain", "id"=>"2"}
+  [1m[36mDomain Load (0.2ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/domains_controller.rb:89:in `set_domain'
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 0.2ms | Allocations: 2649)
+
+
+  
+ActiveRecord::AssociationTypeMismatch (Domain(#47396153800680) expected, got "" which is an instance of String(#47396125375960)):
+  
+app/controllers/domains_controller.rb:66:in `block in update'
+app/controllers/domains_controller.rb:65:in `update'
+Started PATCH "/domains/2" for ::1 at 2019-10-19 20:39:31 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by DomainsController#update as HTML
+  Parameters: {"authenticity_token"=>"5Ue33gb8qmQNdgchGpqO9erjFJMU+l1iuer/WxFdmy5YQZ1vD1L/OZPPQmZ97wfTOwgIVWtk1g7cNtk0q/IKBQ==", "domain"=>{"domains"=>"", "name"=>"teste", "type_domain"=>"SLAVE", "ttl"=>"1", "primary_name_server"=>"1", "contact"=>"1", "refresh"=>"1", "retry"=>"1", "expire"=>"1", "minimum"=>"1"}, "commit"=>"Update Domain", "id"=>"2"}
+  [1m[36mDomain Load (0.3ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/domains_controller.rb:93:in `set_domain'
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 0.3ms | Allocations: 11358)
+
+
+  
+ActiveRecord::AssociationTypeMismatch (Domain(#70161849387920) expected, got "" which is an instance of String(#47396125375960)):
+  
+app/controllers/domains_controller.rb:70:in `block in update'
+app/controllers/domains_controller.rb:65:in `update'
+Started PATCH "/domains/2" for ::1 at 2019-10-19 20:40:37 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by DomainsController#update as HTML
+  Parameters: {"authenticity_token"=>"5Ue33gb8qmQNdgchGpqO9erjFJMU+l1iuer/WxFdmy5YQZ1vD1L/OZPPQmZ97wfTOwgIVWtk1g7cNtk0q/IKBQ==", "domain"=>{"domains"=>"", "name"=>"teste", "type_domain"=>"SLAVE", "ttl"=>"1", "primary_name_server"=>"1", "contact"=>"1", "refresh"=>"1", "retry"=>"1", "expire"=>"1", "minimum"=>"1"}, "commit"=>"Update Domain", "id"=>"2"}
+  [1m[36mDomain Load (0.2ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/domains_controller.rb:96:in `set_domain'
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 1.1ms | Allocations: 11914)
+
+
+  
+ActiveRecord::AssociationTypeMismatch (Domain(#70161851353960) expected, got "" which is an instance of String(#47396125375960)):
+  
+app/controllers/domains_controller.rb:73:in `block in update'
+app/controllers/domains_controller.rb:65:in `update'
+Started GET "/domains" for ::1 at 2019-10-19 20:40:58 -0300
+Processing by DomainsController#index as HTML
+  Rendering domains/index.html.erb within layouts/application
+  [1m[36mDomain Load (0.4ms)[0m  [1m[34mSELECT "domains".* FROM "domains"[0m
+  ↳ app/views/domains/index.html.erb:22
+  Rendered domains/index.html.erb within layouts/application (Duration: 4.7ms | Allocations: 1183)
+Completed 200 OK in 17ms (Views: 15.8ms | ActiveRecord: 0.4ms | Allocations: 11968)
+
+
+Started GET "/domains/2" for ::1 at 2019-10-19 20:41:00 -0300
+Processing by DomainsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mDomain Load (0.2ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/domains_controller.rb:96:in `set_domain'
+  Rendering domains/show.html.erb within layouts/application
+  [1m[36mDomain Load (0.3ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."domains_id" = ?[0m  [["domains_id", 2]]
+  ↳ app/views/domains/show.html.erb:85
+  [1m[36mRecord Load (0.2ms)[0m  [1m[34mSELECT "records".* FROM "records" WHERE "records"."domain_id" = ?[0m  [["domain_id", 2]]
+  ↳ app/views/domains/show.html.erb:124
+  Rendered domains/show.html.erb within layouts/application (Duration: 13.0ms | Allocations: 2245)
+Completed 200 OK in 47ms (Views: 26.9ms | ActiveRecord: 1.2ms | Allocations: 14804)
+
+
+Started GET "/domains/2/edit" for ::1 at 2019-10-19 20:41:02 -0300
+Processing by DomainsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mDomain Load (0.2ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/domains_controller.rb:96:in `set_domain'
+  Rendering domains/edit.html.erb within layouts/application
+  Rendered domains/_form.html.erb (Duration: 4.0ms | Allocations: 2290)
+  Rendered domains/edit.html.erb within layouts/application (Duration: 4.4ms | Allocations: 2411)
+Completed 200 OK in 19ms (Views: 16.3ms | ActiveRecord: 0.2ms | Allocations: 13541)
+
+
+Started PATCH "/domains/2" for ::1 at 2019-10-19 20:41:04 -0300
+Processing by DomainsController#update as HTML
+  Parameters: {"authenticity_token"=>"KhDDuwUnJYGs/EtGvuPMf5/WzJV5YMEO6EeuwXwAsGGXFukKDIlw3DJFDgHZlkVZTj3QUwb+SmKNm4iuxq8hSg==", "domain"=>{"domains"=>"", "name"=>"teste", "type_domain"=>"SLAVE", "ttl"=>"1", "primary_name_server"=>"1", "contact"=>"1", "refresh"=>"1", "retry"=>"1", "expire"=>"1", "minimum"=>"1"}, "commit"=>"Update Domain", "id"=>"2"}
+  [1m[36mDomain Load (0.2ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/domains_controller.rb:96:in `set_domain'
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.2ms | Allocations: 1752)
+
+
+  
+ActiveRecord::AssociationTypeMismatch (Domain(#70161851353960) expected, got "" which is an instance of String(#47396125375960)):
+  
+app/controllers/domains_controller.rb:73:in `block in update'
+app/controllers/domains_controller.rb:65:in `update'
+Started PATCH "/domains/2" for ::1 at 2019-10-19 20:42:02 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by DomainsController#update as HTML
+  Parameters: {"authenticity_token"=>"KhDDuwUnJYGs/EtGvuPMf5/WzJV5YMEO6EeuwXwAsGGXFukKDIlw3DJFDgHZlkVZTj3QUwb+SmKNm4iuxq8hSg==", "domain"=>{"domains"=>"", "name"=>"teste", "type_domain"=>"SLAVE", "ttl"=>"1", "primary_name_server"=>"1", "contact"=>"1", "refresh"=>"1", "retry"=>"1", "expire"=>"1", "minimum"=>"1"}, "commit"=>"Update Domain", "id"=>"2"}
+  [1m[36mDomain Load (0.1ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/domains_controller.rb:98:in `set_domain'
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.9ms | Allocations: 12015)
+
+
+  
+ActiveRecord::AssociationTypeMismatch (Domain(#70161764997620) expected, got "" which is an instance of String(#47396125375960)):
+  
+app/controllers/domains_controller.rb:75:in `block in update'
+app/controllers/domains_controller.rb:65:in `update'
+Started PATCH "/domains/2" for ::1 at 2019-10-19 20:44:29 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by DomainsController#update as HTML
+  Parameters: {"authenticity_token"=>"KhDDuwUnJYGs/EtGvuPMf5/WzJV5YMEO6EeuwXwAsGGXFukKDIlw3DJFDgHZlkVZTj3QUwb+SmKNm4iuxq8hSg==", "domain"=>{"domains"=>"", "name"=>"teste", "type_domain"=>"SLAVE", "ttl"=>"1", "primary_name_server"=>"1", "contact"=>"1", "refresh"=>"1", "retry"=>"1", "expire"=>"1", "minimum"=>"1"}, "commit"=>"Update Domain", "id"=>"2"}
+  [1m[36mDomain Load (0.2ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/domains_controller.rb:99:in `set_domain'
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.9ms | Allocations: 12017)
+
+
+  
+ActiveRecord::AssociationTypeMismatch (Domain(#70161680159980) expected, got "" which is an instance of String(#47396125375960)):
+  
+app/controllers/domains_controller.rb:76:in `block in update'
+app/controllers/domains_controller.rb:65:in `update'
+Started PATCH "/domains/2" for ::1 at 2019-10-19 20:44:50 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by DomainsController#update as HTML
+  Parameters: {"authenticity_token"=>"KhDDuwUnJYGs/EtGvuPMf5/WzJV5YMEO6EeuwXwAsGGXFukKDIlw3DJFDgHZlkVZTj3QUwb+SmKNm4iuxq8hSg==", "domain"=>{"domains"=>"", "name"=>"teste", "type_domain"=>"SLAVE", "ttl"=>"1", "primary_name_server"=>"1", "contact"=>"1", "refresh"=>"1", "retry"=>"1", "expire"=>"1", "minimum"=>"1"}, "commit"=>"Update Domain", "id"=>"2"}
+  [1m[36mDomain Load (0.1ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/domains_controller.rb:99:in `set_domain'
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 0.8ms | Allocations: 12057)
+
+
+  
+ActiveRecord::AssociationTypeMismatch (Domain(#70161850260100) expected, got "" which is an instance of String(#47396125375960)):
+  
+app/controllers/domains_controller.rb:76:in `block in update'
+app/controllers/domains_controller.rb:65:in `update'
+Started PATCH "/domains/2" for ::1 at 2019-10-19 20:45:03 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by DomainsController#update as HTML
+  Parameters: {"authenticity_token"=>"KhDDuwUnJYGs/EtGvuPMf5/WzJV5YMEO6EeuwXwAsGGXFukKDIlw3DJFDgHZlkVZTj3QUwb+SmKNm4iuxq8hSg==", "domain"=>{"domains"=>"", "name"=>"teste", "type_domain"=>"SLAVE", "ttl"=>"1", "primary_name_server"=>"1", "contact"=>"1", "refresh"=>"1", "retry"=>"1", "expire"=>"1", "minimum"=>"1"}, "commit"=>"Update Domain", "id"=>"2"}
+  [1m[36mDomain Load (0.2ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/domains_controller.rb:99:in `set_domain'
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 1.0ms | Allocations: 11293)
+
+
+  
+TypeError (no implicit conversion of ActionController::Parameters into String):
+  
+app/controllers/domains_controller.rb:74:in `+'
+app/controllers/domains_controller.rb:74:in `block in update'
+app/controllers/domains_controller.rb:65:in `update'
+Started PATCH "/domains/2" for ::1 at 2019-10-19 20:45:26 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by DomainsController#update as HTML
+  Parameters: {"authenticity_token"=>"KhDDuwUnJYGs/EtGvuPMf5/WzJV5YMEO6EeuwXwAsGGXFukKDIlw3DJFDgHZlkVZTj3QUwb+SmKNm4iuxq8hSg==", "domain"=>{"domains"=>"", "name"=>"teste", "type_domain"=>"SLAVE", "ttl"=>"1", "primary_name_server"=>"1", "contact"=>"1", "refresh"=>"1", "retry"=>"1", "expire"=>"1", "minimum"=>"1"}, "commit"=>"Update Domain", "id"=>"2"}
+  [1m[36mDomain Load (0.2ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/domains_controller.rb:99:in `set_domain'
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 1.0ms | Allocations: 12077)
+
+
+  
+ActiveRecord::AssociationTypeMismatch (Domain(#70161852265540) expected, got "" which is an instance of String(#47396125375960)):
+  
+app/controllers/domains_controller.rb:76:in `block in update'
+app/controllers/domains_controller.rb:65:in `update'
+Started PATCH "/domains/2" for ::1 at 2019-10-19 20:47:14 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by DomainsController#update as HTML
+  Parameters: {"authenticity_token"=>"KhDDuwUnJYGs/EtGvuPMf5/WzJV5YMEO6EeuwXwAsGGXFukKDIlw3DJFDgHZlkVZTj3QUwb+SmKNm4iuxq8hSg==", "domain"=>{"domains"=>"", "name"=>"teste", "type_domain"=>"SLAVE", "ttl"=>"1", "primary_name_server"=>"1", "contact"=>"1", "refresh"=>"1", "retry"=>"1", "expire"=>"1", "minimum"=>"1"}, "commit"=>"Update Domain", "id"=>"2"}
+  [1m[36mDomain Load (0.1ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/domains_controller.rb:99:in `set_domain'
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.8ms | Allocations: 12039)
+
+
+  
+ActiveRecord::AssociationTypeMismatch (Domain(#70161764149800) expected, got "" which is an instance of String(#47396125375960)):
+  
+app/controllers/domains_controller.rb:76:in `block in update'
+app/controllers/domains_controller.rb:65:in `update'
+Started PATCH "/domains/2" for ::1 at 2019-10-19 20:48:48 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by DomainsController#update as HTML
+  Parameters: {"authenticity_token"=>"KhDDuwUnJYGs/EtGvuPMf5/WzJV5YMEO6EeuwXwAsGGXFukKDIlw3DJFDgHZlkVZTj3QUwb+SmKNm4iuxq8hSg==", "domain"=>{"domains"=>"", "name"=>"teste", "type_domain"=>"SLAVE", "ttl"=>"1", "primary_name_server"=>"1", "contact"=>"1", "refresh"=>"1", "retry"=>"1", "expire"=>"1", "minimum"=>"1"}, "commit"=>"Update Domain", "id"=>"2"}
+  [1m[36mDomain Load (0.6ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/domains_controller.rb:99:in `set_domain'
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 1.6ms | Allocations: 12020)
+
+
+  
+ActiveRecord::AssociationTypeMismatch (Domain(#70161847959000) expected, got "" which is an instance of String(#47396125375960)):
+  
+app/controllers/domains_controller.rb:76:in `block in update'
+app/controllers/domains_controller.rb:65:in `update'
+Started PATCH "/domains/2" for ::1 at 2019-10-19 20:49:48 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by DomainsController#update as HTML
+  Parameters: {"authenticity_token"=>"KhDDuwUnJYGs/EtGvuPMf5/WzJV5YMEO6EeuwXwAsGGXFukKDIlw3DJFDgHZlkVZTj3QUwb+SmKNm4iuxq8hSg==", "domain"=>{"domains"=>"", "name"=>"teste", "type_domain"=>"SLAVE", "ttl"=>"1", "primary_name_server"=>"1", "contact"=>"1", "refresh"=>"1", "retry"=>"1", "expire"=>"1", "minimum"=>"1"}, "commit"=>"Update Domain", "id"=>"2"}
+  [1m[36mDomain Load (0.1ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/domains_controller.rb:99:in `set_domain'
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 0.8ms | Allocations: 12019)
+
+
+  
+ActiveRecord::AssociationTypeMismatch (Domain(#70161852927380) expected, got "" which is an instance of String(#47396125375960)):
+  
+app/controllers/domains_controller.rb:76:in `block in update'
+app/controllers/domains_controller.rb:65:in `update'
+Started PATCH "/domains/2" for ::1 at 2019-10-19 20:50:17 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by DomainsController#update as HTML
+  Parameters: {"authenticity_token"=>"KhDDuwUnJYGs/EtGvuPMf5/WzJV5YMEO6EeuwXwAsGGXFukKDIlw3DJFDgHZlkVZTj3QUwb+SmKNm4iuxq8hSg==", "domain"=>{"domains"=>"", "name"=>"teste", "type_domain"=>"SLAVE", "ttl"=>"1", "primary_name_server"=>"1", "contact"=>"1", "refresh"=>"1", "retry"=>"1", "expire"=>"1", "minimum"=>"1"}, "commit"=>"Update Domain", "id"=>"2"}
+  [1m[36mDomain Load (0.3ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/domains_controller.rb:99:in `set_domain'
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 1.9ms | Allocations: 11334)
+
+
+  
+TypeError (no implicit conversion of nil into String):
+  
+app/controllers/domains_controller.rb:74:in `+'
+app/controllers/domains_controller.rb:74:in `block in update'
+app/controllers/domains_controller.rb:65:in `update'
+Started PATCH "/domains/2" for ::1 at 2019-10-19 20:50:31 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by DomainsController#update as HTML
+  Parameters: {"authenticity_token"=>"KhDDuwUnJYGs/EtGvuPMf5/WzJV5YMEO6EeuwXwAsGGXFukKDIlw3DJFDgHZlkVZTj3QUwb+SmKNm4iuxq8hSg==", "domain"=>{"domains"=>"", "name"=>"teste", "type_domain"=>"SLAVE", "ttl"=>"1", "primary_name_server"=>"1", "contact"=>"1", "refresh"=>"1", "retry"=>"1", "expire"=>"1", "minimum"=>"1"}, "commit"=>"Update Domain", "id"=>"2"}
+  [1m[36mDomain Load (0.3ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/domains_controller.rb:99:in `set_domain'
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 1.2ms | Allocations: 12019)
+
+
+  
+ActiveRecord::AssociationTypeMismatch (Domain(#70161766168840) expected, got "" which is an instance of String(#47396125375960)):
+  
+app/controllers/domains_controller.rb:76:in `block in update'
+app/controllers/domains_controller.rb:65:in `update'
+Started PATCH "/domains/2" for ::1 at 2019-10-19 20:50:51 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by DomainsController#update as HTML
+  Parameters: {"authenticity_token"=>"KhDDuwUnJYGs/EtGvuPMf5/WzJV5YMEO6EeuwXwAsGGXFukKDIlw3DJFDgHZlkVZTj3QUwb+SmKNm4iuxq8hSg==", "domain"=>{"domains"=>"", "name"=>"teste", "type_domain"=>"SLAVE", "ttl"=>"1", "primary_name_server"=>"1", "contact"=>"1", "refresh"=>"1", "retry"=>"1", "expire"=>"1", "minimum"=>"1"}, "commit"=>"Update Domain", "id"=>"2"}
+  [1m[36mDomain Load (0.2ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/domains_controller.rb:99:in `set_domain'
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 1.7ms | Allocations: 12058)
+
+
+  
+ActiveRecord::AssociationTypeMismatch (Domain(#70161851289720) expected, got "" which is an instance of String(#47396125375960)):
+  
+app/controllers/domains_controller.rb:76:in `block in update'
+app/controllers/domains_controller.rb:65:in `update'
+Started PATCH "/domains/2" for ::1 at 2019-10-19 20:51:14 -0300
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by DomainsController#update as HTML
+  Parameters: {"authenticity_token"=>"KhDDuwUnJYGs/EtGvuPMf5/WzJV5YMEO6EeuwXwAsGGXFukKDIlw3DJFDgHZlkVZTj3QUwb+SmKNm4iuxq8hSg==", "domain"=>{"domains"=>"", "name"=>"teste", "type_domain"=>"SLAVE", "ttl"=>"1", "primary_name_server"=>"1", "contact"=>"1", "refresh"=>"1", "retry"=>"1", "expire"=>"1", "minimum"=>"1"}, "commit"=>"Update Domain", "id"=>"2"}
+  [1m[36mDomain Load (0.3ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/domains_controller.rb:99:in `set_domain'
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 1.4ms | Allocations: 12039)
+
+
+  
+ActiveRecord::AssociationTypeMismatch (Domain(#70161765777980) expected, got "" which is an instance of String(#47396125375960)):
+  
+app/controllers/domains_controller.rb:76:in `block in update'
+app/controllers/domains_controller.rb:65:in `update'
+Started PATCH "/domains/2" for ::1 at 2019-10-19 20:53:10 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by DomainsController#update as HTML
+  Parameters: {"authenticity_token"=>"KhDDuwUnJYGs/EtGvuPMf5/WzJV5YMEO6EeuwXwAsGGXFukKDIlw3DJFDgHZlkVZTj3QUwb+SmKNm4iuxq8hSg==", "domain"=>{"domains"=>"", "name"=>"teste", "type_domain"=>"SLAVE", "ttl"=>"1", "primary_name_server"=>"1", "contact"=>"1", "refresh"=>"1", "retry"=>"1", "expire"=>"1", "minimum"=>"1"}, "commit"=>"Update Domain", "id"=>"2"}
+  [1m[36mDomain Load (0.1ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/domains_controller.rb:99:in `set_domain'
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.8ms | Allocations: 11696)
+
+
+  
+ActiveRecord::AssociationTypeMismatch (Domain(#70161852318240) expected, got "" which is an instance of String(#47396125375960)):
+  
+app/controllers/domains_controller.rb:76:in `block in update'
+app/controllers/domains_controller.rb:65:in `update'
+Started PATCH "/domains/2" for ::1 at 2019-10-19 20:54:06 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by DomainsController#update as HTML
+  Parameters: {"authenticity_token"=>"KhDDuwUnJYGs/EtGvuPMf5/WzJV5YMEO6EeuwXwAsGGXFukKDIlw3DJFDgHZlkVZTj3QUwb+SmKNm4iuxq8hSg==", "domain"=>{"domains"=>"", "name"=>"teste", "type_domain"=>"SLAVE", "ttl"=>"1", "primary_name_server"=>"1", "contact"=>"1", "refresh"=>"1", "retry"=>"1", "expire"=>"1", "minimum"=>"1"}, "commit"=>"Update Domain", "id"=>"2"}
+  [1m[36mDomain Load (0.2ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/domains_controller.rb:99:in `set_domain'
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 1.2ms | Allocations: 12038)
+
+
+  
+ActiveRecord::AssociationTypeMismatch (Domain(#70161680084620) expected, got "" which is an instance of String(#47396125375960)):
+  
+app/controllers/domains_controller.rb:76:in `block in update'
+app/controllers/domains_controller.rb:65:in `update'
+Started PATCH "/domains/2" for ::1 at 2019-10-19 20:56:21 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  
+SyntaxError (/home/leonardo/workspace/desafio_dev_backend_infra/CrudDNS/app/controllers/domains_controller.rb:78: syntax error, unexpected tSTRING_BEG, expecting '}'
+          "domains"=>""
+          ^
+/home/leonardo/workspace/desafio_dev_backend_infra/CrudDNS/app/controllers/domains_controller.rb:78: syntax error, unexpected =>, expecting end
+          "domains"=>""
+                   ^~
+/home/leonardo/workspace/desafio_dev_backend_infra/CrudDNS/app/controllers/domains_controller.rb:79: syntax error, unexpected '}', expecting end
+      }
+      ^
+/home/leonardo/workspace/desafio_dev_backend_infra/CrudDNS/app/controllers/domains_controller.rb:122: syntax error, unexpected end, expecting end-of-input):
+  
+app/controllers/domains_controller.rb:78: syntax error, unexpected tSTRING_BEG, expecting '}'
+app/controllers/domains_controller.rb:78: syntax error, unexpected =>, expecting end
+app/controllers/domains_controller.rb:79: syntax error, unexpected '}', expecting end
+app/controllers/domains_controller.rb:122: syntax error, unexpected end, expecting end-of-input
+app/controllers/domains_controller.rb:78: syntax error, unexpected tSTRING_BEG, expecting '}'
+app/controllers/domains_controller.rb:78: syntax error, unexpected =>, expecting end
+app/controllers/domains_controller.rb:79: syntax error, unexpected '}', expecting end
+app/controllers/domains_controller.rb:122: syntax error, unexpected end, expecting end-of-input
+app/controllers/domains_controller.rb:78: syntax error, unexpected tSTRING_BEG, expecting '}'
+app/controllers/domains_controller.rb:78: syntax error, unexpected =>, expecting end
+app/controllers/domains_controller.rb:79: syntax error, unexpected '}', expecting end
+app/controllers/domains_controller.rb:122: syntax error, unexpected end, expecting end-of-input
+Started PATCH "/domains/2" for ::1 at 2019-10-19 20:56:54 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  
+SyntaxError (/home/leonardo/workspace/desafio_dev_backend_infra/CrudDNS/app/controllers/domains_controller.rb:78: syntax error, unexpected tSTRING_BEG, expecting '}'
+          "domains"=>""
+          ^
+/home/leonardo/workspace/desafio_dev_backend_infra/CrudDNS/app/controllers/domains_controller.rb:78: syntax error, unexpected =>, expecting end
+          "domains"=>""
+                   ^~
+/home/leonardo/workspace/desafio_dev_backend_infra/CrudDNS/app/controllers/domains_controller.rb:79: syntax error, unexpected '}', expecting end
+      }
+      ^
+/home/leonardo/workspace/desafio_dev_backend_infra/CrudDNS/app/controllers/domains_controller.rb:113: syntax error, unexpected end, expecting end-of-input):
+  
+app/controllers/domains_controller.rb:78: syntax error, unexpected tSTRING_BEG, expecting '}'
+app/controllers/domains_controller.rb:78: syntax error, unexpected =>, expecting end
+app/controllers/domains_controller.rb:79: syntax error, unexpected '}', expecting end
+app/controllers/domains_controller.rb:113: syntax error, unexpected end, expecting end-of-input
+app/controllers/domains_controller.rb:78: syntax error, unexpected tSTRING_BEG, expecting '}'
+app/controllers/domains_controller.rb:78: syntax error, unexpected =>, expecting end
+app/controllers/domains_controller.rb:79: syntax error, unexpected '}', expecting end
+app/controllers/domains_controller.rb:113: syntax error, unexpected end, expecting end-of-input
+app/controllers/domains_controller.rb:78: syntax error, unexpected tSTRING_BEG, expecting '}'
+app/controllers/domains_controller.rb:78: syntax error, unexpected =>, expecting end
+app/controllers/domains_controller.rb:79: syntax error, unexpected '}', expecting end
+app/controllers/domains_controller.rb:113: syntax error, unexpected end, expecting end-of-input
+Started PATCH "/domains/2" for ::1 at 2019-10-19 20:57:07 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by DomainsController#update as HTML
+  Parameters: {"authenticity_token"=>"KhDDuwUnJYGs/EtGvuPMf5/WzJV5YMEO6EeuwXwAsGGXFukKDIlw3DJFDgHZlkVZTj3QUwb+SmKNm4iuxq8hSg==", "domain"=>{"domains"=>"", "name"=>"teste", "type_domain"=>"SLAVE", "ttl"=>"1", "primary_name_server"=>"1", "contact"=>"1", "refresh"=>"1", "retry"=>"1", "expire"=>"1", "minimum"=>"1"}, "commit"=>"Update Domain", "id"=>"2"}
+  [1m[36mDomain Load (0.2ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/domains_controller.rb:106:in `set_domain'
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 0.9ms | Allocations: 11979)
+
+
+  
+ActiveRecord::AssociationTypeMismatch (Domain(#70161762470460) expected, got "" which is an instance of String(#47396125375960)):
+  
+app/controllers/domains_controller.rb:83:in `block in update'
+app/controllers/domains_controller.rb:65:in `update'
+Started PATCH "/domains/2" for ::1 at 2019-10-19 20:57:29 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by DomainsController#update as HTML
+  Parameters: {"authenticity_token"=>"KhDDuwUnJYGs/EtGvuPMf5/WzJV5YMEO6EeuwXwAsGGXFukKDIlw3DJFDgHZlkVZTj3QUwb+SmKNm4iuxq8hSg==", "domain"=>{"domains"=>"", "name"=>"teste", "type_domain"=>"SLAVE", "ttl"=>"1", "primary_name_server"=>"1", "contact"=>"1", "refresh"=>"1", "retry"=>"1", "expire"=>"1", "minimum"=>"1"}, "commit"=>"Update Domain", "id"=>"2"}
+  [1m[36mDomain Load (0.1ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/domains_controller.rb:106:in `set_domain'
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.8ms | Allocations: 11919)
+
+
+  
+ActiveRecord::AssociationTypeMismatch (Domain(#70161852619400) expected, got "" which is an instance of String(#47396125375960)):
+  
+app/controllers/domains_controller.rb:83:in `block in update'
+app/controllers/domains_controller.rb:65:in `update'
+Started PATCH "/domains/2" for ::1 at 2019-10-19 21:16:56 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by DomainsController#update as HTML
+  Parameters: {"authenticity_token"=>"KhDDuwUnJYGs/EtGvuPMf5/WzJV5YMEO6EeuwXwAsGGXFukKDIlw3DJFDgHZlkVZTj3QUwb+SmKNm4iuxq8hSg==", "domain"=>{"domains"=>"", "name"=>"teste", "type_domain"=>"SLAVE", "ttl"=>"1", "primary_name_server"=>"1", "contact"=>"1", "refresh"=>"1", "retry"=>"1", "expire"=>"1", "minimum"=>"1"}, "commit"=>"Update Domain", "id"=>"2"}
+  [1m[36mDomain Load (0.2ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/domains_controller.rb:106:in `set_domain'
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 0.2ms | Allocations: 12225)
+
+
+  
+ActiveRecord::AssociationTypeMismatch (Domain(#70161849937200) expected, got "" which is an instance of String(#47396125375960)):
+  
+app/controllers/domains_controller.rb:83:in `block in update'
+app/controllers/domains_controller.rb:65:in `update'
+Started PATCH "/domains/2" for ::1 at 2019-10-19 21:26:07 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by DomainsController#update as HTML
+  Parameters: {"authenticity_token"=>"KhDDuwUnJYGs/EtGvuPMf5/WzJV5YMEO6EeuwXwAsGGXFukKDIlw3DJFDgHZlkVZTj3QUwb+SmKNm4iuxq8hSg==", "domain"=>{"domains"=>"", "name"=>"teste", "type_domain"=>"SLAVE", "ttl"=>"1", "primary_name_server"=>"1", "contact"=>"1", "refresh"=>"1", "retry"=>"1", "expire"=>"1", "minimum"=>"1"}, "commit"=>"Update Domain", "id"=>"2"}
+  [1m[36mDomain Load (0.2ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/domains_controller.rb:112:in `set_domain'
+Redirected to http://localhost:3000/domains/2
+Completed 302 Found in 22ms (ActiveRecord: 0.2ms | Allocations: 12573)
+
+
+Started GET "/domains/2" for ::1 at 2019-10-19 21:26:07 -0300
+Processing by DomainsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mDomain Load (0.2ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/domains_controller.rb:112:in `set_domain'
+  Rendering domains/show.html.erb within layouts/application
+  [1m[36mDomain Load (0.3ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."domains_id" = ?[0m  [["domains_id", 2]]
+  ↳ app/views/domains/show.html.erb:85
+  [1m[36mRecord Load (0.2ms)[0m  [1m[34mSELECT "records".* FROM "records" WHERE "records"."domain_id" = ?[0m  [["domain_id", 2]]
+  ↳ app/views/domains/show.html.erb:124
+  Rendered domains/show.html.erb within layouts/application (Duration: 3.5ms | Allocations: 1390)
+Completed 200 OK in 23ms (Views: 16.9ms | ActiveRecord: 1.1ms | Allocations: 13954)
+
+
+Started GET "/domains" for ::1 at 2019-10-19 21:26:17 -0300
+Processing by DomainsController#index as HTML
+  Rendering domains/index.html.erb within layouts/application
+  [1m[36mDomain Load (0.3ms)[0m  [1m[34mSELECT "domains".* FROM "domains"[0m
+  ↳ app/views/domains/index.html.erb:22
+  Rendered domains/index.html.erb within layouts/application (Duration: 3.2ms | Allocations: 1109)
+Completed 200 OK in 19ms (Views: 17.7ms | ActiveRecord: 0.3ms | Allocations: 11722)
+
+
+Started GET "/domains/2/edit" for ::1 at 2019-10-19 21:26:21 -0300
+Processing by DomainsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mDomain Load (0.2ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/domains_controller.rb:112:in `set_domain'
+  Rendering domains/edit.html.erb within layouts/application
+  Rendered domains/_form.html.erb (Duration: 3.8ms | Allocations: 2274)
+  Rendered domains/edit.html.erb within layouts/application (Duration: 4.2ms | Allocations: 2394)
+Completed 200 OK in 16ms (Views: 14.3ms | ActiveRecord: 0.2ms | Allocations: 13543)
+
+
+Started PATCH "/domains/2" for ::1 at 2019-10-19 21:26:23 -0300
+Processing by DomainsController#update as HTML
+  Parameters: {"authenticity_token"=>"RPbxLs8HPXWmwdd6+8l+TR7wOr12vbcYVHyXgdMk2Er58NufxqloKDh4kj2cvPdrzxsmewkjPHQxoLHuaYtJYQ==", "domain"=>{"domains"=>"", "name"=>"teste", "type_domain"=>"SLAVE", "ttl"=>"1", "primary_name_server"=>"1", "contact"=>"1", "refresh"=>"1", "retry"=>"1", "expire"=>"1", "minimum"=>"1"}, "commit"=>"Update Domain", "id"=>"2"}
+  [1m[36mDomain Load (0.2ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/domains_controller.rb:112:in `set_domain'
+Redirected to http://localhost:3000/domains/2
+Completed 302 Found in 5ms (ActiveRecord: 0.2ms | Allocations: 2458)
+
+
+Started GET "/domains/2" for ::1 at 2019-10-19 21:26:23 -0300
+Processing by DomainsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mDomain Load (0.2ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/domains_controller.rb:112:in `set_domain'
+  Rendering domains/show.html.erb within layouts/application
+  [1m[36mDomain Load (0.1ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."domains_id" = ?[0m  [["domains_id", 2]]
+  ↳ app/views/domains/show.html.erb:85
+  [1m[36mRecord Load (0.4ms)[0m  [1m[34mSELECT "records".* FROM "records" WHERE "records"."domain_id" = ?[0m  [["domain_id", 2]]
+  ↳ app/views/domains/show.html.erb:124
+  Rendered domains/show.html.erb within layouts/application (Duration: 5.3ms | Allocations: 1322)
+Completed 200 OK in 59ms (Views: 55.2ms | ActiveRecord: 0.7ms | Allocations: 12581)
+
+
+Started GET "/domains/2/edit" for ::1 at 2019-10-19 21:26:35 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by DomainsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mDomain Load (0.3ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/domains_controller.rb:112:in `set_domain'
+  Rendering domains/edit.html.erb within layouts/application
+  Rendered domains/_form.html.erb (Duration: 3.9ms | Allocations: 2340)
+  Rendered domains/edit.html.erb within layouts/application (Duration: 4.3ms | Allocations: 2463)
+Completed 200 OK in 35ms (Views: 15.8ms | ActiveRecord: 1.1ms | Allocations: 23576)
+
+
+Started PATCH "/domains/2" for ::1 at 2019-10-19 21:26:38 -0300
+Processing by DomainsController#update as HTML
+  Parameters: {"authenticity_token"=>"QCpHbcUEbL9/P7xvr+XKaM5aVF/slOnPy/1i3hMjpPX9LG3czKo54uGG+SjIkENOH7FImZMKYqOuIUSxqYw13g==", "domain"=>{"domains"=>"", "name"=>"test", "type_domain"=>"SLAVE", "ttl"=>"1", "primary_name_server"=>"1", "contact"=>"1", "refresh"=>"1", "retry"=>"1", "expire"=>"1", "minimum"=>"1"}, "commit"=>"Update Domain", "id"=>"2"}
+  [1m[36mDomain Load (0.3ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/domains_controller.rb:112:in `set_domain'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/domains_controller.rb:89:in `block in update'
+  [1m[36mDomain Update (1.2ms)[0m  [1m[33mUPDATE "domains" SET "name" = ?, "updated_at" = ? WHERE "domains"."id" = ?[0m  [["name", "test"], ["updated_at", "2019-10-20 00:26:38.846912"], ["id", 2]]
+  ↳ app/controllers/domains_controller.rb:89:in `block in update'
+  [1m[35m (294.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/domains_controller.rb:89:in `block in update'
+Redirected to http://localhost:3000/domains/2
+Completed 302 Found in 315ms (ActiveRecord: 296.2ms | Allocations: 6351)
+
+
+Started GET "/domains/2" for ::1 at 2019-10-19 21:26:39 -0300
+Processing by DomainsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mDomain Load (0.3ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/domains_controller.rb:112:in `set_domain'
+  Rendering domains/show.html.erb within layouts/application
+  [1m[36mDomain Load (0.2ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."domains_id" = ?[0m  [["domains_id", 2]]
+  ↳ app/views/domains/show.html.erb:85
+  [1m[36mRecord Load (0.2ms)[0m  [1m[34mSELECT "records".* FROM "records" WHERE "records"."domain_id" = ?[0m  [["domain_id", 2]]
+  ↳ app/views/domains/show.html.erb:124
+  Rendered domains/show.html.erb within layouts/application (Duration: 3.1ms | Allocations: 1385)
+Completed 200 OK in 30ms (Views: 16.7ms | ActiveRecord: 1.2ms | Allocations: 15387)
+
+
+Started GET "/domains" for ::1 at 2019-10-19 21:26:43 -0300
+Processing by DomainsController#index as HTML
+  Rendering domains/index.html.erb within layouts/application
+  [1m[36mDomain Load (1.3ms)[0m  [1m[34mSELECT "domains".* FROM "domains"[0m
+  ↳ app/views/domains/index.html.erb:22
+  Rendered domains/index.html.erb within layouts/application (Duration: 5.4ms | Allocations: 1107)
+Completed 200 OK in 35ms (Views: 32.6ms | ActiveRecord: 1.3ms | Allocations: 11730)
+
+
+Started GET "/domains/2/edit" for ::1 at 2019-10-19 21:26:45 -0300
+Processing by DomainsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mDomain Load (0.3ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/domains_controller.rb:112:in `set_domain'
+  Rendering domains/edit.html.erb within layouts/application
+  Rendered domains/_form.html.erb (Duration: 6.9ms | Allocations: 2263)
+  Rendered domains/edit.html.erb within layouts/application (Duration: 7.8ms | Allocations: 2383)
+Completed 200 OK in 46ms (Views: 41.7ms | ActiveRecord: 0.3ms | Allocations: 13540)
+
+
+Started PATCH "/domains/2" for ::1 at 2019-10-19 21:26:49 -0300
+Processing by DomainsController#update as HTML
+  Parameters: {"authenticity_token"=>"GV+9Qi/ERl1FWfAoLZIZlCr6ZJq64l8jxjQKdlPq3QmkWZfzJmoTANvgtW9K55Cy+xF4XMV81E+j6CwZ6UVMIg==", "domain"=>{"domains"=>"", "name"=>"test", "type_domain"=>"HINT", "ttl"=>"1", "primary_name_server"=>"1", "contact"=>"1", "refresh"=>"1", "retry"=>"1", "expire"=>"1", "minimum"=>"1"}, "commit"=>"Update Domain", "id"=>"2"}
+  [1m[36mDomain Load (0.3ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/domains_controller.rb:112:in `set_domain'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/domains_controller.rb:89:in `block in update'
+  [1m[36mDomain Update (0.5ms)[0m  [1m[33mUPDATE "domains" SET "type_domain" = ?, "updated_at" = ? WHERE "domains"."id" = ?[0m  [["type_domain", "HINT"], ["updated_at", "2019-10-20 00:26:49.331467"], ["id", 2]]
+  ↳ app/controllers/domains_controller.rb:89:in `block in update'
+  [1m[35m (92.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/domains_controller.rb:89:in `block in update'
+Redirected to http://localhost:3000/domains/2
+Completed 302 Found in 110ms (ActiveRecord: 92.9ms | Allocations: 5500)
+
+
+Started GET "/domains/2" for ::1 at 2019-10-19 21:26:49 -0300
+Processing by DomainsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mDomain Load (0.1ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/domains_controller.rb:112:in `set_domain'
+  Rendering domains/show.html.erb within layouts/application
+  [1m[36mDomain Load (0.2ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."domains_id" = ?[0m  [["domains_id", 2]]
+  ↳ app/views/domains/show.html.erb:85
+  [1m[36mRecord Load (0.2ms)[0m  [1m[34mSELECT "records".* FROM "records" WHERE "records"."domain_id" = ?[0m  [["domain_id", 2]]
+  ↳ app/views/domains/show.html.erb:124
+  Rendered domains/show.html.erb within layouts/application (Duration: 5.4ms | Allocations: 1322)
+Completed 200 OK in 45ms (Views: 40.9ms | ActiveRecord: 0.5ms | Allocations: 12580)
+
+
+Started GET "/domains" for ::1 at 2019-10-19 21:27:13 -0300
+Processing by DomainsController#index as HTML
+  Rendering domains/index.html.erb within layouts/application
+  [1m[36mDomain Load (0.2ms)[0m  [1m[34mSELECT "domains".* FROM "domains"[0m
+  ↳ app/views/domains/index.html.erb:22
+  Rendered domains/index.html.erb within layouts/application (Duration: 2.2ms | Allocations: 1076)
+Completed 200 OK in 15ms (Views: 13.6ms | ActiveRecord: 0.2ms | Allocations: 11693)
+
+
+Started GET "/domains/1" for ::1 at 2019-10-19 21:27:17 -0300
+Processing by DomainsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDomain Load (0.2ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/domains_controller.rb:112:in `set_domain'
+  Rendering domains/show.html.erb within layouts/application
+  [1m[36mDomain Load (0.3ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."domains_id" = ?[0m  [["domains_id", 1]]
+  ↳ app/views/domains/show.html.erb:85
+  [1m[36mRecord Load (0.2ms)[0m  [1m[34mSELECT "records".* FROM "records" WHERE "records"."domain_id" = ?[0m  [["domain_id", 1]]
+  ↳ app/views/domains/show.html.erb:124
+  Rendered domains/show.html.erb within layouts/application (Duration: 5.9ms | Allocations: 1323)
+Completed 200 OK in 23ms (Views: 19.1ms | ActiveRecord: 0.6ms | Allocations: 12563)
+
+
+Started GET "/domains/new/1" for ::1 at 2019-10-19 21:27:18 -0300
+Processing by DomainsController#new as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDomain Load (0.1ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/domains_controller.rb:23:in `new'
+  Rendering domains/new.html.erb within layouts/application
+  Rendered domains/_form.html.erb (Duration: 5.4ms | Allocations: 2212)
+  Rendered domains/new.html.erb within layouts/application (Duration: 21.5ms | Allocations: 2426)
+Completed 200 OK in 41ms (Views: 38.9ms | ActiveRecord: 0.1ms | Allocations: 13725)
+
+
+Started POST "/domains" for ::1 at 2019-10-19 21:27:32 -0300
+Processing by DomainsController#create as HTML
+  Parameters: {"authenticity_token"=>"0s86zbegipjyslBHoSOPKvZ6fhiSVwNhH909rl1f45pvyRB8vg7fxWwLFQDGVgYMJ5Fi3u3JiA16ARvB5/BysQ==", "domain"=>{"domains"=>"1", "name"=>"b.a", "type_domain"=>"MASTER", "ttl"=>"1", "primary_name_server"=>"d", "contact"=>"e", "refresh"=>"f", "retry"=>"a", "expire"=>"h", "minimum"=>"i"}, "commit"=>"Create Domain"}
+  [1m[36mDomain Load (0.1ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/domains_controller.rb:38:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/domains_controller.rb:52:in `block in create'
+  [1m[36mDomain Create (0.5ms)[0m  [1m[32mINSERT INTO "domains" ("name", "type_domain", "ttl", "primary_name_server", "contact", "refresh", "retry", "expire", "minimum", "created_at", "updated_at", "domains_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "b.a"], ["type_domain", "MASTER"], ["ttl", "1"], ["primary_name_server", "d"], ["contact", "e"], ["refresh", "f"], ["retry", "a"], ["expire", "h"], ["minimum", "i"], ["created_at", "2019-10-20 00:27:32.037278"], ["updated_at", "2019-10-20 00:27:32.037278"], ["domains_id", 1]]
+  ↳ app/controllers/domains_controller.rb:52:in `block in create'
+  [1m[35m (224.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/domains_controller.rb:52:in `block in create'
+Redirected to http://localhost:3000/domains/4
+Completed 302 Found in 237ms (ActiveRecord: 225.5ms | Allocations: 5575)
+
+
+Started GET "/domains/4" for ::1 at 2019-10-19 21:27:32 -0300
+Processing by DomainsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mDomain Load (0.1ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/domains_controller.rb:112:in `set_domain'
+  Rendering domains/show.html.erb within layouts/application
+  [1m[36mDomain Load (0.3ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."domains_id" = ?[0m  [["domains_id", 4]]
+  ↳ app/views/domains/show.html.erb:85
+  [1m[36mRecord Load (0.1ms)[0m  [1m[34mSELECT "records".* FROM "records" WHERE "records"."domain_id" = ?[0m  [["domain_id", 4]]
+  ↳ app/views/domains/show.html.erb:124
+  Rendered domains/show.html.erb within layouts/application (Duration: 3.6ms | Allocations: 1325)
+Completed 200 OK in 16ms (Views: 13.6ms | ActiveRecord: 0.6ms | Allocations: 12583)
+
+
+Started GET "/domains" for ::1 at 2019-10-19 21:27:36 -0300
+Processing by DomainsController#index as HTML
+  Rendering domains/index.html.erb within layouts/application
+  [1m[36mDomain Load (0.2ms)[0m  [1m[34mSELECT "domains".* FROM "domains"[0m
+  ↳ app/views/domains/index.html.erb:22
+  Rendered domains/index.html.erb within layouts/application (Duration: 3.7ms | Allocations: 1228)
+Completed 200 OK in 20ms (Views: 18.4ms | ActiveRecord: 0.2ms | Allocations: 11850)
+
+
+Started GET "/domains/4/edit" for ::1 at 2019-10-19 21:27:40 -0300
+Processing by DomainsController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mDomain Load (0.3ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/domains_controller.rb:112:in `set_domain'
+  Rendering domains/edit.html.erb within layouts/application
+  Rendered domains/_form.html.erb (Duration: 5.8ms | Allocations: 2268)
+  Rendered domains/edit.html.erb within layouts/application (Duration: 6.2ms | Allocations: 2388)
+Completed 200 OK in 19ms (Views: 16.1ms | ActiveRecord: 0.3ms | Allocations: 13534)
+
+
+Started PATCH "/domains/4" for ::1 at 2019-10-19 21:27:52 -0300
+Processing by DomainsController#update as HTML
+  Parameters: {"authenticity_token"=>"ObM0cbkX6A0e/3Sg7UU+7Df7ZUFSXMIhQi7tSMYDq9yEtR7AsLm9UIBGMeeKMLfK5hB5hy3CSU0n8ssnfKw69w==", "domain"=>{"domains"=>"1", "name"=>"be.a", "type_domain"=>"MASTER", "ttl"=>"1", "primary_name_server"=>"d", "contact"=>"e", "refresh"=>"f", "retry"=>"a", "expire"=>"h", "minimum"=>"i"}, "commit"=>"Update Domain", "id"=>"4"}
+  [1m[36mDomain Load (0.2ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/domains_controller.rb:112:in `set_domain'
+  [1m[36mDomain Load (0.2ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/domains_controller.rb:85:in `block in update'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/domains_controller.rb:89:in `block in update'
+  [1m[36mDomain Update (0.4ms)[0m  [1m[33mUPDATE "domains" SET "name" = ?, "updated_at" = ? WHERE "domains"."id" = ?[0m  [["name", "be.a"], ["updated_at", "2019-10-20 00:27:52.768923"], ["id", 4]]
+  ↳ app/controllers/domains_controller.rb:89:in `block in update'
+  [1m[35m (184.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/domains_controller.rb:89:in `block in update'
+Redirected to http://localhost:3000/domains/4
+Completed 302 Found in 196ms (ActiveRecord: 185.1ms | Allocations: 6199)
+
+
+Started GET "/domains/4" for ::1 at 2019-10-19 21:27:52 -0300
+Processing by DomainsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mDomain Load (0.1ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/domains_controller.rb:112:in `set_domain'
+  Rendering domains/show.html.erb within layouts/application
+  [1m[36mDomain Load (0.1ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."domains_id" = ?[0m  [["domains_id", 4]]
+  ↳ app/views/domains/show.html.erb:85
+  [1m[36mRecord Load (0.1ms)[0m  [1m[34mSELECT "records".* FROM "records" WHERE "records"."domain_id" = ?[0m  [["domain_id", 4]]
+  ↳ app/views/domains/show.html.erb:124
+  Rendered domains/show.html.erb within layouts/application (Duration: 2.1ms | Allocations: 1322)
+Completed 200 OK in 16ms (Views: 13.5ms | ActiveRecord: 0.3ms | Allocations: 12561)
+
+
+Started GET "/domains" for ::1 at 2019-10-19 21:27:59 -0300
+Processing by DomainsController#index as HTML
+  Rendering domains/index.html.erb within layouts/application
+  [1m[36mDomain Load (0.2ms)[0m  [1m[34mSELECT "domains".* FROM "domains"[0m
+  ↳ app/views/domains/index.html.erb:22
+  Rendered domains/index.html.erb within layouts/application (Duration: 3.6ms | Allocations: 1226)
+Completed 200 OK in 17ms (Views: 15.8ms | ActiveRecord: 0.2ms | Allocations: 11836)
+
+
+Started GET "/domains/3" for ::1 at 2019-10-19 21:28:07 -0300
+Processing by DomainsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mDomain Load (0.1ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/domains_controller.rb:112:in `set_domain'
+  Rendering domains/show.html.erb within layouts/application
+  [1m[36mDomain Load (0.1ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."domains_id" = ?[0m  [["domains_id", 3]]
+  ↳ app/views/domains/show.html.erb:85
+  [1m[36mRecord Load (0.1ms)[0m  [1m[34mSELECT "records".* FROM "records" WHERE "records"."domain_id" = ?[0m  [["domain_id", 3]]
+  ↳ app/views/domains/show.html.erb:124
+  Rendered domains/show.html.erb within layouts/application (Duration: 2.0ms | Allocations: 1320)
+Completed 200 OK in 14ms (Views: 11.8ms | ActiveRecord: 0.3ms | Allocations: 12548)
+
+
+Started GET "/domains/1" for ::1 at 2019-10-19 21:28:14 -0300
+Processing by DomainsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDomain Load (0.2ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/domains_controller.rb:112:in `set_domain'
+  Rendering domains/show.html.erb within layouts/application
+  [1m[36mDomain Load (0.1ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."domains_id" = ?[0m  [["domains_id", 1]]
+  ↳ app/views/domains/show.html.erb:85
+  [1m[36mRecord Load (0.1ms)[0m  [1m[34mSELECT "records".* FROM "records" WHERE "records"."domain_id" = ?[0m  [["domain_id", 1]]
+  ↳ app/views/domains/show.html.erb:124
+  Rendered domains/show.html.erb within layouts/application (Duration: 2.3ms | Allocations: 1469)
+Completed 200 OK in 16ms (Views: 13.1ms | ActiveRecord: 0.4ms | Allocations: 12711)
+
+
+Started GET "/domains" for ::1 at 2019-10-19 21:28:18 -0300
+Processing by DomainsController#index as HTML
+  Rendering domains/index.html.erb within layouts/application
+  [1m[36mDomain Load (0.3ms)[0m  [1m[34mSELECT "domains".* FROM "domains"[0m
+  ↳ app/views/domains/index.html.erb:22
+  Rendered domains/index.html.erb within layouts/application (Duration: 4.3ms | Allocations: 1226)
+Completed 200 OK in 18ms (Views: 16.6ms | ActiveRecord: 0.3ms | Allocations: 11848)
+
+
+Started DELETE "/domains/4" for ::1 at 2019-10-19 21:28:24 -0300
+Processing by DomainsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"tv20eIL4jBd83THDzDAQvBMiv23o2RbF8eHhKoj8kREL+57Ji1bZSuJkdISrRZmawsmjq5dHnamUPcdFMlMAOg==", "id"=>"4"}
+  [1m[36mDomain Load (0.2ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/domains_controller.rb:112:in `set_domain'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/domains_controller.rb:102:in `destroy'
+  [1m[36mDomain Destroy (0.4ms)[0m  [1m[31mDELETE FROM "domains" WHERE "domains"."id" = ?[0m  [["id", 4]]
+  ↳ app/controllers/domains_controller.rb:102:in `destroy'
+  [1m[36mDomain Load (0.2ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/domains_controller.rb:102:in `destroy'
+  [1m[36mDomain Destroy (0.4ms)[0m  [1m[31mDELETE FROM "domains" WHERE "domains"."id" = ?[0m  [["id", 1]]
+  ↳ app/controllers/domains_controller.rb:102:in `destroy'
+  [1m[35m (151.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/domains_controller.rb:102:in `destroy'
+Redirected to http://localhost:3000/domains
+Completed 302 Found in 202ms (ActiveRecord: 152.3ms | Allocations: 7698)
+
+
+Started GET "/domains" for ::1 at 2019-10-19 21:28:24 -0300
+Processing by DomainsController#index as HTML
+  Rendering domains/index.html.erb within layouts/application
+  [1m[36mDomain Load (0.2ms)[0m  [1m[34mSELECT "domains".* FROM "domains"[0m
+  ↳ app/views/domains/index.html.erb:22
+  Rendered domains/index.html.erb within layouts/application (Duration: 3.4ms | Allocations: 929)
+Completed 200 OK in 23ms (Views: 21.3ms | ActiveRecord: 0.2ms | Allocations: 11552)
+
+
+Started GET "/domains" for ::1 at 2019-10-19 21:30:23 -0300
+Processing by DomainsController#index as HTML
+  Rendering domains/index.html.erb within layouts/application
+  [1m[36mDomain Load (0.1ms)[0m  [1m[34mSELECT "domains".* FROM "domains"[0m
+  ↳ app/views/domains/index.html.erb:22
+  Rendered domains/index.html.erb within layouts/application (Duration: 1.5ms | Allocations: 927)
+Completed 200 OK in 12ms (Views: 10.7ms | ActiveRecord: 0.1ms | Allocations: 11535)
+
+
+Started GET "/domains/new" for ::1 at 2019-10-19 21:30:28 -0300
+Processing by DomainsController#new as HTML
+  Rendering domains/new.html.erb within layouts/application
+  Rendered domains/_form.html.erb (Duration: 5.0ms | Allocations: 2180)
+  Rendered domains/new.html.erb within layouts/application (Duration: 5.4ms | Allocations: 2271)
+Completed 200 OK in 18ms (Views: 16.1ms | ActiveRecord: 0.0ms | Allocations: 12913)
+
+
+Started GET "/domains" for ::1 at 2019-10-19 21:30:32 -0300
+Processing by DomainsController#index as HTML
+  Rendering domains/index.html.erb within layouts/application
+  [1m[36mDomain Load (0.2ms)[0m  [1m[34mSELECT "domains".* FROM "domains"[0m
+  ↳ app/views/domains/index.html.erb:22
+  Rendered domains/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 927)
+Completed 200 OK in 46ms (Views: 45.1ms | ActiveRecord: 0.2ms | Allocations: 11536)
+
+
+Started GET "/domains" for ::1 at 2019-10-19 21:30:33 -0300
+Processing by DomainsController#index as HTML
+  Rendering domains/index.html.erb within layouts/application
+  [1m[36mDomain Load (0.3ms)[0m  [1m[34mSELECT "domains".* FROM "domains"[0m
+  ↳ app/views/domains/index.html.erb:22
+  Rendered domains/index.html.erb within layouts/application (Duration: 2.8ms | Allocations: 927)
+Completed 200 OK in 15ms (Views: 13.6ms | ActiveRecord: 0.3ms | Allocations: 11537)
+
+
+Started GET "/domains/new" for ::1 at 2019-10-19 21:31:32 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by DomainsController#new as HTML
+  Rendering domains/new.html.erb within layouts/application
+  Rendered domains/_form.html.erb (Duration: 4.0ms | Allocations: 2258)
+  Rendered domains/new.html.erb within layouts/application (Duration: 4.4ms | Allocations: 2350)
+Completed 200 OK in 36ms (Views: 14.7ms | ActiveRecord: 1.4ms | Allocations: 22760)
+
+
+Started POST "/domains" for ::1 at 2019-10-19 21:31:40 -0300
+Processing by DomainsController#create as HTML
+  Parameters: {"authenticity_token"=>"x9ZVuE0SSpM5013T4oBl1HvwmsGesqEab951zGZ7UpN60H8JRLwfzqdqGJSF9ezyqhuGB+EsKnYKAlOj3NTDuA==", "domain"=>{"domains"=>"", "name"=>"a", "type_domain"=>"MASTER", "ttl"=>"1", "primary_name_server"=>"d", "contact"=>"e", "refresh"=>"f", "retry"=>"a", "expire"=>"h", "minimum"=>"i"}, "commit"=>"Create Domain"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/domains_controller.rb:52:in `block in create'
+  [1m[36mDomain Create (0.7ms)[0m  [1m[32mINSERT INTO "domains" ("name", "type_domain", "ttl", "primary_name_server", "contact", "refresh", "retry", "expire", "minimum", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "a"], ["type_domain", "MASTER"], ["ttl", "1"], ["primary_name_server", "d"], ["contact", "e"], ["refresh", "f"], ["retry", "a"], ["expire", "h"], ["minimum", "i"], ["created_at", "2019-10-20 00:31:40.144292"], ["updated_at", "2019-10-20 00:31:40.144292"]]
+  ↳ app/controllers/domains_controller.rb:52:in `block in create'
+  [1m[35m (241.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/domains_controller.rb:52:in `block in create'
+Redirected to http://localhost:3000/domains/4
+Completed 302 Found in 255ms (ActiveRecord: 242.4ms | Allocations: 5128)
+
+
+Started GET "/domains/4" for ::1 at 2019-10-19 21:31:40 -0300
+Processing by DomainsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mDomain Load (0.3ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/domains_controller.rb:110:in `set_domain'
+  Rendering domains/show.html.erb within layouts/application
+  [1m[36mDomain Load (0.3ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."domains_id" = ?[0m  [["domains_id", 4]]
+  ↳ app/views/domains/show.html.erb:85
+  [1m[36mRecord Load (0.4ms)[0m  [1m[34mSELECT "records".* FROM "records" WHERE "records"."domain_id" = ?[0m  [["domain_id", 4]]
+  ↳ app/views/domains/show.html.erb:124
+  Rendered domains/show.html.erb within layouts/application (Duration: 4.7ms | Allocations: 1385)
+Completed 200 OK in 26ms (Views: 18.8ms | ActiveRecord: 1.4ms | Allocations: 13952)
+
+
+Started GET "/domains/new/4" for ::1 at 2019-10-19 21:31:43 -0300
+Processing by DomainsController#new as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mDomain Load (0.3ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/domains_controller.rb:23:in `new'
+  Rendering domains/new.html.erb within layouts/application
+  Rendered domains/_form.html.erb (Duration: 4.5ms | Allocations: 2184)
+  Rendered domains/new.html.erb within layouts/application (Duration: 4.9ms | Allocations: 2275)
+Completed 200 OK in 21ms (Views: 17.0ms | ActiveRecord: 0.3ms | Allocations: 13771)
+
+
+Started POST "/domains" for ::1 at 2019-10-19 21:31:52 -0300
+Processing by DomainsController#create as HTML
+  Parameters: {"authenticity_token"=>"pWeSh1Cjqv5i5/wybhrsFB2HnFlLbr4KcHz4RG8E1ncYYbg2WQ3/o/xeuXUJb2UyzGyAnzTwNWYVoN4r1atHXA==", "domain"=>{"domains"=>"4", "name"=>"be.a", "type_domain"=>"SLAVE", "ttl"=>"c", "primary_name_server"=>"d", "contact"=>"e", "refresh"=>"f", "retry"=>"a", "expire"=>"h", "minimum"=>"i"}, "commit"=>"Create Domain"}
+  [1m[36mDomain Load (0.1ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/domains_controller.rb:38:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/domains_controller.rb:52:in `block in create'
+  [1m[36mDomain Create (2.6ms)[0m  [1m[32mINSERT INTO "domains" ("name", "type_domain", "ttl", "primary_name_server", "contact", "refresh", "retry", "expire", "minimum", "created_at", "updated_at", "domains_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "be.a"], ["type_domain", "SLAVE"], ["ttl", "c"], ["primary_name_server", "d"], ["contact", "e"], ["refresh", "f"], ["retry", "a"], ["expire", "h"], ["minimum", "i"], ["created_at", "2019-10-20 00:31:52.313113"], ["updated_at", "2019-10-20 00:31:52.313113"], ["domains_id", 4]]
+  ↳ app/controllers/domains_controller.rb:52:in `block in create'
+  [1m[35m (430.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/domains_controller.rb:52:in `block in create'
+Redirected to http://localhost:3000/domains/5
+Completed 302 Found in 445ms (ActiveRecord: 433.3ms | Allocations: 5496)
+
+
+Started GET "/domains/5" for ::1 at 2019-10-19 21:31:52 -0300
+Processing by DomainsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mDomain Load (0.2ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/domains_controller.rb:110:in `set_domain'
+  Rendering domains/show.html.erb within layouts/application
+  [1m[36mDomain Load (0.1ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."domains_id" = ?[0m  [["domains_id", 5]]
+  ↳ app/views/domains/show.html.erb:85
+  [1m[36mRecord Load (0.1ms)[0m  [1m[34mSELECT "records".* FROM "records" WHERE "records"."domain_id" = ?[0m  [["domain_id", 5]]
+  ↳ app/views/domains/show.html.erb:124
+  Rendered domains/show.html.erb within layouts/application (Duration: 2.5ms | Allocations: 1322)
+Completed 200 OK in 17ms (Views: 13.6ms | ActiveRecord: 0.4ms | Allocations: 12575)
+
+
+Started GET "/domains" for ::1 at 2019-10-19 21:31:56 -0300
+Processing by DomainsController#index as HTML
+  Rendering domains/index.html.erb within layouts/application
+  [1m[36mDomain Load (0.4ms)[0m  [1m[34mSELECT "domains".* FROM "domains"[0m
+  ↳ app/views/domains/index.html.erb:22
+  Rendered domains/index.html.erb within layouts/application (Duration: 4.0ms | Allocations: 1259)
+Completed 200 OK in 20ms (Views: 18.6ms | ActiveRecord: 0.4ms | Allocations: 11875)
+
+
+Started GET "/domains/4" for ::1 at 2019-10-19 21:31:59 -0300
+Processing by DomainsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mDomain Load (0.2ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/domains_controller.rb:110:in `set_domain'
+  Rendering domains/show.html.erb within layouts/application
+  [1m[36mDomain Load (0.2ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."domains_id" = ?[0m  [["domains_id", 4]]
+  ↳ app/views/domains/show.html.erb:85
+  [1m[36mRecord Load (0.2ms)[0m  [1m[34mSELECT "records".* FROM "records" WHERE "records"."domain_id" = ?[0m  [["domain_id", 4]]
+  ↳ app/views/domains/show.html.erb:124
+  Rendered domains/show.html.erb within layouts/application (Duration: 3.6ms | Allocations: 1469)
+Completed 200 OK in 17ms (Views: 14.3ms | ActiveRecord: 0.5ms | Allocations: 12699)
+
+
+Started GET "/domains" for ::1 at 2019-10-19 21:32:04 -0300
+Processing by DomainsController#index as HTML
+  Rendering domains/index.html.erb within layouts/application
+  [1m[36mDomain Load (0.2ms)[0m  [1m[34mSELECT "domains".* FROM "domains"[0m
+  ↳ app/views/domains/index.html.erb:22
+  Rendered domains/index.html.erb within layouts/application (Duration: 3.9ms | Allocations: 1226)
+Completed 200 OK in 17ms (Views: 15.5ms | ActiveRecord: 0.2ms | Allocations: 11838)
+
+

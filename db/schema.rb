@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_17_021640) do
+ActiveRecord::Schema.define(version: 2019_10_19_184840) do
 
   create_table "domains", force: :cascade do |t|
     t.string "name"
@@ -40,6 +40,6 @@ ActiveRecord::Schema.define(version: 2019_10_17_021640) do
     t.index ["domain_id"], name: "index_records_on_domain_id"
   end
 
-  add_foreign_key "domains", "domains", column: "domains_id"
-  add_foreign_key "records", "domains"
+  add_foreign_key "domains", "domains", column: "domains_id", on_delete: :cascade
+  add_foreign_key "records", "domains", on_delete: :cascade
 end

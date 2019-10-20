@@ -63,8 +63,28 @@ class DomainsController < ApplicationController
   # PATCH/PUT /domains/1.json
   def update
     respond_to do |format|
-      if @domain.update(domain_params)
-        format.html { redirect_to @domain, notice: 'Domain inserido com sucesso!' }
+
+      new_values = {
+          "name"=>domain_params[:name], 
+          "type_domain"=>domain_params[:type_domain], 
+          "ttl"=>domain_params[:ttl], 
+          "primary_name_server"=>domain_params[:primary_name_server], 
+          "contact"=>domain_params[:contact], 
+          "refresh"=>domain_params[:refresh], 
+          "retry"=>domain_params[:retry], 
+          "expire"=>domain_params[:expire], 
+          "minimum"=>domain_params[:minimum],
+          "domains"=>nil
+      }
+
+
+      if domain_params[:domains] != ""
+        new_values[:domains] = Domain.find(domain_params[:domains].to_i)
+      end  
+
+
+      if @domain.update(new_values)
+        format.html { redirect_to @domain, notice: 'Domain atualizado com sucesso!' }
         format.json { render :show, status: :ok, location: @domain }
       else
         format.html { render :edit }
