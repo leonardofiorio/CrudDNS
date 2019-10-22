@@ -17832,3 +17832,1824 @@ Processing by RecordsController#show as HTML
 Completed 200 OK in 17ms (Views: 13.9ms | ActiveRecord: 0.2ms | Allocations: 11750)
 
 
+Started GET "/domains" for ::1 at 2019-10-22 15:54:03 -0300
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by DomainsController#index as HTML
+  Rendering domains/index.html.erb within layouts/application
+  [1m[36mDomain Load (0.3ms)[0m  [1m[34mSELECT "domains".* FROM "domains"[0m
+  ↳ app/views/domains/index.html.erb:22
+  Rendered domains/index.html.erb within layouts/application (Duration: 56.6ms | Allocations: 10536)
+Completed 200 OK in 3052ms (Views: 3032.0ms | ActiveRecord: 1.9ms | Allocations: 1306486)
+
+
+Started GET "/domains/2" for ::1 at 2019-10-22 15:54:27 -0300
+Processing by DomainsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mDomain Load (0.3ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/domains_controller.rb:109:in `set_domain'
+  Rendering domains/show.html.erb within layouts/application
+  [1m[36mDomain Load (8.1ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."domains_id" = ?[0m  [["domains_id", 2]]
+  ↳ app/views/domains/show.html.erb:85
+  [1m[36mRecord Load (0.3ms)[0m  [1m[34mSELECT "records".* FROM "records" WHERE "records"."domain_id" = ?[0m  [["domain_id", 2]]
+  ↳ app/views/domains/show.html.erb:128
+  Rendered domains/show.html.erb within layouts/application (Duration: 18.2ms | Allocations: 2296)
+Completed 200 OK in 102ms (Views: 55.1ms | ActiveRecord: 9.2ms | Allocations: 15424)
+
+
+Started GET "/records/new" for ::1 at 2019-10-22 15:54:37 -0300
+Processing by RecordsController#new as HTML
+  Rendering records/new.html.erb within layouts/application
+  [1m[36mDomain Load (0.4ms)[0m  [1m[34mSELECT "domains".* FROM "domains" ORDER BY "domains"."name" ASC[0m
+  ↳ app/views/records/_form.html.erb:16
+  Rendered records/_form.html.erb (Duration: 16.9ms | Allocations: 4961)
+  Rendered records/new.html.erb within layouts/application (Duration: 19.1ms | Allocations: 5344)
+Completed 200 OK in 91ms (Views: 42.9ms | ActiveRecord: 1.5ms | Allocations: 21896)
+
+
+Started GET "/records/new" for ::1 at 2019-10-22 15:54:45 -0300
+Processing by RecordsController#new as HTML
+  Rendering records/new.html.erb within layouts/application
+  [1m[36mDomain Load (0.2ms)[0m  [1m[34mSELECT "domains".* FROM "domains" ORDER BY "domains"."name" ASC[0m
+  ↳ app/views/records/_form.html.erb:16
+  Rendered records/_form.html.erb (Duration: 20.5ms | Allocations: 2440)
+  Rendered records/new.html.erb within layouts/application (Duration: 27.8ms | Allocations: 2546)
+Completed 200 OK in 77ms (Views: 74.5ms | ActiveRecord: 0.2ms | Allocations: 13287)
+
+
+Started GET "/records/new/2" for ::1 at 2019-10-22 15:54:50 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/records/new/2"):
+  
+actionpack (6.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+webpacker (4.0.7) lib/webpacker/dev_server_proxy.rb:29:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.0) lib/rails/engine.rb:526:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/records/new/2" for ::1 at 2019-10-22 15:59:57 -0300
+  
+SyntaxError (/home/leonardo/workspace/desafio_dev_backend_infra/CrudDNS/config/routes.rb:7: syntax error, unexpected tSTRING_BEG, expecting do or '{' or '('
+  get 'records/new/:id', to 'records#new'
+                            ^):
+  
+config/routes.rb:7: syntax error, unexpected tSTRING_BEG, expecting do or '{' or '('
+config/routes.rb:7: syntax error, unexpected tSTRING_BEG, expecting do or '{' or '('
+config/routes.rb:7: syntax error, unexpected tSTRING_BEG, expecting do or '{' or '('
+Started GET "/records/new/2" for ::1 at 2019-10-22 16:00:07 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by RecordsController#new as HTML
+  Parameters: {"id"=>"2"}
+  Rendering records/new.html.erb within layouts/application
+  [1m[36mDomain Load (0.4ms)[0m  [1m[34mSELECT "domains".* FROM "domains" ORDER BY "domains"."name" ASC[0m
+  ↳ app/views/records/_form.html.erb:16
+  Rendered records/_form.html.erb (Duration: 61.1ms | Allocations: 11814)
+  Rendered records/new.html.erb within layouts/application (Duration: 62.4ms | Allocations: 11920)
+Completed 200 OK in 140ms (Views: 92.3ms | ActiveRecord: 7.2ms | Allocations: 29483)
+
+
+Started GET "/records/new/2" for ::1 at 2019-10-22 16:02:07 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by RecordsController#new as HTML
+  Parameters: {"id"=>"2"}
+Completed 500 Internal Server Error in 50ms (ActiveRecord: 1.0ms | Allocations: 7526)
+
+
+  
+NoMethodError (undefined method `domain_id=' for nil:NilClass):
+  
+app/controllers/records_controller.rb:20:in `new'
+Started GET "/records/new/2" for ::1 at 2019-10-22 16:02:20 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by RecordsController#new as HTML
+  Parameters: {"id"=>"2"}
+Completed 500 Internal Server Error in 63ms (ActiveRecord: 1.7ms | Allocations: 7566)
+
+
+  
+NoMethodError (undefined method `domains_id=' for nil:NilClass):
+  
+app/controllers/records_controller.rb:20:in `new'
+Started GET "/records/new/2" for ::1 at 2019-10-22 16:03:13 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by RecordsController#new as HTML
+  Parameters: {"id"=>"2"}
+  Rendering records/new.html.erb within layouts/application
+  [1m[36mDomain Load (1.3ms)[0m  [1m[34mSELECT "domains".* FROM "domains" ORDER BY "domains"."name" ASC[0m
+  ↳ app/views/records/_form.html.erb:16
+  Rendered records/_form.html.erb (Duration: 76.4ms | Allocations: 11768)
+  Rendered records/new.html.erb within layouts/application (Duration: 77.0ms | Allocations: 11875)
+Completed 200 OK in 181ms (Views: 123.0ms | ActiveRecord: 9.6ms | Allocations: 29320)
+
+
+Started GET "/records/new/2" for ::1 at 2019-10-22 16:06:22 -0300
+Processing by RecordsController#new as HTML
+  Parameters: {"id"=>"2"}
+  Rendering records/new.html.erb within layouts/application
+  Rendered records/_form.html.erb (Duration: 1.6ms | Allocations: 1551)
+  Rendered records/new.html.erb within layouts/application (Duration: 2.9ms | Allocations: 1905)
+Completed 500 Internal Server Error in 52ms (ActiveRecord: 0.0ms | Allocations: 3124)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <%= form_with(model: record, local: true) do |form| %>
+  <% if record.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(record.errors.count, "erro") %> ocorreram durante o cadastro do record:</h2>
+
+      <ul>
+        <% record.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :domain_id %>
+    <%= if params[:id] %>
+      <%= <%= form.collection_select :domain_id, Domain.order(:name), :id, :name, include_blank: true, value: params[:id] %>
+    <%= else %>
+      <%= form.collection_select :domain_id, Domain.order(:name), :id, :name, include_blank: true %>
+    <% end %>
+  </div>  
+
+  <div class="field">
+    <%= form.label :type_record %>
+    <%= form.select(:type_record, [['A','A'], ['TXT','TXT'], ['CNAME','CNAME'],  ['PTR','PTR']], include_blank: true) %>
+  </div>  
+
+  <div class="field">
+    <%= form.label :host %>
+    <%= form.text_field :host %>
+  </div>
+
+  <div class="field">
+    <%= form.label :ttl %>
+    <%= form.text_field :ttl %>
+  </div>
+
+  <div class="field">
+    <%= form.label :content %>
+    <%= form.text_field :content,:input_html => {:on =>  "ValidateIPaddress();"} %>
+  </div>
+
+  <div class="field">
+    <%= form.label :priority %>
+    <%= form.number_field :priority %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
+
+):
+1:    <%= form_with(model: record, local: true) do |form| %>
+2:      <% if record.errors.any? %>
+3:        <div id="error_explanation">
+4:          <h2><%= pluralize(record.errors.count, "erro") %> ocorreram durante o cadastro do record:</h2>
+5:    
+6:          <ul>
+7:            <% record.errors.full_messages.each do |message| %>
+8:              <li><%= message %></li>
+9:            <% end %>
+10:          </ul>
+11:        </div>
+12:      <% end %>
+13:    
+14:      <div class="field">
+15:        <%= form.label :domain_id %>
+16:        <%= if params[:id] %>
+17:          <%= <%= form.collection_select :domain_id, Domain.order(:name), :id, :name, include_blank: true, value: params[:id] %>
+18:        <%= else %>
+19:          <%= form.collection_select :domain_id, Domain.order(:name), :id, :name, include_blank: true %>
+20:        <% end %>
+21:      </div>  
+22:    
+23:      <div class="field">
+24:        <%= form.label :type_record %>
+25:        <%= form.select(:type_record, [['A','A'], ['TXT','TXT'], ['CNAME','CNAME'],  ['PTR','PTR']], include_blank: true) %>
+26:      </div>  
+27:    
+28:      <div class="field">
+29:        <%= form.label :host %>
+30:        <%= form.text_field :host %>
+31:      </div>
+32:    
+33:      <div class="field">
+34:        <%= form.label :ttl %>
+35:        <%= form.text_field :ttl %>
+36:      </div>
+37:    
+38:      <div class="field">
+39:        <%= form.label :content %>
+40:        <%= form.text_field :content,:input_html => {:on =>  "ValidateIPaddress();"} %>
+41:      </div>
+42:    
+43:      <div class="field">
+44:        <%= form.label :priority %>
+45:        <%= form.number_field :priority %>
+46:      </div>
+47:    
+48:      <div class="actions">
+49:        <%= form.submit %>
+50:      </div>
+51:    <% end %>
+  
+app/views/records/_form.html.erb:16: syntax error, unexpected ')', expecting then or ';' or '\n'
+app/views/records/_form.html.erb:17: syntax error, unexpected '<'
+app/views/records/_form.html.erb:18: syntax error, unexpected else
+app/views/records/_form.html.erb:20: syntax error, unexpected end, expecting ')'
+app/views/records/_form.html.erb:51: syntax error, unexpected end, expecting ')'
+app/views/records/_form.html.erb:53: syntax error, unexpected end, expecting ')'
+app/views/records/_form.html.erb:16: syntax error, unexpected ')', expecting then or ';' or '\n'
+app/views/records/_form.html.erb:17: syntax error, unexpected '<'
+app/views/records/_form.html.erb:18: syntax error, unexpected else
+app/views/records/_form.html.erb:20: syntax error, unexpected end, expecting ')'
+app/views/records/_form.html.erb:51: syntax error, unexpected end, expecting ')'
+app/views/records/_form.html.erb:53: syntax error, unexpected end, expecting ')'
+app/views/records/_form.html.erb:16: syntax error, unexpected ')', expecting then or ';' or '\n'
+app/views/records/_form.html.erb:17: syntax error, unexpected '<'
+app/views/records/_form.html.erb:18: syntax error, unexpected else
+app/views/records/_form.html.erb:20: syntax error, unexpected end, expecting ')'
+app/views/records/_form.html.erb:51: syntax error, unexpected end, expecting ')'
+app/views/records/_form.html.erb:53: syntax error, unexpected end, expecting ')'
+app/views/records/_form.html.erb:16: syntax error, unexpected ')', expecting then or ';' or '\n'
+app/views/records/_form.html.erb:17: syntax error, unexpected '<'
+app/views/records/_form.html.erb:18: syntax error, unexpected else
+app/views/records/_form.html.erb:20: syntax error, unexpected end, expecting ')'
+app/views/records/_form.html.erb:51: syntax error, unexpected end, expecting ')'
+app/views/records/_form.html.erb:53: syntax error, unexpected end, expecting ')'
+app/views/records/_form.html.erb:16: syntax error, unexpected ')', expecting then or ';' or '\n'
+app/views/records/_form.html.erb:17: syntax error, unexpected '<'
+app/views/records/_form.html.erb:18: syntax error, unexpected else
+app/views/records/_form.html.erb:20: syntax error, unexpected end, expecting ')'
+app/views/records/_form.html.erb:51: syntax error, unexpected end, expecting ')'
+app/views/records/_form.html.erb:53: syntax error, unexpected end, expecting ')'
+app/views/records/_form.html.erb:16: syntax error, unexpected ')', expecting then or ';' or '\n'
+app/views/records/_form.html.erb:17: syntax error, unexpected '<'
+app/views/records/_form.html.erb:18: syntax error, unexpected else
+app/views/records/_form.html.erb:20: syntax error, unexpected end, expecting ')'
+app/views/records/_form.html.erb:51: syntax error, unexpected end, expecting ')'
+app/views/records/_form.html.erb:53: syntax error, unexpected end, expecting ')'
+app/views/records/new.html.erb:5
+Started PUT "/__web_console/repl_sessions/d514c6eeef07c6725568576ecb4dcefd" for ::1 at 2019-10-22 16:08:53 -0300
+Started PUT "/__web_console/repl_sessions/d514c6eeef07c6725568576ecb4dcefd" for ::1 at 2019-10-22 16:08:56 -0300
+Started PUT "/__web_console/repl_sessions/d514c6eeef07c6725568576ecb4dcefd" for ::1 at 2019-10-22 16:09:06 -0300
+Started PUT "/__web_console/repl_sessions/d514c6eeef07c6725568576ecb4dcefd" for ::1 at 2019-10-22 16:09:15 -0300
+Started PUT "/__web_console/repl_sessions/d514c6eeef07c6725568576ecb4dcefd" for ::1 at 2019-10-22 16:09:41 -0300
+Started PUT "/__web_console/repl_sessions/d514c6eeef07c6725568576ecb4dcefd" for ::1 at 2019-10-22 16:09:42 -0300
+Started PUT "/__web_console/repl_sessions/d514c6eeef07c6725568576ecb4dcefd" for ::1 at 2019-10-22 16:10:12 -0300
+Started GET "/records/new/2" for ::1 at 2019-10-22 16:10:35 -0300
+Processing by RecordsController#new as HTML
+  Parameters: {"id"=>"2"}
+  Rendering records/new.html.erb within layouts/application
+  Rendered records/_form.html.erb (Duration: 2.6ms | Allocations: 1566)
+  Rendered records/new.html.erb within layouts/application (Duration: 4.7ms | Allocations: 1920)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms | Allocations: 3139)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <%= form_with(model: record, local: true) do |form| %>
+  <% if record.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(record.errors.count, "erro") %> ocorreram durante o cadastro do record:</h2>
+
+      <ul>
+        <% record.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :domain_id %>
+    <%= puts params[:id] %>
+    <%= if !params[:id].nil? %>
+      <%= <%= form.collection_select :domain_id, Domain.order(:name), :id, :name, include_blank: true, value: params[:id] %>
+    <%= else %>
+      <%= form.collection_select :domain_id, Domain.order(:name), :id, :name, include_blank: true %>
+    <% end %>
+  </div>  
+
+  <div class="field">
+    <%= form.label :type_record %>
+    <%= form.select(:type_record, [['A','A'], ['TXT','TXT'], ['CNAME','CNAME'],  ['PTR','PTR']], include_blank: true) %>
+  </div>  
+
+  <div class="field">
+    <%= form.label :host %>
+    <%= form.text_field :host %>
+  </div>
+
+  <div class="field">
+    <%= form.label :ttl %>
+    <%= form.text_field :ttl %>
+  </div>
+
+  <div class="field">
+    <%= form.label :content %>
+    <%= form.text_field :content,:input_html => {:on =>  "ValidateIPaddress();"} %>
+  </div>
+
+  <div class="field">
+    <%= form.label :priority %>
+    <%= form.number_field :priority %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
+
+):
+1:    <%= form_with(model: record, local: true) do |form| %>
+2:      <% if record.errors.any? %>
+3:        <div id="error_explanation">
+4:          <h2><%= pluralize(record.errors.count, "erro") %> ocorreram durante o cadastro do record:</h2>
+5:    
+6:          <ul>
+7:            <% record.errors.full_messages.each do |message| %>
+8:              <li><%= message %></li>
+9:            <% end %>
+10:          </ul>
+11:        </div>
+12:      <% end %>
+13:    
+14:      <div class="field">
+15:        <%= form.label :domain_id %>
+16:        <%= puts params[:id] %>
+17:        <%= if !params[:id].nil? %>
+18:          <%= <%= form.collection_select :domain_id, Domain.order(:name), :id, :name, include_blank: true, value: params[:id] %>
+19:        <%= else %>
+20:          <%= form.collection_select :domain_id, Domain.order(:name), :id, :name, include_blank: true %>
+21:        <% end %>
+22:      </div>  
+23:    
+24:      <div class="field">
+25:        <%= form.label :type_record %>
+26:        <%= form.select(:type_record, [['A','A'], ['TXT','TXT'], ['CNAME','CNAME'],  ['PTR','PTR']], include_blank: true) %>
+27:      </div>  
+28:    
+29:      <div class="field">
+30:        <%= form.label :host %>
+31:        <%= form.text_field :host %>
+32:      </div>
+33:    
+34:      <div class="field">
+35:        <%= form.label :ttl %>
+36:        <%= form.text_field :ttl %>
+37:      </div>
+38:    
+39:      <div class="field">
+40:        <%= form.label :content %>
+41:        <%= form.text_field :content,:input_html => {:on =>  "ValidateIPaddress();"} %>
+42:      </div>
+43:    
+44:      <div class="field">
+45:        <%= form.label :priority %>
+46:        <%= form.number_field :priority %>
+47:      </div>
+48:    
+49:      <div class="actions">
+50:        <%= form.submit %>
+51:      </div>
+52:    <% end %>
+  
+app/views/records/_form.html.erb:17: syntax error, unexpected ')', expecting then or ';' or '\n'
+app/views/records/_form.html.erb:18: syntax error, unexpected '<'
+app/views/records/_form.html.erb:19: syntax error, unexpected else
+app/views/records/_form.html.erb:21: syntax error, unexpected end, expecting ')'
+app/views/records/_form.html.erb:52: syntax error, unexpected end, expecting ')'
+app/views/records/_form.html.erb:54: syntax error, unexpected end, expecting ')'
+app/views/records/_form.html.erb:17: syntax error, unexpected ')', expecting then or ';' or '\n'
+app/views/records/_form.html.erb:18: syntax error, unexpected '<'
+app/views/records/_form.html.erb:19: syntax error, unexpected else
+app/views/records/_form.html.erb:21: syntax error, unexpected end, expecting ')'
+app/views/records/_form.html.erb:52: syntax error, unexpected end, expecting ')'
+app/views/records/_form.html.erb:54: syntax error, unexpected end, expecting ')'
+app/views/records/_form.html.erb:17: syntax error, unexpected ')', expecting then or ';' or '\n'
+app/views/records/_form.html.erb:18: syntax error, unexpected '<'
+app/views/records/_form.html.erb:19: syntax error, unexpected else
+app/views/records/_form.html.erb:21: syntax error, unexpected end, expecting ')'
+app/views/records/_form.html.erb:52: syntax error, unexpected end, expecting ')'
+app/views/records/_form.html.erb:54: syntax error, unexpected end, expecting ')'
+app/views/records/_form.html.erb:17: syntax error, unexpected ')', expecting then or ';' or '\n'
+app/views/records/_form.html.erb:18: syntax error, unexpected '<'
+app/views/records/_form.html.erb:19: syntax error, unexpected else
+app/views/records/_form.html.erb:21: syntax error, unexpected end, expecting ')'
+app/views/records/_form.html.erb:52: syntax error, unexpected end, expecting ')'
+app/views/records/_form.html.erb:54: syntax error, unexpected end, expecting ')'
+app/views/records/_form.html.erb:17: syntax error, unexpected ')', expecting then or ';' or '\n'
+app/views/records/_form.html.erb:18: syntax error, unexpected '<'
+app/views/records/_form.html.erb:19: syntax error, unexpected else
+app/views/records/_form.html.erb:21: syntax error, unexpected end, expecting ')'
+app/views/records/_form.html.erb:52: syntax error, unexpected end, expecting ')'
+app/views/records/_form.html.erb:54: syntax error, unexpected end, expecting ')'
+app/views/records/_form.html.erb:17: syntax error, unexpected ')', expecting then or ';' or '\n'
+app/views/records/_form.html.erb:18: syntax error, unexpected '<'
+app/views/records/_form.html.erb:19: syntax error, unexpected else
+app/views/records/_form.html.erb:21: syntax error, unexpected end, expecting ')'
+app/views/records/_form.html.erb:52: syntax error, unexpected end, expecting ')'
+app/views/records/_form.html.erb:54: syntax error, unexpected end, expecting ')'
+app/views/records/new.html.erb:5
+Started GET "/records/new/2" for ::1 at 2019-10-22 16:11:02 -0300
+Processing by RecordsController#new as HTML
+  Parameters: {"id"=>"2"}
+  Rendering records/new.html.erb within layouts/application
+  Rendered records/_form.html.erb (Duration: 1.4ms | Allocations: 1566)
+  Rendered records/new.html.erb within layouts/application (Duration: 2.8ms | Allocations: 1920)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms | Allocations: 3139)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <%= form_with(model: record, local: true) do |form| %>
+  <% if record.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(record.errors.count, "erro") %> ocorreram durante o cadastro do record:</h2>
+
+      <ul>
+        <% record.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :domain_id %>
+    <%= puts params[:id] %>
+    <% if !(params[:id].nil?) %>
+      <%= <%= form.collection_select :domain_id, Domain.order(:name), :id, :name, include_blank: true, value: params[:id] %>
+    <%= else %>
+      <%= form.collection_select :domain_id, Domain.order(:name), :id, :name, include_blank: true %>
+    <% end %>
+  </div>  
+
+  <div class="field">
+    <%= form.label :type_record %>
+    <%= form.select(:type_record, [['A','A'], ['TXT','TXT'], ['CNAME','CNAME'],  ['PTR','PTR']], include_blank: true) %>
+  </div>  
+
+  <div class="field">
+    <%= form.label :host %>
+    <%= form.text_field :host %>
+  </div>
+
+  <div class="field">
+    <%= form.label :ttl %>
+    <%= form.text_field :ttl %>
+  </div>
+
+  <div class="field">
+    <%= form.label :content %>
+    <%= form.text_field :content,:input_html => {:on =>  "ValidateIPaddress();"} %>
+  </div>
+
+  <div class="field">
+    <%= form.label :priority %>
+    <%= form.number_field :priority %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
+
+):
+1:    <%= form_with(model: record, local: true) do |form| %>
+2:      <% if record.errors.any? %>
+3:        <div id="error_explanation">
+4:          <h2><%= pluralize(record.errors.count, "erro") %> ocorreram durante o cadastro do record:</h2>
+5:    
+6:          <ul>
+7:            <% record.errors.full_messages.each do |message| %>
+8:              <li><%= message %></li>
+9:            <% end %>
+10:          </ul>
+11:        </div>
+12:      <% end %>
+13:    
+14:      <div class="field">
+15:        <%= form.label :domain_id %>
+16:        <%= puts params[:id] %>
+17:        <% if !(params[:id].nil?) %>
+18:          <%= <%= form.collection_select :domain_id, Domain.order(:name), :id, :name, include_blank: true, value: params[:id] %>
+19:        <%= else %>
+20:          <%= form.collection_select :domain_id, Domain.order(:name), :id, :name, include_blank: true %>
+21:        <% end %>
+22:      </div>  
+23:    
+24:      <div class="field">
+25:        <%= form.label :type_record %>
+26:        <%= form.select(:type_record, [['A','A'], ['TXT','TXT'], ['CNAME','CNAME'],  ['PTR','PTR']], include_blank: true) %>
+27:      </div>  
+28:    
+29:      <div class="field">
+30:        <%= form.label :host %>
+31:        <%= form.text_field :host %>
+32:      </div>
+33:    
+34:      <div class="field">
+35:        <%= form.label :ttl %>
+36:        <%= form.text_field :ttl %>
+37:      </div>
+38:    
+39:      <div class="field">
+40:        <%= form.label :content %>
+41:        <%= form.text_field :content,:input_html => {:on =>  "ValidateIPaddress();"} %>
+42:      </div>
+43:    
+44:      <div class="field">
+45:        <%= form.label :priority %>
+46:        <%= form.number_field :priority %>
+47:      </div>
+48:    
+49:      <div class="actions">
+50:        <%= form.submit %>
+51:      </div>
+52:    <% end %>
+  
+app/views/records/_form.html.erb:18: syntax error, unexpected '<'
+app/views/records/_form.html.erb:19: syntax error, unexpected else
+app/views/records/_form.html.erb:21: syntax error, unexpected end, expecting ')'
+app/views/records/_form.html.erb:52: syntax error, unexpected end, expecting ')'
+app/views/records/_form.html.erb:54: syntax error, unexpected end, expecting ')'
+app/views/records/_form.html.erb:18: syntax error, unexpected '<'
+app/views/records/_form.html.erb:19: syntax error, unexpected else
+app/views/records/_form.html.erb:21: syntax error, unexpected end, expecting ')'
+app/views/records/_form.html.erb:52: syntax error, unexpected end, expecting ')'
+app/views/records/_form.html.erb:54: syntax error, unexpected end, expecting ')'
+app/views/records/_form.html.erb:18: syntax error, unexpected '<'
+app/views/records/_form.html.erb:19: syntax error, unexpected else
+app/views/records/_form.html.erb:21: syntax error, unexpected end, expecting ')'
+app/views/records/_form.html.erb:52: syntax error, unexpected end, expecting ')'
+app/views/records/_form.html.erb:54: syntax error, unexpected end, expecting ')'
+app/views/records/_form.html.erb:18: syntax error, unexpected '<'
+app/views/records/_form.html.erb:19: syntax error, unexpected else
+app/views/records/_form.html.erb:21: syntax error, unexpected end, expecting ')'
+app/views/records/_form.html.erb:52: syntax error, unexpected end, expecting ')'
+app/views/records/_form.html.erb:54: syntax error, unexpected end, expecting ')'
+app/views/records/_form.html.erb:18: syntax error, unexpected '<'
+app/views/records/_form.html.erb:19: syntax error, unexpected else
+app/views/records/_form.html.erb:21: syntax error, unexpected end, expecting ')'
+app/views/records/_form.html.erb:52: syntax error, unexpected end, expecting ')'
+app/views/records/_form.html.erb:54: syntax error, unexpected end, expecting ')'
+app/views/records/_form.html.erb:18: syntax error, unexpected '<'
+app/views/records/_form.html.erb:19: syntax error, unexpected else
+app/views/records/_form.html.erb:21: syntax error, unexpected end, expecting ')'
+app/views/records/_form.html.erb:52: syntax error, unexpected end, expecting ')'
+app/views/records/_form.html.erb:54: syntax error, unexpected end, expecting ')'
+app/views/records/new.html.erb:5
+Started GET "/records/new/2" for ::1 at 2019-10-22 16:11:13 -0300
+Processing by RecordsController#new as HTML
+  Parameters: {"id"=>"2"}
+  Rendering records/new.html.erb within layouts/application
+  Rendered records/_form.html.erb (Duration: 1.0ms | Allocations: 1565)
+  Rendered records/new.html.erb within layouts/application (Duration: 1.7ms | Allocations: 1919)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms | Allocations: 3138)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <%= form_with(model: record, local: true) do |form| %>
+  <% if record.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(record.errors.count, "erro") %> ocorreram durante o cadastro do record:</h2>
+
+      <ul>
+        <% record.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :domain_id %>
+    <%= puts params[:id] %>
+    <% if !(params[:id].nil?) %>
+      <%= form.collection_select :domain_id, Domain.order(:name), :id, :name, include_blank: true, value: params[:id] %>
+    <%= else %>
+      <%= form.collection_select :domain_id, Domain.order(:name), :id, :name, include_blank: true %>
+    <% end %>
+  </div>  
+
+  <div class="field">
+    <%= form.label :type_record %>
+    <%= form.select(:type_record, [['A','A'], ['TXT','TXT'], ['CNAME','CNAME'],  ['PTR','PTR']], include_blank: true) %>
+  </div>  
+
+  <div class="field">
+    <%= form.label :host %>
+    <%= form.text_field :host %>
+  </div>
+
+  <div class="field">
+    <%= form.label :ttl %>
+    <%= form.text_field :ttl %>
+  </div>
+
+  <div class="field">
+    <%= form.label :content %>
+    <%= form.text_field :content,:input_html => {:on =>  "ValidateIPaddress();"} %>
+  </div>
+
+  <div class="field">
+    <%= form.label :priority %>
+    <%= form.number_field :priority %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
+
+):
+1:    <%= form_with(model: record, local: true) do |form| %>
+2:      <% if record.errors.any? %>
+3:        <div id="error_explanation">
+4:          <h2><%= pluralize(record.errors.count, "erro") %> ocorreram durante o cadastro do record:</h2>
+5:    
+6:          <ul>
+7:            <% record.errors.full_messages.each do |message| %>
+8:              <li><%= message %></li>
+9:            <% end %>
+10:          </ul>
+11:        </div>
+12:      <% end %>
+13:    
+14:      <div class="field">
+15:        <%= form.label :domain_id %>
+16:        <%= puts params[:id] %>
+17:        <% if !(params[:id].nil?) %>
+18:          <%= form.collection_select :domain_id, Domain.order(:name), :id, :name, include_blank: true, value: params[:id] %>
+19:        <%= else %>
+20:          <%= form.collection_select :domain_id, Domain.order(:name), :id, :name, include_blank: true %>
+21:        <% end %>
+22:      </div>  
+23:    
+24:      <div class="field">
+25:        <%= form.label :type_record %>
+26:        <%= form.select(:type_record, [['A','A'], ['TXT','TXT'], ['CNAME','CNAME'],  ['PTR','PTR']], include_blank: true) %>
+27:      </div>  
+28:    
+29:      <div class="field">
+30:        <%= form.label :host %>
+31:        <%= form.text_field :host %>
+32:      </div>
+33:    
+34:      <div class="field">
+35:        <%= form.label :ttl %>
+36:        <%= form.text_field :ttl %>
+37:      </div>
+38:    
+39:      <div class="field">
+40:        <%= form.label :content %>
+41:        <%= form.text_field :content,:input_html => {:on =>  "ValidateIPaddress();"} %>
+42:      </div>
+43:    
+44:      <div class="field">
+45:        <%= form.label :priority %>
+46:        <%= form.number_field :priority %>
+47:      </div>
+48:    
+49:      <div class="actions">
+50:        <%= form.submit %>
+51:      </div>
+52:    <% end %>
+  
+app/views/records/_form.html.erb:19: syntax error, unexpected else
+app/views/records/_form.html.erb:21: syntax error, unexpected end, expecting ')'
+app/views/records/_form.html.erb:52: syntax error, unexpected end, expecting ')'
+app/views/records/_form.html.erb:54: syntax error, unexpected end, expecting ')'
+app/views/records/_form.html.erb:19: syntax error, unexpected else
+app/views/records/_form.html.erb:21: syntax error, unexpected end, expecting ')'
+app/views/records/_form.html.erb:52: syntax error, unexpected end, expecting ')'
+app/views/records/_form.html.erb:54: syntax error, unexpected end, expecting ')'
+app/views/records/_form.html.erb:19: syntax error, unexpected else
+app/views/records/_form.html.erb:21: syntax error, unexpected end, expecting ')'
+app/views/records/_form.html.erb:52: syntax error, unexpected end, expecting ')'
+app/views/records/_form.html.erb:54: syntax error, unexpected end, expecting ')'
+app/views/records/_form.html.erb:19: syntax error, unexpected else
+app/views/records/_form.html.erb:21: syntax error, unexpected end, expecting ')'
+app/views/records/_form.html.erb:52: syntax error, unexpected end, expecting ')'
+app/views/records/_form.html.erb:54: syntax error, unexpected end, expecting ')'
+app/views/records/_form.html.erb:19: syntax error, unexpected else
+app/views/records/_form.html.erb:21: syntax error, unexpected end, expecting ')'
+app/views/records/_form.html.erb:52: syntax error, unexpected end, expecting ')'
+app/views/records/_form.html.erb:54: syntax error, unexpected end, expecting ')'
+app/views/records/_form.html.erb:19: syntax error, unexpected else
+app/views/records/_form.html.erb:21: syntax error, unexpected end, expecting ')'
+app/views/records/_form.html.erb:52: syntax error, unexpected end, expecting ')'
+app/views/records/_form.html.erb:54: syntax error, unexpected end, expecting ')'
+app/views/records/new.html.erb:5
+Started GET "/records/new/2" for ::1 at 2019-10-22 16:11:21 -0300
+Processing by RecordsController#new as HTML
+  Parameters: {"id"=>"2"}
+  Rendering records/new.html.erb within layouts/application
+  [1m[36mDomain Load (0.2ms)[0m  [1m[34mSELECT "domains".* FROM "domains" ORDER BY "domains"."name" ASC[0m
+  ↳ app/views/records/_form.html.erb:18
+  Rendered records/_form.html.erb (Duration: 5.5ms | Allocations: 2994)
+  Rendered records/new.html.erb within layouts/application (Duration: 6.5ms | Allocations: 3367)
+Completed 200 OK in 128ms (Views: 126.6ms | ActiveRecord: 0.2ms | Allocations: 15014)
+
+
+Started GET "/records/new/2" for ::1 at 2019-10-22 16:13:04 -0300
+Processing by RecordsController#new as HTML
+  Parameters: {"id"=>"2"}
+  Rendering records/new.html.erb within layouts/application
+  [1m[36mDomain Load (0.2ms)[0m  [1m[34mSELECT "domains".* FROM "domains" ORDER BY "domains"."name" ASC[0m
+  ↳ app/views/records/_form.html.erb:18
+  Rendered records/_form.html.erb (Duration: 30.4ms | Allocations: 2996)
+  Rendered records/new.html.erb within layouts/application (Duration: 40.6ms | Allocations: 3368)
+Completed 200 OK in 97ms (Views: 89.7ms | ActiveRecord: 0.2ms | Allocations: 15016)
+
+
+Started GET "/records/new/2" for ::1 at 2019-10-22 16:13:17 -0300
+Processing by RecordsController#new as HTML
+  Parameters: {"id"=>"2"}
+  Rendering records/new.html.erb within layouts/application
+  [1m[36mDomain Load (5.3ms)[0m  [1m[34mSELECT "domains".* FROM "domains" ORDER BY "domains"."name" ASC[0m
+  ↳ app/views/records/_form.html.erb:18
+  Rendered records/_form.html.erb (Duration: 37.5ms | Allocations: 2985)
+  Rendered records/new.html.erb within layouts/application (Duration: 65.0ms | Allocations: 3357)
+Completed 200 OK in 128ms (Views: 120.9ms | ActiveRecord: 5.3ms | Allocations: 15002)
+
+
+Started GET "/records" for ::1 at 2019-10-22 16:13:57 -0300
+Processing by RecordsController#index as HTML
+  Rendering records/index.html.erb within layouts/application
+  [1m[36mRecord Load (5.5ms)[0m  [1m[34mSELECT "records".* FROM "records"[0m
+  ↳ app/views/records/index.html.erb:18
+  Rendered records/index.html.erb within layouts/application (Duration: 22.3ms | Allocations: 1890)
+Completed 200 OK in 69ms (Views: 62.3ms | ActiveRecord: 5.5ms | Allocations: 12770)
+
+
+Started GET "/records/new" for ::1 at 2019-10-22 16:14:00 -0300
+Processing by RecordsController#new as HTML
+  Rendering records/new.html.erb within layouts/application
+  [1m[36mDomain Load (0.2ms)[0m  [1m[34mSELECT "domains".* FROM "domains" ORDER BY "domains"."name" ASC[0m
+  ↳ app/views/records/_form.html.erb:20
+  Rendered records/_form.html.erb (Duration: 7.5ms | Allocations: 2454)
+  Rendered records/new.html.erb within layouts/application (Duration: 8.0ms | Allocations: 2558)
+Completed 200 OK in 34ms (Views: 32.8ms | ActiveRecord: 0.2ms | Allocations: 13282)
+
+
+Started GET "/records" for ::1 at 2019-10-22 16:14:04 -0300
+Processing by RecordsController#index as HTML
+  Rendering records/index.html.erb within layouts/application
+  [1m[36mRecord Load (0.2ms)[0m  [1m[34mSELECT "records".* FROM "records"[0m
+  ↳ app/views/records/index.html.erb:18
+  Rendered records/index.html.erb within layouts/application (Duration: 4.1ms | Allocations: 1554)
+Completed 200 OK in 29ms (Views: 27.7ms | ActiveRecord: 0.2ms | Allocations: 12263)
+
+
+Started GET "/records" for ::1 at 2019-10-22 16:14:13 -0300
+Processing by RecordsController#index as HTML
+  Rendering records/index.html.erb within layouts/application
+  [1m[36mRecord Load (0.2ms)[0m  [1m[34mSELECT "records".* FROM "records"[0m
+  ↳ app/views/records/index.html.erb:18
+  Rendered records/index.html.erb within layouts/application (Duration: 17.5ms | Allocations: 1554)
+Completed 200 OK in 89ms (Views: 87.3ms | ActiveRecord: 0.2ms | Allocations: 12271)
+
+
+Started GET "/domains" for ::1 at 2019-10-22 16:14:16 -0300
+Processing by DomainsController#index as HTML
+  Rendering domains/index.html.erb within layouts/application
+  [1m[36mDomain Load (0.3ms)[0m  [1m[34mSELECT "domains".* FROM "domains"[0m
+  ↳ app/views/domains/index.html.erb:22
+  Rendered domains/index.html.erb within layouts/application (Duration: 72.6ms | Allocations: 1699)
+Completed 200 OK in 138ms (Views: 135.0ms | ActiveRecord: 0.3ms | Allocations: 12999)
+
+
+Started GET "/domains/new" for ::1 at 2019-10-22 16:14:22 -0300
+Processing by DomainsController#new as HTML
+  Rendering domains/new.html.erb within layouts/application
+  Rendered domains/_form.html.erb (Duration: 139.0ms | Allocations: 3183)
+  Rendered domains/new.html.erb within layouts/application (Duration: 148.9ms | Allocations: 3528)
+Completed 200 OK in 179ms (Views: 177.0ms | ActiveRecord: 0.0ms | Allocations: 14409)
+
+
+Started POST "/domains" for ::1 at 2019-10-22 16:14:34 -0300
+Processing by DomainsController#create as HTML
+  Parameters: {"authenticity_token"=>"zXwMowmwQOGOUcsLJtyG96LBIXH/V5MTLU8GPguk7cNweiYSAB4VvBDojkxBqQ/Rcyo9t4DJGH9IkyBRsQt86A==", "domain"=>{"domains"=>"", "name"=>"w", "type_domain"=>"SLAVE", "ttl"=>"1", "primary_name_server"=>"d", "contact"=>"e", "refresh"=>"f", "retry"=>"a", "expire"=>"h", "minimum"=>"i"}, "commit"=>"Create Domain"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/domains_controller.rb:52:in `block in create'
+  [1m[36mDomain Create (60.6ms)[0m  [1m[32mINSERT INTO "domains" ("name", "type_domain", "ttl", "primary_name_server", "contact", "refresh", "retry", "expire", "minimum", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "w"], ["type_domain", "SLAVE"], ["ttl", "1"], ["primary_name_server", "d"], ["contact", "e"], ["refresh", "f"], ["retry", "a"], ["expire", "h"], ["minimum", "i"], ["created_at", "2019-10-22 19:14:34.150990"], ["updated_at", "2019-10-22 19:14:34.150990"]]
+  ↳ app/controllers/domains_controller.rb:52:in `block in create'
+  [1m[35m (181.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/domains_controller.rb:52:in `block in create'
+Redirected to http://localhost:3000/domains/6
+Completed 302 Found in 273ms (ActiveRecord: 242.4ms | Allocations: 4652)
+
+
+Started GET "/domains/6" for ::1 at 2019-10-22 16:14:34 -0300
+Processing by DomainsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mDomain Load (1.0ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/domains_controller.rb:109:in `set_domain'
+  Rendering domains/show.html.erb within layouts/application
+  [1m[36mDomain Load (0.3ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."domains_id" = ?[0m  [["domains_id", 6]]
+  ↳ app/views/domains/show.html.erb:85
+  [1m[36mRecord Load (0.3ms)[0m  [1m[34mSELECT "records".* FROM "records" WHERE "records"."domain_id" = ?[0m  [["domain_id", 6]]
+  ↳ app/views/domains/show.html.erb:128
+  Rendered domains/show.html.erb within layouts/application (Duration: 14.3ms | Allocations: 2254)
+Completed 200 OK in 56ms (Views: 46.9ms | ActiveRecord: 1.6ms | Allocations: 13887)
+
+
+Started GET "/domains" for ::1 at 2019-10-22 16:14:38 -0300
+Processing by DomainsController#index as HTML
+  Rendering domains/index.html.erb within layouts/application
+  [1m[36mDomain Load (0.2ms)[0m  [1m[34mSELECT "domains".* FROM "domains"[0m
+  ↳ app/views/domains/index.html.erb:22
+  Rendered domains/index.html.erb within layouts/application (Duration: 3.2ms | Allocations: 1377)
+Completed 200 OK in 19ms (Views: 18.0ms | ActiveRecord: 0.2ms | Allocations: 12091)
+
+
+Started GET "/domains/new" for ::1 at 2019-10-22 16:14:40 -0300
+Processing by DomainsController#new as HTML
+  Rendering domains/new.html.erb within layouts/application
+  Rendered domains/_form.html.erb (Duration: 4.9ms | Allocations: 2182)
+  Rendered domains/new.html.erb within layouts/application (Duration: 5.3ms | Allocations: 2273)
+Completed 200 OK in 26ms (Views: 25.3ms | ActiveRecord: 0.0ms | Allocations: 13014)
+
+
+Started POST "/domains" for ::1 at 2019-10-22 16:14:50 -0300
+Processing by DomainsController#create as HTML
+  Parameters: {"authenticity_token"=>"+Zm7utZlU9XYHPSJ+YcNPTajDc9mRP220T+kJ1UmPK9En5EL38sGiEalsc6e8oQb50gRCRnadtq044JI74mthA==", "domain"=>{"domains"=>"", "name"=>"dev.globo.com", "type_domain"=>"MASTER", "ttl"=>"a", "primary_name_server"=>"e", "contact"=>"e", "refresh"=>"f", "retry"=>"a", "expire"=>"h", "minimum"=>"i"}, "commit"=>"Create Domain"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/domains_controller.rb:52:in `block in create'
+  [1m[36mDomain Create (0.7ms)[0m  [1m[32mINSERT INTO "domains" ("name", "type_domain", "ttl", "primary_name_server", "contact", "refresh", "retry", "expire", "minimum", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "dev.globo.com"], ["type_domain", "MASTER"], ["ttl", "a"], ["primary_name_server", "e"], ["contact", "e"], ["refresh", "f"], ["retry", "a"], ["expire", "h"], ["minimum", "i"], ["created_at", "2019-10-22 19:14:50.838489"], ["updated_at", "2019-10-22 19:14:50.838489"]]
+  ↳ app/controllers/domains_controller.rb:52:in `block in create'
+  [1m[35m (155.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/domains_controller.rb:52:in `block in create'
+Redirected to http://localhost:3000/domains/7
+Completed 302 Found in 188ms (ActiveRecord: 156.7ms | Allocations: 4876)
+
+
+Started GET "/domains/7" for ::1 at 2019-10-22 16:14:51 -0300
+Processing by DomainsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mDomain Load (0.2ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/domains_controller.rb:109:in `set_domain'
+  Rendering domains/show.html.erb within layouts/application
+  [1m[36mDomain Load (0.2ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."domains_id" = ?[0m  [["domains_id", 7]]
+  ↳ app/views/domains/show.html.erb:85
+  [1m[36mRecord Load (0.7ms)[0m  [1m[34mSELECT "records".* FROM "records" WHERE "records"."domain_id" = ?[0m  [["domain_id", 7]]
+  ↳ app/views/domains/show.html.erb:128
+  Rendered domains/show.html.erb within layouts/application (Duration: 9.5ms | Allocations: 1343)
+Completed 200 OK in 60ms (Views: 50.7ms | ActiveRecord: 1.1ms | Allocations: 12687)
+
+
+Started GET "/domains" for ::1 at 2019-10-22 16:14:55 -0300
+Processing by DomainsController#index as HTML
+  Rendering domains/index.html.erb within layouts/application
+  [1m[36mDomain Load (0.2ms)[0m  [1m[34mSELECT "domains".* FROM "domains"[0m
+  ↳ app/views/domains/index.html.erb:22
+  Rendered domains/index.html.erb within layouts/application (Duration: 3.8ms | Allocations: 1524)
+Completed 200 OK in 22ms (Views: 21.1ms | ActiveRecord: 0.2ms | Allocations: 12237)
+
+
+Started GET "/domains/new" for ::1 at 2019-10-22 16:14:57 -0300
+Processing by DomainsController#new as HTML
+  Rendering domains/new.html.erb within layouts/application
+  Rendered domains/_form.html.erb (Duration: 9.5ms | Allocations: 2180)
+  Rendered domains/new.html.erb within layouts/application (Duration: 12.4ms | Allocations: 2271)
+Completed 200 OK in 71ms (Views: 69.5ms | ActiveRecord: 0.0ms | Allocations: 13004)
+
+
+Started POST "/domains" for ::1 at 2019-10-22 16:15:08 -0300
+Processing by DomainsController#create as HTML
+  Parameters: {"authenticity_token"=>"44GvYHBZQbExb74WcjQhuTjdVFRTFZsxD+KxQHUEWPFeh4XRefcU7K/W+1EVQaif6TZIkiyLEF1qPpcvz6vJ2g==", "domain"=>{"domains"=>"", "name"=>"a", "type_domain"=>"", "ttl"=>"1", "primary_name_server"=>"d", "contact"=>"e", "refresh"=>"a", "retry"=>"g", "expire"=>"h", "minimum"=>"a"}, "commit"=>"Create Domain"}
+  Rendering domains/new.html.erb within layouts/application
+  Rendered domains/_form.html.erb (Duration: 21.6ms | Allocations: 2403)
+  Rendered domains/new.html.erb within layouts/application (Duration: 22.4ms | Allocations: 2494)
+Completed 200 OK in 74ms (Views: 58.6ms | ActiveRecord: 0.0ms | Allocations: 15029)
+
+
+Started POST "/domains" for ::1 at 2019-10-22 16:15:11 -0300
+Processing by DomainsController#create as HTML
+  Parameters: {"authenticity_token"=>"cCvd9SOXhPQgY8SLeFFxCIhhVrsW5M0CZ9+Wck7r1hfNLfdEKjnRqb7agcwfJPguWYpKfWl6Rm4CA7Ad9ERHPA==", "domain"=>{"domains"=>"", "name"=>"a", "type_domain"=>"MASTER", "ttl"=>"1", "primary_name_server"=>"d", "contact"=>"e", "refresh"=>"a", "retry"=>"g", "expire"=>"h", "minimum"=>"a"}, "commit"=>"Create Domain"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/domains_controller.rb:52:in `block in create'
+  [1m[36mDomain Create (0.4ms)[0m  [1m[32mINSERT INTO "domains" ("name", "type_domain", "ttl", "primary_name_server", "contact", "refresh", "retry", "expire", "minimum", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "a"], ["type_domain", "MASTER"], ["ttl", "1"], ["primary_name_server", "d"], ["contact", "e"], ["refresh", "a"], ["retry", "g"], ["expire", "h"], ["minimum", "a"], ["created_at", "2019-10-22 19:15:11.583880"], ["updated_at", "2019-10-22 19:15:11.583880"]]
+  ↳ app/controllers/domains_controller.rb:52:in `block in create'
+  [1m[35m (92.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/domains_controller.rb:52:in `block in create'
+Redirected to http://localhost:3000/domains/8
+Completed 302 Found in 122ms (ActiveRecord: 93.1ms | Allocations: 4774)
+
+
+Started GET "/domains/8" for ::1 at 2019-10-22 16:15:11 -0300
+Processing by DomainsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mDomain Load (0.2ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/domains_controller.rb:109:in `set_domain'
+  Rendering domains/show.html.erb within layouts/application
+  [1m[36mDomain Load (0.2ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."domains_id" = ?[0m  [["domains_id", 8]]
+  ↳ app/views/domains/show.html.erb:85
+  [1m[36mRecord Load (0.3ms)[0m  [1m[34mSELECT "records".* FROM "records" WHERE "records"."domain_id" = ?[0m  [["domain_id", 8]]
+  ↳ app/views/domains/show.html.erb:128
+  Rendered domains/show.html.erb within layouts/application (Duration: 9.2ms | Allocations: 1343)
+Completed 200 OK in 78ms (Views: 74.1ms | ActiveRecord: 0.6ms | Allocations: 12693)
+
+
+Started GET "/domains" for ::1 at 2019-10-22 16:15:13 -0300
+Processing by DomainsController#index as HTML
+  Rendering domains/index.html.erb within layouts/application
+  [1m[36mDomain Load (5.0ms)[0m  [1m[34mSELECT "domains".* FROM "domains"[0m
+  ↳ app/views/domains/index.html.erb:22
+  Rendered domains/index.html.erb within layouts/application (Duration: 10.0ms | Allocations: 1673)
+Completed 200 OK in 89ms (Views: 83.0ms | ActiveRecord: 5.0ms | Allocations: 12386)
+
+
+Started GET "/domains/new" for ::1 at 2019-10-22 16:15:18 -0300
+Processing by DomainsController#new as HTML
+  Rendering domains/new.html.erb within layouts/application
+  Rendered domains/_form.html.erb (Duration: 13.9ms | Allocations: 2180)
+  Rendered domains/new.html.erb within layouts/application (Duration: 30.5ms | Allocations: 2271)
+Completed 200 OK in 72ms (Views: 70.7ms | ActiveRecord: 0.0ms | Allocations: 13016)
+
+
+Started POST "/domains" for ::1 at 2019-10-22 16:15:28 -0300
+Processing by DomainsController#create as HTML
+  Parameters: {"authenticity_token"=>"PZ7T0eGd3K6LhFiKqSYwgLXTbozaggqS8wTSZPc125KAmPlg6DOJ8xU9Hc3OU7mmZDhySqUcgf6W2PQLTZpKuQ==", "domain"=>{"domains"=>"", "name"=>"asd", "type_domain"=>"MASTER", "ttl"=>"1", "primary_name_server"=>"d", "contact"=>"e", "refresh"=>"f", "retry"=>"a", "expire"=>"h", "minimum"=>"i"}, "commit"=>"Create Domain"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/domains_controller.rb:52:in `block in create'
+  [1m[36mDomain Create (2.3ms)[0m  [1m[32mINSERT INTO "domains" ("name", "type_domain", "ttl", "primary_name_server", "contact", "refresh", "retry", "expire", "minimum", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "asd"], ["type_domain", "MASTER"], ["ttl", "1"], ["primary_name_server", "d"], ["contact", "e"], ["refresh", "f"], ["retry", "a"], ["expire", "h"], ["minimum", "i"], ["created_at", "2019-10-22 19:15:28.858125"], ["updated_at", "2019-10-22 19:15:28.858125"]]
+  ↳ app/controllers/domains_controller.rb:52:in `block in create'
+  [1m[35m (168.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/domains_controller.rb:52:in `block in create'
+Redirected to http://localhost:3000/domains/9
+Completed 302 Found in 203ms (ActiveRecord: 170.6ms | Allocations: 4858)
+
+
+Started GET "/domains/9" for ::1 at 2019-10-22 16:15:29 -0300
+Processing by DomainsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mDomain Load (0.2ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/domains_controller.rb:109:in `set_domain'
+  Rendering domains/show.html.erb within layouts/application
+  [1m[36mDomain Load (0.1ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."domains_id" = ?[0m  [["domains_id", 9]]
+  ↳ app/views/domains/show.html.erb:85
+  [1m[36mRecord Load (0.1ms)[0m  [1m[34mSELECT "records".* FROM "records" WHERE "records"."domain_id" = ?[0m  [["domain_id", 9]]
+  ↳ app/views/domains/show.html.erb:128
+  Rendered domains/show.html.erb within layouts/application (Duration: 2.6ms | Allocations: 1343)
+Completed 200 OK in 18ms (Views: 15.7ms | ActiveRecord: 0.4ms | Allocations: 12685)
+
+
+Started GET "/domains" for ::1 at 2019-10-22 16:15:30 -0300
+Processing by DomainsController#index as HTML
+  Rendering domains/index.html.erb within layouts/application
+  [1m[36mDomain Load (0.2ms)[0m  [1m[34mSELECT "domains".* FROM "domains"[0m
+  ↳ app/views/domains/index.html.erb:22
+  Rendered domains/index.html.erb within layouts/application (Duration: 4.0ms | Allocations: 1822)
+Completed 200 OK in 21ms (Views: 19.8ms | ActiveRecord: 0.2ms | Allocations: 12541)
+
+
+Started GET "/domains/new" for ::1 at 2019-10-22 16:15:38 -0300
+Processing by DomainsController#new as HTML
+  Rendering domains/new.html.erb within layouts/application
+  Rendered domains/_form.html.erb (Duration: 3.6ms | Allocations: 2180)
+  Rendered domains/new.html.erb within layouts/application (Duration: 3.9ms | Allocations: 2271)
+Completed 200 OK in 15ms (Views: 14.1ms | ActiveRecord: 0.0ms | Allocations: 13008)
+
+
+Started POST "/domains" for ::1 at 2019-10-22 16:15:50 -0300
+Processing by DomainsController#create as HTML
+  Parameters: {"authenticity_token"=>"BEkKGyrOoWS5ZZYFJwVpQVX82U4bUuWAcUXUjqRmozO5TyCqI2D0OSfc00JAcOBnhBfFiGTMbuwUmfLhHskyGA==", "domain"=>{"domains"=>"", "name"=>"asdf", "type_domain"=>"MASTER", "ttl"=>"1", "primary_name_server"=>"d", "contact"=>"a", "refresh"=>"f", "retry"=>"g", "expire"=>"h", "minimum"=>"i"}, "commit"=>"Create Domain"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/domains_controller.rb:52:in `block in create'
+  [1m[36mDomain Create (1.3ms)[0m  [1m[32mINSERT INTO "domains" ("name", "type_domain", "ttl", "primary_name_server", "contact", "refresh", "retry", "expire", "minimum", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "asdf"], ["type_domain", "MASTER"], ["ttl", "1"], ["primary_name_server", "d"], ["contact", "a"], ["refresh", "f"], ["retry", "g"], ["expire", "h"], ["minimum", "i"], ["created_at", "2019-10-22 19:15:50.679485"], ["updated_at", "2019-10-22 19:15:50.679485"]]
+  ↳ app/controllers/domains_controller.rb:52:in `block in create'
+  [1m[35m (223.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/domains_controller.rb:52:in `block in create'
+Redirected to http://localhost:3000/domains/10
+Completed 302 Found in 237ms (ActiveRecord: 224.7ms | Allocations: 4870)
+
+
+Started GET "/domains/10" for ::1 at 2019-10-22 16:15:50 -0300
+Processing by DomainsController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mDomain Load (0.1ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/domains_controller.rb:109:in `set_domain'
+  Rendering domains/show.html.erb within layouts/application
+  [1m[36mDomain Load (0.1ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."domains_id" = ?[0m  [["domains_id", 10]]
+  ↳ app/views/domains/show.html.erb:85
+  [1m[36mRecord Load (0.1ms)[0m  [1m[34mSELECT "records".* FROM "records" WHERE "records"."domain_id" = ?[0m  [["domain_id", 10]]
+  ↳ app/views/domains/show.html.erb:128
+  Rendered domains/show.html.erb within layouts/application (Duration: 2.9ms | Allocations: 1343)
+Completed 200 OK in 18ms (Views: 15.6ms | ActiveRecord: 0.4ms | Allocations: 12703)
+
+
+Started GET "/domains" for ::1 at 2019-10-22 16:15:52 -0300
+Processing by DomainsController#index as HTML
+  Rendering domains/index.html.erb within layouts/application
+  [1m[36mDomain Load (0.3ms)[0m  [1m[34mSELECT "domains".* FROM "domains"[0m
+  ↳ app/views/domains/index.html.erb:22
+  Rendered domains/index.html.erb within layouts/application (Duration: 6.4ms | Allocations: 1971)
+Completed 200 OK in 24ms (Views: 23.2ms | ActiveRecord: 0.3ms | Allocations: 12678)
+
+
+Started GET "/domains/new" for ::1 at 2019-10-22 16:15:56 -0300
+Processing by DomainsController#new as HTML
+  Rendering domains/new.html.erb within layouts/application
+  Rendered domains/_form.html.erb (Duration: 2.9ms | Allocations: 2180)
+  Rendered domains/new.html.erb within layouts/application (Duration: 3.2ms | Allocations: 2271)
+Completed 200 OK in 23ms (Views: 21.8ms | ActiveRecord: 0.0ms | Allocations: 13012)
+
+
+Started POST "/domains" for ::1 at 2019-10-22 16:16:05 -0300
+Processing by DomainsController#create as HTML
+  Parameters: {"authenticity_token"=>"9tXhV5Thg6cBgbncoprqoNvwqqycwDoZgaJiIG7dYL5L08vmnU/W+p84/JvF72OGChu2auNesXXkfkRP1HLxlQ==", "domain"=>{"domains"=>"", "name"=>"dev.globo.com", "type_domain"=>"MASTER", "ttl"=>"c", "primary_name_server"=>"a", "contact"=>"eu@eu", "refresh"=>"f", "retry"=>"a", "expire"=>"1", "minimum"=>"i"}, "commit"=>"Create Domain"}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/domains_controller.rb:52:in `block in create'
+  [1m[36mDomain Create (2.6ms)[0m  [1m[32mINSERT INTO "domains" ("name", "type_domain", "ttl", "primary_name_server", "contact", "refresh", "retry", "expire", "minimum", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "dev.globo.com"], ["type_domain", "MASTER"], ["ttl", "c"], ["primary_name_server", "a"], ["contact", "eu@eu"], ["refresh", "f"], ["retry", "a"], ["expire", "1"], ["minimum", "i"], ["created_at", "2019-10-22 19:16:05.143623"], ["updated_at", "2019-10-22 19:16:05.143623"]]
+  ↳ app/controllers/domains_controller.rb:52:in `block in create'
+  [1m[35m (257.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/domains_controller.rb:52:in `block in create'
+Redirected to http://localhost:3000/domains/11
+Completed 302 Found in 270ms (ActiveRecord: 259.9ms | Allocations: 4863)
+
+
+Started GET "/domains/11" for ::1 at 2019-10-22 16:16:05 -0300
+Processing by DomainsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mDomain Load (0.2ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/domains_controller.rb:109:in `set_domain'
+  Rendering domains/show.html.erb within layouts/application
+  [1m[36mDomain Load (0.2ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."domains_id" = ?[0m  [["domains_id", 11]]
+  ↳ app/views/domains/show.html.erb:85
+  [1m[36mRecord Load (0.2ms)[0m  [1m[34mSELECT "records".* FROM "records" WHERE "records"."domain_id" = ?[0m  [["domain_id", 11]]
+  ↳ app/views/domains/show.html.erb:128
+  Rendered domains/show.html.erb within layouts/application (Duration: 3.6ms | Allocations: 1343)
+Completed 200 OK in 17ms (Views: 14.6ms | ActiveRecord: 0.5ms | Allocations: 12689)
+
+
+Started GET "/domains" for ::1 at 2019-10-22 16:16:07 -0300
+Processing by DomainsController#index as HTML
+  Rendering domains/index.html.erb within layouts/application
+  [1m[36mDomain Load (0.2ms)[0m  [1m[34mSELECT "domains".* FROM "domains"[0m
+  ↳ app/views/domains/index.html.erb:22
+  Rendered domains/index.html.erb within layouts/application (Duration: 4.6ms | Allocations: 2120)
+Completed 200 OK in 20ms (Views: 17.9ms | ActiveRecord: 0.2ms | Allocations: 12829)
+
+
+Started GET "/domains/new" for ::1 at 2019-10-22 16:16:09 -0300
+Processing by DomainsController#new as HTML
+  Rendering domains/new.html.erb within layouts/application
+  Rendered domains/_form.html.erb (Duration: 6.6ms | Allocations: 2180)
+  Rendered domains/new.html.erb within layouts/application (Duration: 7.2ms | Allocations: 2271)
+Completed 200 OK in 24ms (Views: 22.7ms | ActiveRecord: 0.0ms | Allocations: 13010)
+
+
+Started POST "/domains" for ::1 at 2019-10-22 16:16:20 -0300
+Processing by DomainsController#create as HTML
+  Parameters: {"authenticity_token"=>"rDgC3p3rTUDjp/O6297Z+UCim9Q4a1qCwp6qTUYJQlsRPihvlEUYHX0etv28q1DfkUmHEkf10e6nQowi/KbTcA==", "domain"=>{"domains"=>"", "name"=>"dev.globo.comasdf", "type_domain"=>"", "ttl"=>"1", "primary_name_server"=>"d", "contact"=>"a", "refresh"=>"a", "retry"=>"a", "expire"=>"h", "minimum"=>"i"}, "commit"=>"Create Domain"}
+  Rendering domains/new.html.erb within layouts/application
+  Rendered domains/_form.html.erb (Duration: 3.9ms | Allocations: 2384)
+  Rendered domains/new.html.erb within layouts/application (Duration: 4.3ms | Allocations: 2475)
+Completed 200 OK in 25ms (Views: 21.3ms | ActiveRecord: 0.0ms | Allocations: 15002)
+
+
+Started POST "/domains" for ::1 at 2019-10-22 16:16:23 -0300
+Processing by DomainsController#create as HTML
+  Parameters: {"authenticity_token"=>"LQa+EDgMUbDNH5RKHFSFuOCvfeMx0xH1a2Ww2wrG83iQAJShMaIE7VOm0Q17IQyeMURhJU5NmpkOuZa0sGliUw==", "domain"=>{"domains"=>"", "name"=>"dev.globo.comasdf", "type_domain"=>"SLAVE", "ttl"=>"1", "primary_name_server"=>"d", "contact"=>"a", "refresh"=>"a", "retry"=>"a", "expire"=>"h", "minimum"=>"i"}, "commit"=>"Create Domain"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/domains_controller.rb:52:in `block in create'
+  [1m[36mDomain Create (1.2ms)[0m  [1m[32mINSERT INTO "domains" ("name", "type_domain", "ttl", "primary_name_server", "contact", "refresh", "retry", "expire", "minimum", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "dev.globo.comasdf"], ["type_domain", "SLAVE"], ["ttl", "1"], ["primary_name_server", "d"], ["contact", "a"], ["refresh", "a"], ["retry", "a"], ["expire", "h"], ["minimum", "i"], ["created_at", "2019-10-22 19:16:23.510429"], ["updated_at", "2019-10-22 19:16:23.510429"]]
+  ↳ app/controllers/domains_controller.rb:52:in `block in create'
+  [1m[35m (76.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/domains_controller.rb:52:in `block in create'
+Redirected to http://localhost:3000/domains/12
+Completed 302 Found in 96ms (ActiveRecord: 78.0ms | Allocations: 4768)
+
+
+Started GET "/domains/12" for ::1 at 2019-10-22 16:16:23 -0300
+Processing by DomainsController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mDomain Load (0.2ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/domains_controller.rb:109:in `set_domain'
+  Rendering domains/show.html.erb within layouts/application
+  [1m[36mDomain Load (0.2ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."domains_id" = ?[0m  [["domains_id", 12]]
+  ↳ app/views/domains/show.html.erb:85
+  [1m[36mRecord Load (0.3ms)[0m  [1m[34mSELECT "records".* FROM "records" WHERE "records"."domain_id" = ?[0m  [["domain_id", 12]]
+  ↳ app/views/domains/show.html.erb:128
+  Rendered domains/show.html.erb within layouts/application (Duration: 5.4ms | Allocations: 1343)
+Completed 200 OK in 38ms (Views: 33.6ms | ActiveRecord: 0.7ms | Allocations: 12692)
+
+
+Started GET "/domains" for ::1 at 2019-10-22 16:16:25 -0300
+Processing by DomainsController#index as HTML
+  Rendering domains/index.html.erb within layouts/application
+  [1m[36mDomain Load (0.6ms)[0m  [1m[34mSELECT "domains".* FROM "domains"[0m
+  ↳ app/views/domains/index.html.erb:22
+  Rendered domains/index.html.erb within layouts/application (Duration: 6.4ms | Allocations: 2269)
+Completed 200 OK in 21ms (Views: 19.3ms | ActiveRecord: 0.6ms | Allocations: 12974)
+
+
+Started DELETE "/domains/11" for ::1 at 2019-10-22 16:16:37 -0300
+Processing by DomainsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"up25G2xv0D/5EU1NZRrWPHFTO2HM4wGEwJzJPzrW94QHm5OqZcGFYmeoCAoCb18aoLgnp7N9iuilQO9QgHlmrw==", "id"=>"11"}
+  [1m[36mDomain Load (0.2ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/domains_controller.rb:109:in `set_domain'
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/domains_controller.rb:99:in `destroy'
+  [1m[36mDomain Destroy (2.4ms)[0m  [1m[31mDELETE FROM "domains" WHERE "domains"."id" = ?[0m  [["id", 11]]
+  ↳ app/controllers/domains_controller.rb:99:in `destroy'
+  [1m[35m (105.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/domains_controller.rb:99:in `destroy'
+Redirected to http://localhost:3000/domains
+Completed 302 Found in 197ms (ActiveRecord: 108.6ms | Allocations: 6601)
+
+
+Started GET "/domains" for ::1 at 2019-10-22 16:16:38 -0300
+Processing by DomainsController#index as HTML
+  Rendering domains/index.html.erb within layouts/application
+  [1m[36mDomain Load (0.2ms)[0m  [1m[34mSELECT "domains".* FROM "domains"[0m
+  ↳ app/views/domains/index.html.erb:22
+  Rendered domains/index.html.erb within layouts/application (Duration: 3.8ms | Allocations: 2122)
+Completed 200 OK in 23ms (Views: 21.7ms | ActiveRecord: 0.2ms | Allocations: 12846)
+
+
+Started GET "/domains/new" for ::1 at 2019-10-22 16:19:54 -0300
+Processing by DomainsController#new as HTML
+  Rendering domains/new.html.erb within layouts/application
+  Rendered domains/_form.html.erb (Duration: 9.4ms | Allocations: 2180)
+  Rendered domains/new.html.erb within layouts/application (Duration: 9.9ms | Allocations: 2271)
+Completed 200 OK in 37ms (Views: 35.6ms | ActiveRecord: 0.0ms | Allocations: 13008)
+
+
+Started GET "/domains/new" for ::1 at 2019-10-22 16:23:30 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by DomainsController#new as HTML
+Completed 500 Internal Server Error in 69ms (ActiveRecord: 0.0ms | Allocations: 1253)
+
+
+  
+SyntaxError (/home/leonardo/workspace/desafio_dev_backend_infra/CrudDNS/app/models/domain.rb:13: syntax error, unexpected tSTRING_BEG, expecting =>
+...D', 'STUB', 'HINT'], :message "incorreto!"
+...                              ^):
+  
+app/models/domain.rb:13: syntax error, unexpected tSTRING_BEG, expecting =>
+app/models/domain.rb:13: syntax error, unexpected tSTRING_BEG, expecting =>
+app/models/domain.rb:13: syntax error, unexpected tSTRING_BEG, expecting =>
+app/controllers/domains_controller.rb:20:in `new'
+Started GET "/domains/new" for ::1 at 2019-10-22 16:24:07 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by DomainsController#new as HTML
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 1251)
+
+
+  
+SyntaxError (/home/leonardo/workspace/desafio_dev_backend_infra/CrudDNS/app/models/domain.rb:13: syntax error, unexpected tSTRING_BEG, expecting =>
+...D', 'STUB', 'HINT'], :message "incorreto!"
+...                              ^):
+  
+app/models/domain.rb:13: syntax error, unexpected tSTRING_BEG, expecting =>
+app/models/domain.rb:13: syntax error, unexpected tSTRING_BEG, expecting =>
+app/models/domain.rb:13: syntax error, unexpected tSTRING_BEG, expecting =>
+app/controllers/domains_controller.rb:20:in `new'
+Started GET "/domains/new" for ::1 at 2019-10-22 16:29:36 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by DomainsController#new as HTML
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 1269)
+
+
+  
+SyntaxError (/home/leonardo/workspace/desafio_dev_backend_infra/CrudDNS/app/models/domain.rb:15: syntax error, unexpected tSTRING_BEG, expecting =>
+...> TYPES_DOMAIN.keys, :message "incorreto!"
+...                              ^):
+  
+app/models/domain.rb:15: syntax error, unexpected tSTRING_BEG, expecting =>
+app/models/domain.rb:15: syntax error, unexpected tSTRING_BEG, expecting =>
+app/models/domain.rb:15: syntax error, unexpected tSTRING_BEG, expecting =>
+app/controllers/domains_controller.rb:20:in `new'
+Started GET "/domains/new" for ::1 at 2019-10-22 16:29:38 -0300
+Processing by DomainsController#new as HTML
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 1233)
+
+
+  
+SyntaxError (/home/leonardo/workspace/desafio_dev_backend_infra/CrudDNS/app/models/domain.rb:15: syntax error, unexpected tSTRING_BEG, expecting =>
+...> TYPES_DOMAIN.keys, :message "incorreto!"
+...                              ^):
+  
+app/models/domain.rb:15: syntax error, unexpected tSTRING_BEG, expecting =>
+app/models/domain.rb:15: syntax error, unexpected tSTRING_BEG, expecting =>
+app/models/domain.rb:15: syntax error, unexpected tSTRING_BEG, expecting =>
+app/controllers/domains_controller.rb:20:in `new'
+Started GET "/domains/new" for ::1 at 2019-10-22 16:31:07 -0300
+Processing by DomainsController#new as HTML
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 0.0ms | Allocations: 2823)
+
+
+  
+SyntaxError (/home/leonardo/workspace/desafio_dev_backend_infra/CrudDNS/app/models/domain.rb:15: syntax error, unexpected tSTRING_BEG, expecting =>
+...> TYPES_DOMAIN.keys, :message "incorreto!"
+...                              ^):
+  
+app/models/domain.rb:15: syntax error, unexpected tSTRING_BEG, expecting =>
+app/models/domain.rb:15: syntax error, unexpected tSTRING_BEG, expecting =>
+app/models/domain.rb:15: syntax error, unexpected tSTRING_BEG, expecting =>
+app/controllers/domains_controller.rb:20:in `new'
+Started GET "/domains/new" for ::1 at 2019-10-22 16:32:15 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by DomainsController#new as HTML
+  Rendering domains/new.html.erb within layouts/application
+  Rendered domains/_form.html.erb (Duration: 3.6ms | Allocations: 2258)
+  Rendered domains/new.html.erb within layouts/application (Duration: 4.3ms | Allocations: 2430)
+Completed 200 OK in 74ms (Views: 17.1ms | ActiveRecord: 1.5ms | Allocations: 23092)
+
+
+Started GET "/domains" for ::1 at 2019-10-22 16:34:18 -0300
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by DomainsController#index as HTML
+  Rendering domains/index.html.erb within layouts/application
+  [1m[36mDomain Load (9.7ms)[0m  [1m[34mSELECT "domains".* FROM "domains"[0m
+  ↳ app/views/domains/index.html.erb:22
+  Rendered domains/index.html.erb within layouts/application (Duration: 62.0ms | Allocations: 10398)
+Completed 200 OK in 123ms (Views: 105.1ms | ActiveRecord: 11.2ms | Allocations: 22772)
+
+
+Started GET "/domains/4" for ::1 at 2019-10-22 16:34:22 -0300
+Processing by DomainsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mDomain Load (0.2ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/domains_controller.rb:109:in `set_domain'
+  Rendering domains/show.html.erb within layouts/application
+  [1m[36mDomain Load (0.3ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."domains_id" = ?[0m  [["domains_id", 4]]
+  ↳ app/views/domains/show.html.erb:85
+  [1m[36mRecord Load (0.4ms)[0m  [1m[34mSELECT "records".* FROM "records" WHERE "records"."domain_id" = ?[0m  [["domain_id", 4]]
+  ↳ app/views/domains/show.html.erb:128
+  Rendered domains/show.html.erb within layouts/application (Duration: 20.1ms | Allocations: 7028)
+Completed 200 OK in 75ms (Views: 36.0ms | ActiveRecord: 1.8ms | Allocations: 19644)
+
+
+Started GET "/" for ::1 at 2019-10-22 16:46:27 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by DomainsController#index as HTML
+  Rendering domains/index.html.erb within layouts/application
+  [1m[36mDomain Load (0.3ms)[0m  [1m[34mSELECT "domains".* FROM "domains"[0m
+  ↳ app/views/domains/index.html.erb:22
+  Rendered domains/index.html.erb within layouts/application (Duration: 7.5ms | Allocations: 2154)
+Completed 200 OK in 1036ms (Views: 966.4ms | ActiveRecord: 0.3ms | Allocations: 12862)
+
+
+Started GET "/" for ::1 at 2019-10-22 16:47:35 -0300
+Processing by DomainsController#index as HTML
+  Rendering domains/index.html.erb within layouts/application
+  [1m[36mDomain Load (0.3ms)[0m  [1m[34mSELECT "domains".* FROM "domains"[0m
+  ↳ app/views/domains/index.html.erb:28
+  Rendered domains/index.html.erb within layouts/application (Duration: 51.0ms | Allocations: 2508)
+Completed 200 OK in 329ms (Views: 327.4ms | ActiveRecord: 0.3ms | Allocations: 14150)
+
+
+Started GET "/" for ::1 at 2019-10-22 16:47:51 -0300
+Processing by DomainsController#index as HTML
+  Rendering domains/index.html.erb within layouts/application
+  [1m[36mDomain Load (0.4ms)[0m  [1m[34mSELECT "domains".* FROM "domains"[0m
+  ↳ app/views/domains/index.html.erb:28
+  Rendered domains/index.html.erb within layouts/application (Duration: 5.7ms | Allocations: 2513)
+Completed 200 OK in 28ms (Views: 26.7ms | ActiveRecord: 0.4ms | Allocations: 14152)
+
+
+Started GET "/" for ::1 at 2019-10-22 16:48:18 -0300
+Processing by DomainsController#index as HTML
+  Rendering domains/index.html.erb within layouts/application
+  [1m[36mDomain Load (0.2ms)[0m  [1m[34mSELECT "domains".* FROM "domains"[0m
+  ↳ app/views/domains/index.html.erb:32
+  Rendered domains/index.html.erb within layouts/application (Duration: 11.0ms | Allocations: 2516)
+Completed 200 OK in 39ms (Views: 37.3ms | ActiveRecord: 0.2ms | Allocations: 14129)
+
+
+Started GET "/" for ::1 at 2019-10-22 16:48:28 -0300
+Processing by DomainsController#index as HTML
+  Rendering domains/index.html.erb within layouts/application
+  [1m[36mDomain Load (0.2ms)[0m  [1m[34mSELECT "domains".* FROM "domains"[0m
+  ↳ app/views/domains/index.html.erb:34
+  Rendered domains/index.html.erb within layouts/application (Duration: 4.2ms | Allocations: 2516)
+Completed 200 OK in 25ms (Views: 23.3ms | ActiveRecord: 0.2ms | Allocations: 14149)
+
+
+Started GET "/" for ::1 at 2019-10-22 16:48:39 -0300
+Processing by DomainsController#index as HTML
+  Rendering domains/index.html.erb within layouts/application
+  [1m[36mDomain Load (0.2ms)[0m  [1m[34mSELECT "domains".* FROM "domains"[0m
+  ↳ app/views/domains/index.html.erb:34
+  Rendered domains/index.html.erb within layouts/application (Duration: 6.2ms | Allocations: 2515)
+Completed 200 OK in 28ms (Views: 26.5ms | ActiveRecord: 0.2ms | Allocations: 14148)
+
+
+Started GET "/domains/new" for ::1 at 2019-10-22 16:48:47 -0300
+Processing by DomainsController#new as HTML
+  Rendering domains/new.html.erb within layouts/application
+  Rendered domains/_form.html.erb (Duration: 6.3ms | Allocations: 2822)
+  Rendered domains/new.html.erb within layouts/application (Duration: 26.2ms | Allocations: 3167)
+Completed 200 OK in 46ms (Views: 43.8ms | ActiveRecord: 0.0ms | Allocations: 14037)
+
+
+Started GET "/domains/new" for ::1 at 2019-10-22 19:08:58 -0300
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by DomainsController#new as HTML
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms | Allocations: 1340)
+
+
+  
+SyntaxError (/home/leonardo/workspace/desafio_dev_backend_infra/CrudDNS/app/models/domain.rb:13: syntax error, unexpected tSTRING_BEG, expecting =>
+...['MASTER', 'SLAVE'], :message "incorreto!"
+...                              ^
+/home/leonardo/workspace/desafio_dev_backend_infra/CrudDNS/app/models/domain.rb:25: syntax error, unexpected end-of-input, expecting end):
+  
+app/models/domain.rb:13: syntax error, unexpected tSTRING_BEG, expecting =>
+app/models/domain.rb:25: syntax error, unexpected end-of-input, expecting end
+app/models/domain.rb:13: syntax error, unexpected tSTRING_BEG, expecting =>
+app/models/domain.rb:25: syntax error, unexpected end-of-input, expecting end
+app/models/domain.rb:13: syntax error, unexpected tSTRING_BEG, expecting =>
+app/models/domain.rb:25: syntax error, unexpected end-of-input, expecting end
+app/controllers/domains_controller.rb:20:in `new'
+Started GET "/domains/new" for ::1 at 2019-10-22 19:13:19 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by DomainsController#new as HTML
+  Rendering domains/new.html.erb within layouts/application
+  Rendered domains/_form.html.erb (Duration: 20.2ms | Allocations: 4873)
+  Rendered domains/new.html.erb within layouts/application (Duration: 21.7ms | Allocations: 5394)
+Completed 200 OK in 1188ms (Views: 1133.7ms | ActiveRecord: 1.2ms | Allocations: 1309456)
+
+
+Started POST "/domains" for ::1 at 2019-10-22 19:13:23 -0300
+Processing by DomainsController#create as HTML
+  Parameters: {"authenticity_token"=>"6QV49LhUg3apPaULW10Ue9OOOEEq2pYYQoolA8agbgNUA1JFsfrWKzeE4Ew8KJ1dAmUkh1VEHXQnVgNsfA//KA==", "domain"=>{"domains"=>"", "name"=>"", "type_domain"=>"", "ttl"=>"", "primary_name_server"=>"", "contact"=>"", "refresh"=>"", "retry"=>"", "expire"=>"", "minimum"=>""}, "commit"=>"Create Domain"}
+  Rendering domains/new.html.erb within layouts/application
+  Rendered domains/_form.html.erb (Duration: 5.5ms | Allocations: 3348)
+  Rendered domains/new.html.erb within layouts/application (Duration: 5.8ms | Allocations: 3441)
+Completed 200 OK in 27ms (Views: 18.6ms | ActiveRecord: 0.0ms | Allocations: 17573)
+
+
+Started POST "/domains" for ::1 at 2019-10-22 19:14:03 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by DomainsController#create as HTML
+  Parameters: {"authenticity_token"=>"6QV49LhUg3apPaULW10Ue9OOOEEq2pYYQoolA8agbgNUA1JFsfrWKzeE4Ew8KJ1dAmUkh1VEHXQnVgNsfA//KA==", "domain"=>{"domains"=>"", "name"=>"", "type_domain"=>"", "ttl"=>"", "primary_name_server"=>"", "contact"=>"", "refresh"=>"", "retry"=>"", "expire"=>"", "minimum"=>""}, "commit"=>"Create Domain"}
+  Rendering domains/new.html.erb within layouts/application
+  Rendered domains/_form.html.erb (Duration: 7.6ms | Allocations: 3349)
+  Rendered domains/new.html.erb within layouts/application (Duration: 8.2ms | Allocations: 3442)
+Completed 200 OK in 45ms (Views: 21.4ms | ActiveRecord: 0.7ms | Allocations: 27422)
+
+
+Started GET "/domains/new" for ::1 at 2019-10-22 19:14:08 -0300
+Processing by DomainsController#new as HTML
+  Rendering domains/new.html.erb within layouts/application
+  Rendered domains/_form.html.erb (Duration: 4.4ms | Allocations: 2180)
+  Rendered domains/new.html.erb within layouts/application (Duration: 4.9ms | Allocations: 2271)
+Completed 200 OK in 20ms (Views: 19.2ms | ActiveRecord: 0.0ms | Allocations: 13014)
+
+
+Started POST "/domains" for ::1 at 2019-10-22 19:14:10 -0300
+Processing by DomainsController#create as HTML
+  Parameters: {"authenticity_token"=>"sWCEi7ucGJ6YElcb+RKZeuLQS4in889M9jQVKQr5o0oMZq46sjJNwwarElyeZxBcMztXTthtRCCT6DNGsFYyYQ==", "domain"=>{"domains"=>"", "name"=>"", "type_domain"=>"", "ttl"=>"", "primary_name_server"=>"", "contact"=>"", "refresh"=>"", "retry"=>"", "expire"=>"", "minimum"=>""}, "commit"=>"Create Domain"}
+  Rendering domains/new.html.erb within layouts/application
+  Rendered domains/_form.html.erb (Duration: 4.2ms | Allocations: 3320)
+  Rendered domains/new.html.erb within layouts/application (Duration: 4.6ms | Allocations: 3411)
+Completed 200 OK in 28ms (Views: 19.0ms | ActiveRecord: 0.0ms | Allocations: 17117)
+
+
+Started POST "/domains" for ::1 at 2019-10-22 19:14:35 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by DomainsController#create as HTML
+  Parameters: {"authenticity_token"=>"sWCEi7ucGJ6YElcb+RKZeuLQS4in889M9jQVKQr5o0oMZq46sjJNwwarElyeZxBcMztXTthtRCCT6DNGsFYyYQ==", "domain"=>{"domains"=>"", "name"=>"", "type_domain"=>"", "ttl"=>"", "primary_name_server"=>"", "contact"=>"", "refresh"=>"", "retry"=>"", "expire"=>"", "minimum"=>""}, "commit"=>"Create Domain"}
+  Rendering domains/new.html.erb within layouts/application
+  Rendered domains/_form.html.erb (Duration: 9.2ms | Allocations: 3349)
+  Rendered domains/new.html.erb within layouts/application (Duration: 10.0ms | Allocations: 3521)
+Completed 200 OK in 105ms (Views: 67.5ms | ActiveRecord: 1.3ms | Allocations: 27360)
+
+
+Started GET "/domains/new" for ::1 at 2019-10-22 19:14:39 -0300
+Processing by DomainsController#new as HTML
+  Rendering domains/new.html.erb within layouts/application
+  Rendered domains/_form.html.erb (Duration: 3.3ms | Allocations: 2180)
+  Rendered domains/new.html.erb within layouts/application (Duration: 3.7ms | Allocations: 2271)
+Completed 200 OK in 15ms (Views: 14.3ms | ActiveRecord: 0.0ms | Allocations: 13015)
+
+
+Started POST "/domains" for ::1 at 2019-10-22 19:14:40 -0300
+Processing by DomainsController#create as HTML
+  Parameters: {"authenticity_token"=>"Y9KkF1tbDAlzsIq/wQj/UqAD9zAm3XS2A+SpbUDAbaTe1I6mUvVZVO0Jz/imfXZ0cejr9llD/9pmOI8C+m/8jw==", "domain"=>{"domains"=>"", "name"=>"", "type_domain"=>"", "ttl"=>"", "primary_name_server"=>"", "contact"=>"", "refresh"=>"", "retry"=>"", "expire"=>"", "minimum"=>""}, "commit"=>"Create Domain"}
+  Rendering domains/new.html.erb within layouts/application
+  Rendered domains/_form.html.erb (Duration: 4.5ms | Allocations: 3320)
+  Rendered domains/new.html.erb within layouts/application (Duration: 5.1ms | Allocations: 3411)
+Completed 200 OK in 27ms (Views: 18.9ms | ActiveRecord: 0.0ms | Allocations: 17161)
+
+
+Started POST "/domains" for ::1 at 2019-10-22 19:15:49 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by DomainsController#create as HTML
+  Parameters: {"authenticity_token"=>"Y9KkF1tbDAlzsIq/wQj/UqAD9zAm3XS2A+SpbUDAbaTe1I6mUvVZVO0Jz/imfXZ0cejr9llD/9pmOI8C+m/8jw==", "domain"=>{"domains"=>"", "name"=>"", "type_domain"=>"", "ttl"=>"", "primary_name_server"=>"", "contact"=>"", "refresh"=>"", "retry"=>"", "expire"=>"", "minimum"=>""}, "commit"=>"Create Domain"}
+  Rendering domains/new.html.erb within layouts/application
+  Rendered domains/_form.html.erb (Duration: 5.4ms | Allocations: 3349)
+  Rendered domains/new.html.erb within layouts/application (Duration: 5.8ms | Allocations: 3441)
+Completed 200 OK in 42ms (Views: 19.4ms | ActiveRecord: 0.7ms | Allocations: 27214)
+
+
+Started GET "/domains/new" for ::1 at 2019-10-22 19:15:52 -0300
+Processing by DomainsController#new as HTML
+  Rendering domains/new.html.erb within layouts/application
+  Rendered domains/_form.html.erb (Duration: 3.8ms | Allocations: 2180)
+  Rendered domains/new.html.erb within layouts/application (Duration: 4.2ms | Allocations: 2271)
+Completed 200 OK in 16ms (Views: 15.3ms | ActiveRecord: 0.0ms | Allocations: 13012)
+
+
+Started POST "/domains" for ::1 at 2019-10-22 19:15:54 -0300
+Processing by DomainsController#create as HTML
+  Parameters: {"authenticity_token"=>"kieDx1Cavc/ZV5HPx1pdrnxjrgVtH8ecUuun+OWQ8/svIal2WTTokkfu1IigL9SIrYiywxKBTPA3N4GXXz9i0A==", "domain"=>{"domains"=>"", "name"=>"", "type_domain"=>"", "ttl"=>"", "primary_name_server"=>"", "contact"=>"", "refresh"=>"", "retry"=>"", "expire"=>"", "minimum"=>""}, "commit"=>"Create Domain"}
+  Rendering domains/new.html.erb within layouts/application
+  Rendered domains/_form.html.erb (Duration: 4.6ms | Allocations: 3320)
+  Rendered domains/new.html.erb within layouts/application (Duration: 4.9ms | Allocations: 3411)
+Completed 200 OK in 24ms (Views: 18.7ms | ActiveRecord: 0.0ms | Allocations: 17131)
+
+
+Started POST "/domains" for ::1 at 2019-10-22 19:16:17 -0300
+Processing by DomainsController#create as HTML
+  Parameters: {"authenticity_token"=>"Vk4uDVLWq+U/SmSaV8ApbKXF7Wn5hJegw9TJj9P/Bl7rSAS8W3j+uKHzId0wtaBKdC7xr4YaHMymCO/gaVCXdQ==", "domain"=>{"domains"=>"", "name"=>"", "type_domain"=>"", "ttl"=>"", "primary_name_server"=>"", "contact"=>"", "refresh"=>"", "retry"=>"", "expire"=>"", "minimum"=>""}, "commit"=>"Create Domain"}
+  Rendering domains/new.html.erb within layouts/application
+  Rendered domains/_form.html.erb (Duration: 5.7ms | Allocations: 3320)
+  Rendered domains/new.html.erb within layouts/application (Duration: 6.1ms | Allocations: 3411)
+Completed 200 OK in 26ms (Views: 19.2ms | ActiveRecord: 0.0ms | Allocations: 17119)
+
+
+Started GET "/domains/new" for ::1 at 2019-10-22 19:16:20 -0300
+Processing by DomainsController#new as HTML
+  Rendering domains/new.html.erb within layouts/application
+  Rendered domains/_form.html.erb (Duration: 4.9ms | Allocations: 2180)
+  Rendered domains/new.html.erb within layouts/application (Duration: 5.7ms | Allocations: 2271)
+Completed 200 OK in 21ms (Views: 20.3ms | ActiveRecord: 0.0ms | Allocations: 13004)
+
+
+Started POST "/domains" for ::1 at 2019-10-22 19:17:44 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by DomainsController#create as HTML
+  Parameters: {"authenticity_token"=>"Kmrp65o/KkAN6TMDi6ABm1De6hm5C9SN7Zu3HRVlptGXbMNak5F/HZNQdkTs1Yi9gTX238aVX+GIR5Fyr8o3+g==", "domain"=>{"domains"=>"", "name"=>"", "type_domain"=>"", "ttl"=>"", "primary_name_server"=>"", "contact"=>"", "refresh"=>"", "retry"=>"", "expire"=>"", "minimum"=>""}, "commit"=>"Create Domain"}
+  Rendering domains/new.html.erb within layouts/application
+  Rendered domains/_form.html.erb (Duration: 4.3ms | Allocations: 3349)
+  Rendered domains/new.html.erb within layouts/application (Duration: 4.6ms | Allocations: 3441)
+Completed 200 OK in 37ms (Views: 18.0ms | ActiveRecord: 0.8ms | Allocations: 27202)
+
+
+Started GET "/domain/new" for ::1 at 2019-10-22 19:18:01 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  
+ActionController::RoutingError (No route matches [GET] "/domain/new"):
+  
+actionpack (6.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+webpacker (4.0.7) lib/webpacker/dev_server_proxy.rb:29:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.0) lib/rails/engine.rb:526:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/domains/new" for ::1 at 2019-10-22 19:18:03 -0300
+Processing by DomainsController#new as HTML
+  Rendering domains/new.html.erb within layouts/application
+  Rendered domains/_form.html.erb (Duration: 6.1ms | Allocations: 2258)
+  Rendered domains/new.html.erb within layouts/application (Duration: 6.5ms | Allocations: 2350)
+Completed 200 OK in 44ms (Views: 22.4ms | ActiveRecord: 1.2ms | Allocations: 22991)
+
+
+Started POST "/domains" for ::1 at 2019-10-22 19:18:04 -0300
+Processing by DomainsController#create as HTML
+  Parameters: {"authenticity_token"=>"+pb7HzHe74Y5CBBahV3O+EtZHIBWrWIFOs/e3Hfg8ApHkNGuOHC626exVR3iKEfemrIARikz6WlfE/izzU9hIQ==", "domain"=>{"domains"=>"", "name"=>"", "type_domain"=>"", "ttl"=>"", "primary_name_server"=>"", "contact"=>"", "refresh"=>"", "retry"=>"", "expire"=>"", "minimum"=>""}, "commit"=>"Create Domain"}
+  Rendering domains/new.html.erb within layouts/application
+  Rendered domains/_form.html.erb (Duration: 9.5ms | Allocations: 3328)
+  Rendered domains/new.html.erb within layouts/application (Duration: 9.9ms | Allocations: 3420)
+Completed 200 OK in 37ms (Views: 28.9ms | ActiveRecord: 0.0ms | Allocations: 17322)
+
+
+Started POST "/domains" for ::1 at 2019-10-22 19:18:36 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by DomainsController#create as HTML
+  Parameters: {"authenticity_token"=>"ipGNHd/gZaAIWdN7d9Yvo+o1pid2JjMiFQYDjv/aa5E3l6es1k4w/ZbgljwQo6aFO9664Qm4uE5w2iXhRXX6ug==", "domain"=>{"domains"=>"", "name"=>"", "type_domain"=>"", "ttl"=>"", "primary_name_server"=>"", "contact"=>"", "refresh"=>"", "retry"=>"", "expire"=>"", "minimum"=>""}, "commit"=>"Create Domain"}
+  Rendering domains/new.html.erb within layouts/application
+  Rendered domains/_form.html.erb (Duration: 5.2ms | Allocations: 3496)
+  Rendered domains/new.html.erb within layouts/application (Duration: 5.7ms | Allocations: 3588)
+Completed 200 OK in 43ms (Views: 19.6ms | ActiveRecord: 3.2ms | Allocations: 27343)
+
+
+Started GET "/domains/news" for ::1 at 2019-10-22 19:18:41 -0300
+Processing by DomainsController#show as HTML
+  Parameters: {"id"=>"news"}
+  [1m[36mDomain Load (0.5ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/domains_controller.rb:109:in `set_domain'
+Completed 404 Not Found in 5ms (ActiveRecord: 0.5ms | Allocations: 1596)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Domain with 'id'=news):
+  
+app/controllers/domains_controller.rb:109:in `set_domain'
+Started GET "/domains/new" for ::1 at 2019-10-22 19:18:43 -0300
+Processing by DomainsController#new as HTML
+  Rendering domains/new.html.erb within layouts/application
+  Rendered domains/_form.html.erb (Duration: 4.2ms | Allocations: 2180)
+  Rendered domains/new.html.erb within layouts/application (Duration: 4.7ms | Allocations: 2271)
+Completed 200 OK in 19ms (Views: 17.7ms | ActiveRecord: 0.0ms | Allocations: 13017)
+
+
+Started POST "/domains" for ::1 at 2019-10-22 19:18:44 -0300
+Processing by DomainsController#create as HTML
+  Parameters: {"authenticity_token"=>"S9AQtdRPzwmCvbGj+aPtNR2/Q+dkTXis1mzpwkC7t1L21joE3eGaVBwE9OSe1mQTzFRfIRvT88CzsM+t+hQmeQ==", "domain"=>{"domains"=>"", "name"=>"", "type_domain"=>"", "ttl"=>"", "primary_name_server"=>"", "contact"=>"", "refresh"=>"", "retry"=>"", "expire"=>"", "minimum"=>""}, "commit"=>"Create Domain"}
+  Rendering domains/new.html.erb within layouts/application
+  Rendered domains/_form.html.erb (Duration: 5.7ms | Allocations: 3448)
+  Rendered domains/new.html.erb within layouts/application (Duration: 6.1ms | Allocations: 3539)
+Completed 200 OK in 25ms (Views: 19.1ms | ActiveRecord: 0.0ms | Allocations: 17304)
+
+
+Started GET "/domains/new" for ::1 at 2019-10-22 19:19:00 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by DomainsController#new as HTML
+  Rendering domains/new.html.erb within layouts/application
+  Rendered domains/_form.html.erb (Duration: 3.6ms | Allocations: 2258)
+  Rendered domains/new.html.erb within layouts/application (Duration: 4.0ms | Allocations: 2350)
+Completed 200 OK in 36ms (Views: 16.2ms | ActiveRecord: 0.9ms | Allocations: 22965)
+
+
+Started POST "/domains" for ::1 at 2019-10-22 19:19:01 -0300
+Processing by DomainsController#create as HTML
+  Parameters: {"authenticity_token"=>"eVEohuXE9xHe8CDHBYN/XzofYIyU86Y5BjRcAu0HfNLEVwI37GqiTEBJZYBi9vZ56/R8SuttLVVj6HptV6jt+Q==", "domain"=>{"domains"=>"", "name"=>"", "type_domain"=>"", "ttl"=>"", "primary_name_server"=>"", "contact"=>"", "refresh"=>"", "retry"=>"", "expire"=>"", "minimum"=>""}, "commit"=>"Create Domain"}
+  Rendering domains/new.html.erb within layouts/application
+  Rendered domains/_form.html.erb (Duration: 32.0ms | Allocations: 3479)
+  Rendered domains/new.html.erb within layouts/application (Duration: 32.3ms | Allocations: 3570)
+Completed 200 OK in 50ms (Views: 44.0ms | ActiveRecord: 0.0ms | Allocations: 17454)
+
+
+Started POST "/domains" for ::1 at 2019-10-22 19:20:06 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by DomainsController#create as HTML
+  Parameters: {"authenticity_token"=>"ClVMPT5HznT2cnHoiht71yEDjislqNZqMx3MbjKLG0q3U2aMN+mbKWjLNK/tbvLx8OiS7Vo2XQZWweoBiCSKYQ==", "domain"=>{"domains"=>"", "name"=>"", "type_domain"=>"", "ttl"=>"", "primary_name_server"=>"", "contact"=>"", "refresh"=>"", "retry"=>"", "expire"=>"", "minimum"=>""}, "commit"=>"Create Domain"}
+  Rendering domains/new.html.erb within layouts/application
+  Rendered domains/_form.html.erb (Duration: 5.8ms | Allocations: 3500)
+  Rendered domains/new.html.erb within layouts/application (Duration: 6.6ms | Allocations: 3592)
+Completed 200 OK in 36ms (Views: 18.4ms | ActiveRecord: 0.6ms | Allocations: 27423)
+
+
+Started POST "/domains" for ::1 at 2019-10-22 19:20:17 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by DomainsController#create as HTML
+  Parameters: {"authenticity_token"=>"ClVMPT5HznT2cnHoiht71yEDjislqNZqMx3MbjKLG0q3U2aMN+mbKWjLNK/tbvLx8OiS7Vo2XQZWweoBiCSKYQ==", "domain"=>{"domains"=>"", "name"=>"", "type_domain"=>"", "ttl"=>"", "primary_name_server"=>"", "contact"=>"", "refresh"=>"", "retry"=>"", "expire"=>"", "minimum"=>""}, "commit"=>"Create Domain"}
+  Rendering domains/new.html.erb within layouts/application
+  Rendered domains/_form.html.erb (Duration: 6.7ms | Allocations: 3500)
+  Rendered domains/new.html.erb within layouts/application (Duration: 7.4ms | Allocations: 3592)
+Completed 200 OK in 44ms (Views: 21.2ms | ActiveRecord: 1.0ms | Allocations: 27397)
+
+
+Started GET "/domains/new" for ::1 at 2019-10-22 19:20:22 -0300
+Processing by DomainsController#new as HTML
+  Rendering domains/new.html.erb within layouts/application
+  Rendered domains/_form.html.erb (Duration: 4.8ms | Allocations: 2180)
+  Rendered domains/new.html.erb within layouts/application (Duration: 5.2ms | Allocations: 2271)
+Completed 200 OK in 17ms (Views: 15.0ms | ActiveRecord: 0.0ms | Allocations: 13000)
+
+
+Started POST "/domains" for ::1 at 2019-10-22 19:20:24 -0300
+Processing by DomainsController#create as HTML
+  Parameters: {"authenticity_token"=>"H5Y/V6iLAjkuSbU5som/28EkyyvD56sG2jyNSA543r+ikBXmoSVXZLDw8H7V/Db9EM/X7bx5IGq/4KsntNdPlA==", "domain"=>{"domains"=>"", "name"=>"", "type_domain"=>"", "ttl"=>"", "primary_name_server"=>"", "contact"=>"", "refresh"=>"", "retry"=>"", "expire"=>"", "minimum"=>""}, "commit"=>"Create Domain"}
+  Rendering domains/new.html.erb within layouts/application
+  Rendered domains/_form.html.erb (Duration: 4.3ms | Allocations: 3471)
+  Rendered domains/new.html.erb within layouts/application (Duration: 4.6ms | Allocations: 3562)
+Completed 200 OK in 26ms (Views: 18.3ms | ActiveRecord: 0.0ms | Allocations: 17278)
+
+
+Started GET "/domains" for ::1 at 2019-10-22 19:20:39 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by DomainsController#index as HTML
+  Rendering domains/index.html.erb within layouts/application
+  [1m[36mDomain Load (0.3ms)[0m  [1m[34mSELECT "domains".* FROM "domains"[0m
+  ↳ app/views/domains/index.html.erb:34
+  Rendered domains/index.html.erb within layouts/application (Duration: 19.0ms | Allocations: 10813)
+Completed 200 OK in 39ms (Views: 31.9ms | ActiveRecord: 0.9ms | Allocations: 23347)
+
+
+Started GET "/records" for ::1 at 2019-10-22 19:21:03 -0300
+Processing by RecordsController#index as HTML
+  Rendering records/index.html.erb within layouts/application
+  [1m[36mRecord Load (0.2ms)[0m  [1m[34mSELECT "records".* FROM "records"[0m
+  ↳ app/views/records/index.html.erb:18
+  Rendered records/index.html.erb within layouts/application (Duration: 12.4ms | Allocations: 7687)
+Completed 200 OK in 48ms (Views: 44.1ms | ActiveRecord: 0.7ms | Allocations: 19707)
+
+
+Started GET "/records/new" for ::1 at 2019-10-22 19:21:05 -0300
+Processing by RecordsController#new as HTML
+  Rendering records/new.html.erb within layouts/application
+  [1m[36mDomain Load (0.5ms)[0m  [1m[34mSELECT "domains".* FROM "domains" ORDER BY "domains"."name" ASC[0m
+  ↳ app/views/records/_form.html.erb:20
+  Rendered records/_form.html.erb (Duration: 8.7ms | Allocations: 3663)
+  Rendered records/new.html.erb within layouts/application (Duration: 10.2ms | Allocations: 4034)
+Completed 200 OK in 23ms (Views: 21.0ms | ActiveRecord: 0.5ms | Allocations: 14883)
+
+
+Started POST "/records" for ::1 at 2019-10-22 19:22:58 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by RecordsController#create as HTML
+  Parameters: {"authenticity_token"=>"ZUFREHQrzVzq/Q1CmRJuKmqT+6P1u5d1hEHakVVy3yfYR3uhfYWYAXRESAX+Z+cMu3jnZYolHBnhnfz+791ODA==", "record"=>{"domain_id"=>"", "type_record"=>"", "host"=>"", "ttl"=>"", "content"=>"", "priority"=>""}, "commit"=>"Create Record"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 1308)
+
+
+  
+SyntaxError (/home/leonardo/workspace/desafio_dev_backend_infra/CrudDNS/app/models/record.rb:19: syntax error, unexpected else
+		else
+		^~~~
+/home/leonardo/workspace/desafio_dev_backend_infra/CrudDNS/app/models/record.rb:23: syntax error, unexpected end, expecting end-of-input):
+  
+app/models/record.rb:19: syntax error, unexpected else
+app/models/record.rb:23: syntax error, unexpected end, expecting end-of-input
+app/models/record.rb:19: syntax error, unexpected else
+app/models/record.rb:23: syntax error, unexpected end, expecting end-of-input
+app/models/record.rb:19: syntax error, unexpected else
+app/models/record.rb:23: syntax error, unexpected end, expecting end-of-input
+app/controllers/records_controller.rb:27:in `create'
+Started GET "/records/news" for ::1 at 2019-10-22 19:23:08 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by RecordsController#show as HTML
+  Parameters: {"id"=>"news"}
+  [1m[36mRecord Load (0.3ms)[0m  [1m[34mSELECT "records".* FROM "records" WHERE "records"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/records_controller.rb:97:in `set_record'
+Completed 404 Not Found in 7ms (ActiveRecord: 1.0ms | Allocations: 3078)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Record with 'id'=news):
+  
+app/controllers/records_controller.rb:97:in `set_record'
+Started GET "/records/new" for ::1 at 2019-10-22 19:23:11 -0300
+Processing by RecordsController#new as HTML
+  Rendering records/new.html.erb within layouts/application
+  [1m[36mDomain Load (0.3ms)[0m  [1m[34mSELECT "domains".* FROM "domains" ORDER BY "domains"."name" ASC[0m
+  ↳ app/views/records/_form.html.erb:20
+  Rendered records/_form.html.erb (Duration: 22.2ms | Allocations: 12031)
+  Rendered records/new.html.erb within layouts/application (Duration: 23.1ms | Allocations: 12137)
+Completed 200 OK in 46ms (Views: 35.9ms | ActiveRecord: 1.3ms | Allocations: 27907)
+
+
+Started POST "/records" for ::1 at 2019-10-22 19:23:12 -0300
+Processing by RecordsController#create as HTML
+  Parameters: {"authenticity_token"=>"+wviseth1bXN3EUsifs3xrmWBKRBRvo+3x5vpYhFF3pGDcgA4s+A6FNlAGvujr7gaH0YYj7YcVK6wknKMuqGUQ==", "record"=>{"domain_id"=>"", "type_record"=>"", "host"=>"", "ttl"=>"", "content"=>"", "priority"=>""}, "commit"=>"Create Record"}
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "records" WHERE "records"."type_record" = ? AND "records"."host" = ? AND "records"."domain_id" IS NULL[0m  [["type_record", "CNAME"], ["host", ""]]
+  ↳ app/controllers/records_controller.rb:50:in `create'
+  Rendering records/new.html.erb within layouts/application
+  [1m[36mDomain Load (0.2ms)[0m  [1m[34mSELECT "domains".* FROM "domains" ORDER BY "domains"."name" ASC[0m
+  ↳ app/views/records/_form.html.erb:20
+  Rendered records/_form.html.erb (Duration: 5.4ms | Allocations: 3806)
+  Rendered records/new.html.erb within layouts/application (Duration: 5.8ms | Allocations: 3910)
+Completed 200 OK in 35ms (Views: 20.8ms | ActiveRecord: 0.4ms | Allocations: 18764)
+
+
+Started GET "/record/news" for ::1 at 2019-10-22 19:23:43 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  
+ActionController::RoutingError (No route matches [GET] "/record/news"):
+  
+actionpack (6.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+webpacker (4.0.7) lib/webpacker/dev_server_proxy.rb:29:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.0) lib/rails/engine.rb:526:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/record/new" for ::1 at 2019-10-22 19:23:45 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/record/new"):
+  
+actionpack (6.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+webpacker (4.0.7) lib/webpacker/dev_server_proxy.rb:29:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.0) lib/rails/engine.rb:526:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/records/new" for ::1 at 2019-10-22 19:23:49 -0300
+Processing by RecordsController#new as HTML
+  Rendering records/new.html.erb within layouts/application
+  [1m[36mDomain Load (0.3ms)[0m  [1m[34mSELECT "domains".* FROM "domains" ORDER BY "domains"."name" ASC[0m
+  ↳ app/views/records/_form.html.erb:20
+  Rendered records/_form.html.erb (Duration: 24.8ms | Allocations: 12031)
+  Rendered records/new.html.erb within layouts/application (Duration: 25.2ms | Allocations: 12137)
+Completed 200 OK in 53ms (Views: 36.1ms | ActiveRecord: 2.7ms | Allocations: 29691)
+
+
+Started POST "/records" for ::1 at 2019-10-22 19:23:50 -0300
+Processing by RecordsController#create as HTML
+  Parameters: {"authenticity_token"=>"gx+PfzQ71zpTkPIi5gnao040M5Q2xNI3TnSovcX+O1w+GaXOPZWCZ80pt2WBfFOFn98vUklaWVsrqI7Sf1Gqdw==", "record"=>{"domain_id"=>"", "type_record"=>"", "host"=>"", "ttl"=>"", "content"=>"", "priority"=>""}, "commit"=>"Create Record"}
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "records" WHERE "records"."type_record" = ? AND "records"."host" = ? AND "records"."domain_id" IS NULL[0m  [["type_record", "CNAME"], ["host", ""]]
+  ↳ app/controllers/records_controller.rb:50:in `create'
+  Rendering records/new.html.erb within layouts/application
+  [1m[36mDomain Load (0.2ms)[0m  [1m[34mSELECT "domains".* FROM "domains" ORDER BY "domains"."name" ASC[0m
+  ↳ app/views/records/_form.html.erb:20
+  Rendered records/_form.html.erb (Duration: 9.3ms | Allocations: 3658)
+  Rendered records/new.html.erb within layouts/application (Duration: 10.4ms | Allocations: 3762)
+Completed 200 OK in 38ms (Views: 27.6ms | ActiveRecord: 1.4ms | Allocations: 17555)
+
+
+Started GET "/records" for ::1 at 2019-10-22 19:23:55 -0300
+Processing by RecordsController#index as HTML
+  Rendering records/index.html.erb within layouts/application
+  [1m[36mRecord Load (0.4ms)[0m  [1m[34mSELECT "records".* FROM "records"[0m
+  ↳ app/views/records/index.html.erb:18
+  Rendered records/index.html.erb within layouts/application (Duration: 3.7ms | Allocations: 1592)
+Completed 200 OK in 17ms (Views: 16.1ms | ActiveRecord: 0.4ms | Allocations: 12308)
+
+
