@@ -17,7 +17,19 @@ class DomainsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create domain" do
     assert_difference('Domain.count') do
-      post domains_url, params: { domain: { contact: @domain.contact, expire: @domain.expire, minimum: @domain.minimum, name: @domain.name, primary_name_server: @domain.primary_name_server, refresh: @domain.refresh, retry: @domain.retry, ttl: @domain.ttl, type: @domain.type } }
+      post "/domains", params: { "domain"=>{
+                                    "domains"=>"",
+                                     "name"=>"globo.com",
+                                      "type_domain"=>"MASTER",
+                                       "ttl"=>"1",
+                                        "primary_name_server"=>"ns.globo.com", 
+                                        "contact"=>"contact@globo.com",
+                                         "refresh"=>"1",
+                                          "retry"=>"2",
+                                           "expire"=>"3", 
+                                           "minimum"=>"4"
+                                   }
+                                }
     end
 
     assert_redirected_to domain_url(Domain.last)
@@ -34,7 +46,21 @@ class DomainsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update domain" do
-    patch domain_url(@domain), params: { domain: { contact: @domain.contact, expire: @domain.expire, minimum: @domain.minimum, name: @domain.name, primary_name_server: @domain.primary_name_server, refresh: @domain.refresh, retry: @domain.retry, ttl: @domain.ttl, type: @domain.type } }
+    patch domain_url(@domain),  params: { "domain"=>
+                                  {
+                                    "domains"=>"",
+                                     "name"=>"globo.com",
+                                      "type_domain"=>"MASTER",
+                                       "ttl"=>"1",
+                                        "primary_name_server"=>"ns.globo.com", 
+                                        "contact"=>"contact@globo.com",
+                                         "refresh"=>"1",
+                                          "retry"=>"2",
+                                           "expire"=>"3", 
+                                           "minimum"=>"4"
+                                   }
+                                }
+    
     assert_redirected_to domain_url(@domain)
   end
 
@@ -45,4 +71,5 @@ class DomainsControllerTest < ActionDispatch::IntegrationTest
 
     assert_redirected_to domains_url
   end
+
 end

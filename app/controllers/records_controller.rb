@@ -47,9 +47,9 @@ class RecordsController < ApplicationController
       #com o mesmo nome, no mesmo Domain.
 
       records_cname_domain = Record.where(type_record: "CNAME", host: @record.host,
-       domain_id: @record.domain_id)
+       domain_id: @record.domain_id).count()
 
-      if !records_cname_domain.nil?
+      if records_cname_domain != 0
           valid = false
       end
 

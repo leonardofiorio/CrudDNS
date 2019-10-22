@@ -1,19 +1,22 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyString
-  type: 
-  ttl: MyString
-  primary_name_server: MyString
-  contact: MyString
-  refresh: MyString
-  retry: MyString
-  expire: MyString
-  minimum: MyString
+  id: 1
+  name: "globo.com"
+  type_domain: "MASTER"
+  ttl: "400"
+  primary_name_server: "ns.globo.com"
+  contact: "contact@globo.com"
+  refresh: "200"
+  retry: "100"
+  expire: "100"
+  minimum: "1"
+  domains: ""
 
 two:
+  id: 2
   name: MyString
-  type: 
+  type_domain: MyString 
   ttl: MyString
   primary_name_server: MyString
   contact: MyString
@@ -21,3 +24,4 @@ two:
   retry: MyString
   expire: MyString
   minimum: MyString
+  domains: 1

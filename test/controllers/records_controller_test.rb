@@ -3,6 +3,7 @@ require 'test_helper'
 class RecordsControllerTest < ActionDispatch::IntegrationTest
   setup do
     @record = records(:one)
+    @domain = domains(:one)
   end
 
   test "should get index" do
@@ -16,8 +17,32 @@ class RecordsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should create record" do
+    assert_difference('Domain.count') do
+     post "/domains", params: { "domain"=>{
+                                    "id" => 1,
+                                    "domains"=>"",
+                                     "name"=>"globo.com",
+                                      "type_domain"=>"MASTER",
+                                       "ttl"=>"1",
+                                        "primary_name_server"=>"ns.globo.com", 
+                                        "contact"=>"contact@globo.com",
+                                         "refresh"=>"1",
+                                          "retry"=>"2",
+                                           "expire"=>"3", 
+                                           "minimum"=>"4"}
+                                }
+    end
+
     assert_difference('Record.count') do
-      post records_url, params: { record: { content: @record.content, host: @record.host, priority: @record.priority, ttl: @record.ttl, type: @record.type } }
+      post records_url, params: { "record" => { 
+                                    "content" => "conteudo",
+                                    "host" => "meuhost",
+                                    "priority" => "1", 
+                                    "ttl" => "200", 
+                                    "type_record" => "CNAME",
+                                    "domain_id" => 1 
+                                  } 
+                                }
     end
 
     assert_redirected_to record_url(Record.last)
@@ -34,7 +59,44 @@ class RecordsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update record" do
-    patch record_url(@record), params: { record: { content: @record.content, host: @record.host, priority: @record.priority, ttl: @record.ttl, type: @record.type } }
+    post "/domains", params: { "domain"=>{
+                                    "id" => 1,
+                                    "domains"=>"",
+                                     "name"=>"globo.com",
+                                      "type_domain"=>"MASTER",
+                                       "ttl"=>"1",
+                                        "primary_name_server"=>"ns.globo.com", 
+                                        "contact"=>"contact@globo.com",
+                                         "refresh"=>"1",
+                                          "retry"=>"2",
+                                           "expire"=>"3", 
+                                           "minimum"=>"4"
+                                  }
+                                }
+
+    post records_url, params: { "record" => { 
+                                    "id" => 1 ,
+                                    "content" => "conteudo",
+                                    "host" => "meuhost",
+                                    "priority" => "1", 
+                                    "ttl" => "200", 
+                                    "type_record" => "CNAME",
+                                    "domain_id" => 1 
+                                  } 
+                                } 
+
+    patch record_url(@record), params: { "record" => 
+                                  { 
+                                    "id" => 1,
+                                    "content" => "content",
+                                    "host" => "meuhost",
+                                    "priority" => "1", 
+                                    "ttl" => "200", 
+                                    "type_record" => "CNAME",
+                                    "domain_id" => 1 
+                                  } 
+                                }
+
     assert_redirected_to record_url(@record)
   end
 
@@ -44,5 +106,91 @@ class RecordsControllerTest < ActionDispatch::IntegrationTest
     end
 
     assert_redirected_to records_url
+  end
+
+  
+  # Tentando inserir CNAME com mesmo nome de CNAME já existente
+  # O segundo record não deve ser inserido
+  test "CNAME host duplicated - should not create record" do 
+      post "/domains", params: { "domain"=>{
+                                    "id" => 1,
+                                    "domains"=>"",
+                                     "name"=>"globo.com",
+                                      "type_domain"=>"MASTER",
+                                       "ttl"=>"1",
+                                        "primary_name_server"=>"ns.globo.com", 
+                                        "contact"=>"contact@globo.com",
+                                         "refresh"=>"1",
+                                          "retry"=>"2",
+                                           "expire"=>"3", 
+                                           "minimum"=>"4"
+                                  }
+                                }
+
+    post records_url, params: { "record" => { 
+                                    "id" => 1 ,
+                                    "content" => "conteudo",
+                                    "host" => "meuhost",
+                                    "priority" => "1", 
+                                    "ttl" => "200", 
+                                    "type_record" => "CNAME",
+                                    "domain_id" => 1 
+                                  } 
+                                } 
+
+    assert_difference("Record.count", 0) do                            
+      post records_url, params: { "record" => { 
+                                      "id" => 1 ,
+                                      "content" => "conteudo",
+                                      "host" => "meuhost",
+                                      "priority" => "1", 
+                                      "ttl" => "200", 
+                                      "type_record" => "A",
+                                      "domain_id" => 1 
+                                    } 
+                                  } 
+    end
+  end
+
+  test "new Record with same host CNAME - should not create record" do 
+
+      post "/domains", params: { "domain"=>{
+                                    "id" => 1,
+                                    "domains"=>"",
+                                     "name"=>"globo.com",
+                                      "type_domain"=>"MASTER",
+                                       "ttl"=>"1",
+                                        "primary_name_server"=>"ns.globo.com", 
+                                        "contact"=>"contact@globo.com",
+                                         "refresh"=>"1",
+                                          "retry"=>"2",
+                                           "expire"=>"3", 
+                                           "minimum"=>"4"
+                                  }
+                                }
+
+      post records_url, params: { "record" => { 
+                                    "id" => 1 ,
+                                    "content" => "conteudo",
+                                    "host" => "meuhost",
+                                    "priority" => "1", 
+                                    "ttl" => "200", 
+                                    "type_record" => "CNAME",
+                                    "domain_id" => 1 
+                                  } 
+                                } 
+
+      assert_difference("Record.count", 0) do  
+        post records_url, params: { "record" => { 
+                                      "id" => 1 ,
+                                      "content" => "conteudo",
+                                      "host" => "meuhost",
+                                      "priority" => "1", 
+                                      "ttl" => "200", 
+                                      "type_record" => "A",
+                                      "domain_id" => 1 
+                                    } 
+                                  } 
+      end
   end
 end
