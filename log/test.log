@@ -37002,3 +37002,510 @@ RecordTest: test_invalid_host_record
 RecordTest: test_invalid_type_record_record
 -------------------------------------------
   [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mTruncate Tables (295.9ms)[0m  [1m[31mDELETE FROM "domains";
+DELETE FROM "records"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixtures Load (0.3ms)[0m  [1m[31mDELETE FROM "records";
+DELETE FROM "domains";
+INSERT INTO "records" ("id", "type_record", "host", "ttl", "content", "priority", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyString', 'MyString', 'MyString', 1, '2019-10-23 16:36:17.108946', '2019-10-23 16:36:17.108946');
+INSERT INTO "records" ("id", "type_record", "host", "ttl", "content", "priority", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyString', 'MyString', 'MyString', 1, '2019-10-23 16:36:17.108946', '2019-10-23 16:36:17.108946');
+INSERT INTO "domains" ("id", "name", "type_domain", "ttl", "primary_name_server", "contact", "refresh", "retry", "expire", "minimum", "created_at", "updated_at", "domains_id") VALUES (1, 'globo.com', 'MASTER', '400', 'ns.globo.com', 'contact@globo.com', '200', '100', '100', '1', '2019-10-23 16:36:17.111110', '2019-10-23 16:36:17.111110', 0);
+INSERT INTO "domains" ("id", "name", "type_domain", "ttl", "primary_name_server", "contact", "refresh", "retry", "expire", "minimum", "created_at", "updated_at", "domains_id") VALUES (2, 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', '2019-10-23 16:36:17.111110', '2019-10-23 16:36:17.111110', 64810937)[0m
+  [1m[36mTruncate Tables (336.0ms)[0m  [1m[31mDELETE FROM "domains";
+DELETE FROM "records"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixtures Load (0.4ms)[0m  [1m[31mDELETE FROM "records";
+DELETE FROM "domains";
+INSERT INTO "records" ("id", "type_record", "host", "ttl", "content", "priority", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyString', 'MyString', 'MyString', 1, '2019-10-23 16:36:17.135584', '2019-10-23 16:36:17.135584');
+INSERT INTO "records" ("id", "type_record", "host", "ttl", "content", "priority", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyString', 'MyString', 'MyString', 1, '2019-10-23 16:36:17.135584', '2019-10-23 16:36:17.135584');
+INSERT INTO "domains" ("id", "name", "type_domain", "ttl", "primary_name_server", "contact", "refresh", "retry", "expire", "minimum", "created_at", "updated_at", "domains_id") VALUES (1, 'globo.com', 'MASTER', '400', 'ns.globo.com', 'contact@globo.com', '200', '100', '100', '1', '2019-10-23 16:36:17.138011', '2019-10-23 16:36:17.138011', 0);
+INSERT INTO "domains" ("id", "name", "type_domain", "ttl", "primary_name_server", "contact", "refresh", "retry", "expire", "minimum", "created_at", "updated_at", "domains_id") VALUES (2, 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', '2019-10-23 16:36:17.138011', '2019-10-23 16:36:17.138011', 64810937)[0m
+  [1m[35m (148.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------
+RecordTest: test_invalid_domain_record
+--------------------------------------
+  [1m[35m (130.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------
+RecordTest: test_invalid_ttl_record
+-----------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------
+RecordTest: test_valid_record
+-----------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------
+-------------------------------------------
+RecordTest: test_invalid_host_record
+RecordTest: test_invalid_type_record_record
+-------------------------------------------
+------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------------
+RecordTest: test_invalid_content_record
+---------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------
+RecordTest: test_invalid_priority_record
+----------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+--------------------------
+RecordTest: test_the_truth
+--------------------------
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------
+----------------------------------------------
+RecordsControllerTest: test_should_create_record
+RecordsControllerTest: test_should_show_record
+----------------------------------------------
+------------------------------------------------
+  [1m[36mRecord Load (0.4ms)[0m  [1m[34mSELECT "records".* FROM "records" WHERE "records"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mRecord Load (0.4ms)[0m  [1m[34mSELECT "records".* FROM "records" WHERE "records"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mDomain Load (0.2ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDomain Load (0.2ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "domains"[0m
+Started GET "/records/980190962" for 127.0.0.1 at 2019-10-23 13:36:17 -0300
+Started POST "/domains" for 127.0.0.1 at 2019-10-23 13:36:17 -0300
+Processing by RecordsController#show as HTML
+  Parameters: {"id"=>"980190962"}
+Processing by DomainsController#create as HTML
+  Parameters: {"domain"=>{"id"=>"1", "domains"=>"", "name"=>"globo.com", "type_domain"=>"MASTER", "ttl"=>"1", "primary_name_server"=>"ns.globo.com", "contact"=>"contact@globo.com", "refresh"=>"1", "retry"=>"2", "expire"=>"3", "minimum"=>"4"}}
+  [1m[36mRecord Load (0.1ms)[0m  [1m[34mSELECT "records".* FROM "records" WHERE "records"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+[31mUnpermitted parameter: :id[0m
+  Rendering records/show.html.erb within layouts/application
+[31mUnpermitted parameter: :id[0m
+[31mUnpermitted parameter: :id[0m
+[31mUnpermitted parameter: :id[0m
+[31mUnpermitted parameter: :id[0m
+[31mUnpermitted parameter: :id[0m
+[31mUnpermitted parameter: :id[0m
+[31mUnpermitted parameter: :id[0m
+  Rendered records/show.html.erb within layouts/application (Duration: 1.8ms | Allocations: 483)
+[31mUnpermitted parameter: :id[0m
+[31mUnpermitted parameter: :id[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mDomain Create (0.9ms)[0m  [1m[32mINSERT INTO "domains" ("name", "type_domain", "ttl", "primary_name_server", "contact", "refresh", "retry", "expire", "minimum", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "globo.com"], ["type_domain", "MASTER"], ["ttl", "1"], ["primary_name_server", "ns.globo.com"], ["contact", "contact@globo.com"], ["refresh", "1"], ["retry", "2"], ["expire", "3"], ["minimum", "4"], ["created_at", "2019-10-23 16:36:17.399846"], ["updated_at", "2019-10-23 16:36:17.399846"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/domains/3
+Completed 302 Found in 18ms (ActiveRecord: 1.1ms | Allocations: 2757)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "domains"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "records"[0m
+Started POST "/records" for 127.0.0.1 at 2019-10-23 13:36:17 -0300
+Processing by RecordsController#create as HTML
+  Parameters: {"record"=>{"content"=>"conteudo", "host"=>"meuhost", "priority"=>"1", "ttl"=>"200", "type_record"=>"CNAME", "domain_id"=>"1"}}
+  [1m[36mRecord Load (0.2ms)[0m  [1m[34mSELECT "records".* FROM "records" WHERE "records"."domain_id" = ?[0m  [["domain_id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mDomain Load (0.1ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRecord Create (0.3ms)[0m  [1m[32mINSERT INTO "records" ("type_record", "host", "ttl", "content", "priority", "created_at", "updated_at", "domain_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["type_record", "CNAME"], ["host", "meuhost"], ["ttl", "200"], ["content", "conteudo"], ["priority", 1], ["created_at", "2019-10-23 16:36:17.422613"], ["updated_at", "2019-10-23 16:36:17.422613"], ["domain_id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/records/980190963
+Completed 302 Found in 9ms (ActiveRecord: 0.8ms | Allocations: 2114)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "records"[0m
+  [1m[36mRecord Load (0.2ms)[0m  [1m[34mSELECT "records".* FROM "records" ORDER BY "records"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------------------------------------------
+RecordsControllerTest: test_CNAME_host_duplicated_-_should_not_create_record
+----------------------------------------------------------------------------
+  [1m[36mRecord Load (0.2ms)[0m  [1m[34mSELECT "records".* FROM "records" WHERE "records"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mDomain Load (0.1ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Started POST "/domains" for 127.0.0.1 at 2019-10-23 13:36:17 -0300
+Processing by DomainsController#create as HTML
+  Parameters: {"domain"=>{"id"=>"1", "domains"=>"", "name"=>"globo.com", "type_domain"=>"MASTER", "ttl"=>"1", "primary_name_server"=>"ns.globo.com", "contact"=>"contact@globo.com", "refresh"=>"1", "retry"=>"2", "expire"=>"3", "minimum"=>"4"}}
+[31mUnpermitted parameter: :id[0m
+[31mUnpermitted parameter: :id[0m
+[31mUnpermitted parameter: :id[0m
+[31mUnpermitted parameter: :id[0m
+[31mUnpermitted parameter: :id[0m
+[31mUnpermitted parameter: :id[0m
+[31mUnpermitted parameter: :id[0m
+[31mUnpermitted parameter: :id[0m
+[31mUnpermitted parameter: :id[0m
+[31mUnpermitted parameter: :id[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mDomain Create (0.4ms)[0m  [1m[32mINSERT INTO "domains" ("name", "type_domain", "ttl", "primary_name_server", "contact", "refresh", "retry", "expire", "minimum", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "globo.com"], ["type_domain", "MASTER"], ["ttl", "1"], ["primary_name_server", "ns.globo.com"], ["contact", "contact@globo.com"], ["refresh", "1"], ["retry", "2"], ["expire", "3"], ["minimum", "4"], ["created_at", "2019-10-23 16:36:17.442976"], ["updated_at", "2019-10-23 16:36:17.442976"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/domains/3
+Completed 302 Found in 7ms (ActiveRecord: 0.6ms | Allocations: 2165)
+Started POST "/records" for 127.0.0.1 at 2019-10-23 13:36:17 -0300
+Processing by RecordsController#create as HTML
+  Parameters: {"record"=>{"id"=>"1", "content"=>"conteudo", "host"=>"meuhost", "priority"=>"1", "ttl"=>"200", "type_record"=>"CNAME", "domain_id"=>"1"}}
+[31mUnpermitted parameter: :id[0m
+  [1m[36mRecord Load (0.1ms)[0m  [1m[34mSELECT "records".* FROM "records" WHERE "records"."domain_id" = ?[0m  [["domain_id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mDomain Load (0.1ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRecord Create (0.3ms)[0m  [1m[32mINSERT INTO "records" ("type_record", "host", "ttl", "content", "priority", "created_at", "updated_at", "domain_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["type_record", "CNAME"], ["host", "meuhost"], ["ttl", "200"], ["content", "conteudo"], ["priority", 1], ["created_at", "2019-10-23 16:36:17.455639"], ["updated_at", "2019-10-23 16:36:17.455639"], ["domain_id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/records/980190963
+Completed 302 Found in 6ms (ActiveRecord: 0.7ms | Allocations: 1438)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "records"[0m
+Started POST "/records" for 127.0.0.1 at 2019-10-23 13:36:17 -0300
+Processing by RecordsController#create as HTML
+  Parameters: {"record"=>{"id"=>"1", "content"=>"conteudo", "host"=>"meuhost", "priority"=>"1", "ttl"=>"200", "type_record"=>"A", "domain_id"=>"1"}}
+[31mUnpermitted parameter: :id[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "records" WHERE "records"."type_record" = ? AND "records"."host" = ? AND "records"."domain_id" = ?[0m  [["type_record", "CNAME"], ["host", "meuhost"], ["domain_id", 1]]
+  Rendering records/new.html.erb within layouts/application
+  [1m[36mDomain Load (0.3ms)[0m  [1m[34mSELECT "domains".* FROM "domains" ORDER BY "domains"."name" ASC[0m
+  Rendered records/_form.html.erb (Duration: 10.8ms | Allocations: 3266)
+  Rendered records/new.html.erb within layouts/application (Duration: 12.6ms | Allocations: 3755)
+Completed 200 OK in 1240ms (Views: 1228.6ms | ActiveRecord: 0.1ms | Allocations: 1287363)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------------------------------------------
+RecordsControllerTest: test_new_Record_with_same_host_CNAME_-_should_not_create_record
+--------------------------------------------------------------------------------------
+  [1m[36mRecord Load (0.1ms)[0m  [1m[34mSELECT "records".* FROM "records" WHERE "records"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mDomain Load (0.1ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Started POST "/domains" for 127.0.0.1 at 2019-10-23 13:36:18 -0300
+Processing by DomainsController#create as HTML
+  Parameters: {"domain"=>{"id"=>"1", "domains"=>"", "name"=>"globo.com", "type_domain"=>"MASTER", "ttl"=>"1", "primary_name_server"=>"ns.globo.com", "contact"=>"contact@globo.com", "refresh"=>"1", "retry"=>"2", "expire"=>"3", "minimum"=>"4"}}
+[31mUnpermitted parameter: :id[0m
+[31mUnpermitted parameter: :id[0m
+[31mUnpermitted parameter: :id[0m
+[31mUnpermitted parameter: :id[0m
+[31mUnpermitted parameter: :id[0m
+[31mUnpermitted parameter: :id[0m
+[31mUnpermitted parameter: :id[0m
+[31mUnpermitted parameter: :id[0m
+[31mUnpermitted parameter: :id[0m
+[31mUnpermitted parameter: :id[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mDomain Create (0.3ms)[0m  [1m[32mINSERT INTO "domains" ("name", "type_domain", "ttl", "primary_name_server", "contact", "refresh", "retry", "expire", "minimum", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "globo.com"], ["type_domain", "MASTER"], ["ttl", "1"], ["primary_name_server", "ns.globo.com"], ["contact", "contact@globo.com"], ["refresh", "1"], ["retry", "2"], ["expire", "3"], ["minimum", "4"], ["created_at", "2019-10-23 16:36:18.678692"], ["updated_at", "2019-10-23 16:36:18.678692"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/domains/3
+Completed 302 Found in 48ms (ActiveRecord: 0.5ms | Allocations: 2680)
+Started POST "/records" for 127.0.0.1 at 2019-10-23 13:36:18 -0300
+Processing by RecordsController#create as HTML
+  Parameters: {"record"=>{"id"=>"1", "content"=>"conteudo", "host"=>"meuhost", "priority"=>"1", "ttl"=>"200", "type_record"=>"CNAME", "domain_id"=>"1"}}
+[31mUnpermitted parameter: :id[0m
+  [1m[36mRecord Load (0.2ms)[0m  [1m[34mSELECT "records".* FROM "records" WHERE "records"."domain_id" = ?[0m  [["domain_id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mDomain Load (0.1ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRecord Create (0.2ms)[0m  [1m[32mINSERT INTO "records" ("type_record", "host", "ttl", "content", "priority", "created_at", "updated_at", "domain_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["type_record", "CNAME"], ["host", "meuhost"], ["ttl", "200"], ["content", "conteudo"], ["priority", 1], ["created_at", "2019-10-23 16:36:18.701644"], ["updated_at", "2019-10-23 16:36:18.701644"], ["domain_id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/records/980190963
+Completed 302 Found in 6ms (ActiveRecord: 0.6ms | Allocations: 2069)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "records"[0m
+Started POST "/records" for 127.0.0.1 at 2019-10-23 13:36:18 -0300
+Processing by RecordsController#create as HTML
+  Parameters: {"record"=>{"id"=>"1", "content"=>"conteudo", "host"=>"meuhost", "priority"=>"1", "ttl"=>"200", "type_record"=>"A", "domain_id"=>"1"}}
+[31mUnpermitted parameter: :id[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "records" WHERE "records"."type_record" = ? AND "records"."host" = ? AND "records"."domain_id" = ?[0m  [["type_record", "CNAME"], ["host", "meuhost"], ["domain_id", 1]]
+  Rendering records/new.html.erb within layouts/application
+  [1m[36mDomain Load (0.2ms)[0m  [1m[34mSELECT "domains".* FROM "domains" ORDER BY "domains"."name" ASC[0m
+  Rendered records/_form.html.erb (Duration: 6.3ms | Allocations: 3282)
+  Rendered records/new.html.erb within layouts/application (Duration: 7.1ms | Allocations: 3652)
+Completed 200 OK in 15ms (Views: 12.6ms | ActiveRecord: 0.4ms | Allocations: 8679)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "records"[0m
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------
+RecordsControllerTest: test_should_get_new
+------------------------------------------
+  [1m[36mRecord Load (0.1ms)[0m  [1m[34mSELECT "records".* FROM "records" WHERE "records"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mDomain Load (0.1ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Started GET "/records/new" for 127.0.0.1 at 2019-10-23 13:36:18 -0300
+Processing by RecordsController#new as HTML
+  Rendering records/new.html.erb within layouts/application
+  [1m[36mDomain Load (0.1ms)[0m  [1m[34mSELECT "domains".* FROM "domains" ORDER BY "domains"."name" ASC[0m
+  Rendered records/_form.html.erb (Duration: 3.0ms | Allocations: 1766)
+  Rendered records/new.html.erb within layouts/application (Duration: 3.4ms | Allocations: 1853)
+Completed 200 OK in 9ms (Views: 8.6ms | ActiveRecord: 0.1ms | Allocations: 6216)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------------
+RecordsControllerTest: test_should_destroy_record
+-------------------------------------------------
+  [1m[36mRecord Load (0.1ms)[0m  [1m[34mSELECT "records".* FROM "records" WHERE "records"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mDomain Load (0.1ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "records"[0m
+Started DELETE "/records/980190962" for 127.0.0.1 at 2019-10-23 13:36:18 -0300
+Processing by RecordsController#destroy as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mRecord Load (0.1ms)[0m  [1m[34mSELECT "records".* FROM "records" WHERE "records"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRecord Destroy (0.3ms)[0m  [1m[31mDELETE FROM "records" WHERE "records"."id" = ?[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/records
+Completed 302 Found in 3ms (ActiveRecord: 0.5ms | Allocations: 635)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "records"[0m
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------
+RecordsControllerTest: test_should_get_edit
+-------------------------------------------
+  [1m[36mRecord Load (0.1ms)[0m  [1m[34mSELECT "records".* FROM "records" WHERE "records"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mDomain Load (0.1ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Started GET "/records/980190962/edit" for 127.0.0.1 at 2019-10-23 13:36:18 -0300
+Processing by RecordsController#edit as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mRecord Load (0.1ms)[0m  [1m[34mSELECT "records".* FROM "records" WHERE "records"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  Rendering records/edit.html.erb within layouts/application
+  [1m[36mDomain Load (0.1ms)[0m  [1m[34mSELECT "domains".* FROM "domains" ORDER BY "domains"."name" ASC[0m
+  Rendered records/_form.html.erb (Duration: 3.0ms | Allocations: 1826)
+  Rendered records/edit.html.erb within layouts/application (Duration: 3.7ms | Allocations: 2064)
+Completed 200 OK in 10ms (Views: 8.8ms | ActiveRecord: 0.2ms | Allocations: 6673)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------
+RecordsControllerTest: test_should_get_index
+--------------------------------------------
+  [1m[36mRecord Load (0.1ms)[0m  [1m[34mSELECT "records".* FROM "records" WHERE "records"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mDomain Load (0.1ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Started GET "/records" for 127.0.0.1 at 2019-10-23 13:36:18 -0300
+Processing by RecordsController#index as HTML
+  Rendering records/index.html.erb within layouts/application
+  [1m[36mRecord Load (0.2ms)[0m  [1m[34mSELECT "records".* FROM "records"[0m
+  Rendered records/index.html.erb within layouts/application (Duration: 2.7ms | Allocations: 752)
+Completed 200 OK in 13ms (Views: 11.2ms | ActiveRecord: 0.2ms | Allocations: 5254)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------
+RecordsControllerTest: test_should_update_record
+------------------------------------------------
+  [1m[36mRecord Load (0.1ms)[0m  [1m[34mSELECT "records".* FROM "records" WHERE "records"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mDomain Load (0.1ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Started POST "/domains" for 127.0.0.1 at 2019-10-23 13:36:18 -0300
+Processing by DomainsController#create as HTML
+  Parameters: {"domain"=>{"id"=>"1", "domains"=>"", "name"=>"globo.com", "type_domain"=>"MASTER", "ttl"=>"1", "primary_name_server"=>"ns.globo.com", "contact"=>"contact@globo.com", "refresh"=>"1", "retry"=>"2", "expire"=>"3", "minimum"=>"4"}}
+[31mUnpermitted parameter: :id[0m
+[31mUnpermitted parameter: :id[0m
+[31mUnpermitted parameter: :id[0m
+[31mUnpermitted parameter: :id[0m
+[31mUnpermitted parameter: :id[0m
+[31mUnpermitted parameter: :id[0m
+[31mUnpermitted parameter: :id[0m
+[31mUnpermitted parameter: :id[0m
+[31mUnpermitted parameter: :id[0m
+[31mUnpermitted parameter: :id[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mDomain Create (0.3ms)[0m  [1m[32mINSERT INTO "domains" ("name", "type_domain", "ttl", "primary_name_server", "contact", "refresh", "retry", "expire", "minimum", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "globo.com"], ["type_domain", "MASTER"], ["ttl", "1"], ["primary_name_server", "ns.globo.com"], ["contact", "contact@globo.com"], ["refresh", "1"], ["retry", "2"], ["expire", "3"], ["minimum", "4"], ["created_at", "2019-10-23 16:36:18.800787"], ["updated_at", "2019-10-23 16:36:18.800787"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/domains/3
+Completed 302 Found in 7ms (ActiveRecord: 0.6ms | Allocations: 2165)
+Started POST "/records" for 127.0.0.1 at 2019-10-23 13:36:18 -0300
+Processing by RecordsController#create as HTML
+  Parameters: {"record"=>{"id"=>"1", "content"=>"conteudo", "host"=>"meuhost", "priority"=>"1", "ttl"=>"200", "type_record"=>"CNAME", "domain_id"=>"1"}}
+[31mUnpermitted parameter: :id[0m
+  [1m[36mRecord Load (0.1ms)[0m  [1m[34mSELECT "records".* FROM "records" WHERE "records"."domain_id" = ?[0m  [["domain_id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mDomain Load (0.1ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRecord Create (0.3ms)[0m  [1m[32mINSERT INTO "records" ("type_record", "host", "ttl", "content", "priority", "created_at", "updated_at", "domain_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["type_record", "CNAME"], ["host", "meuhost"], ["ttl", "200"], ["content", "conteudo"], ["priority", 1], ["created_at", "2019-10-23 16:36:18.813247"], ["updated_at", "2019-10-23 16:36:18.813247"], ["domain_id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/records/980190963
+Completed 302 Found in 6ms (ActiveRecord: 0.7ms | Allocations: 1430)
+Started PATCH "/records/980190962" for 127.0.0.1 at 2019-10-23 13:36:18 -0300
+Completed 200 OK in 1357ms (Views: 1353.6ms | ActiveRecord: 0.6ms | Allocations: 1290810)
+Processing by RecordsController#update as HTML
+  Parameters: {"record"=>{"id"=>"1", "content"=>"content", "host"=>"meuhost", "priority"=>"1", "ttl"=>"200", "type_record"=>"CNAME", "domain_id"=>"1"}, "id"=>"980190962"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "records"[0m
+  [1m[36mRecord Load (0.1ms)[0m  [1m[34mSELECT "records".* FROM "records" WHERE "records"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+[31mUnpermitted parameter: :id[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------
+  [1m[36mDomain Load (0.1ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+DomainTest: test_invalid_retry_domain
+-------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mRecord Update (0.3ms)[0m  [1m[33mUPDATE "records" SET "domain_id" = ?, "type_record" = ?, "host" = ?, "ttl" = ?, "content" = ?, "updated_at" = ? WHERE "records"."id" = ?[0m  [["domain_id", 1], ["type_record", "CNAME"], ["host", "meuhost"], ["ttl", "200"], ["content", "content"], ["updated_at", "2019-10-23 16:36:18.825494"], ["id", 980190962]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Redirected to http://www.example.com/records/980190962
+--------------------------------
+DomainTest: test_valid_subdomain
+--------------------------------
+Completed 302 Found in 6ms (ActiveRecord: 0.7ms | Allocations: 1458)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+---------------------------------------
+DomainTest: test_invalid_minimum_domain
+---------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------------
+DomainTest: test_invalid_refresh_domain
+---------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------
+DomainTest: test_the_truth
+--------------------------
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+------------------------------------
+DomainTest: test_invalid_type_domain
+------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------
+DomainTest: test_invalid_expire_domain
+--------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------------------------
+DomainTest: test_invalid_primary_name_server_domain
+---------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------
+DomainTest: test_invalid_name_domain
+------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------
+DomainTest: test_valid_domain
+-----------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------
+DomainsControllerTest: test_should_create_domain
+------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------------
+DomainsControllerTest: test_should_destroy_domain
+-------------------------------------------------
+  [1m[36mDomain Load (0.1ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "domains"[0m
+  [1m[36mDomain Load (0.1ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "domains"[0m
+Started POST "/domains" for 127.0.0.1 at 2019-10-23 13:36:18 -0300
+Started DELETE "/domains/1" for 127.0.0.1 at 2019-10-23 13:36:18 -0300
+Processing by DomainsController#create as HTML
+  Parameters: {"domain"=>{"domains"=>"", "name"=>"globo.com", "type_domain"=>"MASTER", "ttl"=>"1", "primary_name_server"=>"ns.globo.com", "contact"=>"contact@globo.com", "refresh"=>"1", "retry"=>"2", "expire"=>"3", "minimum"=>"4"}}
+Processing by DomainsController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mDomain Create (0.6ms)[0m  [1m[32mINSERT INTO "domains" ("name", "type_domain", "ttl", "primary_name_server", "contact", "refresh", "retry", "expire", "minimum", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "globo.com"], ["type_domain", "MASTER"], ["ttl", "1"], ["primary_name_server", "ns.globo.com"], ["contact", "contact@globo.com"], ["refresh", "1"], ["retry", "2"], ["expire", "3"], ["minimum", "4"], ["created_at", "2019-10-23 16:36:18.849312"], ["updated_at", "2019-10-23 16:36:18.849312"]]
+  [1m[36mDomain Load (0.1ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/domains/3
+Completed 302 Found in 4ms (ActiveRecord: 0.8ms | Allocations: 1963)
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mDomain Destroy (0.4ms)[0m  [1m[31mDELETE FROM "domains" WHERE "domains"."id" = ?[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "domains"[0m
+  [1m[36mDomain Load (0.1ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  [1m[36mDomain Load (0.2ms)[0m  [1m[34mSELECT "domains".* FROM "domains" ORDER BY "domains"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/domains
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+Completed 302 Found in 5ms (ActiveRecord: 0.8ms | Allocations: 1120)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------
+DomainsControllerTest: test_should_get_edit
+-------------------------------------------
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "domains"[0m
+  [1m[36mDomain Load (0.1ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+Started GET "/domains/1/edit" for 127.0.0.1 at 2019-10-23 13:36:18 -0300
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------
+DomainsControllerTest: test_should_get_new
+------------------------------------------
+  [1m[36mDomain Load (0.1ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Processing by DomainsController#edit as HTML
+  Parameters: {"id"=>"1"}
+Started GET "/domains/new" for 127.0.0.1 at 2019-10-23 13:36:18 -0300
+  [1m[36mDomain Load (0.1ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering domains/edit.html.erb within layouts/application
+Processing by DomainsController#new as HTML
+  Rendering domains/new.html.erb within layouts/application
+  Rendered domains/_form.html.erb (Duration: 7.2ms | Allocations: 3148)
+  Rendered domains/edit.html.erb within layouts/application (Duration: 8.5ms | Allocations: 3518)
+  Rendered domains/_form.html.erb (Duration: 7.8ms | Allocations: 3032)
+  Rendered domains/new.html.erb within layouts/application (Duration: 8.9ms | Allocations: 3360)
+Completed 200 OK in 19ms (Views: 16.4ms | ActiveRecord: 0.1ms | Allocations: 8662)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------
+DomainsControllerTest: test_should_get_index
+--------------------------------------------
+  [1m[36mDomain Load (0.1ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 18ms (Views: 17.1ms | ActiveRecord: 0.0ms | Allocations: 8315)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+Started GET "/domains" for 127.0.0.1 at 2019-10-23 13:36:18 -0300
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------------
+DomainsControllerTest: test_should_show_domain
+----------------------------------------------
+Processing by DomainsController#index as HTML
+  [1m[36mDomain Load (0.1ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering domains/index.html.erb within layouts/application
+Started GET "/domains/1" for 127.0.0.1 at 2019-10-23 13:36:18 -0300
+  [1m[36mDomain Load (0.2ms)[0m  [1m[34mSELECT "domains".* FROM "domains"[0m
+  Rendered domains/index.html.erb within layouts/application (Duration: 1.9ms | Allocations: 886)
+Processing by DomainsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDomain Load (0.1ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering domains/show.html.erb within layouts/application
+  [1m[36mDomain Load (0.2ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."domains_id" = ?[0m  [["domains_id", 1]]
+  [1m[36mRecord Load (0.1ms)[0m  [1m[34mSELECT "records".* FROM "records" WHERE "records"."domain_id" = ?[0m  [["domain_id", 1]]
+  Rendered domains/show.html.erb within layouts/application (Duration: 2.5ms | Allocations: 1322)
+Completed 200 OK in 8ms (Views: 7.1ms | ActiveRecord: 0.2ms | Allocations: 5384)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------
+DomainsControllerTest: test_should_update_domain
+------------------------------------------------
+  [1m[36mDomain Load (0.1ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Started PATCH "/domains/1" for 127.0.0.1 at 2019-10-23 13:36:18 -0300
+Completed 200 OK in 9ms (Views: 7.4ms | ActiveRecord: 0.3ms | Allocations: 6035)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+Processing by DomainsController#update as HTML
+  Parameters: {"domain"=>{"domains"=>"", "name"=>"globo.com", "type_domain"=>"MASTER", "ttl"=>"1", "primary_name_server"=>"ns.globo.com", "contact"=>"contact@globo.com", "refresh"=>"1", "retry"=>"2", "expire"=>"3", "minimum"=>"4"}, "id"=>"1"}
+  [1m[36mDomain Load (0.1ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mDomain Update (0.4ms)[0m  [1m[33mUPDATE "domains" SET "ttl" = ?, "refresh" = ?, "retry" = ?, "expire" = ?, "minimum" = ?, "domains_id" = ?, "updated_at" = ? WHERE "domains"."id" = ?[0m  [["ttl", "1"], ["refresh", "1"], ["retry", "2"], ["expire", "3"], ["minimum", "4"], ["domains_id", nil], ["updated_at", "2019-10-23 16:36:18.903543"], ["id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/domains/1
+Completed 302 Found in 5ms (ActiveRecord: 0.7ms | Allocations: 2128)
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m

@@ -38,7 +38,10 @@ RUN rbenv rehash
 # Copiando projeto para raiz da imagem
 COPY * /CrudDNS
 
-CMD cd /CrudDNS && rails s -b 0.0.0.0 -p 3000
+WORKDIR /CrudDNS
+RUN bundle install
+ 
+CMD rails s -b 0.0.0.0 -p 3000
 
 # Configuração de porta do docker
 EXPOSE 3000
