@@ -10,7 +10,7 @@ class Record < ApplicationRecord
 	#Validação personalizada para o type_record
 	validate :type_record_validate
 
-	#Validação para caso do formato ipv4
+	#Validação personalizada para o formato ipv4
 	validate :content_ipv4_validate
 
 	# Validação do Domain a qual o Record pertence
