@@ -22,3 +22,10 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+
+Como executar:
+* $ docker build -t <image> .
+
+
+* $ docker run -it -p 3000:3000 <image>
