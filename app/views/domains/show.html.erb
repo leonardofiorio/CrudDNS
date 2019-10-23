@@ -109,7 +109,7 @@
 <h2>Records do Domain "<%= @domain.name %>"</h2>
 
 <p>
-<%= link_to 'Novo Record', new_record_path %>
+  <%= link_to 'Inserir novo Record no Domain', new_record_path + "/" + @domain.id.to_s %>
 </p>
 
 <table id="records" class="table table-hover display">

@@ -19653,3 +19653,1101 @@ Processing by RecordsController#index as HTML
 Completed 200 OK in 17ms (Views: 16.1ms | ActiveRecord: 0.4ms | Allocations: 12308)
 
 
+Started GET "/records/new" for ::1 at 2019-10-22 20:06:54 -0300
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RecordsController#new as HTML
+  Rendering records/new.html.erb within layouts/application
+  [1m[36mDomain Load (0.3ms)[0m  [1m[34mSELECT "domains".* FROM "domains" ORDER BY "domains"."name" ASC[0m
+  ↳ app/views/records/_form.html.erb:19
+  Rendered records/_form.html.erb (Duration: 39.8ms | Allocations: 15557)
+  Rendered records/new.html.erb within layouts/application (Duration: 41.3ms | Allocations: 16296)
+Completed 200 OK in 1336ms (Views: 1317.5ms | ActiveRecord: 1.6ms | Allocations: 1318218)
+
+
+Started GET "/records" for ::1 at 2019-10-22 20:07:02 -0300
+Processing by RecordsController#index as HTML
+  Rendering records/index.html.erb within layouts/application
+  [1m[36mRecord Load (0.8ms)[0m  [1m[34mSELECT "records".* FROM "records"[0m
+  ↳ app/views/records/index.html.erb:18
+  Rendered records/index.html.erb within layouts/application (Duration: 5.0ms | Allocations: 1919)
+Completed 200 OK in 19ms (Views: 16.2ms | ActiveRecord: 0.8ms | Allocations: 12808)
+
+
+Started GET "/domains" for ::1 at 2019-10-22 20:07:08 -0300
+Processing by DomainsController#index as HTML
+  Rendering domains/index.html.erb within layouts/application
+  [1m[36mDomain Load (0.4ms)[0m  [1m[34mSELECT "domains".* FROM "domains"[0m
+  ↳ app/views/domains/index.html.erb:34
+  Rendered domains/index.html.erb within layouts/application (Duration: 6.2ms | Allocations: 2624)
+Completed 200 OK in 25ms (Views: 22.6ms | ActiveRecord: 0.4ms | Allocations: 13984)
+
+
+Started GET "/domains/4" for ::1 at 2019-10-22 20:07:27 -0300
+Processing by DomainsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mDomain Load (0.2ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/domains_controller.rb:109:in `set_domain'
+  Rendering domains/show.html.erb within layouts/application
+  [1m[36mDomain Load (0.3ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."domains_id" = ?[0m  [["domains_id", 4]]
+  ↳ app/views/domains/show.html.erb:85
+  [1m[36mRecord Load (0.2ms)[0m  [1m[34mSELECT "records".* FROM "records" WHERE "records"."domain_id" = ?[0m  [["domain_id", 4]]
+  ↳ app/views/domains/show.html.erb:128
+  Rendered domains/show.html.erb within layouts/application (Duration: 5.2ms | Allocations: 2832)
+Completed 200 OK in 30ms (Views: 17.9ms | ActiveRecord: 0.7ms | Allocations: 16347)
+
+
+Started GET "/domains" for ::1 at 2019-10-22 20:40:37 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by DomainsController#index as HTML
+  Rendering domains/index.html.erb within layouts/application
+  [1m[36mDomain Load (0.2ms)[0m  [1m[34mSELECT "domains".* FROM "domains"[0m
+  ↳ app/views/domains/index.html.erb:34
+  Rendered domains/index.html.erb within layouts/application (Duration: 14.7ms | Allocations: 9881)
+Completed 200 OK in 30ms (Views: 25.9ms | ActiveRecord: 0.2ms | Allocations: 22196)
+
+
+Started GET "/domains/8" for ::1 at 2019-10-22 20:40:44 -0300
+Processing by DomainsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mDomain Load (0.3ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/domains_controller.rb:109:in `set_domain'
+  Rendering domains/show.html.erb within layouts/application
+  [1m[36mDomain Load (0.3ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."domains_id" = ?[0m  [["domains_id", 8]]
+  ↳ app/views/domains/show.html.erb:85
+  [1m[36mRecord Load (0.4ms)[0m  [1m[34mSELECT "records".* FROM "records" WHERE "records"."domain_id" = ?[0m  [["domain_id", 8]]
+  ↳ app/views/domains/show.html.erb:128
+  Rendered domains/show.html.erb within layouts/application (Duration: 6.0ms | Allocations: 1399)
+Completed 200 OK in 32ms (Views: 23.2ms | ActiveRecord: 1.0ms | Allocations: 13896)
+
+
+Started GET "/domains" for ::1 at 2019-10-22 20:40:46 -0300
+Processing by DomainsController#index as HTML
+  Rendering domains/index.html.erb within layouts/application
+  [1m[36mDomain Load (0.2ms)[0m  [1m[34mSELECT "domains".* FROM "domains"[0m
+  ↳ app/views/domains/index.html.erb:34
+  Rendered domains/index.html.erb within layouts/application (Duration: 4.3ms | Allocations: 2120)
+Completed 200 OK in 20ms (Views: 18.1ms | ActiveRecord: 0.2ms | Allocations: 12835)
+
+
+Started DELETE "/domains/8" for ::1 at 2019-10-22 20:40:49 -0300
+Processing by DomainsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"o6HKRhfHat6bpchLw9RdzREp890V94o2icINWihmPPIep+D3Hmk/gwUcjQykodTrwMLvG2ppAVrsHis1ksmt2Q==", "id"=>"8"}
+  [1m[36mDomain Load (0.1ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/domains_controller.rb:109:in `set_domain'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/domains_controller.rb:99:in `destroy'
+  [1m[36mDomain Destroy (0.4ms)[0m  [1m[31mDELETE FROM "domains" WHERE "domains"."id" = ?[0m  [["id", 8]]
+  ↳ app/controllers/domains_controller.rb:99:in `destroy'
+  [1m[35m (72.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/domains_controller.rb:99:in `destroy'
+Redirected to http://localhost:3000/domains
+Completed 302 Found in 83ms (ActiveRecord: 72.7ms | Allocations: 4929)
+
+
+Started GET "/domains" for ::1 at 2019-10-22 20:40:49 -0300
+Processing by DomainsController#index as HTML
+  Rendering domains/index.html.erb within layouts/application
+  [1m[36mDomain Load (0.2ms)[0m  [1m[34mSELECT "domains".* FROM "domains"[0m
+  ↳ app/views/domains/index.html.erb:34
+  Rendered domains/index.html.erb within layouts/application (Duration: 4.0ms | Allocations: 1974)
+Completed 200 OK in 22ms (Views: 20.3ms | ActiveRecord: 0.2ms | Allocations: 12855)
+
+
+Started GET "/domains/4" for ::1 at 2019-10-22 20:40:57 -0300
+Processing by DomainsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mDomain Load (0.1ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/domains_controller.rb:109:in `set_domain'
+  Rendering domains/show.html.erb within layouts/application
+  [1m[36mDomain Load (0.1ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."domains_id" = ?[0m  [["domains_id", 4]]
+  ↳ app/views/domains/show.html.erb:85
+  [1m[36mRecord Load (0.3ms)[0m  [1m[34mSELECT "records".* FROM "records" WHERE "records"."domain_id" = ?[0m  [["domain_id", 4]]
+  ↳ app/views/domains/show.html.erb:128
+  Rendered domains/show.html.erb within layouts/application (Duration: 14.2ms | Allocations: 6849)
+Completed 200 OK in 29ms (Views: 26.5ms | ActiveRecord: 0.6ms | Allocations: 18189)
+
+
+Started GET "/records/new" for ::1 at 2019-10-22 20:41:03 -0300
+Processing by RecordsController#new as HTML
+  Rendering records/new.html.erb within layouts/application
+  [1m[36mDomain Load (0.4ms)[0m  [1m[34mSELECT "domains".* FROM "domains" ORDER BY "domains"."name" ASC[0m
+  ↳ app/views/records/_form.html.erb:19
+  Rendered records/_form.html.erb (Duration: 7.6ms | Allocations: 2694)
+  Rendered records/new.html.erb within layouts/application (Duration: 8.0ms | Allocations: 2800)
+Completed 200 OK in 24ms (Views: 22.9ms | ActiveRecord: 0.4ms | Allocations: 13731)
+
+
+Started GET "/records" for ::1 at 2019-10-22 20:41:11 -0300
+Processing by RecordsController#index as HTML
+  Rendering records/index.html.erb within layouts/application
+  [1m[36mRecord Load (0.2ms)[0m  [1m[34mSELECT "records".* FROM "records"[0m
+  ↳ app/views/records/index.html.erb:18
+  Rendered records/index.html.erb within layouts/application (Duration: 2.8ms | Allocations: 1581)
+Completed 200 OK in 18ms (Views: 17.1ms | ActiveRecord: 0.2ms | Allocations: 12294)
+
+
+Started GET "/domains" for ::1 at 2019-10-22 20:41:16 -0300
+Processing by DomainsController#index as HTML
+  Rendering domains/index.html.erb within layouts/application
+  [1m[36mDomain Load (0.2ms)[0m  [1m[34mSELECT "domains".* FROM "domains"[0m
+  ↳ app/views/domains/index.html.erb:34
+  Rendered domains/index.html.erb within layouts/application (Duration: 5.4ms | Allocations: 1971)
+Completed 200 OK in 31ms (Views: 29.2ms | ActiveRecord: 0.2ms | Allocations: 12672)
+
+
+Started GET "/domains/new" for ::1 at 2019-10-22 20:41:19 -0300
+Processing by DomainsController#new as HTML
+  Rendering domains/new.html.erb within layouts/application
+  Rendered domains/_form.html.erb (Duration: 11.1ms | Allocations: 5097)
+  Rendered domains/new.html.erb within layouts/application (Duration: 12.5ms | Allocations: 5444)
+Completed 200 OK in 27ms (Views: 25.4ms | ActiveRecord: 0.0ms | Allocations: 16225)
+
+
+Started GET "/domains/4" for ::1 at 2019-10-22 20:41:23 -0300
+Processing by DomainsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mDomain Load (0.2ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/domains_controller.rb:109:in `set_domain'
+  Rendering domains/show.html.erb within layouts/application
+  [1m[36mDomain Load (0.2ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."domains_id" = ?[0m  [["domains_id", 4]]
+  ↳ app/views/domains/show.html.erb:85
+  [1m[36mRecord Load (0.2ms)[0m  [1m[34mSELECT "records".* FROM "records" WHERE "records"."domain_id" = ?[0m  [["domain_id", 4]]
+  ↳ app/views/domains/show.html.erb:128
+  Rendered domains/show.html.erb within layouts/application (Duration: 6.2ms | Allocations: 1894)
+Completed 200 OK in 27ms (Views: 22.1ms | ActiveRecord: 0.6ms | Allocations: 13241)
+
+
+Started GET "/domains/4" for ::1 at 2019-10-22 20:42:56 -0300
+Processing by DomainsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mDomain Load (0.3ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/domains_controller.rb:109:in `set_domain'
+  Rendering domains/show.html.erb within layouts/application
+  [1m[36mDomain Load (0.1ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."domains_id" = ?[0m  [["domains_id", 4]]
+  ↳ app/views/domains/show.html.erb:85
+  Rendered domains/show.html.erb within layouts/application (Duration: 9.4ms | Allocations: 4629)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.5ms | Allocations: 6456)
+
+
+  
+ActionView::Template::Error (no implicit conversion of Integer into String):
+    109: <h2>Records do Domain "<%= @domain.name %>"</h2>
+    110: 
+    111: <p>
+    112: <%= link_to 'Inserir novo Record no Domain', new_record_path + "/" + @domain.id %>
+    113: </p>
+    114: 
+    115: <table id="records" class="table table-hover display">
+  
+app/views/domains/show.html.erb:112:in `+'
+app/views/domains/show.html.erb:112
+Started GET "/domains/4" for ::1 at 2019-10-22 20:43:44 -0300
+Processing by DomainsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mDomain Load (0.2ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/domains_controller.rb:109:in `set_domain'
+  Rendering domains/show.html.erb within layouts/application
+  [1m[36mDomain Load (0.2ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."domains_id" = ?[0m  [["domains_id", 4]]
+  ↳ app/views/domains/show.html.erb:85
+  [1m[36mRecord Load (0.1ms)[0m  [1m[34mSELECT "records".* FROM "records" WHERE "records"."domain_id" = ?[0m  [["domain_id", 4]]
+  ↳ app/views/domains/show.html.erb:128
+  Rendered domains/show.html.erb within layouts/application (Duration: 4.6ms | Allocations: 2755)
+Completed 200 OK in 41ms (Views: 37.8ms | ActiveRecord: 0.5ms | Allocations: 15082)
+
+
+Started GET "/records/new/4" for ::1 at 2019-10-22 20:43:47 -0300
+Processing by RecordsController#new as HTML
+  Parameters: {"id"=>"4"}
+  Rendering records/new.html.erb within layouts/application
+  [1m[36mDomain Load (0.3ms)[0m  [1m[34mSELECT "domains".* FROM "domains" ORDER BY "domains"."name" ASC[0m
+  ↳ app/views/records/_form.html.erb:17
+  Rendered records/_form.html.erb (Duration: 8.5ms | Allocations: 3190)
+  Rendered records/new.html.erb within layouts/application (Duration: 9.6ms | Allocations: 3568)
+Completed 200 OK in 24ms (Views: 22.1ms | ActiveRecord: 0.3ms | Allocations: 14865)
+
+
+Started GET "/records/new/4" for ::1 at 2019-10-22 20:44:04 -0300
+Processing by RecordsController#new as HTML
+  Parameters: {"id"=>"4"}
+  Rendering records/new.html.erb within layouts/application
+  [1m[36mDomain Load (0.3ms)[0m  [1m[34mSELECT "domains".* FROM "domains" ORDER BY "domains"."name" ASC[0m
+  ↳ app/views/records/_form.html.erb:17
+  Rendered records/_form.html.erb (Duration: 5.1ms | Allocations: 2639)
+  Rendered records/new.html.erb within layouts/application (Duration: 5.5ms | Allocations: 2744)
+Completed 200 OK in 23ms (Views: 20.9ms | ActiveRecord: 0.3ms | Allocations: 13466)
+
+
+Started GET "/records" for ::1 at 2019-10-22 20:44:05 -0300
+Processing by RecordsController#index as HTML
+  Rendering records/index.html.erb within layouts/application
+  [1m[36mRecord Load (0.2ms)[0m  [1m[34mSELECT "records".* FROM "records"[0m
+  ↳ app/views/records/index.html.erb:18
+  Rendered records/index.html.erb within layouts/application (Duration: 4.3ms | Allocations: 1851)
+Completed 200 OK in 25ms (Views: 23.2ms | ActiveRecord: 0.2ms | Allocations: 12708)
+
+
+Started GET "/domains" for ::1 at 2019-10-22 20:44:11 -0300
+Processing by DomainsController#index as HTML
+  Rendering domains/index.html.erb within layouts/application
+  [1m[36mDomain Load (0.3ms)[0m  [1m[34mSELECT "domains".* FROM "domains"[0m
+  ↳ app/views/domains/index.html.erb:34
+  Rendered domains/index.html.erb within layouts/application (Duration: 7.7ms | Allocations: 2365)
+Completed 200 OK in 29ms (Views: 26.9ms | ActiveRecord: 0.3ms | Allocations: 13219)
+
+
+Started GET "/domains/new" for ::1 at 2019-10-22 20:44:15 -0300
+Processing by DomainsController#new as HTML
+  Rendering domains/new.html.erb within layouts/application
+  Rendered domains/_form.html.erb (Duration: 6.0ms | Allocations: 2813)
+  Rendered domains/new.html.erb within layouts/application (Duration: 7.2ms | Allocations: 3152)
+Completed 200 OK in 23ms (Views: 21.9ms | ActiveRecord: 0.0ms | Allocations: 14026)
+
+
+Started GET "/domains/4" for ::1 at 2019-10-22 20:44:21 -0300
+Processing by DomainsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mDomain Load (0.2ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/domains_controller.rb:109:in `set_domain'
+  Rendering domains/show.html.erb within layouts/application
+  [1m[36mDomain Load (0.2ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."domains_id" = ?[0m  [["domains_id", 4]]
+  ↳ app/views/domains/show.html.erb:85
+  [1m[36mRecord Load (0.2ms)[0m  [1m[34mSELECT "records".* FROM "records" WHERE "records"."domain_id" = ?[0m  [["domain_id", 4]]
+  ↳ app/views/domains/show.html.erb:128
+  Rendered domains/show.html.erb within layouts/application (Duration: 8.4ms | Allocations: 1898)
+Completed 200 OK in 24ms (Views: 20.0ms | ActiveRecord: 0.7ms | Allocations: 13234)
+
+
+Started GET "/records/new/4" for ::1 at 2019-10-22 20:44:41 -0300
+Processing by RecordsController#new as HTML
+  Parameters: {"id"=>"4"}
+  Rendering records/new.html.erb within layouts/application
+  [1m[36mDomain Load (0.2ms)[0m  [1m[34mSELECT "domains".* FROM "domains" ORDER BY "domains"."name" ASC[0m
+  ↳ app/views/records/_form.html.erb:17
+  Rendered records/_form.html.erb (Duration: 4.3ms | Allocations: 2647)
+  Rendered records/new.html.erb within layouts/application (Duration: 4.7ms | Allocations: 2753)
+Completed 200 OK in 20ms (Views: 18.6ms | ActiveRecord: 0.2ms | Allocations: 13476)
+
+
+Started POST "/records" for ::1 at 2019-10-22 20:44:56 -0300
+Processing by RecordsController#create as HTML
+  Parameters: {"authenticity_token"=>"y9SzbFsrCIA3M2EOtn/iEkDSHaXyhUzaQ1gQyAuQOtl20pndUoVd3amKJEnRCms0kTkBY40bx7YmhDansT+r8g==", "record"=>{"domain_id"=>"4", "type_record"=>"A", "host"=>"asdfg", "ttl"=>"1", "content"=>"1.1.1.1.1", "priority"=>"1"}, "commit"=>"Create Record"}
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "records" WHERE "records"."type_record" = ? AND "records"."host" = ? AND "records"."domain_id" = ?[0m  [["type_record", "CNAME"], ["host", "asdfg"], ["domain_id", 4]]
+  ↳ app/controllers/records_controller.rb:50:in `create'
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/records_controller.rb:60:in `block in create'
+  [1m[36mDomain Load (0.2ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/records_controller.rb:60:in `block in create'
+  [1m[36mRecord Create (1.6ms)[0m  [1m[32mINSERT INTO "records" ("type_record", "host", "ttl", "content", "priority", "created_at", "updated_at", "domain_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["type_record", "A"], ["host", "asdfg"], ["ttl", "1"], ["content", "1.1.1.1.1"], ["priority", 1], ["created_at", "2019-10-22 23:44:56.113825"], ["updated_at", "2019-10-22 23:44:56.113825"], ["domain_id", 4]]
+  ↳ app/controllers/records_controller.rb:60:in `block in create'
+  [1m[35m (205.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/records_controller.rb:60:in `block in create'
+Redirected to http://localhost:3000/records/10
+Completed 302 Found in 237ms (ActiveRecord: 207.8ms | Allocations: 8776)
+
+
+Started GET "/records/10" for ::1 at 2019-10-22 20:44:56 -0300
+Processing by RecordsController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mRecord Load (0.3ms)[0m  [1m[34mSELECT "records".* FROM "records" WHERE "records"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/records_controller.rb:97:in `set_record'
+  Rendering records/show.html.erb within layouts/application
+  Rendered records/show.html.erb within layouts/application (Duration: 0.8ms | Allocations: 341)
+Completed 200 OK in 17ms (Views: 14.3ms | ActiveRecord: 0.3ms | Allocations: 11847)
+
+
+Started GET "/records/new" for ::1 at 2019-10-22 20:47:22 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by RecordsController#new as HTML
+  Rendering records/new.html.erb within layouts/application
+  [1m[36mDomain Load (0.6ms)[0m  [1m[34mSELECT "domains".* FROM "domains" ORDER BY "domains"."name" ASC[0m
+  ↳ app/views/records/_form.html.erb:19
+  Rendered records/_form.html.erb (Duration: 22.1ms | Allocations: 11991)
+  Rendered records/new.html.erb within layouts/application (Duration: 22.5ms | Allocations: 12097)
+Completed 200 OK in 51ms (Views: 32.1ms | ActiveRecord: 2.5ms | Allocations: 29895)
+
+
+Started GET "/records/new/4" for ::1 at 2019-10-22 20:47:27 -0300
+Processing by RecordsController#new as HTML
+  Parameters: {"id"=>"4"}
+  Rendering records/new.html.erb within layouts/application
+  [1m[36mDomain Load (0.3ms)[0m  [1m[34mSELECT "domains".* FROM "domains" ORDER BY "domains"."name" ASC[0m
+  ↳ app/views/records/_form.html.erb:17
+  Rendered records/_form.html.erb (Duration: 8.6ms | Allocations: 2639)
+  Rendered records/new.html.erb within layouts/application (Duration: 9.1ms | Allocations: 2743)
+Completed 200 OK in 49ms (Views: 47.8ms | ActiveRecord: 0.3ms | Allocations: 13475)
+
+
+Started POST "/records" for ::1 at 2019-10-22 20:47:39 -0300
+Processing by RecordsController#create as HTML
+  Parameters: {"authenticity_token"=>"9PYqiXgPbRjSGm6GN1jqgXUSPl4Niv4PLaKYcib9bRpJ8AA4caE4RUyjK8FQLWOnpPkimHIUdWNIfr4dnFL8MQ==", "record"=>{"domain_id"=>"4", "type_record"=>"A", "host"=>"incendio", "ttl"=>"1", "content"=>"1.1.1.1.1", "priority"=>"1"}, "commit"=>"Create Record"}
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "records" WHERE "records"."type_record" = ? AND "records"."host" = ? AND "records"."domain_id" = ?[0m  [["type_record", "CNAME"], ["host", "incendio"], ["domain_id", 4]]
+  ↳ app/controllers/records_controller.rb:50:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/records_controller.rb:60:in `block in create'
+  [1m[36mDomain Load (0.7ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/records_controller.rb:60:in `block in create'
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/records_controller.rb:60:in `block in create'
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 1.2ms | Allocations: 4801)
+
+
+  
+TypeError (type mismatch: String given):
+  
+app/models/record.rb:30:in `=~'
+app/models/record.rb:30:in `content_ipv4_validate'
+app/controllers/records_controller.rb:60:in `block in create'
+app/controllers/records_controller.rb:59:in `create'
+Started PUT "/__web_console/repl_sessions/517513972cf055675d95495ea663fa5b" for ::1 at 2019-10-22 20:48:06 -0300
+Started PUT "/__web_console/repl_sessions/517513972cf055675d95495ea663fa5b" for ::1 at 2019-10-22 20:48:07 -0300
+Started PUT "/__web_console/repl_sessions/517513972cf055675d95495ea663fa5b" for ::1 at 2019-10-22 20:48:08 -0300
+Started PUT "/__web_console/repl_sessions/517513972cf055675d95495ea663fa5b" for ::1 at 2019-10-22 20:48:11 -0300
+Started PUT "/__web_console/repl_sessions/517513972cf055675d95495ea663fa5b" for ::1 at 2019-10-22 20:48:12 -0300
+Started PUT "/__web_console/repl_sessions/517513972cf055675d95495ea663fa5b" for ::1 at 2019-10-22 20:48:19 -0300
+Started PUT "/__web_console/repl_sessions/517513972cf055675d95495ea663fa5b" for ::1 at 2019-10-22 20:48:20 -0300
+Started PUT "/__web_console/repl_sessions/517513972cf055675d95495ea663fa5b" for ::1 at 2019-10-22 20:49:58 -0300
+Started PUT "/__web_console/repl_sessions/517513972cf055675d95495ea663fa5b" for ::1 at 2019-10-22 20:50:00 -0300
+Started PUT "/__web_console/repl_sessions/517513972cf055675d95495ea663fa5b" for ::1 at 2019-10-22 20:50:16 -0300
+Started PUT "/__web_console/repl_sessions/517513972cf055675d95495ea663fa5b" for ::1 at 2019-10-22 20:50:17 -0300
+Started PUT "/__web_console/repl_sessions/517513972cf055675d95495ea663fa5b" for ::1 at 2019-10-22 20:50:30 -0300
+Started PUT "/__web_console/repl_sessions/517513972cf055675d95495ea663fa5b" for ::1 at 2019-10-22 20:55:00 -0300
+Started PUT "/__web_console/repl_sessions/517513972cf055675d95495ea663fa5b" for ::1 at 2019-10-22 20:55:03 -0300
+Started PUT "/__web_console/repl_sessions/517513972cf055675d95495ea663fa5b" for ::1 at 2019-10-22 20:55:46 -0300
+Started POST "/records" for ::1 at 2019-10-22 20:57:18 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by RecordsController#create as HTML
+  Parameters: {"authenticity_token"=>"9PYqiXgPbRjSGm6GN1jqgXUSPl4Niv4PLaKYcib9bRpJ8AA4caE4RUyjK8FQLWOnpPkimHIUdWNIfr4dnFL8MQ==", "record"=>{"domain_id"=>"4", "type_record"=>"A", "host"=>"incendio", "ttl"=>"1", "content"=>"1.1.1.1.1", "priority"=>"1"}, "commit"=>"Create Record"}
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "records" WHERE "records"."type_record" = ? AND "records"."host" = ? AND "records"."domain_id" = ?[0m  [["type_record", "CNAME"], ["host", "incendio"], ["domain_id", 4]]
+  ↳ app/controllers/records_controller.rb:50:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/records_controller.rb:60:in `block in create'
+  [1m[36mDomain Load (0.6ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/records_controller.rb:60:in `block in create'
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/records_controller.rb:60:in `block in create'
+  Rendering records/new.html.erb within layouts/application
+  [1m[36mDomain Load (0.5ms)[0m  [1m[34mSELECT "domains".* FROM "domains" ORDER BY "domains"."name" ASC[0m
+  ↳ app/views/records/_form.html.erb:19
+  Rendered records/_form.html.erb (Duration: 7.0ms | Allocations: 2914)
+  Rendered records/new.html.erb within layouts/application (Duration: 7.4ms | Allocations: 3020)
+Completed 200 OK in 71ms (Views: 36.8ms | ActiveRecord: 1.5ms | Allocations: 33300)
+
+
+Started POST "/records" for ::1 at 2019-10-22 20:57:26 -0300
+Processing by RecordsController#create as HTML
+  Parameters: {"authenticity_token"=>"SEmW2PFxy6ZlUa6yZbL2dLqzKASUL1nuXWbTWoJG8qj1T7xp+N+e+/vo6/UCx39Sa1g0wuux0oI4uvU1OOljgw==", "record"=>{"domain_id"=>"4", "type_record"=>"A", "host"=>"incendio", "ttl"=>"1", "content"=>"1.1.1.1.", "priority"=>"1"}, "commit"=>"Create Record"}
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "records" WHERE "records"."type_record" = ? AND "records"."host" = ? AND "records"."domain_id" = ?[0m  [["type_record", "CNAME"], ["host", "incendio"], ["domain_id", 4]]
+  ↳ app/controllers/records_controller.rb:50:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/records_controller.rb:60:in `block in create'
+  [1m[36mDomain Load (0.2ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/records_controller.rb:60:in `block in create'
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/records_controller.rb:60:in `block in create'
+  Rendering records/new.html.erb within layouts/application
+  [1m[36mDomain Load (0.2ms)[0m  [1m[34mSELECT "domains".* FROM "domains" ORDER BY "domains"."name" ASC[0m
+  ↳ app/views/records/_form.html.erb:19
+  Rendered records/_form.html.erb (Duration: 5.7ms | Allocations: 2807)
+  Rendered records/new.html.erb within layouts/application (Duration: 6.7ms | Allocations: 2911)
+Completed 200 OK in 33ms (Views: 19.6ms | ActiveRecord: 1.4ms | Allocations: 17274)
+
+
+Started GET "/records/news" for ::1 at 2019-10-22 20:57:31 -0300
+Processing by RecordsController#show as HTML
+  Parameters: {"id"=>"news"}
+  [1m[36mRecord Load (0.3ms)[0m  [1m[34mSELECT "records".* FROM "records" WHERE "records"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/records_controller.rb:97:in `set_record'
+Completed 404 Not Found in 3ms (ActiveRecord: 0.3ms | Allocations: 1228)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Record with 'id'=news):
+  
+app/controllers/records_controller.rb:97:in `set_record'
+Started GET "/records/new" for ::1 at 2019-10-22 20:57:35 -0300
+Processing by RecordsController#new as HTML
+  Rendering records/new.html.erb within layouts/application
+  [1m[36mDomain Load (0.3ms)[0m  [1m[34mSELECT "domains".* FROM "domains" ORDER BY "domains"."name" ASC[0m
+  ↳ app/views/records/_form.html.erb:19
+  Rendered records/_form.html.erb (Duration: 5.5ms | Allocations: 2648)
+  Rendered records/new.html.erb within layouts/application (Duration: 6.1ms | Allocations: 2755)
+Completed 200 OK in 42ms (Views: 40.6ms | ActiveRecord: 0.3ms | Allocations: 13491)
+
+
+Started POST "/records" for ::1 at 2019-10-22 20:57:51 -0300
+Processing by RecordsController#create as HTML
+  Parameters: {"authenticity_token"=>"U1kmQC9nFQaLnfO3sM6jaVsoxW1zVBSWOO05mH+19K7uXwzxJslAWxUktvDXuypPisPZqwzKn/pdMR/3xRplhQ==", "record"=>{"domain_id"=>"4", "type_record"=>"A", "host"=>"asdfgh", "ttl"=>"1", "content"=>"1.1.1.1.1", "priority"=>"3"}, "commit"=>"Create Record"}
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "records" WHERE "records"."type_record" = ? AND "records"."host" = ? AND "records"."domain_id" = ?[0m  [["type_record", "CNAME"], ["host", "asdfgh"], ["domain_id", 4]]
+  ↳ app/controllers/records_controller.rb:50:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/records_controller.rb:60:in `block in create'
+  [1m[36mDomain Load (0.1ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/records_controller.rb:60:in `block in create'
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/records_controller.rb:60:in `block in create'
+  Rendering records/new.html.erb within layouts/application
+  [1m[36mDomain Load (0.3ms)[0m  [1m[34mSELECT "domains".* FROM "domains" ORDER BY "domains"."name" ASC[0m
+  ↳ app/views/records/_form.html.erb:19
+  Rendered records/_form.html.erb (Duration: 6.5ms | Allocations: 2807)
+  Rendered records/new.html.erb within layouts/application (Duration: 7.1ms | Allocations: 2911)
+Completed 200 OK in 28ms (Views: 20.1ms | ActiveRecord: 0.8ms | Allocations: 17271)
+
+
+Started POST "/records" for ::1 at 2019-10-22 20:58:00 -0300
+Processing by RecordsController#create as HTML
+  Parameters: {"authenticity_token"=>"PyS3gs0lWngn/uuV7HNkKdabEfjvfZ6WWVuIXyllBamCIp0zxIsPJblHrtKLBu0PB3ANPpDjFfo8h64wk8qUgg==", "record"=>{"domain_id"=>"4", "type_record"=>"A", "host"=>"asdfgh", "ttl"=>"1", "content"=>"1.1.1.1", "priority"=>"3"}, "commit"=>"Create Record"}
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "records" WHERE "records"."type_record" = ? AND "records"."host" = ? AND "records"."domain_id" = ?[0m  [["type_record", "CNAME"], ["host", "asdfgh"], ["domain_id", 4]]
+  ↳ app/controllers/records_controller.rb:50:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/records_controller.rb:60:in `block in create'
+  [1m[36mDomain Load (0.2ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/records_controller.rb:60:in `block in create'
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/records_controller.rb:60:in `block in create'
+  Rendering records/new.html.erb within layouts/application
+  [1m[36mDomain Load (0.2ms)[0m  [1m[34mSELECT "domains".* FROM "domains" ORDER BY "domains"."name" ASC[0m
+  ↳ app/views/records/_form.html.erb:19
+  Rendered records/_form.html.erb (Duration: 5.7ms | Allocations: 2807)
+  Rendered records/new.html.erb within layouts/application (Duration: 6.3ms | Allocations: 2911)
+Completed 200 OK in 37ms (Views: 22.5ms | ActiveRecord: 0.9ms | Allocations: 17266)
+
+
+Started POST "/records" for ::1 at 2019-10-22 20:58:02 -0300
+Processing by RecordsController#create as HTML
+  Parameters: {"authenticity_token"=>"ZITyRpYhDPYO6bLyGMl0InSPjHsDz/Mq6yfvmfc0IHnZgtj3n49Zq5BQ97V/vP0EpWSQvXxReEaO+8n2TZuxUg==", "record"=>{"domain_id"=>"4", "type_record"=>"A", "host"=>"asdfgh", "ttl"=>"1", "content"=>"1.1.1.1", "priority"=>"3"}, "commit"=>"Create Record"}
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "records" WHERE "records"."type_record" = ? AND "records"."host" = ? AND "records"."domain_id" = ?[0m  [["type_record", "CNAME"], ["host", "asdfgh"], ["domain_id", 4]]
+  ↳ app/controllers/records_controller.rb:50:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/records_controller.rb:60:in `block in create'
+  [1m[36mDomain Load (0.2ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/records_controller.rb:60:in `block in create'
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/records_controller.rb:60:in `block in create'
+  Rendering records/new.html.erb within layouts/application
+  [1m[36mDomain Load (0.3ms)[0m  [1m[34mSELECT "domains".* FROM "domains" ORDER BY "domains"."name" ASC[0m
+  ↳ app/views/records/_form.html.erb:19
+  Rendered records/_form.html.erb (Duration: 4.8ms | Allocations: 2807)
+  Rendered records/new.html.erb within layouts/application (Duration: 5.7ms | Allocations: 2911)
+Completed 200 OK in 31ms (Views: 20.1ms | ActiveRecord: 2.0ms | Allocations: 17270)
+
+
+Started POST "/records" for ::1 at 2019-10-22 20:58:02 -0300
+Processing by RecordsController#create as HTML
+  Parameters: {"authenticity_token"=>"hYYtSmdNJGu3fjZfTAVYXcjd3QKda+TmrwbVHBpnOpU4gAf7buNxNinHcxgrcNF7GTbBxOL1b4rK2vNzoMirvg==", "record"=>{"domain_id"=>"4", "type_record"=>"A", "host"=>"asdfgh", "ttl"=>"1", "content"=>"1.1.1.1", "priority"=>"3"}, "commit"=>"Create Record"}
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "records" WHERE "records"."type_record" = ? AND "records"."host" = ? AND "records"."domain_id" = ?[0m  [["type_record", "CNAME"], ["host", "asdfgh"], ["domain_id", 4]]
+  ↳ app/controllers/records_controller.rb:50:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/records_controller.rb:60:in `block in create'
+  [1m[36mDomain Load (0.2ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/records_controller.rb:60:in `block in create'
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/records_controller.rb:60:in `block in create'
+  Rendering records/new.html.erb within layouts/application
+  [1m[36mDomain Load (0.8ms)[0m  [1m[34mSELECT "domains".* FROM "domains" ORDER BY "domains"."name" ASC[0m
+  ↳ app/views/records/_form.html.erb:19
+  Rendered records/_form.html.erb (Duration: 9.2ms | Allocations: 2807)
+  Rendered records/new.html.erb within layouts/application (Duration: 9.7ms | Allocations: 2911)
+Completed 200 OK in 40ms (Views: 27.7ms | ActiveRecord: 1.5ms | Allocations: 17272)
+
+
+Started POST "/records" for ::1 at 2019-10-22 20:58:03 -0300
+Processing by RecordsController#create as HTML
+  Parameters: {"authenticity_token"=>"bGSn5ILFuKzo7L8z8kcavB40qzk+TsFrPK+Dv1cN2KvRYo1Vi2vt8XZV+nSVMpOaz9+3/0HQSgdZc6XQ7aJJgA==", "record"=>{"domain_id"=>"4", "type_record"=>"A", "host"=>"asdfgh", "ttl"=>"1", "content"=>"1.1.1.1", "priority"=>"3"}, "commit"=>"Create Record"}
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "records" WHERE "records"."type_record" = ? AND "records"."host" = ? AND "records"."domain_id" = ?[0m  [["type_record", "CNAME"], ["host", "asdfgh"], ["domain_id", 4]]
+  ↳ app/controllers/records_controller.rb:50:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/records_controller.rb:60:in `block in create'
+  [1m[36mDomain Load (0.1ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/records_controller.rb:60:in `block in create'
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/records_controller.rb:60:in `block in create'
+  Rendering records/new.html.erb within layouts/application
+  [1m[36mDomain Load (1.9ms)[0m  [1m[34mSELECT "domains".* FROM "domains" ORDER BY "domains"."name" ASC[0m
+  ↳ app/views/records/_form.html.erb:19
+  Rendered records/_form.html.erb (Duration: 16.8ms | Allocations: 2807)
+  Rendered records/new.html.erb within layouts/application (Duration: 17.7ms | Allocations: 2911)
+Completed 200 OK in 48ms (Views: 39.7ms | ActiveRecord: 2.4ms | Allocations: 17266)
+
+
+Started POST "/records" for ::1 at 2019-10-22 20:58:03 -0300
+Processing by RecordsController#create as HTML
+  Parameters: {"authenticity_token"=>"KfWn9r0Jk2ZWwkxC7Um4H33kjwzIiCYa2S6mnNO+Ng+U841HtKfGO8h7CQWKPDE5rA+TyrcWrXa88oDzaRGnJA==", "record"=>{"domain_id"=>"4", "type_record"=>"A", "host"=>"asdfgh", "ttl"=>"1", "content"=>"1.1.1.1", "priority"=>"3"}, "commit"=>"Create Record"}
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "records" WHERE "records"."type_record" = ? AND "records"."host" = ? AND "records"."domain_id" = ?[0m  [["type_record", "CNAME"], ["host", "asdfgh"], ["domain_id", 4]]
+  ↳ app/controllers/records_controller.rb:50:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/records_controller.rb:60:in `block in create'
+  [1m[36mDomain Load (0.2ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/records_controller.rb:60:in `block in create'
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/records_controller.rb:60:in `block in create'
+  Rendering records/new.html.erb within layouts/application
+  [1m[36mDomain Load (0.6ms)[0m  [1m[34mSELECT "domains".* FROM "domains" ORDER BY "domains"."name" ASC[0m
+  ↳ app/views/records/_form.html.erb:19
+  Rendered records/_form.html.erb (Duration: 10.1ms | Allocations: 2807)
+  Rendered records/new.html.erb within layouts/application (Duration: 10.6ms | Allocations: 2911)
+Completed 200 OK in 48ms (Views: 31.5ms | ActiveRecord: 1.3ms | Allocations: 17260)
+
+
+Started POST "/records" for ::1 at 2019-10-22 20:58:03 -0300
+Processing by RecordsController#create as HTML
+  Parameters: {"authenticity_token"=>"56ulFbCRd5N/rrGk8Ls5ow6NGgH78m5ySio4ou9eiaxarY+kuT8izuEX9OOXzrCF32YGx4Rs5R4v9h7NVfEYhw==", "record"=>{"domain_id"=>"4", "type_record"=>"A", "host"=>"asdfgh", "ttl"=>"1", "content"=>"1.1.1.1", "priority"=>"3"}, "commit"=>"Create Record"}
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "records" WHERE "records"."type_record" = ? AND "records"."host" = ? AND "records"."domain_id" = ?[0m  [["type_record", "CNAME"], ["host", "asdfgh"], ["domain_id", 4]]
+  ↳ app/controllers/records_controller.rb:50:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/records_controller.rb:60:in `block in create'
+  [1m[36mDomain Load (0.4ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/records_controller.rb:60:in `block in create'
+  [1m[35m (0.5ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/records_controller.rb:60:in `block in create'
+  Rendering records/new.html.erb within layouts/application
+  [1m[36mDomain Load (0.2ms)[0m  [1m[34mSELECT "domains".* FROM "domains" ORDER BY "domains"."name" ASC[0m
+  ↳ app/views/records/_form.html.erb:19
+  Rendered records/_form.html.erb (Duration: 6.2ms | Allocations: 2807)
+  Rendered records/new.html.erb within layouts/application (Duration: 6.8ms | Allocations: 2911)
+Completed 200 OK in 50ms (Views: 27.3ms | ActiveRecord: 1.6ms | Allocations: 17268)
+
+
+Started POST "/records" for ::1 at 2019-10-22 20:58:08 -0300
+Processing by RecordsController#create as HTML
+  Parameters: {"authenticity_token"=>"aO/loA7tEakFSb4GBkmcE4Rhd/VnmKVvjfanEogDFOHV6c8RB0NE9Jvw+0FhPBU1VYprMxgGLgPoKoF9MqyFyg==", "record"=>{"domain_id"=>"4", "type_record"=>"A", "host"=>"asdfgh", "ttl"=>"1", "content"=>"1.1.1.1", "priority"=>"3"}, "commit"=>"Create Record"}
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "records" WHERE "records"."type_record" = ? AND "records"."host" = ? AND "records"."domain_id" = ?[0m  [["type_record", "CNAME"], ["host", "asdfgh"], ["domain_id", 4]]
+  ↳ app/controllers/records_controller.rb:50:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/records_controller.rb:60:in `block in create'
+  [1m[36mDomain Load (0.1ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/records_controller.rb:60:in `block in create'
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/records_controller.rb:60:in `block in create'
+  Rendering records/new.html.erb within layouts/application
+  [1m[36mDomain Load (0.2ms)[0m  [1m[34mSELECT "domains".* FROM "domains" ORDER BY "domains"."name" ASC[0m
+  ↳ app/views/records/_form.html.erb:19
+  Rendered records/_form.html.erb (Duration: 5.5ms | Allocations: 2807)
+  Rendered records/new.html.erb within layouts/application (Duration: 6.3ms | Allocations: 2911)
+Completed 200 OK in 33ms (Views: 21.4ms | ActiveRecord: 1.1ms | Allocations: 17278)
+
+
+Started POST "/records" for ::1 at 2019-10-22 20:58:08 -0300
+Processing by RecordsController#create as HTML
+  Parameters: {"authenticity_token"=>"hYQZIOg925N/gaF8bsB8pmAvzbZE0IehSlM5SMzKbJc4gjOR4ZOOzuE45DsJtfWAscTRcDtODM0vjx8ndmX9vA==", "record"=>{"domain_id"=>"4", "type_record"=>"A", "host"=>"asdfgh", "ttl"=>"1", "content"=>"1.1.1.1", "priority"=>"3"}, "commit"=>"Create Record"}
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "records" WHERE "records"."type_record" = ? AND "records"."host" = ? AND "records"."domain_id" = ?[0m  [["type_record", "CNAME"], ["host", "asdfgh"], ["domain_id", 4]]
+  ↳ app/controllers/records_controller.rb:50:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/records_controller.rb:60:in `block in create'
+  [1m[36mDomain Load (0.2ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/records_controller.rb:60:in `block in create'
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/records_controller.rb:60:in `block in create'
+  Rendering records/new.html.erb within layouts/application
+  [1m[36mDomain Load (0.3ms)[0m  [1m[34mSELECT "domains".* FROM "domains" ORDER BY "domains"."name" ASC[0m
+  ↳ app/views/records/_form.html.erb:19
+  Rendered records/_form.html.erb (Duration: 12.2ms | Allocations: 2807)
+  Rendered records/new.html.erb within layouts/application (Duration: 12.8ms | Allocations: 2911)
+Completed 200 OK in 49ms (Views: 31.3ms | ActiveRecord: 1.8ms | Allocations: 17268)
+
+
+Started POST "/records" for ::1 at 2019-10-22 20:58:09 -0300
+Processing by RecordsController#create as HTML
+  Parameters: {"authenticity_token"=>"0ld4QkNrnee5/GbKvW40mpe+1Qmb6xsipZlWrfxB0c1vUVLzSsXIuidFI43aG728RlXJz+R1kE7ARXDCRu5A5g==", "record"=>{"domain_id"=>"4", "type_record"=>"A", "host"=>"asdfgh", "ttl"=>"1", "content"=>"1.1.1.1", "priority"=>"3"}, "commit"=>"Create Record"}
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "records" WHERE "records"."type_record" = ? AND "records"."host" = ? AND "records"."domain_id" = ?[0m  [["type_record", "CNAME"], ["host", "asdfgh"], ["domain_id", 4]]
+  ↳ app/controllers/records_controller.rb:50:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/records_controller.rb:60:in `block in create'
+  [1m[36mDomain Load (0.1ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/records_controller.rb:60:in `block in create'
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/records_controller.rb:60:in `block in create'
+  Rendering records/new.html.erb within layouts/application
+  [1m[36mDomain Load (0.3ms)[0m  [1m[34mSELECT "domains".* FROM "domains" ORDER BY "domains"."name" ASC[0m
+  ↳ app/views/records/_form.html.erb:19
+  Rendered records/_form.html.erb (Duration: 10.1ms | Allocations: 2807)
+  Rendered records/new.html.erb within layouts/application (Duration: 10.6ms | Allocations: 2911)
+Completed 200 OK in 35ms (Views: 27.4ms | ActiveRecord: 0.8ms | Allocations: 17267)
+
+
+Started POST "/records" for ::1 at 2019-10-22 21:01:43 -0300
+Processing by RecordsController#create as HTML
+  Parameters: {"authenticity_token"=>"ckF6HQre13ij2Vg1nu9C+MBkE7EEOhVGgxM7AJx5PePPR1CsA3CCJT1gHXL5msveEY8Pd3uknirmzx1vJtasyA==", "record"=>{"domain_id"=>"4", "type_record"=>"A", "host"=>"asdfgh", "ttl"=>"1", "content"=>"1.1.1.1", "priority"=>"3"}, "commit"=>"Create Record"}
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "records" WHERE "records"."type_record" = ? AND "records"."host" = ? AND "records"."domain_id" = ?[0m  [["type_record", "CNAME"], ["host", "asdfgh"], ["domain_id", 4]]
+  ↳ app/controllers/records_controller.rb:50:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/records_controller.rb:60:in `block in create'
+  [1m[36mDomain Load (0.3ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/records_controller.rb:60:in `block in create'
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/records_controller.rb:60:in `block in create'
+  Rendering records/new.html.erb within layouts/application
+  [1m[36mDomain Load (0.3ms)[0m  [1m[34mSELECT "domains".* FROM "domains" ORDER BY "domains"."name" ASC[0m
+  ↳ app/views/records/_form.html.erb:19
+  Rendered records/_form.html.erb (Duration: 6.7ms | Allocations: 2809)
+  Rendered records/new.html.erb within layouts/application (Duration: 34.7ms | Allocations: 2913)
+Completed 200 OK in 64ms (Views: 52.0ms | ActiveRecord: 1.3ms | Allocations: 17263)
+
+
+Started POST "/records" for ::1 at 2019-10-22 21:02:00 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by RecordsController#create as HTML
+  Parameters: {"authenticity_token"=>"wtsqOpKPqEnJRVBc6ovD3bZtLoywXsHokHNgheZEFVZ/3QCLmyH9FFf8FRuN/kr7Z4YySs/ASoT1r0bqXOuEfQ==", "record"=>{"domain_id"=>"4", "type_record"=>"A", "host"=>"asdfgh", "ttl"=>"1", "content"=>"1.1.1.1", "priority"=>"3"}, "commit"=>"Create Record"}
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "records" WHERE "records"."type_record" = ? AND "records"."host" = ? AND "records"."domain_id" = ?[0m  [["type_record", "CNAME"], ["host", "asdfgh"], ["domain_id", 4]]
+  ↳ app/controllers/records_controller.rb:50:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/records_controller.rb:60:in `block in create'
+  [1m[36mDomain Load (0.2ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/records_controller.rb:60:in `block in create'
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/records_controller.rb:60:in `block in create'
+  Rendering records/new.html.erb within layouts/application
+  [1m[36mDomain Load (0.3ms)[0m  [1m[34mSELECT "domains".* FROM "domains" ORDER BY "domains"."name" ASC[0m
+  ↳ app/views/records/_form.html.erb:19
+  Rendered records/_form.html.erb (Duration: 6.9ms | Allocations: 2905)
+  Rendered records/new.html.erb within layouts/application (Duration: 7.9ms | Allocations: 3011)
+Completed 200 OK in 92ms (Views: 20.8ms | ActiveRecord: 5.3ms | Allocations: 34529)
+
+
+Started POST "/records" for ::1 at 2019-10-22 21:02:01 -0300
+Processing by RecordsController#create as HTML
+  Parameters: {"authenticity_token"=>"US/lFH0CCtQa4vKQwVbPsAHB8MJh1F8FJpE2wnJPqqrsKc+ldKxfiYRbt9emI0aW0CrsBB5K1GlDTRCtyOA7gQ==", "record"=>{"domain_id"=>"4", "type_record"=>"A", "host"=>"asdfgh", "ttl"=>"1", "content"=>"1.1.1.1", "priority"=>"3"}, "commit"=>"Create Record"}
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "records" WHERE "records"."type_record" = ? AND "records"."host" = ? AND "records"."domain_id" = ?[0m  [["type_record", "CNAME"], ["host", "asdfgh"], ["domain_id", 4]]
+  ↳ app/controllers/records_controller.rb:50:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/records_controller.rb:60:in `block in create'
+  [1m[36mDomain Load (0.3ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/records_controller.rb:60:in `block in create'
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/records_controller.rb:60:in `block in create'
+  Rendering records/new.html.erb within layouts/application
+  [1m[36mDomain Load (0.2ms)[0m  [1m[34mSELECT "domains".* FROM "domains" ORDER BY "domains"."name" ASC[0m
+  ↳ app/views/records/_form.html.erb:19
+  Rendered records/_form.html.erb (Duration: 4.3ms | Allocations: 2807)
+  Rendered records/new.html.erb within layouts/application (Duration: 4.7ms | Allocations: 2911)
+Completed 200 OK in 29ms (Views: 19.1ms | ActiveRecord: 1.1ms | Allocations: 17264)
+
+
+Started POST "/records" for ::1 at 2019-10-22 21:02:02 -0300
+Processing by RecordsController#create as HTML
+  Parameters: {"authenticity_token"=>"uNshFl1ZgSUwc0x/4wdqCwqs4qsuEpM/Ahnkws4og2MF3QunVPfUeK7KCTiEcuMt20f+bVGMGFNnxcKtdIcSSA==", "record"=>{"domain_id"=>"4", "type_record"=>"A", "host"=>"asdfgh", "ttl"=>"1", "content"=>"1.1.1.1", "priority"=>"3"}, "commit"=>"Create Record"}
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "records" WHERE "records"."type_record" = ? AND "records"."host" = ? AND "records"."domain_id" = ?[0m  [["type_record", "CNAME"], ["host", "asdfgh"], ["domain_id", 4]]
+  ↳ app/controllers/records_controller.rb:50:in `create'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/records_controller.rb:60:in `block in create'
+  [1m[36mDomain Load (0.1ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/records_controller.rb:60:in `block in create'
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/records_controller.rb:60:in `block in create'
+  Rendering records/new.html.erb within layouts/application
+  [1m[36mDomain Load (0.2ms)[0m  [1m[34mSELECT "domains".* FROM "domains" ORDER BY "domains"."name" ASC[0m
+  ↳ app/views/records/_form.html.erb:19
+  Rendered records/_form.html.erb (Duration: 4.3ms | Allocations: 2807)
+  Rendered records/new.html.erb within layouts/application (Duration: 4.6ms | Allocations: 2911)
+Completed 200 OK in 35ms (Views: 27.2ms | ActiveRecord: 0.7ms | Allocations: 17272)
+
+
+Started POST "/records" for ::1 at 2019-10-22 21:02:02 -0300
+Processing by RecordsController#create as HTML
+  Parameters: {"authenticity_token"=>"BpJtk6zsSiMxP9bOSJwV5GwlNElA8T5oCZL6Rp9oPFu7lEcipUIffq+Gk4kv6ZzCvc4ojz9vtQRsTtwpJcetcA==", "record"=>{"domain_id"=>"4", "type_record"=>"A", "host"=>"asdfgh", "ttl"=>"1", "content"=>"1.1.1.1", "priority"=>"3"}, "commit"=>"Create Record"}
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "records" WHERE "records"."type_record" = ? AND "records"."host" = ? AND "records"."domain_id" = ?[0m  [["type_record", "CNAME"], ["host", "asdfgh"], ["domain_id", 4]]
+  ↳ app/controllers/records_controller.rb:50:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/records_controller.rb:60:in `block in create'
+  [1m[36mDomain Load (0.1ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/records_controller.rb:60:in `block in create'
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/records_controller.rb:60:in `block in create'
+  Rendering records/new.html.erb within layouts/application
+  [1m[36mDomain Load (0.3ms)[0m  [1m[34mSELECT "domains".* FROM "domains" ORDER BY "domains"."name" ASC[0m
+  ↳ app/views/records/_form.html.erb:19
+  Rendered records/_form.html.erb (Duration: 8.2ms | Allocations: 2807)
+  Rendered records/new.html.erb within layouts/application (Duration: 8.9ms | Allocations: 2911)
+Completed 200 OK in 36ms (Views: 27.8ms | ActiveRecord: 1.3ms | Allocations: 17272)
+
+
+Started GET "/records/new" for ::1 at 2019-10-22 21:02:06 -0300
+Processing by RecordsController#new as HTML
+  Rendering records/new.html.erb within layouts/application
+  [1m[36mDomain Load (0.3ms)[0m  [1m[34mSELECT "domains".* FROM "domains" ORDER BY "domains"."name" ASC[0m
+  ↳ app/views/records/_form.html.erb:19
+  Rendered records/_form.html.erb (Duration: 8.0ms | Allocations: 2649)
+  Rendered records/new.html.erb within layouts/application (Duration: 8.6ms | Allocations: 2753)
+Completed 200 OK in 28ms (Views: 26.1ms | ActiveRecord: 0.3ms | Allocations: 13473)
+
+
+Started POST "/records" for ::1 at 2019-10-22 21:02:15 -0300
+Processing by RecordsController#create as HTML
+  Parameters: {"authenticity_token"=>"/Ri/DKCH5Y0sOzRVQeu/JsKPuEl6FwKjnGCVtyu4XQlAHpW9qSmw0LKCcRImnjYAE2SkjwWJic/5vLPYkRfMIg==", "record"=>{"domain_id"=>"4", "type_record"=>"A", "host"=>"asdfasdfasdf", "ttl"=>"1", "content"=>"1.1.1.1.1", "priority"=>"4"}, "commit"=>"Create Record"}
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "records" WHERE "records"."type_record" = ? AND "records"."host" = ? AND "records"."domain_id" = ?[0m  [["type_record", "CNAME"], ["host", "asdfasdfasdf"], ["domain_id", 4]]
+  ↳ app/controllers/records_controller.rb:50:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/records_controller.rb:60:in `block in create'
+  [1m[36mDomain Load (0.5ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/records_controller.rb:60:in `block in create'
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/records_controller.rb:60:in `block in create'
+  Rendering records/new.html.erb within layouts/application
+  [1m[36mDomain Load (0.3ms)[0m  [1m[34mSELECT "domains".* FROM "domains" ORDER BY "domains"."name" ASC[0m
+  ↳ app/views/records/_form.html.erb:19
+  Rendered records/_form.html.erb (Duration: 8.1ms | Allocations: 2807)
+  Rendered records/new.html.erb within layouts/application (Duration: 8.8ms | Allocations: 2911)
+Completed 200 OK in 37ms (Views: 26.4ms | ActiveRecord: 1.2ms | Allocations: 17265)
+
+
+Started POST "/records" for ::1 at 2019-10-22 21:02:19 -0300
+Processing by RecordsController#create as HTML
+  Parameters: {"authenticity_token"=>"XXdzIMXiknDmm2ju9U27DW/gitdRTntLvLbixKq5SHngcVmRzEzHLXgiLamSODIrvguWES7Q8CfZasSrEBbZUg==", "record"=>{"domain_id"=>"4", "type_record"=>"A", "host"=>"asdfasdfasdf", "ttl"=>"1", "content"=>"1.1.1.1", "priority"=>"4"}, "commit"=>"Create Record"}
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "records" WHERE "records"."type_record" = ? AND "records"."host" = ? AND "records"."domain_id" = ?[0m  [["type_record", "CNAME"], ["host", "asdfasdfasdf"], ["domain_id", 4]]
+  ↳ app/controllers/records_controller.rb:50:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/records_controller.rb:60:in `block in create'
+  [1m[36mDomain Load (0.4ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/records_controller.rb:60:in `block in create'
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/records_controller.rb:60:in `block in create'
+  Rendering records/new.html.erb within layouts/application
+  [1m[36mDomain Load (0.3ms)[0m  [1m[34mSELECT "domains".* FROM "domains" ORDER BY "domains"."name" ASC[0m
+  ↳ app/views/records/_form.html.erb:19
+  Rendered records/_form.html.erb (Duration: 5.6ms | Allocations: 2807)
+  Rendered records/new.html.erb within layouts/application (Duration: 6.2ms | Allocations: 2911)
+Completed 200 OK in 34ms (Views: 22.5ms | ActiveRecord: 1.1ms | Allocations: 17266)
+
+
+Started GET "/records/new" for ::1 at 2019-10-22 21:02:22 -0300
+Processing by RecordsController#new as HTML
+  Rendering records/new.html.erb within layouts/application
+  [1m[36mDomain Load (0.2ms)[0m  [1m[34mSELECT "domains".* FROM "domains" ORDER BY "domains"."name" ASC[0m
+  ↳ app/views/records/_form.html.erb:19
+  Rendered records/_form.html.erb (Duration: 8.4ms | Allocations: 2649)
+  Rendered records/new.html.erb within layouts/application (Duration: 8.9ms | Allocations: 2753)
+Completed 200 OK in 29ms (Views: 27.5ms | ActiveRecord: 0.2ms | Allocations: 13479)
+
+
+Started POST "/records" for ::1 at 2019-10-22 21:02:35 -0300
+Processing by RecordsController#create as HTML
+  Parameters: {"authenticity_token"=>"OaNPrSUIAeHq0vI/SAgIZS8ZaWpmbiw3uFsXWHNZGtKEpWUcLKZUvHRrt3gvfYFD/vJ1rBnwp1vdhzE3yfaL+Q==", "record"=>{"domain_id"=>"4", "type_record"=>"A", "host"=>"12312d", "ttl"=>"1", "content"=>"123.123.123.123", "priority"=>"3"}, "commit"=>"Create Record"}
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "records" WHERE "records"."type_record" = ? AND "records"."host" = ? AND "records"."domain_id" = ?[0m  [["type_record", "CNAME"], ["host", "12312d"], ["domain_id", 4]]
+  ↳ app/controllers/records_controller.rb:50:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/records_controller.rb:60:in `block in create'
+  [1m[36mDomain Load (0.4ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/records_controller.rb:60:in `block in create'
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/records_controller.rb:60:in `block in create'
+  Rendering records/new.html.erb within layouts/application
+  [1m[36mDomain Load (0.3ms)[0m  [1m[34mSELECT "domains".* FROM "domains" ORDER BY "domains"."name" ASC[0m
+  ↳ app/views/records/_form.html.erb:19
+  Rendered records/_form.html.erb (Duration: 34.0ms | Allocations: 2807)
+  Rendered records/new.html.erb within layouts/application (Duration: 34.3ms | Allocations: 2911)
+Completed 200 OK in 58ms (Views: 46.5ms | ActiveRecord: 1.2ms | Allocations: 17279)
+
+
+Started POST "/records" for ::1 at 2019-10-22 21:03:35 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by RecordsController#create as HTML
+  Parameters: {"authenticity_token"=>"3wNDIA4DjsKDCKzjLLnUkiAoOM1SVKakfw+fv4jCpCJiBWmRB63bnx2x6aRLzF208cMkCy3KLcga07nQMm01CQ==", "record"=>{"domain_id"=>"4", "type_record"=>"A", "host"=>"12312d", "ttl"=>"1", "content"=>"123.123.123.123", "priority"=>"3"}, "commit"=>"Create Record"}
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "records" WHERE "records"."type_record" = ? AND "records"."host" = ? AND "records"."domain_id" = ?[0m  [["type_record", "CNAME"], ["host", "12312d"], ["domain_id", 4]]
+  ↳ app/controllers/records_controller.rb:50:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/records_controller.rb:60:in `block in create'
+  [1m[36mDomain Load (0.1ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/records_controller.rb:60:in `block in create'
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/records_controller.rb:60:in `block in create'
+  Rendering records/new.html.erb within layouts/application
+  [1m[36mDomain Load (0.2ms)[0m  [1m[34mSELECT "domains".* FROM "domains" ORDER BY "domains"."name" ASC[0m
+  ↳ app/views/records/_form.html.erb:19
+  Rendered records/_form.html.erb (Duration: 4.3ms | Allocations: 2905)
+  Rendered records/new.html.erb within layouts/application (Duration: 4.6ms | Allocations: 3011)
+Completed 200 OK in 52ms (Views: 18.0ms | ActiveRecord: 2.6ms | Allocations: 34518)
+
+
+Started GET "/records/new" for ::1 at 2019-10-22 21:03:38 -0300
+Processing by RecordsController#new as HTML
+  Rendering records/new.html.erb within layouts/application
+  [1m[36mDomain Load (0.2ms)[0m  [1m[34mSELECT "domains".* FROM "domains" ORDER BY "domains"."name" ASC[0m
+  ↳ app/views/records/_form.html.erb:19
+  Rendered records/_form.html.erb (Duration: 4.5ms | Allocations: 2649)
+  Rendered records/new.html.erb within layouts/application (Duration: 5.2ms | Allocations: 2753)
+Completed 200 OK in 24ms (Views: 22.9ms | ActiveRecord: 0.2ms | Allocations: 13485)
+
+
+Started POST "/records" for ::1 at 2019-10-22 21:03:51 -0300
+Processing by RecordsController#create as HTML
+  Parameters: {"authenticity_token"=>"jAFYvZw/tK5tcYXK2SSDBxzPLCP5TGjRNyRSKNEGYhQxB3IMlZHh8/PIwI2+UQohzSQw5YbS471S+HRHa6nzPw==", "record"=>{"domain_id"=>"12", "type_record"=>"A", "host"=>"asdfg", "ttl"=>"1", "content"=>"123.123.123.123", "priority"=>"1"}, "commit"=>"Create Record"}
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "records" WHERE "records"."type_record" = ? AND "records"."host" = ? AND "records"."domain_id" = ?[0m  [["type_record", "CNAME"], ["host", "asdfg"], ["domain_id", 12]]
+  ↳ app/controllers/records_controller.rb:50:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/records_controller.rb:60:in `block in create'
+  [1m[36mDomain Load (0.2ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/records_controller.rb:60:in `block in create'
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/records_controller.rb:60:in `block in create'
+  Rendering records/new.html.erb within layouts/application
+  [1m[36mDomain Load (0.2ms)[0m  [1m[34mSELECT "domains".* FROM "domains" ORDER BY "domains"."name" ASC[0m
+  ↳ app/views/records/_form.html.erb:19
+  Rendered records/_form.html.erb (Duration: 4.9ms | Allocations: 2807)
+  Rendered records/new.html.erb within layouts/application (Duration: 5.3ms | Allocations: 2911)
+Completed 200 OK in 36ms (Views: 23.9ms | ActiveRecord: 1.0ms | Allocations: 17267)
+
+
+Started GET "/records/news" for ::1 at 2019-10-22 21:04:52 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by RecordsController#show as HTML
+  Parameters: {"id"=>"news"}
+  [1m[36mRecord Load (0.1ms)[0m  [1m[34mSELECT "records".* FROM "records" WHERE "records"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/records_controller.rb:97:in `set_record'
+Completed 404 Not Found in 8ms (ActiveRecord: 1.3ms | Allocations: 3065)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Record with 'id'=news):
+  
+app/controllers/records_controller.rb:97:in `set_record'
+Started GET "/records/new" for ::1 at 2019-10-22 21:04:55 -0300
+Processing by RecordsController#new as HTML
+  Rendering records/new.html.erb within layouts/application
+  [1m[36mDomain Load (0.3ms)[0m  [1m[34mSELECT "domains".* FROM "domains" ORDER BY "domains"."name" ASC[0m
+  ↳ app/views/records/_form.html.erb:19
+  Rendered records/_form.html.erb (Duration: 22.3ms | Allocations: 11982)
+  Rendered records/new.html.erb within layouts/application (Duration: 22.8ms | Allocations: 12088)
+Completed 200 OK in 50ms (Views: 36.9ms | ActiveRecord: 1.0ms | Allocations: 27856)
+
+
+Started POST "/records" for ::1 at 2019-10-22 21:05:03 -0300
+Processing by RecordsController#create as HTML
+  Parameters: {"authenticity_token"=>"OQqZS5WWMwPRviWmMuV5OsZC7luapE/hNawqS5AeTRGEDLP6nDhmXk8HYOFVkPAcF6nyneU6xI1QcAwkKrHcOg==", "record"=>{"domain_id"=>"4", "type_record"=>"A", "host"=>"asdfsdrqw", "ttl"=>"1", "content"=>"123.123.123.123", "priority"=>"1"}, "commit"=>"Create Record"}
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "records" WHERE "records"."type_record" = ? AND "records"."host" = ? AND "records"."domain_id" = ?[0m  [["type_record", "CNAME"], ["host", "asdfsdrqw"], ["domain_id", 4]]
+  ↳ app/controllers/records_controller.rb:50:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/records_controller.rb:60:in `block in create'
+  [1m[36mDomain Load (0.6ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/records_controller.rb:60:in `block in create'
+  [1m[36mRecord Create (2.1ms)[0m  [1m[32mINSERT INTO "records" ("type_record", "host", "ttl", "content", "priority", "created_at", "updated_at", "domain_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["type_record", "A"], ["host", "asdfsdrqw"], ["ttl", "1"], ["content", "123.123.123.123"], ["priority", 1], ["created_at", "2019-10-23 00:05:03.283737"], ["updated_at", "2019-10-23 00:05:03.283737"], ["domain_id", 4]]
+  ↳ app/controllers/records_controller.rb:60:in `block in create'
+  [1m[35m (270.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/records_controller.rb:60:in `block in create'
+Redirected to http://localhost:3000/records/11
+Completed 302 Found in 293ms (ActiveRecord: 273.6ms | Allocations: 6504)
+
+
+Started GET "/records/11" for ::1 at 2019-10-22 21:05:03 -0300
+Processing by RecordsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mRecord Load (0.2ms)[0m  [1m[34mSELECT "records".* FROM "records" WHERE "records"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/records_controller.rb:97:in `set_record'
+  Rendering records/show.html.erb within layouts/application
+  Rendered records/show.html.erb within layouts/application (Duration: 0.4ms | Allocations: 105)
+Completed 200 OK in 19ms (Views: 16.6ms | ActiveRecord: 0.2ms | Allocations: 11350)
+
+
+Started GET "/records" for ::1 at 2019-10-22 21:05:05 -0300
+Processing by RecordsController#index as HTML
+  Rendering records/index.html.erb within layouts/application
+  [1m[36mRecord Load (0.3ms)[0m  [1m[34mSELECT "records".* FROM "records"[0m
+  ↳ app/views/records/index.html.erb:18
+  Rendered records/index.html.erb within layouts/application (Duration: 3.8ms | Allocations: 1845)
+Completed 200 OK in 21ms (Views: 19.8ms | ActiveRecord: 0.3ms | Allocations: 12568)
+
+
+Started GET "/records/3" for ::1 at 2019-10-22 21:05:09 -0300
+Processing by RecordsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mRecord Load (0.2ms)[0m  [1m[34mSELECT "records".* FROM "records" WHERE "records"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/records_controller.rb:97:in `set_record'
+  Rendering records/show.html.erb within layouts/application
+  Rendered records/show.html.erb within layouts/application (Duration: 0.5ms | Allocations: 101)
+Completed 200 OK in 30ms (Views: 27.3ms | ActiveRecord: 0.2ms | Allocations: 11325)
+
+
+Started GET "/records/3/edit" for ::1 at 2019-10-22 21:05:11 -0300
+Processing by RecordsController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mRecord Load (0.2ms)[0m  [1m[34mSELECT "records".* FROM "records" WHERE "records"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/records_controller.rb:97:in `set_record'
+  Rendering records/edit.html.erb within layouts/application
+  [1m[36mDomain Load (1.6ms)[0m  [1m[34mSELECT "domains".* FROM "domains" ORDER BY "domains"."name" ASC[0m
+  ↳ app/views/records/_form.html.erb:17
+  Rendered records/_form.html.erb (Duration: 36.0ms | Allocations: 2721)
+  Rendered records/edit.html.erb within layouts/application (Duration: 37.3ms | Allocations: 2977)
+Completed 200 OK in 56ms (Views: 51.3ms | ActiveRecord: 1.8ms | Allocations: 14343)
+
+
+Started PATCH "/records/3" for ::1 at 2019-10-22 21:05:15 -0300
+Processing by RecordsController#update as HTML
+  Parameters: {"authenticity_token"=>"zOTg6NLexGa2tpchKVZ5a7OJl+rOE/Ou3jOpL1LOzjxx4spZ23CROygP0mZOI/BNYmKLLLGNeMK7749A6GFfFw==", "record"=>{"domain_id"=>"3", "type_record"=>"CNAME", "host"=>"meuhost", "ttl"=>"1", "content"=>"123.123.123.123.1", "priority"=>"1"}, "commit"=>"Update Record", "id"=>"3"}
+  [1m[36mRecord Load (0.2ms)[0m  [1m[34mSELECT "records".* FROM "records" WHERE "records"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/records_controller.rb:97:in `set_record'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/records_controller.rb:74:in `block in update'
+  [1m[36mDomain Load (0.1ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/records_controller.rb:74:in `block in update'
+  [1m[36mRecord Update (1.6ms)[0m  [1m[33mUPDATE "records" SET "domain_id" = ?, "content" = ?, "updated_at" = ? WHERE "records"."id" = ?[0m  [["domain_id", 3], ["content", "123.123.123.123.1"], ["updated_at", "2019-10-23 00:05:15.048088"], ["id", 3]]
+  ↳ app/controllers/records_controller.rb:74:in `block in update'
+  [1m[35m (202.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/records_controller.rb:74:in `block in update'
+Redirected to http://localhost:3000/records/3
+Completed 302 Found in 217ms (ActiveRecord: 204.6ms | Allocations: 5677)
+
+
+Started GET "/records/3" for ::1 at 2019-10-22 21:05:15 -0300
+Processing by RecordsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mRecord Load (0.2ms)[0m  [1m[34mSELECT "records".* FROM "records" WHERE "records"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/records_controller.rb:97:in `set_record'
+  Rendering records/show.html.erb within layouts/application
+  Rendered records/show.html.erb within layouts/application (Duration: 0.4ms | Allocations: 105)
+Completed 200 OK in 22ms (Views: 19.2ms | ActiveRecord: 0.2ms | Allocations: 11353)
+
+
+Started GET "/records" for ::1 at 2019-10-22 21:05:20 -0300
+Processing by RecordsController#index as HTML
+  Rendering records/index.html.erb within layouts/application
+  [1m[36mRecord Load (0.2ms)[0m  [1m[34mSELECT "records".* FROM "records"[0m
+  ↳ app/views/records/index.html.erb:18
+  Rendered records/index.html.erb within layouts/application (Duration: 4.1ms | Allocations: 1819)
+Completed 200 OK in 22ms (Views: 20.9ms | ActiveRecord: 0.2ms | Allocations: 12520)
+
+
+Started GET "/records/new" for ::1 at 2019-10-22 21:05:26 -0300
+Processing by RecordsController#new as HTML
+  Rendering records/new.html.erb within layouts/application
+  [1m[36mDomain Load (0.4ms)[0m  [1m[34mSELECT "domains".* FROM "domains" ORDER BY "domains"."name" ASC[0m
+  ↳ app/views/records/_form.html.erb:19
+  Rendered records/_form.html.erb (Duration: 5.4ms | Allocations: 2649)
+  Rendered records/new.html.erb within layouts/application (Duration: 5.9ms | Allocations: 2753)
+Completed 200 OK in 25ms (Views: 23.5ms | ActiveRecord: 0.4ms | Allocations: 13480)
+
+
+Started POST "/records" for ::1 at 2019-10-22 21:05:37 -0300
+Processing by RecordsController#create as HTML
+  Parameters: {"authenticity_token"=>"D0IR3THV+I4mp/4Dd6t9quXkIJX9rJz+H92ajODWsr6yRDtsOHut07geu0QQ3vSMNA88U4IyF5J6AbzjWnkjlQ==", "record"=>{"domain_id"=>"12", "type_record"=>"A", "host"=>"sad", "ttl"=>"1", "content"=>"123.123.123.123.1", "priority"=>"1"}, "commit"=>"Create Record"}
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "records" WHERE "records"."type_record" = ? AND "records"."host" = ? AND "records"."domain_id" = ?[0m  [["type_record", "CNAME"], ["host", "sad"], ["domain_id", 12]]
+  ↳ app/controllers/records_controller.rb:50:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/records_controller.rb:60:in `block in create'
+  [1m[36mDomain Load (0.1ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/records_controller.rb:60:in `block in create'
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/records_controller.rb:60:in `block in create'
+  Rendering records/new.html.erb within layouts/application
+  [1m[36mDomain Load (0.3ms)[0m  [1m[34mSELECT "domains".* FROM "domains" ORDER BY "domains"."name" ASC[0m
+  ↳ app/views/records/_form.html.erb:19
+  Rendered records/_form.html.erb (Duration: 6.5ms | Allocations: 2812)
+  Rendered records/new.html.erb within layouts/application (Duration: 7.0ms | Allocations: 2916)
+Completed 200 OK in 32ms (Views: 24.0ms | ActiveRecord: 0.8ms | Allocations: 17255)
+
+
+Started GET "/records" for ::1 at 2019-10-22 21:05:39 -0300
+Processing by RecordsController#index as HTML
+  Rendering records/index.html.erb within layouts/application
+  [1m[36mRecord Load (0.2ms)[0m  [1m[34mSELECT "records".* FROM "records"[0m
+  ↳ app/views/records/index.html.erb:18
+  Rendered records/index.html.erb within layouts/application (Duration: 4.2ms | Allocations: 1818)
+Completed 200 OK in 22ms (Views: 20.6ms | ActiveRecord: 0.2ms | Allocations: 12534)
+
+
+Started GET "/records/11/edit" for ::1 at 2019-10-22 21:05:48 -0300
+Processing by RecordsController#edit as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mRecord Load (0.2ms)[0m  [1m[34mSELECT "records".* FROM "records" WHERE "records"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/records_controller.rb:97:in `set_record'
+  Rendering records/edit.html.erb within layouts/application
+  [1m[36mDomain Load (0.3ms)[0m  [1m[34mSELECT "domains".* FROM "domains" ORDER BY "domains"."name" ASC[0m
+  ↳ app/views/records/_form.html.erb:17
+  Rendered records/_form.html.erb (Duration: 5.5ms | Allocations: 2685)
+  Rendered records/edit.html.erb within layouts/application (Duration: 5.9ms | Allocations: 2805)
+Completed 200 OK in 31ms (Views: 27.5ms | ActiveRecord: 0.5ms | Allocations: 14032)
+
+
+Started PATCH "/records/11" for ::1 at 2019-10-22 21:05:52 -0300
+Processing by RecordsController#update as HTML
+  Parameters: {"authenticity_token"=>"eXES/q9tGuU/C9ENxcn413ai8PBZLUrO1n9N6TrLnyDEdzhPpsNPuKGylEqivHHxp0nsNiazwaKzo2uGgGQOCw==", "record"=>{"domain_id"=>"4", "type_record"=>"A", "host"=>"", "ttl"=>"1", "content"=>"123.123.123.123", "priority"=>"1"}, "commit"=>"Update Record", "id"=>"11"}
+  [1m[36mRecord Load (0.3ms)[0m  [1m[34mSELECT "records".* FROM "records" WHERE "records"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/records_controller.rb:97:in `set_record'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/records_controller.rb:74:in `block in update'
+  [1m[36mDomain Load (0.2ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/records_controller.rb:74:in `block in update'
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/records_controller.rb:74:in `block in update'
+  Rendering records/edit.html.erb within layouts/application
+  [1m[36mDomain Load (0.2ms)[0m  [1m[34mSELECT "domains".* FROM "domains" ORDER BY "domains"."name" ASC[0m
+  ↳ app/views/records/_form.html.erb:17
+  Rendered records/_form.html.erb (Duration: 4.8ms | Allocations: 2848)
+  Rendered records/edit.html.erb within layouts/application (Duration: 5.3ms | Allocations: 2968)
+Completed 200 OK in 29ms (Views: 20.9ms | ActiveRecord: 0.8ms | Allocations: 17728)
+
+
+Started GET "/records/11/edit" for ::1 at 2019-10-22 21:06:10 -0300
+Processing by RecordsController#edit as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mRecord Load (0.2ms)[0m  [1m[34mSELECT "records".* FROM "records" WHERE "records"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/records_controller.rb:97:in `set_record'
+  Rendering records/edit.html.erb within layouts/application
+  [1m[36mDomain Load (0.2ms)[0m  [1m[34mSELECT "domains".* FROM "domains" ORDER BY "domains"."name" ASC[0m
+  ↳ app/views/records/_form.html.erb:17
+  Rendered records/_form.html.erb (Duration: 4.3ms | Allocations: 2685)
+  Rendered records/edit.html.erb within layouts/application (Duration: 4.7ms | Allocations: 2805)
+Completed 200 OK in 27ms (Views: 23.7ms | ActiveRecord: 0.4ms | Allocations: 14034)
+
+
+Started PATCH "/records/11" for ::1 at 2019-10-22 21:06:14 -0300
+Processing by RecordsController#update as HTML
+  Parameters: {"authenticity_token"=>"yjfhkpPfn9D/w65EIJCJjkJTxckqm/EZRPrZCK6jmAZ3McsjmnHKjWF66wNH5QCok7jZD1UFenUhJv9nFAwJLQ==", "record"=>{"domain_id"=>"4", "type_record"=>"A", "host"=>"asdfsdrqw", "ttl"=>"1", "content"=>"", "priority"=>"1"}, "commit"=>"Update Record", "id"=>"11"}
+  [1m[36mRecord Load (0.2ms)[0m  [1m[34mSELECT "records".* FROM "records" WHERE "records"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/records_controller.rb:97:in `set_record'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/records_controller.rb:74:in `block in update'
+  [1m[36mDomain Load (0.2ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/records_controller.rb:74:in `block in update'
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/records_controller.rb:74:in `block in update'
+  Rendering records/edit.html.erb within layouts/application
+  [1m[36mDomain Load (0.2ms)[0m  [1m[34mSELECT "domains".* FROM "domains" ORDER BY "domains"."name" ASC[0m
+  ↳ app/views/records/_form.html.erb:17
+  Rendered records/_form.html.erb (Duration: 5.0ms | Allocations: 2983)
+  Rendered records/edit.html.erb within layouts/application (Duration: 5.4ms | Allocations: 3103)
+Completed 200 OK in 34ms (Views: 24.8ms | ActiveRecord: 0.8ms | Allocations: 17859)
+
+
+Started PATCH "/records/11" for ::1 at 2019-10-22 21:06:35 -0300
+Processing by RecordsController#update as HTML
+  Parameters: {"authenticity_token"=>"CvXu6jt96YHxcN21OiA+pe9qHLm29xEHtaKD1HLWp2W388RbMtO83G/JmPJdVbeDPoEAf8lpmmvQfqW7yHk2Tg==", "record"=>{"domain_id"=>"4", "type_record"=>"A", "host"=>"asdfsdrqw", "ttl"=>"1", "content"=>"123.123.123.123.123", "priority"=>"1"}, "commit"=>"Update Record", "id"=>"11"}
+  [1m[36mRecord Load (0.6ms)[0m  [1m[34mSELECT "records".* FROM "records" WHERE "records"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/records_controller.rb:97:in `set_record'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/records_controller.rb:74:in `block in update'
+  [1m[36mDomain Load (0.2ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/records_controller.rb:74:in `block in update'
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/records_controller.rb:74:in `block in update'
+  Rendering records/edit.html.erb within layouts/application
+  [1m[36mDomain Load (0.4ms)[0m  [1m[34mSELECT "domains".* FROM "domains" ORDER BY "domains"."name" ASC[0m
+  ↳ app/views/records/_form.html.erb:17
+  Rendered records/_form.html.erb (Duration: 10.0ms | Allocations: 2849)
+  Rendered records/edit.html.erb within layouts/application (Duration: 10.6ms | Allocations: 2969)
+Completed 200 OK in 47ms (Views: 30.5ms | ActiveRecord: 1.4ms | Allocations: 17545)
+
+
+Started PATCH "/records/11" for ::1 at 2019-10-22 21:06:42 -0300
+Processing by RecordsController#update as HTML
+  Parameters: {"authenticity_token"=>"IRkDwVV15Rm+MZrIV1hIDBnsTYtAE6zjIXIub9cElc+cHylwXNuwRCCI348wLcEqyAdRTT+NJ49ErggAbasE5A==", "record"=>{"domain_id"=>"4", "type_record"=>"A", "host"=>"asdfsdrqw", "ttl"=>"1", "content"=>"123.123.123.123", "priority"=>"1"}, "commit"=>"Update Record", "id"=>"11"}
+  [1m[36mRecord Load (0.2ms)[0m  [1m[34mSELECT "records".* FROM "records" WHERE "records"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/records_controller.rb:97:in `set_record'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/records_controller.rb:74:in `block in update'
+  [1m[36mDomain Load (0.1ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/records_controller.rb:74:in `block in update'
+  [1m[35m (0.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/records_controller.rb:74:in `block in update'
+Redirected to http://localhost:3000/records/11
+Completed 302 Found in 10ms (ActiveRecord: 0.6ms | Allocations: 3701)
+
+
+Started GET "/records/11" for ::1 at 2019-10-22 21:06:42 -0300
+Processing by RecordsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mRecord Load (0.2ms)[0m  [1m[34mSELECT "records".* FROM "records" WHERE "records"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/records_controller.rb:97:in `set_record'
+  Rendering records/show.html.erb within layouts/application
+  Rendered records/show.html.erb within layouts/application (Duration: 0.4ms | Allocations: 103)
+Completed 200 OK in 21ms (Views: 19.1ms | ActiveRecord: 0.2ms | Allocations: 11374)
+
+
