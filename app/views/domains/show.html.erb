@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 
-
-<%= link_to 'Retornar a lista de Domains', domains_path %>
+<p><%= link_to 'Retornar a lista de Domains principais', domains_path %></p>
+<p><%= link_to 'Voltar', :back %></p>
 
 <table id='domain'>
   <tr>
@@ -143,34 +143,3 @@
 </table>
 
 <br>
-
-
-<script type="text/javascript" src="/assets/datatables.js"></script>
-
-
-<script type="text/javascript">
-  $(document).ready( function (){
-
-    $("#records").dataTable(
-       {
-        "language": 
-          {
-             "url": "//cdn.datatables.net/plug-ins/1.10.19/i18n/Portuguese-Brasil.json"
-          },
-      }
-    );
-    
-    $("#subdomains").dataTable(
-      {
-        "language": 
-          {
-             "url": "//cdn.datatables.net/plug-ins/1.10.19/i18n/Portuguese-Brasil.json"
-          },
-      }
-    );
-
-
-
-  } );
-
-</script>

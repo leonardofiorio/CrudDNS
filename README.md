@@ -25,7 +25,7 @@ Things you may want to cover:
 
 
 Como executar:
-* $ docker build -t <image> .
+* $ docker build -t CrudDNS .
 
 
-* $ docker run -it -p 3000:3000 <image>
+* $ docker run -it -p 3000:3000 CrudDNS

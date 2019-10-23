@@ -7,9 +7,51 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <script type="text/javascript" src="/assets/datatables.js"></script>
   </head>
 
   <body>
     <%= yield %>
   </body>
+
+  <script type="text/javascript">
+    $(document).ready(function(){
+      var dataTable = $("#domains").DataTable(
+         {
+          "language": 
+            {
+               "url": "//cdn.datatables.net/plug-ins/1.10.19/i18n/Portuguese-Brasil.json"
+            },
+        }
+      )
+    });
+  </script>
+
+
+  <script type="text/javascript">
+  $(document).ready( function (){
+
+    $("#records").dataTable(
+       {
+        "language": 
+          {
+             "url": "//cdn.datatables.net/plug-ins/1.10.19/i18n/Portuguese-Brasil.json"
+          },
+      }
+    );
+    
+    $("#subdomains").dataTable(
+      {
+        "language": 
+          {
+             "url": "//cdn.datatables.net/plug-ins/1.10.19/i18n/Portuguese-Brasil.json"
+          },
+      }
+    );
+
+
+
+  } );
+  </script>
 </html>
