@@ -1,31 +1,29 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+CrudDNS é um projeto desenvolvido em Ruby on Rails para inserção, alteração, visualização e remoção em um cadastro de Domains e Records (A, TXT, CNAME e PTR).
 
-Things you may want to cover:
 
-* Ruby version
+Principais Tecnologias:
 
-* System dependencies
+* Ruby 2.6.5
 
-* Configuration
+* Rails 6.0.0
 
-* Database creation
+* sqlite 3
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Docker
 
 
 Como executar:
+
 * $ docker build -t CrudDNS .
 
-
 * $ docker run -it -p 3000:3000 CrudDNS
+
+
+Testes:
+
+Os testes foram implementados utilizando a implementação nativa do Rails.
+Para executar:
+
+ * $ rails test
