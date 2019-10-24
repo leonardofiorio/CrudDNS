@@ -16,14 +16,18 @@ Principais Tecnologias:
 
 Como executar:
 
-* $ docker build -t CrudDNS .
+* $ docker build -t cruddns .
 
-* $ docker run -it -p 3000:3000 CrudDNS
+* $ docker run -it -p 3000:3000 cruddns
 
 
 Testes:
 
 Os testes foram implementados utilizando a implementação nativa do Rails.
 Para executar:
+
+ * Descomentar a linha 'CMD rails test' e comentar a linha do servidor
+
+ ou, no caso do ambiente já instalado:
 
  * $ rails test

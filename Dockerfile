@@ -45,6 +45,11 @@ RUN bundle install
 # Configuração de porta do docker
 EXPOSE 3000
  
+
+# Executar testes
+# CMD rails test
+
+
 # Executando server 
 CMD rails s -b 0.0.0.0 -p 3000
 
