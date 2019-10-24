@@ -36,9 +36,10 @@ class RecordsControllerTest < ActionDispatch::IntegrationTest
     assert_difference('Record.count') do
       post records_url, params: { "record" => { 
                                     "content" => "conteudo",
-                                    "host" => "meuhost",
+                                    "name" => "meuhost",
                                     "priority" => "1", 
                                     "ttl" => "200", 
+                                    "class_record" => "IN",
                                     "type_record" => "CNAME",
                                     "domain_id" => 1 
                                   } 
@@ -77,9 +78,10 @@ class RecordsControllerTest < ActionDispatch::IntegrationTest
     post records_url, params: { "record" => { 
                                     "id" => 1 ,
                                     "content" => "conteudo",
-                                    "host" => "meuhost",
+                                    "name" => "meuhost",
                                     "priority" => "1", 
                                     "ttl" => "200", 
+                                    "class_record" => "IN",
                                     "type_record" => "CNAME",
                                     "domain_id" => 1 
                                   } 
@@ -89,9 +91,10 @@ class RecordsControllerTest < ActionDispatch::IntegrationTest
                                   { 
                                     "id" => 1,
                                     "content" => "content",
-                                    "host" => "meuhost",
+                                    "name" => "meuhost",
                                     "priority" => "1", 
                                     "ttl" => "200", 
+                                    "class_record" => "IN",
                                     "type_record" => "CNAME",
                                     "domain_id" => 1 
                                   } 
@@ -111,7 +114,7 @@ class RecordsControllerTest < ActionDispatch::IntegrationTest
   
   # Tentando inserir CNAME com mesmo nome de CNAME já existente
   # O segundo record não deve ser inserido
-  test "CNAME host duplicated - should not create record" do 
+  test "CNAME name duplicated - should not create record" do 
       post "/domains", params: { "domain"=>{
                                     "id" => 1,
                                     "domains"=>"",
@@ -130,9 +133,10 @@ class RecordsControllerTest < ActionDispatch::IntegrationTest
     post records_url, params: { "record" => { 
                                     "id" => 1 ,
                                     "content" => "conteudo",
-                                    "host" => "meuhost",
+                                    "name" => "meuhost",
                                     "priority" => "1", 
                                     "ttl" => "200", 
+                                    "class_record" => "IN",
                                     "type_record" => "CNAME",
                                     "domain_id" => 1 
                                   } 
@@ -142,9 +146,10 @@ class RecordsControllerTest < ActionDispatch::IntegrationTest
       post records_url, params: { "record" => { 
                                       "id" => 1 ,
                                       "content" => "conteudo",
-                                      "host" => "meuhost",
+                                      "name" => "meuhost",
                                       "priority" => "1", 
                                       "ttl" => "200", 
+                                      "class_record" => "IN",
                                       "type_record" => "A",
                                       "domain_id" => 1 
                                     } 
@@ -152,7 +157,7 @@ class RecordsControllerTest < ActionDispatch::IntegrationTest
     end
   end
 
-  test "new Record with same host CNAME - should not create record" do 
+  test "new Record with same name CNAME - should not create record" do 
 
       post "/domains", params: { "domain"=>{
                                     "id" => 1,
@@ -172,9 +177,10 @@ class RecordsControllerTest < ActionDispatch::IntegrationTest
       post records_url, params: { "record" => { 
                                     "id" => 1 ,
                                     "content" => "conteudo",
-                                    "host" => "meuhost",
+                                    "name" => "meuhost",
                                     "priority" => "1", 
                                     "ttl" => "200", 
+                                    "class_record" => "IN",
                                     "type_record" => "CNAME",
                                     "domain_id" => 1 
                                   } 
@@ -182,11 +188,12 @@ class RecordsControllerTest < ActionDispatch::IntegrationTest
 
       assert_difference("Record.count", 0) do  
         post records_url, params: { "record" => { 
-                                      "id" => 1 ,
+                                      "id" => 2 ,
                                       "content" => "conteudo",
-                                      "host" => "meuhost",
+                                      "name" => "meuhost",
                                       "priority" => "1", 
                                       "ttl" => "200", 
+                                      "class_record" => "IN",
                                       "type_record" => "A",
                                       "domain_id" => 1 
                                     } 

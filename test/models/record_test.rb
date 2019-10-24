@@ -20,8 +20,9 @@ class RecordTest < ActiveSupport::TestCase
               			domains: nil
   			)
 
-	  	record = Record.new(host: "popsp.i.s3.globo.com",
+	  	record = Record.new(name: "popsp.i.s3.globo.com",
 	  						ttl: '200',
+	  						class_record: "IN",
 	  						content: '192.168.30.11',
 	  						priority: '1',
 	  						type_record: 'A',
@@ -33,8 +34,9 @@ class RecordTest < ActiveSupport::TestCase
 
 	  
 	  test "invalid domain record" do
-	  	record = Record.new(host: "popsp.i.s3.globo.com",
+	  	record = Record.new(name: "popsp.i.s3.globo.com",
 	  						ttl: '200',
+	  						class_record: "IN",
 	  						content: '192.168.30.11',
 	  						priority: '1',
 	  						type_record: 'A',
@@ -45,7 +47,7 @@ class RecordTest < ActiveSupport::TestCase
 	  end	
 
 
-	  test "invalid host record" do
+	  test "invalid name record" do
 	  	domain = Domain.new(name: "globo.com",
   						type_domain: "MASTER",
   						ttl: "100",
@@ -58,7 +60,7 @@ class RecordTest < ActiveSupport::TestCase
               			domains: nil
   			)
 
-	  	record = Record.new(host: "",
+	  	record = Record.new(name: "",
 	  						ttl: '200',
 	  						content: '192.168.30.11',
 	  						priority: '1',
@@ -83,8 +85,9 @@ class RecordTest < ActiveSupport::TestCase
               			domains: nil
   			)
 
-	  	record = Record.new(host: "popsp.i.s3.globo.com",
+	  	record = Record.new(name: "popsp.i.s3.globo.com",
 	  						ttl: '',
+	  						class_record: "IN",
 	  						content: '192.168.30.11',
 	  						priority: '1',
 	  						type_record: 'A',
@@ -108,8 +111,9 @@ class RecordTest < ActiveSupport::TestCase
               			domains: nil
   			)
 
-	  	record = Record.new(host: "popsp.i.s3.globo.com",
+	  	record = Record.new(name: "popsp.i.s3.globo.com",
 	  						ttl: '200',
+	  						class_record: "IN",
 	  						content: '',
 	  						priority: '1',
 	  						type_record: 'A',
@@ -133,8 +137,9 @@ class RecordTest < ActiveSupport::TestCase
               			domains: nil
   			)
 
-	  	record = Record.new(host: "popsp.i.s3.globo.com",
+	  	record = Record.new(name: "popsp.i.s3.globo.com",
 	  						ttl: '',
+	  						class_record: "IN",
 	  						content: '192.168.30.11',
 	  						priority: '',
 	  						type_record: 'A',
@@ -158,8 +163,9 @@ class RecordTest < ActiveSupport::TestCase
               			domains: nil
   			)
 
-	  	record = Record.new(host: "popsp.i.s3.globo.com",
+	  	record = Record.new(name: "popsp.i.s3.globo.com",
 	  						ttl: '100',
+	  						class_record: "IN",
 	  						content: '192.168.30.11',
 	  						priority: '1',
 	  						type_record: '',

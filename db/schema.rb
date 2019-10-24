@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_24_095204) do
+ActiveRecord::Schema.define(version: 2019_10_24_183021) do
 
   create_table "domains", force: :cascade do |t|
     t.string "name"
@@ -30,13 +30,14 @@ ActiveRecord::Schema.define(version: 2019_10_24_095204) do
 
   create_table "records", force: :cascade do |t|
     t.string "type_record"
-    t.string "host"
+    t.string "name"
     t.string "ttl"
     t.string "content"
     t.integer "priority"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "domain_id"
+    t.string "class_record"
     t.index ["domain_id"], name: "index_records_on_domain_id"
   end
 

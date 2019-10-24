@@ -16,6 +16,10 @@ RUN echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources
 RUN apt-get update 
 RUN apt-get install -y git-core zlib1g-dev build-essential libssl-dev libreadline-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev libcurl4-openssl-dev software-properties-common libffi-dev nodejs yarn
 
+#########################################################################################
+
+# Comandos necessários em caso de instalação direta ao Ubuntu
+
 #RUN cd 
 #RUN git clone https://github.com/rbenv/rbenv.git ~/.rbenv
 #RUN echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bashrc
@@ -29,6 +33,10 @@ RUN apt-get install -y git-core zlib1g-dev build-essential libssl-dev libreadlin
 #RUN /bin/bash source ~/.bashrc
 #RUN rbenv install 2.6.5
 #RUN rbenv global 2.6.5
+
+##########################################################################################
+
+
 RUN gem install bundler
 
 

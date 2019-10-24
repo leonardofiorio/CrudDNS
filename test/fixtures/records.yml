@@ -2,14 +2,16 @@
 
 one:
   type_record: MyString 
-  host: MyString
+  name: MyString
   ttl: MyString
+  class_record: MyString
   content: MyString
   priority: 1
 
 two:
   type_record: MyString 
-  host: MyString
+  name: MyString
   ttl: MyString
+  class_record: MyString
   content: MyString
   priority: 1

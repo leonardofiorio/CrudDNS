@@ -36,7 +36,7 @@ class RecordsController < ApplicationController
 
       records_domain.each do |r|
         
-        if @record.host == r.host 
+        if @record.name == r.name
             valid = false
         end
 
@@ -46,7 +46,7 @@ class RecordsController < ApplicationController
       #Se o tipo não é um CNAME, não pode existir um Record do tipo CNAME, 
       #com o mesmo nome, no mesmo Domain.
 
-      records_cname_domain = Record.where(type_record: "CNAME", host: @record.host,
+      records_cname_domain = Record.where(type_record: "CNAME", name: @record.name,
        domain_id: @record.domain_id).count()
 
       if records_cname_domain != 0
@@ -99,6 +99,6 @@ class RecordsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def record_params
-      params.require(:record).permit(:domain_id ,:type_record, :host, :ttl, :content, :priority)
+      params.require(:record).permit(:domain_id ,:type_record, :name, :ttl, :class_record, :content, :priority)
     end
 end

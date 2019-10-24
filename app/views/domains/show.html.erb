@@ -130,8 +130,9 @@
     <thead>
       <tr>
         <th>Type</th>
-        <th>Host</th>
+        <th>Name</th>
         <th>Ttl</th>
+        <th>Class</th>
         <th>Content</th>
         <th>Priority</th>
         <th>Ações</th>
@@ -142,8 +143,9 @@
       <% @records.each do |record| %>
         <tr>
           <td><%= record.type_record %></td>
-          <td><%= record.host %></td>
+          <td><%= record.name %></td>
           <td><%= record.ttl %></td>
+          <td><%= record.class_record %></td>
           <td><%= record.content %></td>
           <td><%= record.priority %></td>
           <td>

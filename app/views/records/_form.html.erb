@@ -15,7 +15,7 @@
   <tr>
     <td class="label"><%= form.label :domain_id %></td>
     <% if !(params[:id].nil?) %>
-      <td><%= form.collection_select :domain_id, Domain.order(:name), :id, :name, selected:params[:id] %></td>
+      <td><%= form.collection_select :domain_id, Domain.order(:name), :id, :name, selected_value:params[:id] %></td>
     <% else %>
       <td><%= form.collection_select :domain_id, Domain.order(:name), :id, :name, include_blank: true %></td>
     <% end %>
@@ -27,13 +27,18 @@
   </tr>  
 
   <tr>
-    <td class="label"><%= form.label :host %></td>
-    <td><%= form.text_field :host %></td>
+    <td class="label"><%= form.label :name %></td>
+    <td><%= form.text_field :name %></td>
   </tr>
 
   <tr>
     <td class="label"><%= form.label :ttl %></td>
     <td><%= form.text_field :ttl %></td>
+  </tr>
+
+  <tr>
+    <td class="label"><%= form.label :class_record %></td>
+    <td><%= form.text_field :class_record %></td>
   </tr>
 
   <tr>

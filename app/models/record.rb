@@ -1,11 +1,12 @@
 class Record < ApplicationRecord
 
 	# Validações
-	validates_presence_of :host, :message => "não informado!"
+	validates_presence_of :name, :message => "não informado!"
 	validates_presence_of :ttl, :message => "não informado!"
 	validates_presence_of :content, :message => "não informado!"
 	validates_presence_of :priority, :message => "não informado!"
 	validates_presence_of :domain, :message => "não informado!"
+	validates_presence_of :class_record, :message => "não informado!"
 
 	#Validação personalizada para o type_record
 	validate :type_record_validate
