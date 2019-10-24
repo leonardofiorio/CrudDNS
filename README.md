@@ -20,6 +20,8 @@ Como executar:
 
 * $ docker run -it -p 3000:3000 cruddns
 
+OBS: para o mapeamento de portas é necessário que o suporte a encaminhamento esteja habilitado no Sistema Operacional Host. Na distribuição Ubuntu Server 18.04 LTS, isto é feito descomentando a linha "net.ipv4.ip_forward = 1" no arquivo /etc/sysctl.conf
+
 
 Testes:
 
