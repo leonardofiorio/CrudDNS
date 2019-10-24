@@ -32419,3 +32419,104 @@ Processing by DomainsController#index as HTML
 Completed 200 OK in 21ms (Views: 20.0ms | ActiveRecord: 0.2ms | Allocations: 13427)
 
 
+Started GET "/domains/6" for ::1 at 2019-10-24 16:57:03 -0300
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by DomainsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mDomain Load (0.3ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/domains_controller.rb:109:in `set_domain'
+  Rendering domains/show.html.erb within layouts/application
+  [1m[36mDomain Load (0.2ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."domains_id" = ?[0m  [["domains_id", 6]]
+  ↳ app/views/domains/show.html.erb:95
+  [1m[36mRecord Load (0.4ms)[0m  [1m[34mSELECT "records".* FROM "records" WHERE "records"."domain_id" = ?[0m  [["domain_id", 6]]
+  ↳ app/views/domains/show.html.erb:143
+  Rendered domains/show.html.erb within layouts/application (Duration: 25.2ms | Allocations: 10478)
+Completed 200 OK in 1234ms (Views: 1185.5ms | ActiveRecord: 3.3ms | Allocations: 1319405)
+
+
+Started GET "/records/20/edit" for ::1 at 2019-10-24 16:57:15 -0300
+Processing by RecordsController#edit as HTML
+  Parameters: {"id"=>"20"}
+  [1m[36mRecord Load (0.3ms)[0m  [1m[34mSELECT "records".* FROM "records" WHERE "records"."id" = ? LIMIT ?[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ app/controllers/records_controller.rb:97:in `set_record'
+  Rendering records/edit.html.erb within layouts/application
+  [1m[36mDomain Load (0.3ms)[0m  [1m[34mSELECT "domains".* FROM "domains" ORDER BY "domains"."name" ASC[0m
+  ↳ app/views/records/_form.html.erb:18
+  Rendered records/_form.html.erb (Duration: 9.3ms | Allocations: 5340)
+  Rendered records/edit.html.erb within layouts/application (Duration: 10.8ms | Allocations: 5754)
+Completed 200 OK in 28ms (Views: 24.2ms | ActiveRecord: 0.5ms | Allocations: 18971)
+
+
+Started GET "/domains/6" for ::1 at 2019-10-24 16:57:18 -0300
+Processing by DomainsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mDomain Load (0.2ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/domains_controller.rb:109:in `set_domain'
+  Rendering domains/show.html.erb within layouts/application
+  [1m[36mDomain Load (0.3ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."domains_id" = ?[0m  [["domains_id", 6]]
+  ↳ app/views/domains/show.html.erb:95
+  [1m[36mRecord Load (0.3ms)[0m  [1m[34mSELECT "records".* FROM "records" WHERE "records"."domain_id" = ?[0m  [["domain_id", 6]]
+  ↳ app/views/domains/show.html.erb:143
+  Rendered domains/show.html.erb within layouts/application (Duration: 7.9ms | Allocations: 3534)
+Completed 200 OK in 26ms (Views: 22.7ms | ActiveRecord: 0.7ms | Allocations: 16102)
+
+
+Started GET "/records/20/edit" for ::1 at 2019-10-24 16:57:20 -0300
+Processing by RecordsController#edit as HTML
+  Parameters: {"id"=>"20"}
+  [1m[36mRecord Load (0.3ms)[0m  [1m[34mSELECT "records".* FROM "records" WHERE "records"."id" = ? LIMIT ?[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ app/controllers/records_controller.rb:97:in `set_record'
+  Rendering records/edit.html.erb within layouts/application
+  [1m[36mDomain Load (0.2ms)[0m  [1m[34mSELECT "domains".* FROM "domains" ORDER BY "domains"."name" ASC[0m
+  ↳ app/views/records/_form.html.erb:18
+  Rendered records/_form.html.erb (Duration: 6.5ms | Allocations: 2747)
+  Rendered records/edit.html.erb within layouts/application (Duration: 7.0ms | Allocations: 2871)
+Completed 200 OK in 28ms (Views: 23.8ms | ActiveRecord: 0.5ms | Allocations: 15328)
+
+
+Started GET "/domains/6" for ::1 at 2019-10-24 16:57:24 -0300
+Processing by DomainsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mDomain Load (0.2ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/domains_controller.rb:109:in `set_domain'
+  Rendering domains/show.html.erb within layouts/application
+  [1m[36mDomain Load (0.2ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."domains_id" = ?[0m  [["domains_id", 6]]
+  ↳ app/views/domains/show.html.erb:95
+  [1m[36mRecord Load (0.3ms)[0m  [1m[34mSELECT "records".* FROM "records" WHERE "records"."domain_id" = ?[0m  [["domain_id", 6]]
+  ↳ app/views/domains/show.html.erb:143
+  Rendered domains/show.html.erb within layouts/application (Duration: 8.3ms | Allocations: 3521)
+Completed 200 OK in 26ms (Views: 22.6ms | ActiveRecord: 0.6ms | Allocations: 16076)
+
+
+Started GET "/domains" for ::1 at 2019-10-24 16:57:27 -0300
+Processing by DomainsController#index as HTML
+  Rendering domains/index.html.erb within layouts/application
+  [1m[36mDomain Load (0.3ms)[0m  [1m[34mSELECT "domains".* FROM "domains"[0m
+  ↳ app/views/domains/index.html.erb:35
+  Rendered domains/index.html.erb within layouts/application (Duration: 4.7ms | Allocations: 1974)
+Completed 200 OK in 21ms (Views: 19.5ms | ActiveRecord: 0.3ms | Allocations: 14040)
+
+
+Started GET "/" for ::1 at 2019-10-24 18:46:59 -0300
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by DomainsController#index as HTML
+  Rendering domains/index.html.erb within layouts/application
+  [1m[36mDomain Load (0.2ms)[0m  [1m[34mSELECT "domains".* FROM "domains"[0m
+  ↳ app/views/domains/index.html.erb:35
+  Rendered domains/index.html.erb within layouts/application (Duration: 28.6ms | Allocations: 10811)
+Completed 200 OK in 1382ms (Views: 1372.7ms | ActiveRecord: 0.9ms | Allocations: 1308702)
+
+
+Started GET "/domains/5/edit" for ::1 at 2019-10-24 18:47:37 -0300
+Processing by DomainsController#edit as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mDomain Load (0.3ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/domains_controller.rb:109:in `set_domain'
+  Rendering domains/edit.html.erb within layouts/application
+  Rendered domains/_form.html.erb (Duration: 7.3ms | Allocations: 4925)
+  Rendered domains/edit.html.erb within layouts/application (Duration: 8.2ms | Allocations: 5250)
+Completed 200 OK in 32ms (Views: 21.7ms | ActiveRecord: 0.3ms | Allocations: 19903)
+
+

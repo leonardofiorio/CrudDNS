@@ -97,6 +97,31 @@ class RecordTest < ActiveSupport::TestCase
 	  	assert record.invalid?
   	  end
 
+  	  test "invalid class record" do
+	  	domain = Domain.new(name: "globo.com",
+  						type_domain: "MASTER",
+  						ttl: "100",
+  						primary_name_server: "ns.globo.com",
+              			contact: "contact@globo.com",
+              			refresh: "200",
+              			retry: "300",
+              			expire: "400",
+              			minimum: "500",
+              			domains: nil
+  			)
+
+	  	record = Record.new(name: "popsp.i.s3.globo.com",
+	  						ttl: '100',
+	  						class_record: "",
+	  						content: '192.168.30.11',
+	  						priority: '1',
+	  						type_record: 'A',
+	  						domain: domain
+	  		)
+
+	  	assert record.invalid?
+  	  end
+
 
   	  test "invalid content record" do
 	  	domain = Domain.new(name: "globo.com",
