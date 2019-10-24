@@ -1,3 +1,4 @@
+<table id="form_domain">
 <%= form_with(model: domain, local: true) do |form| %>
   <% if domain.errors.any? %>
     <div id="error_explanation">
@@ -12,59 +13,64 @@
   <% end %>
 
   <% if !(@domain.domains_id.nil?) %>
-    <h3> O novo domínio será inserido no domínio <%= @domain.domains_id.to_s %> <h3>
+    <h3> O domínio pertence ou pertencerá ao no domínio <%= @domain.domains_id.to_s %> </h3>
   <% end %>
 
-  <div class="field">
-    <%= form.hidden_field :domains, value: @domain.domains_id.to_s %>
-  </div>
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
-  </div>
+  <%= form.hidden_field :domains, value: @domain.domains_id.to_s %>
 
-  <div class="field">
-    <%= form.label :type_domain %>
-    <%= form.select(:type_domain, ['MASTER', 'SLAVE', 'FORWARD', 'STUB', 'HINT'], include_blank: true) %>
-  </div>  
 
-  <div class="field">
-    <%= form.label :ttl %>
-    <%= form.text_field :ttl %>
-  </div>
+  <tr>
+      <td class="label"><%= form.label :name, :class => "label_form" %></td>
+      <td><%= form.text_field :name, :class=>"input_form" %></td>
+  </td>
 
-  <div class="field">
-    <%= form.label :primary_name_server %>
-    <%= form.text_field :primary_name_server %>
-  </div>
+  <tr>
+      <td class="label"><%= form.label :type_domain %></td>
+      <td><%= form.select(:type_domain, ['MASTER', 'SLAVE', 'FORWARD', 'STUB', 'HINT'], include_blank: true, :class => "input_form") %></td>
+  </tr>
 
-  <div class="field">
-    <%= form.label :contact %>
-    <%= form.text_field :contact %>
-  </div>
+  <tr>
+      <td class="label"><%= form.label :ttl %></td>
+      <td><%= form.text_field :ttl, :class=>"input_form" %></td>
+  </tr>
 
-  <div class="field">
-    <%= form.label :refresh %>
-    <%= form.text_field :refresh %>
-  </div>
+  <tr>
+      <td class="label"><%= form.label :primary_name_server %></td>
+      <td><%= form.text_field :primary_name_server, :class=>"input_form" %></td>
+  </tr>
 
-  <div class="field">
-    <%= form.label :retry %>
-    <%= form.text_field :retry %>
-  </div>
+  <tr>
+      <td class="label"><%= form.label :contact %></td>
+      <td><%= form.text_field :contact , :class=>"input_form" %></td>
+  </tr>
 
-  <div class="field">
-    <%= form.label :expire %>
-    <%= form.text_field :expire %>
-  </div>
+  <tr>
+      <td class="label"><%= form.label :refresh %></td>
+      <td><%= form.text_field :refresh , :class=>"input_form" %></td>
+  </tr>
 
-  <div class="field">
-    <%= form.label :minimum %>
-    <%= form.text_field :minimum %>
-  </div>
+  <tr>
+      <td class="label"><%= form.label :retry %></td>
+      <td><%= form.text_field :retry , :class=>"input_form" %></td>
+  </tr>
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+  <tr>
+      <td class="label"><%= form.label :expire %></td>
+      <td><%= form.text_field :expire , :class=>"input_form"%></td>
+
+  </tr>
+
+  <tr>
+      <td class="label"><%= form.label :minimum %></td>
+      <td><%= form.text_field :minimum , :class=>"input_form" %></td>
+  </tr>
+
+  <tr>
+      <td id="submit" colspan="2">
+        <%= form.submit %>    
+      </td>
+  </tr>
+
 <% end %>
+</table>

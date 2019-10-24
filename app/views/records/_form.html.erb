@@ -1,3 +1,4 @@
+<table id="form_record">
 <%= form_with(model: record, local: true) do |form| %>
   <% if record.errors.any? %>
     <div id="error_explanation">
@@ -11,41 +12,42 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :domain_id %>
+  <tr>
+    <td class="label"><%= form.label :domain_id %></td>
     <% if !(params[:id].nil?) %>
-      <%= form.collection_select :domain_id, Domain.order(:name), :id, :name, selected:params[:id] %>
+      <td><%= form.collection_select :domain_id, Domain.order(:name), :id, :name, selected:params[:id] %></td>
     <% else %>
-      <%= form.collection_select :domain_id, Domain.order(:name), :id, :name, include_blank: true %>
+      <td><%= form.collection_select :domain_id, Domain.order(:name), :id, :name, include_blank: true %></td>
     <% end %>
-  </div>  
+  </tr>  
 
-  <div class="field">
-    <%= form.label :type_record %>
-    <%= form.select(:type_record, [['A','A'], ['TXT','TXT'], ['CNAME','CNAME'],  ['PTR','PTR']], include_blank: true) %>
-  </div>  
+  <tr>
+    <td class="label"><%= form.label :type_record %></td>
+    <td><%= form.select(:type_record, [['A','A'], ['TXT','TXT'], ['CNAME','CNAME'],  ['PTR','PTR']], include_blank: true) %></td>
+  </tr>  
 
-  <div class="field">
-    <%= form.label :host %>
-    <%= form.text_field :host %>
-  </div>
+  <tr>
+    <td class="label"><%= form.label :host %></td>
+    <td><%= form.text_field :host %></td>
+  </tr>
 
-  <div class="field">
-    <%= form.label :ttl %>
-    <%= form.text_field :ttl %>
-  </div>
+  <tr>
+    <td class="label"><%= form.label :ttl %></td>
+    <td><%= form.text_field :ttl %></td>
+  </tr>
 
-  <div class="field">
-    <%= form.label :content %>
-    <%= form.text_field :content,:input_html => {:on =>  "ValidateIPaddress();"} %>
-  </div>
+  <tr>
+    <td class="label"><%= form.label :content %></td>
+    <td><%= form.text_field :content,:input_html => {:on =>  "ValidateIPaddress();"} %></td>
+  </tr>
 
-  <div class="field">
-    <%= form.label :priority %>
-    <%= form.number_field :priority %>
-  </div>
+  <tr>
+    <td class="label"><%= form.label :priority %></td>
+    <td><%= form.number_field :priority %></td>
+  </tr>
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+  <tr>
+    <td><%= form.submit %></td>
+  </tr>
 <% end %>
+</table>

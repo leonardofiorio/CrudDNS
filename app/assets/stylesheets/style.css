@@ -1,0 +1,90 @@
+#conteudo{
+	width: 85%;
+	margin-left: 7.5%;
+	margin-right: 7.5%;
+}
+
+#domains{
+	text-align: center;
+}
+
+#form_domain{
+	width: 90%;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 50px;
+	margin-bottom: 50px;
+}
+
+#form_record{
+	width: 90%;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 50px;
+	margin-bottom: 50px;
+}
+
+#titulo{
+	height: 30px;
+	font-size: 20px;
+	font-weight: bold;
+	padding-left: 60px;  
+	border-radius: 10px;
+	vertical-align: middle;
+	background: #EEEEEE;
+	padding-top: 10px;
+}
+
+#submit{
+	text-align: center;
+}
+
+.label_form{
+	width: 150px;
+}
+
+.label{
+	width: 150px;
+}
+
+.input_form{
+	width: 300px;
+}
+
+#show_domain{
+	margin-bottom: 50px;
+	text-align: center;
+	padding-left: 30px;
+}
+
+#show_subdomains{
+	margin-bottom: 30px;
+	text-align: center;
+}
+
+#show_records{
+	margin-bottom: 30px;
+	text-align: center;
+}
+
+#submit{
+	text-align: left;
+}
+
+#menu{
+	margin-left: auto;
+	margin-right: auto;
+	width: 50%;
+	margin-bottom: 30px;
+}
+
+#title_show_domain{
+	width: 100%;
+	font-size: 20px;
+}
+
+#logo{
+	width: 300px;
+	margin-left: 10%;
+	margin-bottom: 10px;
+}

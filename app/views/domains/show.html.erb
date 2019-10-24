@@ -1,145 +1,160 @@
 <p id="notice"><%= notice %></p>
 
-<p><%= link_to 'Retornar a lista de Domains principais', domains_path %></p>
-<p><%= link_to 'Voltar', :back %></p>
 
-<table id='domain'>
-  <tr>
-    <td><h2> Domain </h2>  </td>
-    <td>  <%= link_to 'Editar', edit_domain_path(@domain) %> </td>
-  </tr>
+<div id="titulo"> 
+  <table id="title_show_domain">
+    <tr>
+      <td style="font-size: 20px; width: 90%;">Domain </td>  
 
-  <tr>
-    <td><strong>Name:</strong></td>
-    <td><%= @domain.name %></td>
-  </tr>
+      <td>
+        <%= link_to 'Editar', edit_domain_path(@domain) %> 
+      </td>     
+    </tr>
+  </table>
+</div>
 
-  <tr>
-    <td><strong>Type:</strong></td>
-    <td><%= @domain.type_domain %></td>
-  </tr>
-
-  <tr>
-    <td><strong>Ttl:</strong></td>
-    <td><%= @domain.ttl %></td>
-  </tr>
-
-  <tr>
-    <td><strong>Primary name server:</strong></td>
-    <td><%= @domain.primary_name_server %></td>
-  </tr>
-
-  <tr>
-    <td><strong>Contact:</strong></td>
-    <td><%= @domain.contact %></td>
-  </tr>
-
-  <tr>
-    <td><strong>Refresh:</strong></td>
-    <td><%= @domain.refresh %></td>
-  </tr>
-
-  <tr>
-    <td><strong>Retry:</strong></td>
-    <td><%= @domain.retry %></td>
-  </tr>
-
-  <tr>
-    <td><strong>Expire:</strong></td>
-    <td><%= @domain.expire %></td>
-  </tr>
-
-  <tr>
-    <td><strong>Minimum:</strong></td>
-    <td><%= @domain.minimum %></td>
-  </tr>
-</table>
-
-</br>
-</br>
+<div id="show_domain">
 
 
-<h2>Subdomains de "<%= @domain.name %>"</h2>
+  <table id='domain'>
+    <tr>
+      <td><strong>Name:</strong></td>
+      <td><%= @domain.name %></td>
+    </tr>
 
-<p>
-<%= link_to 'Inserir um subdomain em "'+ @domain.name + '"', new_domain_path + "/" +@domain.id.to_s %>
+    <tr>
+      <td><strong>Type:</strong></td>
+      <td><%= @domain.type_domain %></td>
+    </tr>
+
+    <tr>
+      <td><strong>Ttl:</strong></td>
+      <td><%= @domain.ttl %></td>
+    </tr>
+
+    <tr>
+      <td><strong>Primary name server:</strong></td>
+      <td><%= @domain.primary_name_server %></td>
+    </tr>
+
+    <tr>
+      <td><strong>Contact:</strong></td>
+      <td><%= @domain.contact %></td>
+    </tr>
+
+    <tr>
+      <td><strong>Refresh:</strong></td>
+      <td><%= @domain.refresh %></td>
+    </tr>
+
+    <tr>
+      <td><strong>Retry:</strong></td>
+      <td><%= @domain.retry %></td>
+    </tr>
+
+    <tr>
+      <td><strong>Expire:</strong></td>
+      <td><%= @domain.expire %></td>
+    </tr>
+
+    <tr>
+      <td><strong>Minimum:</strong></td>
+      <td><%= @domain.minimum %></td>
+    </tr>
+  </table>  
+</div>
+
+
+<div id="titulo">Subdomains de "<%= @domain.name %>"</div>
+
+ <p>
+  <%= link_to 'Inserir um subdomain em "'+ @domain.name + '"', new_domain_path + "/" +@domain.id.to_s %>
 </p>
 
-<table id='subdomains' class="table table-hover display">
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Ttl</th>
-      <th>Primary name server</th>
-      <th>Contact</th>
-      <th>Refresh</th>
-      <th>Retry</th>
-      <th>Expire</th>
-      <th>Minimum</th>
-      <th>Ações</th>
-    </tr>
-  </thead>
 
-  <tbody>
-    <% @domains_contained.each do |domain_contained| %>
+<div id="show_subdomains">
+
+ 
+  <table id='subdomains' class="table table-hover display">
+    <thead>
       <tr>
-        <td><%= domain_contained.name %></td>
-        <td><%= domain_contained.type_domain %></td>
-        <td><%= domain_contained.ttl %></td>
-        <td><%= domain_contained.primary_name_server %></td>
-        <td><%= domain_contained.contact %></td>
-        <td><%= domain_contained.refresh %></td>
-        <td><%= domain_contained.retry %></td>
-        <td><%= domain_contained.expire %></td>
-        <td><%= domain_contained.minimum %></td>
-        <td>
-          <%= link_to 'Exibir', domain_contained %>
-          <%= link_to 'Editar', edit_domain_path(domain_contained) %>
-          <%= link_to 'Excluir', domain_contained, method: :delete, data: { confirm: 'Você tem certeza que deseja excluir?' } %>  
-        </td>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Ttl</th>
+        <th>Primary name server</th>
+        <th>Contact</th>
+        <th>Refresh</th>
+        <th>Retry</th>
+        <th>Expire</th>
+        <th>Minimum</th>
+        <th>Ações</th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
+
+    <tbody>
+      <% @domains_contained.each do |domain_contained| %>
+        <tr>
+          <td><%= domain_contained.name %></td>
+          <td><%= domain_contained.type_domain %></td>
+          <td><%= domain_contained.ttl %></td>
+          <td><%= domain_contained.primary_name_server %></td>
+          <td><%= domain_contained.contact %></td>
+          <td><%= domain_contained.refresh %></td>
+          <td><%= domain_contained.retry %></td>
+          <td><%= domain_contained.expire %></td>
+          <td><%= domain_contained.minimum %></td>
+          <td>
+            <%= link_to 'Exibir', domain_contained %>
+            <%= link_to 'Editar', edit_domain_path(domain_contained) %>
+            <%= link_to 'Excluir', domain_contained, method: :delete, data: { confirm: 'Você tem certeza que deseja excluir?' } %>  
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
 
 </br>
 </br>
 
-<h2>Records do Domain "<%= @domain.name %>"</h2>
+
+<div id="titulo">Records do Domain "<%= @domain.name %>"</div>
 
 <p>
-  <%= link_to 'Inserir novo Record no Domain', new_record_path + "/" + @domain.id.to_s %>
-</p>
+    <%= link_to 'Inserir novo Record no Domain', new_record_path + "/" + @domain.id.to_s %>
+  </p>
 
-<table id="records" class="table table-hover display">
-  <thead>
-    <tr>
-      <th>Type</th>
-      <th>Host</th>
-      <th>Ttl</th>
-      <th>Content</th>
-      <th>Priority</th>
-      <th>Ações</th>
-    </tr>
-  </thead>
+<div id="show_records">
 
-  <tbody>
-    <% @records.each do |record| %>
+  <table id="records" class="table table-hover display">
+    <thead>
       <tr>
-        <td><%= record.type_record %></td>
-        <td><%= record.host %></td>
-        <td><%= record.ttl %></td>
-        <td><%= record.content %></td>
-        <td><%= record.priority %></td>
-        <td>
-          <%= link_to 'Exibir', record %>
-          <%= link_to 'Editar', edit_record_path(record) %>
-          <%= link_to 'Excluir', record, method: :delete, data: { confirm: 'Você tem certeza que deseja excluir?' } %>
-        </td>
+        <th>Type</th>
+        <th>Host</th>
+        <th>Ttl</th>
+        <th>Content</th>
+        <th>Priority</th>
+        <th>Ações</th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
+
+    <tbody>
+      <% @records.each do |record| %>
+        <tr>
+          <td><%= record.type_record %></td>
+          <td><%= record.host %></td>
+          <td><%= record.ttl %></td>
+          <td><%= record.content %></td>
+          <td><%= record.priority %></td>
+          <td>
+            <%= link_to 'Exibir', record %>
+            <%= link_to 'Editar', edit_record_path(record) %>
+            <%= link_to 'Excluir', record, method: :delete, data: { confirm: 'Você tem certeza que deseja excluir?' } %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
 
 <br>

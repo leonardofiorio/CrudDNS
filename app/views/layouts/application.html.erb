@@ -9,10 +9,18 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
 
     <script type="text/javascript" src="/assets/datatables.js"></script>
+
+    <img id="logo" src="<%= image_path('logo.png') %>"/>
+
+    <div id="menu">
+      <div><%= link_to 'Domains', domains_path %></div>
+    </div>
   </head>
 
   <body>
-    <%= yield %>
+    <div id="conteudo">
+      <%= yield %>
+    </div>
   </body>
 
   <script type="text/javascript">
