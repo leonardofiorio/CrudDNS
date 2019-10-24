@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_19_184840) do
+ActiveRecord::Schema.define(version: 2019_10_24_095204) do
 
   create_table "domains", force: :cascade do |t|
     t.string "name"
@@ -18,10 +18,10 @@ ActiveRecord::Schema.define(version: 2019_10_19_184840) do
     t.string "ttl"
     t.string "primary_name_server"
     t.string "contact"
-    t.string "refresh"
-    t.string "retry"
-    t.string "expire"
-    t.string "minimum"
+    t.integer "refresh"
+    t.integer "retry"
+    t.integer "expire"
+    t.integer "minimum"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "domains_id"
