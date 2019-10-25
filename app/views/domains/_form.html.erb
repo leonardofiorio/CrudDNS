@@ -12,8 +12,8 @@
     </div>
   <% end %>
 
-  <% if !(@domain.domains_id.nil?) %>
-    <h3> O domínio pertence ou pertencerá ao no domínio <%= @domain.domains_id.to_s %> </h3>
+  <% if !(@domains_contained.nil?) %>
+    <h3> O domínio pertence ou pertencerá ao no domínio "<%= @domains_contained.name %>" </h3>
   <% end %>
 
 

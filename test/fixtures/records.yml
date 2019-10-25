@@ -7,6 +7,7 @@ one:
   class_record: MyString
   content: MyString
   priority: 1
+  domain_id: 1
 
 two:
   type_record: MyString 
@@ -15,3 +16,4 @@ two:
   class_record: MyString
   content: MyString
   priority: 1
+  domain_id: 1

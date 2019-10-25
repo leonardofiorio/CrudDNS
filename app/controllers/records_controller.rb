@@ -25,43 +25,61 @@ class RecordsController < ApplicationController
   # POST /records.json
   def create
     @record = Record.new(record_params)
-    valid = true
-
 
     if @record.type_record == "CNAME"
       # Se o tipo é um CNAME, não pode existir outro Record, 
-      #com o mesmo nome, no mesmo Domain.
+      # com o mesmo nome, no mesmo Domain.
 
       records_domain = Record.where(domain_id: @record.domain_id)
 
       records_domain.each do |r|
         
         if @record.name == r.name
-            valid = false
+            
+            respond_to do |format|
+                format.html { 
+                  flash[:notice] = 'O Record não foi inserido! Existe um Record com mesmo nome no mesmo Domain'
+                  render :new
+                }
+                format.json { render json: @record.errors, status: :unprocessable_entity }
+            end
+            return 
         end
 
       end
     
     else
-      #Se o tipo não é um CNAME, não pode existir um Record do tipo CNAME, 
-      #com o mesmo nome, no mesmo Domain.
+      # Se o tipo não é um CNAME, não pode existir um Record do tipo CNAME, 
+      # com o mesmo nome, no mesmo Domain.
 
       records_cname_domain = Record.where(type_record: "CNAME", name: @record.name,
        domain_id: @record.domain_id).count()
 
       if records_cname_domain != 0
-          valid = false
+
+          respond_to do |format|
+                format.html { 
+                  flash[:notice] = 'O Record não foi inserido! Existe um Record do tipo CNAME com mesmo nome no mesmo Domain'
+                  render :new
+                }
+                format.json { render json: @record.errors, status: :unprocessable_entity }
+          end
+
+          return
       end
 
     end
 
 
     respond_to do |format|
-      if valid and @record.save
+      if @record.save
         format.html { redirect_to @record, notice: 'Record inserido com sucesso!' }
         format.json { render :show, status: :created, location: @record }
       else
-        format.html { render :new }
+        format.html { 
+          flash[:notice] = 'O Record não pode ser inserido! '
+          render :new
+        }
         format.json { render json: @record.errors, status: :unprocessable_entity }
       end
     end
@@ -70,12 +88,63 @@ class RecordsController < ApplicationController
   # PATCH/PUT /records/1
   # PATCH/PUT /records/1.json
   def update
+
+    if @record.type_record == "CNAME"
+      # Se o tipo é um CNAME, não pode existir outro Record, 
+      # com o mesmo nome, no mesmo Domain.
+
+      records_domain = Record.where(domain_id: @record.domain_id)
+
+      records_domain.each do |r|
+        
+        if @record.name == r.name
+            
+            respond_to do |format|
+                format.html { 
+                  flash[:notice] = 'O Record não foi atualizado! Existe um Record com mesmo nome no mesmo Domain'
+                  render :edit
+                }
+                format.json { render json: @record.errors, status: :unprocessable_entity }
+            end
+
+            return 
+        end
+
+      end
+    
+    else
+      # Se o tipo não é um CNAME, não pode existir um Record do tipo CNAME, 
+      # com o mesmo nome, no mesmo Domain.
+
+      records_cname_domain = Record.where(type_record: "CNAME", name: params[:name],
+       domain_id: @record.domain_id).where('id != ?', @record.id).count()
+
+      if records_cname_domain != 0
+
+          respond_to do |format|
+                format.html { 
+                  flash[:notice] = 'O Record não foi atualizado! Existe um Record do tipo CNAME com mesmo nome no mesmo Domain'
+                  render :edit
+                }
+                format.json { render json: @record.errors, status: :unprocessable_entity }
+          end
+
+          return
+      end
+
+    end
+
+
+
     respond_to do |format|
       if @record.update(record_params)
         format.html { redirect_to @record, notice: 'Record atualizado com sucesso!' }
         format.json { render :show, status: :ok, location: @record }
       else
-        format.html { render :edit }
+        format.html { 
+          flash[:notice] = 'O Record não pode ser atualizado! '
+          render :edit 
+        }
         format.json { render json: @record.errors, status: :unprocessable_entity }
       end
     end
@@ -84,9 +153,10 @@ class RecordsController < ApplicationController
   # DELETE /records/1
   # DELETE /records/1.json
   def destroy
+    domain = @record.domain_id
     @record.destroy
     respond_to do |format|
-      format.html { redirect_to records_url, notice: 'Record foi apagado com sucesso!' }
+      format.html { redirect_to domain_path(domain), notice: 'Record foi apagado com sucesso!' }
       format.json { head :no_content }
     end
   end

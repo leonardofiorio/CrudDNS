@@ -108,7 +108,7 @@ class RecordsControllerTest < ActionDispatch::IntegrationTest
       delete record_url(@record)
     end
 
-    assert_redirected_to records_url
+    assert_redirected_to domain_path(@record.domain_id)
   end
 
   

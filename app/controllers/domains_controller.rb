@@ -4,7 +4,7 @@ class DomainsController < ApplicationController
   # GET /domains
   # GET /domains.json
   def index
-    @domains = Domain.all
+    @domains = Domain.where(domains_id: nil)
   end
 
   # GET /domains/1

@@ -14,11 +14,26 @@
 
   <tr>
     <td class="label"><%= form.label :domain_id %></td>
-    <% if !(params[:id].nil?) %>
-      <td><%= form.collection_select :domain_id, Domain.order(:name), :id, :name, selected_value:params[:id] %></td>
-    <% else %>
-      <td><%= form.collection_select :domain_id, Domain.order(:name), :id, :name, include_blank: true %></td>
-    <% end %>
+
+        <% if !(params[:id_domain].nil?) %>
+
+            <!-- Para o caso de inserção de um novo Record a partir da tela de descrição do Domain -->
+            
+            <td><%= form.collection_select :domain_id, Domain.order(:name), :id, :name, {:selected=> params[:id_domain]} %></td>
+
+        <% elsif !(@record.domain_id.nil?) %>
+
+            <!-- Para o caso de edição de um Record já cadastrado -->
+
+            <td><%= form.collection_select :domain_id, Domain.order(:name), :id, :name, {:selected => @record.domain_id }  %></td>
+
+        <% else %>
+
+            <!-- Para o caso de inserção sem Domain pré-selecionado -->
+
+            <td><%= form.collection_select :domain_id, Domain.order(:name), :id, :name, include_blank: true %></td>
+
+        <% end %>
   </tr>  
 
   <tr>

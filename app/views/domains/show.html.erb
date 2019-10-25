@@ -121,7 +121,7 @@
 <div id="titulo">Records do Domain "<%= @domain.name %>"</div>
 
 <p>
-    <%= link_to 'Inserir novo Record no Domain', new_record_path + "/" + @domain.id.to_s %>
+    <%= link_to 'Inserir novo Record no Domain', :controller=>"records", :action => "new", :id_domain => @domain.id %>
   </p>
 
 <div id="show_records">
