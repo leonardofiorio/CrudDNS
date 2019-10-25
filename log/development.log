@@ -40471,3 +40471,38 @@ Processing by RecordsController#show as HTML
 Completed 200 OK in 23ms (Views: 19.9ms | ActiveRecord: 0.4ms | Allocations: 13299)
 
 
+Started GET "/" for ::1 at 2019-10-25 17:17:56 -0300
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by DomainsController#index as HTML
+  Rendering domains/index.html.erb within layouts/application
+  [1m[36mDomain Load (0.3ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."domains_id" IS NULL[0m
+  ↳ app/views/domains/index.html.erb:36
+  Rendered domains/index.html.erb within layouts/application (Duration: 40.2ms | Allocations: 10292)
+Completed 200 OK in 1325ms (Views: 1311.5ms | ActiveRecord: 1.7ms | Allocations: 1309466)
+
+
+Started DELETE "/domains/7" for ::1 at 2019-10-25 17:18:01 -0300
+Processing by DomainsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"y6JCv7/mVd0OoTzu98JEXkqake8YreuXeBmXpeyTrNJ2pGgOtkgAgJAYeamQt814m3GNKWczYPsdxbHKVjw9+Q==", "id"=>"7"}
+  [1m[36mDomain Load (0.3ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/domains_controller.rb:109:in `set_domain'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/domains_controller.rb:99:in `destroy'
+  [1m[36mDomain Destroy (0.5ms)[0m  [1m[31mDELETE FROM "domains" WHERE "domains"."id" = ?[0m  [["id", 7]]
+  ↳ app/controllers/domains_controller.rb:99:in `destroy'
+  [1m[35m (79.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/domains_controller.rb:99:in `destroy'
+Redirected to http://localhost:3000/domains
+Completed 302 Found in 93ms (ActiveRecord: 80.4ms | Allocations: 5088)
+
+
+Started GET "/domains" for ::1 at 2019-10-25 17:18:01 -0300
+Processing by DomainsController#index as HTML
+  Rendering domains/index.html.erb within layouts/application
+  [1m[36mDomain Load (0.3ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."domains_id" IS NULL[0m
+  ↳ app/views/domains/index.html.erb:36
+  Rendered domains/index.html.erb within layouts/application (Duration: 3.7ms | Allocations: 1081)
+Completed 200 OK in 22ms (Views: 19.6ms | ActiveRecord: 0.3ms | Allocations: 13068)
+
+
