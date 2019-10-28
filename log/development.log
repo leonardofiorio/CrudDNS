@@ -40506,3 +40506,16 @@ Processing by DomainsController#index as HTML
 Completed 200 OK in 22ms (Views: 19.6ms | ActiveRecord: 0.3ms | Allocations: 13068)
 
 
+Started GET "/" for 127.0.0.1 at 2019-10-27 22:22:55 -0300
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by DomainsController#index as HTML
+  Rendering domains/index.html.erb within layouts/application
+  [1m[36mDomain Load (0.6ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."domains_id" IS NULL[0m
+  ↳ app/views/domains/index.html.erb:36
+  Rendered domains/index.html.erb within layouts/application (Duration: 30.1ms | Allocations: 10400)
+[Webpacker] Compiling…
+[Webpacker] Compiled all packs in /home/leonardo/workspace/desafio_dev_backend_infra/CrudDNS/public/packs
+Completed 200 OK in 13326ms (Views: 13291.6ms | ActiveRecord: 1.3ms | Allocations: 1657684)
+
+
