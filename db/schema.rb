@@ -10,7 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_24_183021) do
+ActiveRecord::Schema.define(version: 2019_11_22_135559) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "domains", force: :cascade do |t|
     t.string "name"
@@ -24,7 +27,7 @@ ActiveRecord::Schema.define(version: 2019_10_24_183021) do
     t.integer "minimum"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "domains_id"
+    t.bigint "domains_id"
     t.index ["domains_id"], name: "index_domains_on_domains_id"
   end
 
@@ -32,12 +35,12 @@ ActiveRecord::Schema.define(version: 2019_10_24_183021) do
     t.string "type_record"
     t.string "name"
     t.string "ttl"
+    t.string "class_record"
     t.string "content"
     t.integer "priority"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "domain_id"
-    t.string "class_record"
+    t.bigint "domain_id"
     t.index ["domain_id"], name: "index_records_on_domain_id"
   end
 
